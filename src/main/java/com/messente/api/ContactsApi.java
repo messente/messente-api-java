@@ -676,7 +676,7 @@ public class ContactsApi {
     }
     /**
      * Build call for fetchContacts
-     * @param groupIds Group id string in uuid format. (optional)
+     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -738,7 +738,7 @@ public class ContactsApi {
     /**
      * Returns all contacts.
      * 
-     * @param groupIds Group id string in uuid format. (optional)
+     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ContactListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -750,7 +750,7 @@ public class ContactsApi {
     /**
      * Returns all contacts.
      * 
-     * @param groupIds Group id string in uuid format. (optional)
+     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ApiResponse&lt;ContactListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -763,7 +763,7 @@ public class ContactsApi {
     /**
      * Returns all contacts. (asynchronously)
      * 
-     * @param groupIds Group id string in uuid format. (optional)
+     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

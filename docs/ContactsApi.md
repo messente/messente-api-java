@@ -298,7 +298,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-List<String> groupIds = Arrays.asList(); // List<String> | Group id string in uuid format.
+List<String> groupIds = Arrays.asList(); // List<String> | Optional one or many group id strings in uuid format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\" 
 try {
     ContactListEnvelope result = apiInstance.fetchContacts(groupIds);
     System.out.println(result);
@@ -312,7 +312,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupIds** | [**List&lt;String&gt;**](String.md)| Group id string in uuid format. | [optional]
+ **groupIds** | [**List&lt;String&gt;**](String.md)| Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  | [optional]
 
 ### Return type
 
