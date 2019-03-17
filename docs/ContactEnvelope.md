@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**contact** | [**ContactFields**](.md) |  |  [optional]
+**contact** | [**ContactFields**](ContactFields.md) |  |  [optional]
 
 
 
