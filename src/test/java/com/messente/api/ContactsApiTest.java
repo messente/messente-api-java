@@ -135,7 +135,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Remove a contact from a group.
+     * Removes a contact from a group.
      *
      * 
      *

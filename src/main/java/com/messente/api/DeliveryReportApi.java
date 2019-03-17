@@ -120,7 +120,7 @@ public class DeliveryReportApi {
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage
+     * Retrieves the delivery report for the Omnimessage.
      * 
      * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
      * @return DeliveryReportResponse
@@ -132,7 +132,7 @@ public class DeliveryReportApi {
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage
+     * Retrieves the delivery report for the Omnimessage.
      * 
      * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
      * @return ApiResponse&lt;DeliveryReportResponse&gt;
@@ -145,7 +145,7 @@ public class DeliveryReportApi {
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage (asynchronously)
+     * Retrieves the delivery report for the Omnimessage. (asynchronously)
      * 
      * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
      * @param callback The callback to be executed when the API call finishes

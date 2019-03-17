@@ -865,7 +865,7 @@ public class ContactsApi {
     }
 
     /**
-     * Remove a contact from a group.
+     * Removes a contact from a group.
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -876,7 +876,7 @@ public class ContactsApi {
     }
 
     /**
-     * Remove a contact from a group.
+     * Removes a contact from a group.
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -889,7 +889,7 @@ public class ContactsApi {
     }
 
     /**
-     * Remove a contact from a group. (asynchronously)
+     * Removes a contact from a group. (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
