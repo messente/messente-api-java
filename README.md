@@ -102,11 +102,39 @@ Read the [external getting-started article](https://messente.com/documentation/g
 ```java
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        ApiClient apiClient = new ApiClient();
+
+        // Configure HTTP basic authorization: basicAuth
+        HttpBasicAuth basicAuth = (HttpBasicAuth) apiClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("<MESSENTE_API_USERNAME>");
+        basicAuth.setPassword("<MESSENTE_API_PASSWORD>");
+
+        OmnimessageApi apiInstance = new OmnimessageApi(apiClient);
+        Omnimessage omnimessage = new Omnimessage(); // Omnimessage | Omnimessage to be sent
+        Viber viber = new Viber();
+        viber.text("Viber text");
+        viber.sender("Messente");
+        SMS sms = new SMS();
+        sms.text("SMS text");
+
+        WhatsApp whatsApp = new WhatsApp();
+        WhatsAppText whatsAppText = new WhatsAppText();
+        whatsAppText.body("WhatsApp text");
+        whatsApp.text(whatsAppText);
+
+        omnimessage.setMessages(Arrays.<Object>asList(whatsApp, viber, sms));
+        omnimessage.setTo("<recipient phone number in e.164 format>");
+
+
+        try {
+            OmniMessageCreateSuccessResponse result = apiInstance.sendOmnimessage(omnimessage);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling sendOmnimessage");
+            e.printStackTrace();
+        }
     }
 }
-
-// TODO
 
 ```
 
