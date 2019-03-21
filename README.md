@@ -7,7 +7,45 @@
 
 ## Installation
 
-Install Messente API library with `TODO`.
+Install Messente API library via Maven, Gradle, Ivy or manual build.
+
+### Gradle
+
+```groovy
+compile "com.messente.api:messente-api-java:0.0.1"
+```
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>com.messente.api</groupId>
+  <artifactId>messente-api-java</artifactId>
+  <version>0.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+
+### Ivy
+
+```xml
+<dependency org='com.messente.api' name='messente-api-java' rev='0.0.1'>
+  <artifact name='messente-api-java' ext='pom' ></artifact>
+</dependency>
+```
+
+### Manual Build
+
+Generate
+
+```shell
+mvn clean package
+```
+
+Install
+
+- `target/messente-api-java-0.0.1.jar`
+- `target/lib/*.jar`
 
 ## Features
 
