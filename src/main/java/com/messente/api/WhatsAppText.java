@@ -61,10 +61,10 @@ public class WhatsAppText {
   }
 
    /**
-   * Plaintext content for WhatsApp, can contains URLs, emojis and formatting
+   * Plaintext content for WhatsApp, can contain URLs, emojis and formatting
    * @return body
   **/
-  @ApiModelProperty(required = true, value = "Plaintext content for WhatsApp, can contains URLs, emojis and formatting")
+  @ApiModelProperty(required = true, value = "Plaintext content for WhatsApp, can contain URLs, emojis and formatting")
   public String getBody() {
     return body;
   }
