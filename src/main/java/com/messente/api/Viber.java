@@ -136,10 +136,10 @@ public class Viber {
   }
 
    /**
-   * URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39;  and &#39;&#39;image_url&#39;&#39; (optional)
+   * URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)
    * @return buttonUrl
   **/
-  @ApiModelProperty(value = "URL of the button, must be specified along with ''text'', ''button_text''  and ''image_url'' (optional)")
+  @ApiModelProperty(value = "URL of the button, must be specified along with ''text'', ''button_text'' and ''image_url'' (optional)")
   public String getButtonUrl() {
     return buttonUrl;
   }
