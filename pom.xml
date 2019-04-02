@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.messente.api</groupId>
-    <artifactId>messente-api-java</artifactId>
+    <artifactId>messente-api</artifactId>
     <packaging>jar</packaging>
-    <name>messente-api-java</name>
+    <name>messente-api</name>
     <version>0.0.1</version>
     <url>https://github.com/messente/messente-api-java</url>
     <description>Java library for Messente API</description>
