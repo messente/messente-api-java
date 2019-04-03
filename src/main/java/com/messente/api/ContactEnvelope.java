@@ -75,6 +75,7 @@ public class ContactEnvelope {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactEnvelope {\n");
+    
     sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
     sb.append("}");
     return sb.toString();

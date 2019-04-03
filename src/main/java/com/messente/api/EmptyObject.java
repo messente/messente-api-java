@@ -15,42 +15,12 @@ package com.messente.api;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * NumberToBlacklist
+ * EmptyObject
  */
 
-public class NumberToBlacklist {
-  public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
-  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  private String phoneNumber;
-
-  public NumberToBlacklist phoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
-    return this;
-  }
-
-   /**
-   * Phone number in e.164 format
-   * @return phoneNumber
-  **/
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-  public String getPhoneNumber() {
-    return phoneNumber;
-  }
-
-  public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
-  }
-
+public class EmptyObject {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,22 +30,20 @@ public class NumberToBlacklist {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NumberToBlacklist numberToBlacklist = (NumberToBlacklist) o;
-    return Objects.equals(this.phoneNumber, numberToBlacklist.phoneNumber);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NumberToBlacklist {\n");
+    sb.append("class EmptyObject {\n");
     
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

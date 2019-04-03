@@ -281,6 +281,7 @@ public class ContactFields {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactFields {\n");
+    
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");

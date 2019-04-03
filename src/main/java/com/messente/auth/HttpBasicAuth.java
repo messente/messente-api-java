@@ -15,7 +15,7 @@ package com.messente.auth;
 
 import com.messente.Pair;
 
-import okhttp3.Credentials;
+import com.squareup.okhttp.Credentials;
 
 import java.util.Map;
 import java.util.List;

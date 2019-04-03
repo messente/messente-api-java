@@ -33,7 +33,7 @@ import java.util.List;
 public class FetchBlacklistSuccess {
   public static final String SERIALIZED_NAME_PHONE_NUMBERS = "phoneNumbers";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBERS)
-  private List<String> phoneNumbers = new ArrayList<String>();
+  private List<String> phoneNumbers = null;
 
   public FetchBlacklistSuccess phoneNumbers(List<String> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
@@ -84,6 +84,7 @@ public class FetchBlacklistSuccess {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class FetchBlacklistSuccess {\n");
+    
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("}");
     return sb.toString();

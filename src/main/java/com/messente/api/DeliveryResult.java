@@ -36,11 +36,11 @@ import org.threeten.bp.OffsetDateTime;
 public class DeliveryResult {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private Status status;
+  private Status status = null;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private Channel channel;
+  private Channel channel = null;
 
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
@@ -52,7 +52,7 @@ public class DeliveryResult {
 
   public static final String SERIALIZED_NAME_ERR = "err";
   @SerializedName(SERIALIZED_NAME_ERR)
-  private ErrorCodeOmnichannelMachine err;
+  private ErrorCodeOmnichannelMachine err = null;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -194,6 +194,7 @@ public class DeliveryResult {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeliveryResult {\n");
+    
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");

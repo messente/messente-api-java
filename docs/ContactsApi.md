@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="addContactToGroup"></a>
 # **addContactToGroup**
-> Object addContactToGroup(groupId, phone)
+> EmptyObject addContactToGroup(groupId, phone)
 
 Adds a contact to a group.
 
@@ -40,7 +40,7 @@ ContactsApi apiInstance = new ContactsApi();
 String groupId = "groupId_example"; // String | String in uuid format.
 String phone = "phone_example"; // String | A phone number
 try {
-    Object result = apiInstance.addContactToGroup(groupId, phone);
+    EmptyObject result = apiInstance.addContactToGroup(groupId, phone);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ContactsApi#addContactToGroup");
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**EmptyObject**](EmptyObject.md)
 
 ### Authorization
 

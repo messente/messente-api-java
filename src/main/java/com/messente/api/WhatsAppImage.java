@@ -97,6 +97,7 @@ public class WhatsAppImage {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WhatsAppImage {\n");
+    
     sb.append("    caption: ").append(toIndentedString(caption)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");

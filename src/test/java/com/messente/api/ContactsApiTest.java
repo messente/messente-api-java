@@ -18,6 +18,7 @@ import com.messente.api.ContactEnvelope;
 import com.messente.api.ContactFields;
 import com.messente.api.ContactListEnvelope;
 import com.messente.api.ContactUpdateFields;
+import com.messente.api.EmptyObject;
 import com.messente.api.ErrorPhonebook;
 import com.messente.api.GroupListEnvelope;
 import org.junit.Test;
@@ -49,7 +50,7 @@ public class ContactsApiTest {
     public void addContactToGroupTest() throws ApiException {
         String groupId = null;
         String phone = null;
-        Object response = api.addContactToGroup(groupId, phone);
+        EmptyObject response = api.addContactToGroup(groupId, phone);
 
         // TODO: test validations
     }

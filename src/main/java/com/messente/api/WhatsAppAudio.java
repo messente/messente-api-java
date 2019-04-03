@@ -74,6 +74,7 @@ public class WhatsAppAudio {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WhatsAppAudio {\n");
+    
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();

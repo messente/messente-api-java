@@ -34,7 +34,7 @@ import java.util.List;
 public class GroupListEnvelope {
   public static final String SERIALIZED_NAME_GROUPS = "groups";
   @SerializedName(SERIALIZED_NAME_GROUPS)
-  private List<GroupResponseFields> groups = new ArrayList<GroupResponseFields>();
+  private List<GroupResponseFields> groups = null;
 
   public GroupListEnvelope groups(List<GroupResponseFields> groups) {
     this.groups = groups;
@@ -85,6 +85,7 @@ public class GroupListEnvelope {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupListEnvelope {\n");
+    
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();

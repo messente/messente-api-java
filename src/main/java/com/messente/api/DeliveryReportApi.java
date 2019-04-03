@@ -64,7 +64,7 @@ public class DeliveryReportApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call retrieveDeliveryReportCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call retrieveDeliveryReportCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -90,15 +90,15 @@ public class DeliveryReportApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -106,7 +106,7 @@ public class DeliveryReportApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call retrieveDeliveryReportValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call retrieveDeliveryReportValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
@@ -114,7 +114,7 @@ public class DeliveryReportApi {
         }
         
 
-        okhttp3.Call call = retrieveDeliveryReportCall(omnimessageId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = retrieveDeliveryReportCall(omnimessageId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -139,7 +139,7 @@ public class DeliveryReportApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<DeliveryReportResponse> retrieveDeliveryReportWithHttpInfo(UUID omnimessageId) throws ApiException {
-        okhttp3.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, null, null);
+        com.squareup.okhttp.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, null, null);
         Type localVarReturnType = new TypeToken<DeliveryReportResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -152,7 +152,7 @@ public class DeliveryReportApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call retrieveDeliveryReportAsync(UUID omnimessageId, final ApiCallback<DeliveryReportResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call retrieveDeliveryReportAsync(UUID omnimessageId, final ApiCallback<DeliveryReportResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -173,7 +173,7 @@ public class DeliveryReportApi {
             };
         }
 
-        okhttp3.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DeliveryReportResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

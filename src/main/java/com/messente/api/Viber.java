@@ -213,6 +213,7 @@ public class Viber {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Viber {\n");
+    
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");

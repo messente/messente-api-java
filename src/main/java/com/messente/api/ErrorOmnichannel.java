@@ -82,6 +82,7 @@ public class ErrorOmnichannel {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorOmnichannel {\n");
+    
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();

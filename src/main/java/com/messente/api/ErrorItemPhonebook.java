@@ -33,7 +33,7 @@ import java.io.IOException;
 public class ErrorItemPhonebook {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  private ErrorTitlePhonebook title;
+  private ErrorTitlePhonebook title = null;
 
   public static final String SERIALIZED_NAME_DETAIL = "detail";
   @SerializedName(SERIALIZED_NAME_DETAIL)
@@ -41,7 +41,7 @@ public class ErrorItemPhonebook {
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private ErrorCodePhonebook code;
+  private ErrorCodePhonebook code = null;
 
   public ErrorItemPhonebook title(ErrorTitlePhonebook title) {
     this.title = title;
@@ -122,6 +122,7 @@ public class ErrorItemPhonebook {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorItemPhonebook {\n");
+    
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

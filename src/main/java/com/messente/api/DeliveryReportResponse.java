@@ -129,6 +129,7 @@ public class DeliveryReportResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeliveryReportResponse {\n");
+    
     sb.append("    statuses: ").append(toIndentedString(statuses)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    omnimessageId: ").append(toIndentedString(omnimessageId)).append("\n");

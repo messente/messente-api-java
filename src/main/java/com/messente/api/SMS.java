@@ -239,6 +239,7 @@ public class SMS {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SMS {\n");
+    
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");

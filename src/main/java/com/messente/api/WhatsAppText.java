@@ -97,6 +97,7 @@ public class WhatsAppText {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WhatsAppText {\n");
+    
     sb.append("    previewUrl: ").append(toIndentedString(previewUrl)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("}");

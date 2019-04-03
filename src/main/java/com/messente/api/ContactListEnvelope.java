@@ -34,7 +34,7 @@ import java.util.List;
 public class ContactListEnvelope {
   public static final String SERIALIZED_NAME_CONTACTS = "contacts";
   @SerializedName(SERIALIZED_NAME_CONTACTS)
-  private List<ContactFields> contacts = new ArrayList<ContactFields>();
+  private List<ContactFields> contacts = null;
 
   public ContactListEnvelope contacts(List<ContactFields> contacts) {
     this.contacts = contacts;
@@ -85,6 +85,7 @@ public class ContactListEnvelope {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactListEnvelope {\n");
+    
     sb.append("    contacts: ").append(toIndentedString(contacts)).append("\n");
     sb.append("}");
     return sb.toString();

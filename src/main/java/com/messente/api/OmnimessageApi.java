@@ -65,7 +65,7 @@ public class OmnimessageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call cancelScheduledMessageCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelScheduledMessageCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -91,15 +91,15 @@ public class OmnimessageApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -107,7 +107,7 @@ public class OmnimessageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelScheduledMessageValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelScheduledMessageValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
@@ -115,7 +115,7 @@ public class OmnimessageApi {
         }
         
 
-        okhttp3.Call call = cancelScheduledMessageCall(omnimessageId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelScheduledMessageCall(omnimessageId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -138,7 +138,7 @@ public class OmnimessageApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> cancelScheduledMessageWithHttpInfo(UUID omnimessageId) throws ApiException {
-        okhttp3.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, null, null);
+        com.squareup.okhttp.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, null, null);
         return apiClient.execute(call);
     }
 
@@ -150,7 +150,7 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call cancelScheduledMessageAsync(UUID omnimessageId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelScheduledMessageAsync(UUID omnimessageId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,7 +171,7 @@ public class OmnimessageApi {
             };
         }
 
-        okhttp3.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -183,7 +183,7 @@ public class OmnimessageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call sendOmnimessageCall(Omnimessage omnimessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call sendOmnimessageCall(Omnimessage omnimessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = omnimessage;
 
         // create path and map variables
@@ -208,15 +208,15 @@ public class OmnimessageApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -224,7 +224,7 @@ public class OmnimessageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call sendOmnimessageValidateBeforeCall(Omnimessage omnimessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendOmnimessageValidateBeforeCall(Omnimessage omnimessage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'omnimessage' is set
         if (omnimessage == null) {
@@ -232,7 +232,7 @@ public class OmnimessageApi {
         }
         
 
-        okhttp3.Call call = sendOmnimessageCall(omnimessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendOmnimessageCall(omnimessage, progressListener, progressRequestListener);
         return call;
 
     }
@@ -257,7 +257,7 @@ public class OmnimessageApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OmniMessageCreateSuccessResponse> sendOmnimessageWithHttpInfo(Omnimessage omnimessage) throws ApiException {
-        okhttp3.Call call = sendOmnimessageValidateBeforeCall(omnimessage, null, null);
+        com.squareup.okhttp.Call call = sendOmnimessageValidateBeforeCall(omnimessage, null, null);
         Type localVarReturnType = new TypeToken<OmniMessageCreateSuccessResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -270,7 +270,7 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call sendOmnimessageAsync(Omnimessage omnimessage, final ApiCallback<OmniMessageCreateSuccessResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendOmnimessageAsync(Omnimessage omnimessage, final ApiCallback<OmniMessageCreateSuccessResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -291,7 +291,7 @@ public class OmnimessageApi {
             };
         }
 
-        okhttp3.Call call = sendOmnimessageValidateBeforeCall(omnimessage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendOmnimessageValidateBeforeCall(omnimessage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OmniMessageCreateSuccessResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

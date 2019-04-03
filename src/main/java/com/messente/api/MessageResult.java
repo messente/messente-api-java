@@ -37,7 +37,7 @@ public class MessageResult {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private Channel channel;
+  private Channel channel = null;
 
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
@@ -122,6 +122,7 @@ public class MessageResult {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageResult {\n");
+    
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");

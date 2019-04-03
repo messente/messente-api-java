@@ -64,7 +64,7 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call addToBlacklistCall(NumberToBlacklist numberToBlacklist, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addToBlacklistCall(NumberToBlacklist numberToBlacklist, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = numberToBlacklist;
 
         // create path and map variables
@@ -89,15 +89,15 @@ public class BlacklistApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -105,7 +105,7 @@ public class BlacklistApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addToBlacklistValidateBeforeCall(NumberToBlacklist numberToBlacklist, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addToBlacklistValidateBeforeCall(NumberToBlacklist numberToBlacklist, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'numberToBlacklist' is set
         if (numberToBlacklist == null) {
@@ -113,7 +113,7 @@ public class BlacklistApi {
         }
         
 
-        okhttp3.Call call = addToBlacklistCall(numberToBlacklist, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addToBlacklistCall(numberToBlacklist, progressListener, progressRequestListener);
         return call;
 
     }
@@ -136,7 +136,7 @@ public class BlacklistApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> addToBlacklistWithHttpInfo(NumberToBlacklist numberToBlacklist) throws ApiException {
-        okhttp3.Call call = addToBlacklistValidateBeforeCall(numberToBlacklist, null, null);
+        com.squareup.okhttp.Call call = addToBlacklistValidateBeforeCall(numberToBlacklist, null, null);
         return apiClient.execute(call);
     }
 
@@ -148,7 +148,7 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call addToBlacklistAsync(NumberToBlacklist numberToBlacklist, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addToBlacklistAsync(NumberToBlacklist numberToBlacklist, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,7 +169,7 @@ public class BlacklistApi {
             };
         }
 
-        okhttp3.Call call = addToBlacklistValidateBeforeCall(numberToBlacklist, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addToBlacklistValidateBeforeCall(numberToBlacklist, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -181,7 +181,7 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call deleteFromBlacklistCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteFromBlacklistCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -207,15 +207,15 @@ public class BlacklistApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -223,7 +223,7 @@ public class BlacklistApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFromBlacklistValidateBeforeCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteFromBlacklistValidateBeforeCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'phone' is set
         if (phone == null) {
@@ -231,7 +231,7 @@ public class BlacklistApi {
         }
         
 
-        okhttp3.Call call = deleteFromBlacklistCall(phone, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteFromBlacklistCall(phone, progressListener, progressRequestListener);
         return call;
 
     }
@@ -254,7 +254,7 @@ public class BlacklistApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteFromBlacklistWithHttpInfo(String phone) throws ApiException {
-        okhttp3.Call call = deleteFromBlacklistValidateBeforeCall(phone, null, null);
+        com.squareup.okhttp.Call call = deleteFromBlacklistValidateBeforeCall(phone, null, null);
         return apiClient.execute(call);
     }
 
@@ -266,7 +266,7 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call deleteFromBlacklistAsync(String phone, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteFromBlacklistAsync(String phone, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -287,7 +287,7 @@ public class BlacklistApi {
             };
         }
 
-        okhttp3.Call call = deleteFromBlacklistValidateBeforeCall(phone, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteFromBlacklistValidateBeforeCall(phone, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -298,7 +298,7 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call fetchBlacklistCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call fetchBlacklistCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -323,15 +323,15 @@ public class BlacklistApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -339,10 +339,10 @@ public class BlacklistApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fetchBlacklistValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchBlacklistValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        okhttp3.Call call = fetchBlacklistCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchBlacklistCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -365,7 +365,7 @@ public class BlacklistApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<FetchBlacklistSuccess> fetchBlacklistWithHttpInfo() throws ApiException {
-        okhttp3.Call call = fetchBlacklistValidateBeforeCall(null, null);
+        com.squareup.okhttp.Call call = fetchBlacklistValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<FetchBlacklistSuccess>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -377,7 +377,7 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call fetchBlacklistAsync(final ApiCallback<FetchBlacklistSuccess> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchBlacklistAsync(final ApiCallback<FetchBlacklistSuccess> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -398,7 +398,7 @@ public class BlacklistApi {
             };
         }
 
-        okhttp3.Call call = fetchBlacklistValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchBlacklistValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FetchBlacklistSuccess>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -411,7 +411,7 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call isBlacklistedCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call isBlacklistedCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -437,15 +437,15 @@ public class BlacklistApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if (progressListener != null) {
-            apiClient.setHttpClient(apiClient.getHttpClient().newBuilder().addNetworkInterceptor(new okhttp3.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
-                    okhttp3.Response originalResponse = chain.proceed(chain.request());
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
                 }
-            }).build());
+            });
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
@@ -453,7 +453,7 @@ public class BlacklistApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call isBlacklistedValidateBeforeCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call isBlacklistedValidateBeforeCall(String phone, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'phone' is set
         if (phone == null) {
@@ -461,7 +461,7 @@ public class BlacklistApi {
         }
         
 
-        okhttp3.Call call = isBlacklistedCall(phone, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = isBlacklistedCall(phone, progressListener, progressRequestListener);
         return call;
 
     }
@@ -484,7 +484,7 @@ public class BlacklistApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> isBlacklistedWithHttpInfo(String phone) throws ApiException {
-        okhttp3.Call call = isBlacklistedValidateBeforeCall(phone, null, null);
+        com.squareup.okhttp.Call call = isBlacklistedValidateBeforeCall(phone, null, null);
         return apiClient.execute(call);
     }
 
@@ -496,7 +496,7 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call isBlacklistedAsync(String phone, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call isBlacklistedAsync(String phone, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -517,7 +517,7 @@ public class BlacklistApi {
             };
         }
 
-        okhttp3.Call call = isBlacklistedValidateBeforeCall(phone, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = isBlacklistedValidateBeforeCall(phone, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

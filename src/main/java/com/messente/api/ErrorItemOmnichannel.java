@@ -33,7 +33,7 @@ import java.io.IOException;
 public class ErrorItemOmnichannel {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  private ErrorTitleOmnichannel title;
+  private ErrorTitleOmnichannel title = null;
 
   public static final String SERIALIZED_NAME_DETAIL = "detail";
   @SerializedName(SERIALIZED_NAME_DETAIL)
@@ -41,7 +41,7 @@ public class ErrorItemOmnichannel {
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private ErrorCodeOmnichannel code;
+  private ErrorCodeOmnichannel code = null;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -145,6 +145,7 @@ public class ErrorItemOmnichannel {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ErrorItemOmnichannel {\n");
+    
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");

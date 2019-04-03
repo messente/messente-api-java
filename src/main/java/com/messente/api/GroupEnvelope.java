@@ -75,6 +75,7 @@ public class GroupEnvelope {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupEnvelope {\n");
+    
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("}");
     return sb.toString();
