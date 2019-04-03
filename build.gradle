@@ -108,9 +108,13 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-plugins {
-  id "com.jfrog.bintray" version "1.8.4"
+buildscript {
+  dependencies {
+      classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+  }
 }
+
+apply plugin: "com.jfrog.bintray"
 
 bintray {
   user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
