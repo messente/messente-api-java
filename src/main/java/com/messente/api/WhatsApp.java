@@ -224,7 +224,7 @@ public class WhatsApp {
    * Get channel
    * @return channel
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public ChannelEnum getChannel() {
     return channel;
   }
