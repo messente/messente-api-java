@@ -247,7 +247,7 @@ public class SMS {
    * Get channel
    * @return channel
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public ChannelEnum getChannel() {
     return channel;
   }
