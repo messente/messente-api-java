@@ -101,7 +101,7 @@ public class Viber {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private ChannelEnum channel;
+  private ChannelEnum channel = ChannelEnum.VIBER;
 
   public Viber sender(String sender) {
     this.sender = sender;

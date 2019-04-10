@@ -146,7 +146,7 @@ public class SMS {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private ChannelEnum channel;
+  private ChannelEnum channel = ChannelEnum.SMS;
 
   public SMS text(String text) {
     this.text = text;
