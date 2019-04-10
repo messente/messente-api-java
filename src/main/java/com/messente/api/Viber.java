@@ -54,9 +54,54 @@ public class Viber {
   @SerializedName(SERIALIZED_NAME_BUTTON_TEXT)
   private String buttonText;
 
+  /**
+   * Gets or Sets channel
+   */
+  @JsonAdapter(ChannelEnum.Adapter.class)
+  public enum ChannelEnum {
+    VIBER("viber");
+
+    private String value;
+
+    ChannelEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ChannelEnum fromValue(String text) {
+      for (ChannelEnum b : ChannelEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ChannelEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ChannelEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ChannelEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ChannelEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private String channel = "viber";
+  private ChannelEnum channel;
 
   public Viber sender(String sender) {
     this.sender = sender;
@@ -166,7 +211,7 @@ public class Viber {
     this.buttonText = buttonText;
   }
 
-  public Viber channel(String channel) {
+  public Viber channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
@@ -176,11 +221,11 @@ public class Viber {
    * @return channel
   **/
   @ApiModelProperty(value = "")
-  public String getChannel() {
+  public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(String channel) {
+  public void setChannel(ChannelEnum channel) {
     this.channel = channel;
   }
 

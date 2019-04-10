@@ -10,7 +10,14 @@ Name | Type | Description | Notes
 **image** | [**WhatsAppImage**](WhatsAppImage.md) |  |  [optional]
 **document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  |  [optional]
 **audio** | [**WhatsAppAudio**](WhatsAppAudio.md) |  |  [optional]
-**channel** | **String** |  |  [optional]
+**channel** | [**ChannelEnum**](#ChannelEnum) |  |  [optional]
+
+
+<a name="ChannelEnum"></a>
+## Enum: ChannelEnum
+Name | Value
+---- | -----
+WHATSAPP | &quot;whatsapp&quot;
 
 
 

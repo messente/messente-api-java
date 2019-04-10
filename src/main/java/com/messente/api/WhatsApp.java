@@ -58,9 +58,54 @@ public class WhatsApp {
   @SerializedName(SERIALIZED_NAME_AUDIO)
   private WhatsAppAudio audio = null;
 
+  /**
+   * Gets or Sets channel
+   */
+  @JsonAdapter(ChannelEnum.Adapter.class)
+  public enum ChannelEnum {
+    WHATSAPP("whatsapp");
+
+    private String value;
+
+    ChannelEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ChannelEnum fromValue(String text) {
+      for (ChannelEnum b : ChannelEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ChannelEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ChannelEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ChannelEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ChannelEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private String channel = "whatsapp";
+  private ChannelEnum channel;
 
   public WhatsApp sender(String sender) {
     this.sender = sender;
@@ -170,7 +215,7 @@ public class WhatsApp {
     this.audio = audio;
   }
 
-  public WhatsApp channel(String channel) {
+  public WhatsApp channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
@@ -180,11 +225,11 @@ public class WhatsApp {
    * @return channel
   **/
   @ApiModelProperty(value = "")
-  public String getChannel() {
+  public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(String channel) {
+  public void setChannel(ChannelEnum channel) {
     this.channel = channel;
   }
 
