@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.TextStore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -43,6 +44,10 @@ public class Omnimessage {
   public static final String SERIALIZED_NAME_DLR_URL = "dlr_url";
   @SerializedName(SERIALIZED_NAME_DLR_URL)
   private String dlrUrl;
+
+  public static final String SERIALIZED_NAME_TEXT_STORE = "text_store";
+  @SerializedName(SERIALIZED_NAME_TEXT_STORE)
+  private TextStore textStore = null;
 
   public static final String SERIALIZED_NAME_TIME_TO_SEND = "time_to_send";
   @SerializedName(SERIALIZED_NAME_TIME_TO_SEND)
@@ -107,16 +112,34 @@ public class Omnimessage {
     this.dlrUrl = dlrUrl;
   }
 
+  public Omnimessage textStore(TextStore textStore) {
+    this.textStore = textStore;
+    return this;
+  }
+
+   /**
+   * Get textStore
+   * @return textStore
+  **/
+  @ApiModelProperty(value = "")
+  public TextStore getTextStore() {
+    return textStore;
+  }
+
+  public void setTextStore(TextStore textStore) {
+    this.textStore = textStore;
+  }
+
   public Omnimessage timeToSend(OffsetDateTime timeToSend) {
     this.timeToSend = timeToSend;
     return this;
   }
 
    /**
-   * Optional parameter for sending messages at some specific time in the future.   Time must be specified in the 8601 format.   If no timezone is specified, then the timezone is assumed to be UTC.    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)
+   * Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC.    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)
    * @return timeToSend
   **/
-  @ApiModelProperty(value = "Optional parameter for sending messages at some specific time in the future.   Time must be specified in the 8601 format.   If no timezone is specified, then the timezone is assumed to be UTC.    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)")
+  @ApiModelProperty(value = "Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC.    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)")
   public OffsetDateTime getTimeToSend() {
     return timeToSend;
   }
@@ -138,12 +161,13 @@ public class Omnimessage {
     return Objects.equals(this.to, omnimessage.to) &&
         Objects.equals(this.messages, omnimessage.messages) &&
         Objects.equals(this.dlrUrl, omnimessage.dlrUrl) &&
+        Objects.equals(this.textStore, omnimessage.textStore) &&
         Objects.equals(this.timeToSend, omnimessage.timeToSend);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(to, messages, dlrUrl, timeToSend);
+    return Objects.hash(to, messages, dlrUrl, textStore, timeToSend);
   }
 
 
@@ -155,6 +179,7 @@ public class Omnimessage {
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    dlrUrl: ").append(toIndentedString(dlrUrl)).append("\n");
+    sb.append("    textStore: ").append(toIndentedString(textStore)).append("\n");
     sb.append("    timeToSend: ").append(toIndentedString(timeToSend)).append("\n");
     sb.append("}");
     return sb.toString();
