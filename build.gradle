@@ -106,7 +106,7 @@ dependencies {
 
 buildscript {
   dependencies {
-      classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+      classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1"
   }
 }
 
@@ -119,7 +119,7 @@ bintray {
   configurations = ['archives']
 
   pkg {
-      repo = 'messente-api-java'
+      repo = 'messente-api'
       name = 'messente-api'
       userOrg = "messente"
       version {
