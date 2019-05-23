@@ -25,20 +25,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(TextStore.Adapter.class)
+public enum TextStore {
   
-  SMS("sms"),
+  NOSTORE("nostore"),
   
-  VIBER("viber"),
+  PLAINTEXT("plaintext"),
   
-  WHATSAPP("whatsapp");
+  SHA256("sha256");
 
   private String value;
 
-  Channel(String value) {
+  TextStore(String value) {
     this.value = value;
   }
 
@@ -51,8 +51,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String text) {
-    for (Channel b : Channel.values()) {
+  public static TextStore fromValue(String text) {
+    for (TextStore b : TextStore.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
@@ -60,16 +60,16 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + text + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<TextStore> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final TextStore enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public TextStore read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(String.valueOf(value));
+      return TextStore.fromValue(String.valueOf(value));
     }
   }
 }
