@@ -131,7 +131,7 @@ public class ContactsApi {
     }
 
     /**
-     * Adds a contact to a group.
+     * Adds a contact to a group
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -144,7 +144,7 @@ public class ContactsApi {
     }
 
     /**
-     * Adds a contact to a group.
+     * Adds a contact to a group
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -158,7 +158,7 @@ public class ContactsApi {
     }
 
     /**
-     * Adds a contact to a group. (asynchronously)
+     * Adds a contact to a group (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -255,7 +255,7 @@ public class ContactsApi {
     }
 
     /**
-     * Creates a new contact.
+     * Creates a new contact
      * 
      * @param contactFields  (required)
      * @return ContactEnvelope
@@ -267,7 +267,7 @@ public class ContactsApi {
     }
 
     /**
-     * Creates a new contact.
+     * Creates a new contact
      * 
      * @param contactFields  (required)
      * @return ApiResponse&lt;ContactEnvelope&gt;
@@ -280,7 +280,7 @@ public class ContactsApi {
     }
 
     /**
-     * Creates a new contact. (asynchronously)
+     * Creates a new contact (asynchronously)
      * 
      * @param contactFields  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -377,7 +377,7 @@ public class ContactsApi {
     }
 
     /**
-     * Deletes a contact.
+     * Deletes a contact
      * 
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -387,7 +387,7 @@ public class ContactsApi {
     }
 
     /**
-     * Deletes a contact.
+     * Deletes a contact
      * 
      * @param phone A phone number (required)
      * @return ApiResponse&lt;Void&gt;
@@ -399,7 +399,7 @@ public class ContactsApi {
     }
 
     /**
-     * Deletes a contact. (asynchronously)
+     * Deletes a contact (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
@@ -495,7 +495,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists a contact.
+     * Lists a contact
      * 
      * @param phone A phone number (required)
      * @return ContactEnvelope
@@ -507,7 +507,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists a contact.
+     * Lists a contact
      * 
      * @param phone A phone number (required)
      * @return ApiResponse&lt;ContactEnvelope&gt;
@@ -520,7 +520,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists a contact. (asynchronously)
+     * Lists a contact (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
@@ -617,7 +617,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists groups of a contact.
+     * Lists groups of a contact
      * 
      * @param phone A phone number (required)
      * @return GroupListEnvelope
@@ -629,7 +629,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists groups of a contact.
+     * Lists groups of a contact
      * 
      * @param phone A phone number (required)
      * @return ApiResponse&lt;GroupListEnvelope&gt;
@@ -642,7 +642,7 @@ public class ContactsApi {
     }
 
     /**
-     * Lists groups of a contact. (asynchronously)
+     * Lists groups of a contact (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
@@ -737,7 +737,7 @@ public class ContactsApi {
     }
 
     /**
-     * Returns all contacts.
+     * Returns all contacts
      * 
      * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ContactListEnvelope
@@ -749,7 +749,7 @@ public class ContactsApi {
     }
 
     /**
-     * Returns all contacts.
+     * Returns all contacts
      * 
      * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ApiResponse&lt;ContactListEnvelope&gt;
@@ -762,7 +762,7 @@ public class ContactsApi {
     }
 
     /**
-     * Returns all contacts. (asynchronously)
+     * Returns all contacts (asynchronously)
      * 
      * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -866,7 +866,7 @@ public class ContactsApi {
     }
 
     /**
-     * Removes a contact from a group.
+     * Removes a contact from a group
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -877,7 +877,7 @@ public class ContactsApi {
     }
 
     /**
-     * Removes a contact from a group.
+     * Removes a contact from a group
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -890,7 +890,7 @@ public class ContactsApi {
     }
 
     /**
-     * Removes a contact from a group. (asynchronously)
+     * Removes a contact from a group (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param phone A phone number (required)
@@ -993,7 +993,7 @@ public class ContactsApi {
     }
 
     /**
-     * Updates a contact.
+     * Updates a contact
      * 
      * @param phone A phone number (required)
      * @param contactUpdateFields  (required)
@@ -1006,7 +1006,7 @@ public class ContactsApi {
     }
 
     /**
-     * Updates a contact.
+     * Updates a contact
      * 
      * @param phone A phone number (required)
      * @param contactUpdateFields  (required)
@@ -1020,7 +1020,7 @@ public class ContactsApi {
     }
 
     /**
-     * Updates a contact. (asynchronously)
+     * Updates a contact (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param contactUpdateFields  (required)

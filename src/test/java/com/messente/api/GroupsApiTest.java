@@ -36,7 +36,7 @@ public class GroupsApiTest {
 
     
     /**
-     * Creates a new group with the provided name.
+     * Creates a new group with the provided name
      *
      * 
      *
@@ -52,7 +52,7 @@ public class GroupsApiTest {
     }
     
     /**
-     * Deletes a group.
+     * Deletes a group
      *
      * 
      *
@@ -68,7 +68,7 @@ public class GroupsApiTest {
     }
     
     /**
-     * Lists a group.
+     * Lists a group
      *
      * 
      *
@@ -84,7 +84,7 @@ public class GroupsApiTest {
     }
     
     /**
-     * Returns all groups.
+     * Returns all groups
      *
      * 
      *
@@ -99,7 +99,7 @@ public class GroupsApiTest {
     }
     
     /**
-     * Updates a group with the provided name.
+     * Updates a group with the provided name
      *
      * 
      *

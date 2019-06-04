@@ -121,7 +121,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Cancels a scheduled Omnimessage.
+     * Cancels a scheduled Omnimessage
      * 
      * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -131,7 +131,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Cancels a scheduled Omnimessage.
+     * Cancels a scheduled Omnimessage
      * 
      * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
      * @return ApiResponse&lt;Void&gt;
@@ -143,7 +143,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Cancels a scheduled Omnimessage. (asynchronously)
+     * Cancels a scheduled Omnimessage (asynchronously)
      * 
      * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
      * @param callback The callback to be executed when the API call finishes
@@ -238,7 +238,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Sends an Omnimessage.
+     * Sends an Omnimessage
      * 
      * @param omnimessage Omnimessage to be sent (required)
      * @return OmniMessageCreateSuccessResponse
@@ -250,7 +250,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Sends an Omnimessage.
+     * Sends an Omnimessage
      * 
      * @param omnimessage Omnimessage to be sent (required)
      * @return ApiResponse&lt;OmniMessageCreateSuccessResponse&gt;
@@ -263,7 +263,7 @@ public class OmnimessageApi {
     }
 
     /**
-     * Sends an Omnimessage. (asynchronously)
+     * Sends an Omnimessage (asynchronously)
      * 
      * @param omnimessage Omnimessage to be sent (required)
      * @param callback The callback to be executed when the API call finishes

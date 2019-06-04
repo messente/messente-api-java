@@ -35,7 +35,7 @@ public class DeliveryReportApiTest {
 
     
     /**
-     * Retrieves the delivery report for the Omnimessage.
+     * Retrieves the delivery report for the Omnimessage
      *
      * 
      *

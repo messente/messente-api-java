@@ -35,7 +35,7 @@ public class BlacklistApiTest {
 
     
     /**
-     * Adds a phone number to the blacklist.
+     * Adds a phone number to the blacklist
      *
      * 
      *
@@ -51,7 +51,7 @@ public class BlacklistApiTest {
     }
     
     /**
-     * Deletes a phone number from the blacklist.
+     * Deletes a phone number from the blacklist
      *
      * 
      *
@@ -67,7 +67,7 @@ public class BlacklistApiTest {
     }
     
     /**
-     * Returns all blacklisted phone numbers.
+     * Returns all blacklisted phone numbers
      *
      * 
      *
@@ -82,7 +82,7 @@ public class BlacklistApiTest {
     }
     
     /**
-     * Checks if a phone number is blacklisted.
+     * Checks if a phone number is blacklisted
      *
      * 
      *

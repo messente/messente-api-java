@@ -39,7 +39,7 @@ public class ContactsApiTest {
 
     
     /**
-     * Adds a contact to a group.
+     * Adds a contact to a group
      *
      * 
      *
@@ -56,7 +56,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Creates a new contact.
+     * Creates a new contact
      *
      * 
      *
@@ -72,7 +72,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Deletes a contact.
+     * Deletes a contact
      *
      * 
      *
@@ -88,7 +88,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Lists a contact.
+     * Lists a contact
      *
      * 
      *
@@ -104,7 +104,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Lists groups of a contact.
+     * Lists groups of a contact
      *
      * 
      *
@@ -120,7 +120,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Returns all contacts.
+     * Returns all contacts
      *
      * 
      *
@@ -136,7 +136,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Removes a contact from a group.
+     * Removes a contact from a group
      *
      * 
      *
@@ -153,7 +153,7 @@ public class ContactsApiTest {
     }
     
     /**
-     * Updates a contact.
+     * Updates a contact
      *
      * 
      *

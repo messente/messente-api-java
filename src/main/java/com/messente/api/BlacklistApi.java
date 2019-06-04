@@ -119,7 +119,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Adds a phone number to the blacklist.
+     * Adds a phone number to the blacklist
      * 
      * @param numberToBlacklist Phone number to be blacklisted (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -129,7 +129,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Adds a phone number to the blacklist.
+     * Adds a phone number to the blacklist
      * 
      * @param numberToBlacklist Phone number to be blacklisted (required)
      * @return ApiResponse&lt;Void&gt;
@@ -141,7 +141,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Adds a phone number to the blacklist. (asynchronously)
+     * Adds a phone number to the blacklist (asynchronously)
      * 
      * @param numberToBlacklist Phone number to be blacklisted (required)
      * @param callback The callback to be executed when the API call finishes
@@ -237,7 +237,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Deletes a phone number from the blacklist.
+     * Deletes a phone number from the blacklist
      * 
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -247,7 +247,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Deletes a phone number from the blacklist.
+     * Deletes a phone number from the blacklist
      * 
      * @param phone A phone number (required)
      * @return ApiResponse&lt;Void&gt;
@@ -259,7 +259,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Deletes a phone number from the blacklist. (asynchronously)
+     * Deletes a phone number from the blacklist (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
@@ -348,7 +348,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Returns all blacklisted phone numbers.
+     * Returns all blacklisted phone numbers
      * 
      * @return FetchBlacklistSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -359,7 +359,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Returns all blacklisted phone numbers.
+     * Returns all blacklisted phone numbers
      * 
      * @return ApiResponse&lt;FetchBlacklistSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -371,7 +371,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Returns all blacklisted phone numbers. (asynchronously)
+     * Returns all blacklisted phone numbers (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -467,7 +467,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Checks if a phone number is blacklisted.
+     * Checks if a phone number is blacklisted
      * 
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -477,7 +477,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Checks if a phone number is blacklisted.
+     * Checks if a phone number is blacklisted
      * 
      * @param phone A phone number (required)
      * @return ApiResponse&lt;Void&gt;
@@ -489,7 +489,7 @@ public class BlacklistApi {
     }
 
     /**
-     * Checks if a phone number is blacklisted. (asynchronously)
+     * Checks if a phone number is blacklisted (asynchronously)
      * 
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes

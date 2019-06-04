@@ -36,7 +36,7 @@ public class OmnimessageApiTest {
 
     
     /**
-     * Cancels a scheduled Omnimessage.
+     * Cancels a scheduled Omnimessage
      *
      * 
      *
@@ -52,7 +52,7 @@ public class OmnimessageApiTest {
     }
     
     /**
-     * Sends an Omnimessage.
+     * Sends an Omnimessage
      *
      * 
      *

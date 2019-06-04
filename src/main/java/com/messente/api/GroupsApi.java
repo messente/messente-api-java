@@ -120,7 +120,7 @@ public class GroupsApi {
     }
 
     /**
-     * Creates a new group with the provided name.
+     * Creates a new group with the provided name
      * 
      * @param groupName  (required)
      * @return GroupEnvelope
@@ -132,7 +132,7 @@ public class GroupsApi {
     }
 
     /**
-     * Creates a new group with the provided name.
+     * Creates a new group with the provided name
      * 
      * @param groupName  (required)
      * @return ApiResponse&lt;GroupEnvelope&gt;
@@ -145,7 +145,7 @@ public class GroupsApi {
     }
 
     /**
-     * Creates a new group with the provided name. (asynchronously)
+     * Creates a new group with the provided name (asynchronously)
      * 
      * @param groupName  (required)
      * @param callback The callback to be executed when the API call finishes
@@ -242,7 +242,7 @@ public class GroupsApi {
     }
 
     /**
-     * Deletes a group.
+     * Deletes a group
      * 
      * @param groupId String in uuid format. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -252,7 +252,7 @@ public class GroupsApi {
     }
 
     /**
-     * Deletes a group.
+     * Deletes a group
      * 
      * @param groupId String in uuid format. (required)
      * @return ApiResponse&lt;Void&gt;
@@ -264,7 +264,7 @@ public class GroupsApi {
     }
 
     /**
-     * Deletes a group. (asynchronously)
+     * Deletes a group (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -360,7 +360,7 @@ public class GroupsApi {
     }
 
     /**
-     * Lists a group.
+     * Lists a group
      * 
      * @param groupId String in uuid format. (required)
      * @return GroupEnvelope
@@ -372,7 +372,7 @@ public class GroupsApi {
     }
 
     /**
-     * Lists a group.
+     * Lists a group
      * 
      * @param groupId String in uuid format. (required)
      * @return ApiResponse&lt;GroupEnvelope&gt;
@@ -385,7 +385,7 @@ public class GroupsApi {
     }
 
     /**
-     * Lists a group. (asynchronously)
+     * Lists a group (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -475,7 +475,7 @@ public class GroupsApi {
     }
 
     /**
-     * Returns all groups.
+     * Returns all groups
      * 
      * @return GroupListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -486,7 +486,7 @@ public class GroupsApi {
     }
 
     /**
-     * Returns all groups.
+     * Returns all groups
      * 
      * @return ApiResponse&lt;GroupListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -498,7 +498,7 @@ public class GroupsApi {
     }
 
     /**
-     * Returns all groups. (asynchronously)
+     * Returns all groups (asynchronously)
      * 
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -600,7 +600,7 @@ public class GroupsApi {
     }
 
     /**
-     * Updates a group with the provided name.
+     * Updates a group with the provided name
      * 
      * @param groupId String in uuid format. (required)
      * @param groupName  (required)
@@ -613,7 +613,7 @@ public class GroupsApi {
     }
 
     /**
-     * Updates a group with the provided name.
+     * Updates a group with the provided name
      * 
      * @param groupId String in uuid format. (required)
      * @param groupName  (required)
@@ -627,7 +627,7 @@ public class GroupsApi {
     }
 
     /**
-     * Updates a group with the provided name. (asynchronously)
+     * Updates a group with the provided name (asynchronously)
      * 
      * @param groupId String in uuid format. (required)
      * @param groupName  (required)
