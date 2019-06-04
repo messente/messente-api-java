@@ -49,10 +49,10 @@ public class FetchBlacklistSuccess {
   }
 
    /**
-   * Get phoneNumbers
+   * Array of unique phone numbers
    * @return phoneNumbers
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Array of unique phone numbers")
   public List<String> getPhoneNumbers() {
     return phoneNumbers;
   }
