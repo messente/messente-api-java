@@ -24,7 +24,6 @@ import com.messente.api.Channel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * MessageResult
@@ -33,7 +32,7 @@ import java.util.UUID;
 public class MessageResult {
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
-  private UUID messageId;
+  private String messageId;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
@@ -43,7 +42,7 @@ public class MessageResult {
   @SerializedName(SERIALIZED_NAME_SENDER)
   private String sender;
 
-  public MessageResult messageId(UUID messageId) {
+  public MessageResult messageId(String messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -53,11 +52,11 @@ public class MessageResult {
    * @return messageId
   **/
   @ApiModelProperty(required = true, value = "Unique identifier for the message")
-  public UUID getMessageId() {
+  public String getMessageId() {
     return messageId;
   }
 
-  public void setMessageId(UUID messageId) {
+  public void setMessageId(String messageId) {
     this.messageId = messageId;
   }
 

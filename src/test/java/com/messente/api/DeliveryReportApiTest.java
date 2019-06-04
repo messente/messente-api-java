@@ -16,7 +16,6 @@ package com.messente.api;
 import com.messente.ApiException;
 import com.messente.api.DeliveryReportResponse;
 import com.messente.api.ErrorOmnichannel;
-import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,7 +43,7 @@ public class DeliveryReportApiTest {
      */
     @Test
     public void retrieveDeliveryReportTest() throws ApiException {
-        UUID omnimessageId = null;
+        String omnimessageId = null;
         DeliveryReportResponse response = api.retrieveDeliveryReport(omnimessageId);
 
         // TODO: test validations

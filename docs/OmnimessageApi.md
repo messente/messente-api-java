@@ -31,7 +31,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 OmnimessageApi apiInstance = new OmnimessageApi();
-UUID omnimessageId = new UUID(); // UUID | UUID of the scheduled Omnimessage to be cancelled
+String omnimessageId = "omnimessageId_example"; // String | UUID of the scheduled Omnimessage to be cancelled
 try {
     apiInstance.cancelScheduledMessage(omnimessageId);
 } catch (ApiException e) {
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**UUID**](.md)| UUID of the scheduled Omnimessage to be cancelled |
+ **omnimessageId** | **String**| UUID of the scheduled Omnimessage to be cancelled |
 
 ### Return type
 

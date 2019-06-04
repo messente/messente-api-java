@@ -62,7 +62,7 @@ public class ContactsApi {
 
     /**
      * Build call for addContactToGroup
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -133,7 +133,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @return EmptyObject
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -146,7 +146,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @return ApiResponse&lt;EmptyObject&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -160,7 +160,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group (asynchronously)
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -677,7 +677,7 @@ public class ContactsApi {
     }
     /**
      * Build call for fetchContacts
-     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
+     * @param groupIds Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -739,7 +739,7 @@ public class ContactsApi {
     /**
      * Returns all contacts
      * 
-     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
+     * @param groupIds Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ContactListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -751,7 +751,7 @@ public class ContactsApi {
     /**
      * Returns all contacts
      * 
-     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
+     * @param groupIds Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @return ApiResponse&lt;ContactListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -764,7 +764,7 @@ public class ContactsApi {
     /**
      * Returns all contacts (asynchronously)
      * 
-     * @param groupIds Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
+     * @param groupIds Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -797,7 +797,7 @@ public class ContactsApi {
     }
     /**
      * Build call for removeContactFromGroup
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -868,7 +868,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -879,7 +879,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -892,7 +892,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group (asynchronously)
      * 
-     * @param groupId String in uuid format. (required)
+     * @param groupId String in UUID format. (required)
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

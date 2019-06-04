@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import com.messente.api.DeliveryReportResponse;
 import com.messente.api.ErrorOmnichannel;
-import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -64,7 +63,7 @@ public class DeliveryReportApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call retrieveDeliveryReportCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call retrieveDeliveryReportCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -106,7 +105,7 @@ public class DeliveryReportApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveDeliveryReportValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call retrieveDeliveryReportValidateBeforeCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
@@ -126,7 +125,7 @@ public class DeliveryReportApi {
      * @return DeliveryReportResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DeliveryReportResponse retrieveDeliveryReport(UUID omnimessageId) throws ApiException {
+    public DeliveryReportResponse retrieveDeliveryReport(String omnimessageId) throws ApiException {
         ApiResponse<DeliveryReportResponse> resp = retrieveDeliveryReportWithHttpInfo(omnimessageId);
         return resp.getData();
     }
@@ -138,7 +137,7 @@ public class DeliveryReportApi {
      * @return ApiResponse&lt;DeliveryReportResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DeliveryReportResponse> retrieveDeliveryReportWithHttpInfo(UUID omnimessageId) throws ApiException {
+    public ApiResponse<DeliveryReportResponse> retrieveDeliveryReportWithHttpInfo(String omnimessageId) throws ApiException {
         com.squareup.okhttp.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, null, null);
         Type localVarReturnType = new TypeToken<DeliveryReportResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -152,7 +151,7 @@ public class DeliveryReportApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveDeliveryReportAsync(UUID omnimessageId, final ApiCallback<DeliveryReportResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call retrieveDeliveryReportAsync(String omnimessageId, final ApiCallback<DeliveryReportResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

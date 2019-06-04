@@ -26,7 +26,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * DeliveryReportResponse
@@ -43,7 +42,7 @@ public class DeliveryReportResponse {
 
   public static final String SERIALIZED_NAME_OMNIMESSAGE_ID = "omnimessage_id";
   @SerializedName(SERIALIZED_NAME_OMNIMESSAGE_ID)
-  private UUID omnimessageId;
+  private String omnimessageId;
 
   public DeliveryReportResponse statuses(List<DeliveryResult> statuses) {
     this.statuses = statuses;
@@ -86,7 +85,7 @@ public class DeliveryReportResponse {
     this.to = to;
   }
 
-  public DeliveryReportResponse omnimessageId(UUID omnimessageId) {
+  public DeliveryReportResponse omnimessageId(String omnimessageId) {
     this.omnimessageId = omnimessageId;
     return this;
   }
@@ -96,11 +95,11 @@ public class DeliveryReportResponse {
    * @return omnimessageId
   **/
   @ApiModelProperty(required = true, value = "Unique identifier for the Omnimessage")
-  public UUID getOmnimessageId() {
+  public String getOmnimessageId() {
     return omnimessageId;
   }
 
-  public void setOmnimessageId(UUID omnimessageId) {
+  public void setOmnimessageId(String omnimessageId) {
     this.omnimessageId = omnimessageId;
   }
 

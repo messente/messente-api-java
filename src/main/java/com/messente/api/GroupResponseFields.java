@@ -51,10 +51,10 @@ public class GroupResponseFields {
   }
 
    /**
-   * Id string in uuid format
+   * Id string in UUID format
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "Id string in uuid format")
+  @ApiModelProperty(required = true, value = "Id string in UUID format")
   public String getId() {
     return id;
   }

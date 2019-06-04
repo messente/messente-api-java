@@ -30,7 +30,6 @@ import java.io.IOException;
 import com.messente.api.ErrorOmnichannel;
 import com.messente.api.OmniMessageCreateSuccessResponse;
 import com.messente.api.Omnimessage;
-import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class OmnimessageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call cancelScheduledMessageCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call cancelScheduledMessageCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -107,7 +106,7 @@ public class OmnimessageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call cancelScheduledMessageValidateBeforeCall(UUID omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call cancelScheduledMessageValidateBeforeCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
@@ -126,7 +125,7 @@ public class OmnimessageApi {
      * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void cancelScheduledMessage(UUID omnimessageId) throws ApiException {
+    public void cancelScheduledMessage(String omnimessageId) throws ApiException {
         cancelScheduledMessageWithHttpInfo(omnimessageId);
     }
 
@@ -137,7 +136,7 @@ public class OmnimessageApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> cancelScheduledMessageWithHttpInfo(UUID omnimessageId) throws ApiException {
+    public ApiResponse<Void> cancelScheduledMessageWithHttpInfo(String omnimessageId) throws ApiException {
         com.squareup.okhttp.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, null, null);
         return apiClient.execute(call);
     }
@@ -150,7 +149,7 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cancelScheduledMessageAsync(UUID omnimessageId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelScheduledMessageAsync(String omnimessageId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

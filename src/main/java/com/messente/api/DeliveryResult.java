@@ -26,7 +26,6 @@ import com.messente.api.Status;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
 
 /**
@@ -44,7 +43,7 @@ public class DeliveryResult {
 
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
-  private UUID messageId;
+  private String messageId;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
@@ -94,7 +93,7 @@ public class DeliveryResult {
     this.channel = channel;
   }
 
-  public DeliveryResult messageId(UUID messageId) {
+  public DeliveryResult messageId(String messageId) {
     this.messageId = messageId;
     return this;
   }
@@ -104,11 +103,11 @@ public class DeliveryResult {
    * @return messageId
   **/
   @ApiModelProperty(value = "Unique identifier for the message")
-  public UUID getMessageId() {
+  public String getMessageId() {
     return messageId;
   }
 
-  public void setMessageId(UUID messageId) {
+  public void setMessageId(String messageId) {
     this.messageId = messageId;
   }
 

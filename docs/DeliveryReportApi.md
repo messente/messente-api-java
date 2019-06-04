@@ -30,7 +30,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 DeliveryReportApi apiInstance = new DeliveryReportApi();
-UUID omnimessageId = new UUID(); // UUID | UUID of the Omnimessage to for which the delivery report is to be retrieved
+String omnimessageId = "omnimessageId_example"; // String | UUID of the Omnimessage to for which the delivery report is to be retrieved
 try {
     DeliveryReportResponse result = apiInstance.retrieveDeliveryReport(omnimessageId);
     System.out.println(result);
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**UUID**](.md)| UUID of the Omnimessage to for which the delivery report is to be retrieved |
+ **omnimessageId** | **String**| UUID of the Omnimessage to for which the delivery report is to be retrieved |
 
 ### Return type
 

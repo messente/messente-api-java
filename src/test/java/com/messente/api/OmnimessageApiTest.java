@@ -17,7 +17,6 @@ import com.messente.ApiException;
 import com.messente.api.ErrorOmnichannel;
 import com.messente.api.OmniMessageCreateSuccessResponse;
 import com.messente.api.Omnimessage;
-import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +44,7 @@ public class OmnimessageApiTest {
      */
     @Test
     public void cancelScheduledMessageTest() throws ApiException {
-        UUID omnimessageId = null;
+        String omnimessageId = null;
         api.cancelScheduledMessage(omnimessageId);
 
         // TODO: test validations
