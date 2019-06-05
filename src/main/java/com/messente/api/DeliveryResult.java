@@ -29,8 +29,9 @@ import java.io.IOException;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * DeliveryResult
+ * A delivery report
  */
+@ApiModel(description = "A delivery report")
 
 public class DeliveryResult {
   public static final String SERIALIZED_NAME_STATUS = "status";

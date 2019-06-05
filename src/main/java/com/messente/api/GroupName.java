@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GroupName
+ * A group name container
  */
+@ApiModel(description = "A group name container")
 
 public class GroupName {
   public static final String SERIALIZED_NAME_NAME = "name";
@@ -39,10 +40,10 @@ public class GroupName {
   }
 
    /**
-   * Get name
+   * The name of the group
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The name of the group")
   public String getName() {
     return name;
   }

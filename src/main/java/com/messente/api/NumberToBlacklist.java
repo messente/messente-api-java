@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * NumberToBlacklist
+ * A container for a soon-to-be blacklisted number
  */
+@ApiModel(description = "A container for a soon-to-be blacklisted number")
 
 public class NumberToBlacklist {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";

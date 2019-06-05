@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * WhatsAppDocument
+ * A document
  */
+@ApiModel(description = "A document")
 
 public class WhatsAppDocument {
   public static final String SERIALIZED_NAME_CAPTION = "caption";

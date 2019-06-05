@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ContactUpdateFields
+ * A container for fields of a contact
  */
+@ApiModel(description = "A container for fields of a contact")
 
 public class ContactUpdateFields {
   public static final String SERIALIZED_NAME_EMAIL = "email";
@@ -71,10 +72,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get email
+   * The contact&#39;s email
    * @return email
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The contact's email")
   public String getEmail() {
     return email;
   }
@@ -89,10 +90,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get firstName
+   * The contact&#39;s first name
    * @return firstName
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The contact's first name")
   public String getFirstName() {
     return firstName;
   }
@@ -107,10 +108,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get lastName
+   * The contact&#39;s last name
    * @return lastName
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The contact's last name")
   public String getLastName() {
     return lastName;
   }
@@ -125,10 +126,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get company
+   * The contact&#39;s company
    * @return company
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The contact's company")
   public String getCompany() {
     return company;
   }
@@ -143,10 +144,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get title
+   * The contact&#39;s title
    * @return title
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The contact's title")
   public String getTitle() {
     return title;
   }
@@ -161,10 +162,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get custom
+   * The first custom field
    * @return custom
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The first custom field")
   public String getCustom() {
     return custom;
   }
@@ -179,10 +180,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get custom2
+   * The second custom field
    * @return custom2
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The second custom field")
   public String getCustom2() {
     return custom2;
   }
@@ -197,10 +198,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get custom3
+   * The third custom field
    * @return custom3
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The third custom field")
   public String getCustom3() {
     return custom3;
   }
@@ -215,10 +216,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * Get custom4
+   * The fourth custom field
    * @return custom4
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The fourth custom field")
   public String getCustom4() {
     return custom4;
   }

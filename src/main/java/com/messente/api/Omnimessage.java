@@ -29,8 +29,9 @@ import java.util.List;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * Omnimessage
+ * An omnimessage
  */
+@ApiModel(description = "An omnimessage")
 
 public class Omnimessage {
   public static final String SERIALIZED_NAME_TO = "to";
@@ -82,10 +83,10 @@ public class Omnimessage {
   }
 
    /**
-   * Get messages
+   * An array of messages
    * @return messages
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "An array of messages")
   public List<Object> getMessages() {
     return messages;
   }

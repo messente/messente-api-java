@@ -27,8 +27,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ErrorItemPhonebook
+ * A container for Phonebook API error
  */
+@ApiModel(description = "A container for Phonebook API error")
 
 public class ErrorItemPhonebook {
   public static final String SERIALIZED_NAME_TITLE = "title";

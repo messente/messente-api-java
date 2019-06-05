@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ContactEnvelope
+ * A container for a contact
  */
+@ApiModel(description = "A container for a contact")
 
 public class ContactEnvelope {
   public static final String SERIALIZED_NAME_CONTACT = "contact";

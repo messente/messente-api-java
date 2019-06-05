@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * WhatsAppImage
+ * An image
  */
+@ApiModel(description = "An image")
 
 public class WhatsAppImage {
   public static final String SERIALIZED_NAME_CAPTION = "caption";

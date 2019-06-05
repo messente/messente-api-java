@@ -55,7 +55,7 @@ public class Viber {
   private String buttonText;
 
   /**
-   * Gets or Sets channel
+   * The channel used to deliver the message
    */
   @JsonAdapter(ChannelEnum.Adapter.class)
   public enum ChannelEnum {
@@ -217,10 +217,10 @@ public class Viber {
   }
 
    /**
-   * Get channel
+   * The channel used to deliver the message
    * @return channel
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The channel used to deliver the message")
   public ChannelEnum getChannel() {
     return channel;
   }

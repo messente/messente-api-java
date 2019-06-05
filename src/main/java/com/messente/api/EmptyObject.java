@@ -15,10 +15,12 @@ package com.messente.api;
 
 import java.util.Objects;
 import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
 
 /**
- * EmptyObject
+ * An object containing no properties
  */
+@ApiModel(description = "An object containing no properties")
 
 public class EmptyObject {
 

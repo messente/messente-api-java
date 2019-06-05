@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ErrorOmnichannel
+ * A container for errors
  */
+@ApiModel(description = "A container for errors")
 
 public class ErrorOmnichannel {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
@@ -47,10 +48,10 @@ public class ErrorOmnichannel {
   }
 
    /**
-   * Get errors
+   * An array of errors
    * @return errors
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "An array of errors")
   public List<ErrorItemOmnichannel> getErrors() {
     return errors;
   }

@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DeliveryReportResponse
+ * A container for successful delivery report response
  */
+@ApiModel(description = "A container for successful delivery report response")
 
 public class DeliveryReportResponse {
   public static final String SERIALIZED_NAME_STATUSES = "statuses";
@@ -55,10 +56,10 @@ public class DeliveryReportResponse {
   }
 
    /**
-   * Contains the delivery reports for each channnel, ordered by send order
+   * Contains the delivery reports for each channel, ordered by send order
    * @return statuses
   **/
-  @ApiModelProperty(required = true, value = "Contains the delivery reports for each channnel, ordered by send order")
+  @ApiModelProperty(required = true, value = "Contains the delivery reports for each channel, ordered by send order")
   public List<DeliveryResult> getStatuses() {
     return statuses;
   }

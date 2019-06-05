@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * WhatsAppText
+ * A text
  */
+@ApiModel(description = "A text")
 
 public class WhatsAppText {
   public static final String SERIALIZED_NAME_PREVIEW_URL = "preview_url";

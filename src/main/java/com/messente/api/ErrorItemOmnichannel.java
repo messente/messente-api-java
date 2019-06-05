@@ -27,8 +27,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ErrorItemOmnichannel
+ * A container for Omnichannel API error
  */
+@ApiModel(description = "A container for Omnichannel API error")
 
 public class ErrorItemOmnichannel {
   public static final String SERIALIZED_NAME_TITLE = "title";

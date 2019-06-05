@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * MessageResult
+ * A message part of an omnimessage
  */
+@ApiModel(description = "A message part of an omnimessage")
 
 public class MessageResult {
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";

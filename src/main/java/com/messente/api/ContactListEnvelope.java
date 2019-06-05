@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ContactListEnvelope
+ * A container for contacts
  */
+@ApiModel(description = "A container for contacts")
 
 public class ContactListEnvelope {
   public static final String SERIALIZED_NAME_CONTACTS = "contacts";
@@ -50,10 +51,10 @@ public class ContactListEnvelope {
   }
 
    /**
-   * Get contacts
+   * An array of contacts
    * @return contacts
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An array of contacts")
   public List<ContactFields> getContacts() {
     return contacts;
   }

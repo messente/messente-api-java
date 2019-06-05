@@ -26,8 +26,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GroupEnvelope
+ * A container for a group
  */
+@ApiModel(description = "A container for a group")
 
 public class GroupEnvelope {
   public static final String SERIALIZED_NAME_GROUP = "group";

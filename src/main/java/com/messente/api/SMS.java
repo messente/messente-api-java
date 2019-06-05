@@ -100,7 +100,7 @@ public class SMS {
   private String udh;
 
   /**
-   * Gets or Sets channel
+   * The channel used to deliver the message
    */
   @JsonAdapter(ChannelEnum.Adapter.class)
   public enum ChannelEnum {
@@ -244,10 +244,10 @@ public class SMS {
   }
 
    /**
-   * Get channel
+   * The channel used to deliver the message
    * @return channel
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The channel used to deliver the message")
   public ChannelEnum getChannel() {
     return channel;
   }

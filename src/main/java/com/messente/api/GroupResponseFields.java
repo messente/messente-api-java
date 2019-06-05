@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GroupResponseFields
+ * A container for fields of a group
  */
+@ApiModel(description = "A container for fields of a group")
 
 public class GroupResponseFields {
   public static final String SERIALIZED_NAME_ID = "id";
@@ -69,10 +70,10 @@ public class GroupResponseFields {
   }
 
    /**
-   * Get name
+   * The name of the group
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The name of the group")
   public String getName() {
     return name;
   }
@@ -87,10 +88,10 @@ public class GroupResponseFields {
   }
 
    /**
-   * Format %Y-%m-%dT%H:%M:%S.%fZ
+   * When the group was created
    * @return createdOn
   **/
-  @ApiModelProperty(value = "Format %Y-%m-%dT%H:%M:%S.%fZ")
+  @ApiModelProperty(value = "When the group was created")
   public String getCreatedOn() {
     return createdOn;
   }
@@ -105,10 +106,10 @@ public class GroupResponseFields {
   }
 
    /**
-   * Get contactsCount
+   * The count of contacts in the group
    * @return contactsCount
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The count of contacts in the group")
   public Integer getContactsCount() {
     return contactsCount;
   }

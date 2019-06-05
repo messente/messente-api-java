@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * OmniMessageCreateSuccessResponse
+ * A container for a response received after successfully created omnimessage
  */
+@ApiModel(description = "A container for a response received after successfully created omnimessage")
 
 public class OmniMessageCreateSuccessResponse {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";

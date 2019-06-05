@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * WhatsAppAudio
+ * A sound
  */
+@ApiModel(description = "A sound")
 
 public class WhatsAppAudio {
   public static final String SERIALIZED_NAME_CONTENT = "content";

@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GroupListEnvelope
+ * A container for groups
  */
+@ApiModel(description = "A container for groups")
 
 public class GroupListEnvelope {
   public static final String SERIALIZED_NAME_GROUPS = "groups";
@@ -50,10 +51,10 @@ public class GroupListEnvelope {
   }
 
    /**
-   * Get groups
+   * An array of groups
    * @return groups
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An array of groups")
   public List<GroupResponseFields> getGroups() {
     return groups;
   }

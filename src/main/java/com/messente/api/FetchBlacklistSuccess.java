@@ -27,8 +27,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * FetchBlacklistSuccess
+ * A container for blacklisted numbers
  */
+@ApiModel(description = "A container for blacklisted numbers")
 
 public class FetchBlacklistSuccess {
   public static final String SERIALIZED_NAME_PHONE_NUMBERS = "phoneNumbers";
