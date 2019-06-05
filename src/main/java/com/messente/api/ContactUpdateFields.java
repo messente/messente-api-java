@@ -46,10 +46,6 @@ public class ContactUpdateFields {
   @SerializedName(SERIALIZED_NAME_COMPANY)
   private String company;
 
-  public static final String SERIALIZED_NAME_TITLE = "title";
-  @SerializedName(SERIALIZED_NAME_TITLE)
-  private String title;
-
   public static final String SERIALIZED_NAME_CUSTOM = "custom";
   @SerializedName(SERIALIZED_NAME_CUSTOM)
   private String custom;
@@ -72,10 +68,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * The contact&#39;s email
+   * The email of the contact
    * @return email
   **/
-  @ApiModelProperty(value = "The contact's email")
+  @ApiModelProperty(value = "The email of the contact")
   public String getEmail() {
     return email;
   }
@@ -90,10 +86,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * The contact&#39;s first name
+   * The first name of the contact
    * @return firstName
   **/
-  @ApiModelProperty(value = "The contact's first name")
+  @ApiModelProperty(value = "The first name of the contact")
   public String getFirstName() {
     return firstName;
   }
@@ -108,10 +104,10 @@ public class ContactUpdateFields {
   }
 
    /**
-   * The contact&#39;s last name
+   * The last name of the contact
    * @return lastName
   **/
-  @ApiModelProperty(value = "The contact's last name")
+  @ApiModelProperty(value = "The last name of the contact")
   public String getLastName() {
     return lastName;
   }
@@ -126,34 +122,16 @@ public class ContactUpdateFields {
   }
 
    /**
-   * The contact&#39;s company
+   * The company of the contact
    * @return company
   **/
-  @ApiModelProperty(value = "The contact's company")
+  @ApiModelProperty(value = "The company of the contact")
   public String getCompany() {
     return company;
   }
 
   public void setCompany(String company) {
     this.company = company;
-  }
-
-  public ContactUpdateFields title(String title) {
-    this.title = title;
-    return this;
-  }
-
-   /**
-   * The contact&#39;s title
-   * @return title
-  **/
-  @ApiModelProperty(value = "The contact's title")
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
   }
 
   public ContactUpdateFields custom(String custom) {
@@ -242,7 +220,6 @@ public class ContactUpdateFields {
         Objects.equals(this.firstName, contactUpdateFields.firstName) &&
         Objects.equals(this.lastName, contactUpdateFields.lastName) &&
         Objects.equals(this.company, contactUpdateFields.company) &&
-        Objects.equals(this.title, contactUpdateFields.title) &&
         Objects.equals(this.custom, contactUpdateFields.custom) &&
         Objects.equals(this.custom2, contactUpdateFields.custom2) &&
         Objects.equals(this.custom3, contactUpdateFields.custom3) &&
@@ -251,7 +228,7 @@ public class ContactUpdateFields {
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, firstName, lastName, company, title, custom, custom2, custom3, custom4);
+    return Objects.hash(email, firstName, lastName, company, custom, custom2, custom3, custom4);
   }
 
 
@@ -264,7 +241,6 @@ public class ContactUpdateFields {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
     sb.append("    custom2: ").append(toIndentedString(custom2)).append("\n");
     sb.append("    custom3: ").append(toIndentedString(custom3)).append("\n");
