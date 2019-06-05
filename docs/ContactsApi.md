@@ -37,7 +37,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String groupId = "groupId_example"; // String | String in UUID format.
+String groupId = "groupId_example"; // String | String in UUID format
 String phone = "phone_example"; // String | A phone number
 try {
     EmptyObject result = apiInstance.addContactToGroup(groupId, phone);
@@ -52,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in UUID format. |
+ **groupId** | **String**| String in UUID format |
  **phone** | **String**| A phone number |
 
 ### Return type
@@ -350,7 +350,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String groupId = "groupId_example"; // String | String in UUID format.
+String groupId = "groupId_example"; // String | String in UUID format
 String phone = "phone_example"; // String | A phone number
 try {
     apiInstance.removeContactFromGroup(groupId, phone);
@@ -364,7 +364,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in UUID format. |
+ **groupId** | **String**| String in UUID format |
  **phone** | **String**| A phone number |
 
 ### Return type

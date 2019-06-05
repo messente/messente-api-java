@@ -72,10 +72,10 @@ public class ErrorItemOmnichannel {
   }
 
    /**
-   * Free form more detailed description of the error.
+   * Free form more detailed description of the error
    * @return detail
   **/
-  @ApiModelProperty(required = true, value = "Free form more detailed description of the error.")
+  @ApiModelProperty(required = true, value = "Free form more detailed description of the error")
   public String getDetail() {
     return detail;
   }

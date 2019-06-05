@@ -86,7 +86,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format.
+String groupId = "groupId_example"; // String | String in UUID format
 try {
     apiInstance.deleteGroup(groupId);
 } catch (ApiException e) {
@@ -99,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in UUID format. |
+ **groupId** | **String**| String in UUID format |
 
 ### Return type
 
@@ -137,7 +137,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format.
+String groupId = "groupId_example"; // String | String in UUID format
 try {
     GroupEnvelope result = apiInstance.fetchGroup(groupId);
     System.out.println(result);
@@ -151,7 +151,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in UUID format. |
+ **groupId** | **String**| String in UUID format |
 
 ### Return type
 
@@ -237,7 +237,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format.
+String groupId = "groupId_example"; // String | String in UUID format
 GroupName groupName = new GroupName(); // GroupName | 
 try {
     GroupEnvelope result = apiInstance.updateGroup(groupId, groupName);
@@ -252,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in UUID format. |
+ **groupId** | **String**| String in UUID format |
  **groupName** | [**GroupName**](GroupName.md)|  |
 
 ### Return type

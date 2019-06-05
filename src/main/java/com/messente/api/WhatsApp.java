@@ -29,9 +29,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * WhatsApp message content.   Only one of \&quot;text\&quot;, \&quot;image\&quot;, \&quot;document\&quot; or \&quot;audio\&quot; can be provided.
+ * WhatsApp message content.   Only one of \&quot;text\&quot;, \&quot;image\&quot;, \&quot;document\&quot; or \&quot;audio\&quot; can be provided
  */
-@ApiModel(description = "WhatsApp message content.   Only one of \"text\", \"image\", \"document\" or \"audio\" can be provided.")
+@ApiModel(description = "WhatsApp message content.   Only one of \"text\", \"image\", \"document\" or \"audio\" can be provided")
 
 public class WhatsApp {
   public static final String SERIALIZED_NAME_SENDER = "sender";

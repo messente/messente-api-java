@@ -180,7 +180,7 @@ public class GroupsApi {
     }
     /**
      * Build call for deleteGroup
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -244,7 +244,7 @@ public class GroupsApi {
     /**
      * Deletes a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void deleteGroup(String groupId) throws ApiException {
@@ -254,7 +254,7 @@ public class GroupsApi {
     /**
      * Deletes a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -266,7 +266,7 @@ public class GroupsApi {
     /**
      * Deletes a group (asynchronously)
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -298,7 +298,7 @@ public class GroupsApi {
     }
     /**
      * Build call for fetchGroup
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -362,7 +362,7 @@ public class GroupsApi {
     /**
      * Lists a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @return GroupEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -374,7 +374,7 @@ public class GroupsApi {
     /**
      * Lists a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @return ApiResponse&lt;GroupEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -387,7 +387,7 @@ public class GroupsApi {
     /**
      * Lists a group (asynchronously)
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -532,7 +532,7 @@ public class GroupsApi {
     }
     /**
      * Build call for updateGroup
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param groupName  (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -602,7 +602,7 @@ public class GroupsApi {
     /**
      * Updates a group with the provided name
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param groupName  (required)
      * @return GroupEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -615,7 +615,7 @@ public class GroupsApi {
     /**
      * Updates a group with the provided name
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param groupName  (required)
      * @return ApiResponse&lt;GroupEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -629,7 +629,7 @@ public class GroupsApi {
     /**
      * Updates a group with the provided name (asynchronously)
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param groupName  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

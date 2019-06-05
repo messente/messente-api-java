@@ -62,7 +62,7 @@ public class ContactsApi {
 
     /**
      * Build call for addContactToGroup
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -133,7 +133,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @return EmptyObject
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -146,7 +146,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @return ApiResponse&lt;EmptyObject&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -160,7 +160,7 @@ public class ContactsApi {
     /**
      * Adds a contact to a group (asynchronously)
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -797,7 +797,7 @@ public class ContactsApi {
     }
     /**
      * Build call for removeContactFromGroup
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -868,7 +868,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -879,7 +879,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -892,7 +892,7 @@ public class ContactsApi {
     /**
      * Removes a contact from a group (asynchronously)
      * 
-     * @param groupId String in UUID format. (required)
+     * @param groupId String in UUID format (required)
      * @param phone A phone number (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

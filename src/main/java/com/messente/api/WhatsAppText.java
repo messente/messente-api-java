@@ -44,10 +44,10 @@ public class WhatsAppText {
   }
 
    /**
-   * Whether to display link preview if the message contains a hyperlink.
+   * Whether to display link preview if the message contains a hyperlink
    * @return previewUrl
   **/
-  @ApiModelProperty(value = "Whether to display link preview if the message contains a hyperlink.")
+  @ApiModelProperty(value = "Whether to display link preview if the message contains a hyperlink")
   public Boolean getPreviewUrl() {
     return previewUrl;
   }

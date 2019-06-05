@@ -163,10 +163,10 @@ public class Viber {
   }
 
    /**
-   * URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
+   * URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
    * @return imageUrl
   **/
-  @ApiModelProperty(value = "URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text")
+  @ApiModelProperty(value = "URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text")
   public String getImageUrl() {
     return imageUrl;
   }

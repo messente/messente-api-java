@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed.
+ * The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed
  */
 @JsonAdapter(Status.Adapter.class)
 public enum Status {

@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).
+ * Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore)
  */
 @JsonAdapter(TextStore.Adapter.class)
 public enum TextStore {
