@@ -55,10 +55,10 @@ public class OmniMessageCreateSuccessResponse {
   }
 
    /**
-   * List of messages that compose the Omnimessage
+   * List of messages that compose the omnimessage
    * @return messages
   **/
-  @ApiModelProperty(required = true, value = "List of messages that compose the Omnimessage")
+  @ApiModelProperty(required = true, value = "List of messages that compose the omnimessage")
   public List<MessageResult> getMessages() {
     return messages;
   }
@@ -91,10 +91,10 @@ public class OmniMessageCreateSuccessResponse {
   }
 
    /**
-   * Unique identifier for the Omnimessage
+   * Unique identifier for the omnimessage
    * @return omnimessageId
   **/
-  @ApiModelProperty(required = true, value = "Unique identifier for the Omnimessage")
+  @ApiModelProperty(required = true, value = "Unique identifier for the omnimessage")
   public String getOmnimessageId() {
     return omnimessageId;
   }

@@ -87,10 +87,10 @@ public class GroupResponseFields {
   }
 
    /**
-   * format %Y-%m-%dT%H:%M:%S.%fZ
+   * Format %Y-%m-%dT%H:%M:%S.%fZ
    * @return createdOn
   **/
-  @ApiModelProperty(value = "format %Y-%m-%dT%H:%M:%S.%fZ")
+  @ApiModelProperty(value = "Format %Y-%m-%dT%H:%M:%S.%fZ")
   public String getCreatedOn() {
     return createdOn;
   }

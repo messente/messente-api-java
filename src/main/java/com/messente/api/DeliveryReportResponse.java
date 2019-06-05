@@ -91,10 +91,10 @@ public class DeliveryReportResponse {
   }
 
    /**
-   * Unique identifier for the Omnimessage
+   * Unique identifier for the omnimessage
    * @return omnimessageId
   **/
-  @ApiModelProperty(required = true, value = "Unique identifier for the Omnimessage")
+  @ApiModelProperty(required = true, value = "Unique identifier for the omnimessage")
   public String getOmnimessageId() {
     return omnimessageId;
   }

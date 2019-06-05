@@ -57,7 +57,7 @@ public class DeliveryReportApi {
 
     /**
      * Build call for retrieveDeliveryReport
-     * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
+     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -121,7 +121,7 @@ public class DeliveryReportApi {
     /**
      * Retrieves the delivery report for the Omnimessage
      * 
-     * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
+     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
      * @return DeliveryReportResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -133,7 +133,7 @@ public class DeliveryReportApi {
     /**
      * Retrieves the delivery report for the Omnimessage
      * 
-     * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
+     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
      * @return ApiResponse&lt;DeliveryReportResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -146,7 +146,7 @@ public class DeliveryReportApi {
     /**
      * Retrieves the delivery report for the Omnimessage (asynchronously)
      * 
-     * @param omnimessageId UUID of the Omnimessage to for which the delivery report is to be retrieved (required)
+     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

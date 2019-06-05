@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Textual value which corresponds to ErrorCodePhonebook
+ * Textual value which corresponds to an error code
  */
 @JsonAdapter(ErrorTitlePhonebook.Adapter.class)
 public enum ErrorTitlePhonebook {

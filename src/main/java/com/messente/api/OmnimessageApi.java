@@ -58,7 +58,7 @@ public class OmnimessageApi {
 
     /**
      * Build call for cancelScheduledMessage
-     * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
+     * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -122,7 +122,7 @@ public class OmnimessageApi {
     /**
      * Cancels a scheduled Omnimessage
      * 
-     * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
+     * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void cancelScheduledMessage(String omnimessageId) throws ApiException {
@@ -132,7 +132,7 @@ public class OmnimessageApi {
     /**
      * Cancels a scheduled Omnimessage
      * 
-     * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
+     * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -144,7 +144,7 @@ public class OmnimessageApi {
     /**
      * Cancels a scheduled Omnimessage (asynchronously)
      * 
-     * @param omnimessageId UUID of the scheduled Omnimessage to be cancelled (required)
+     * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

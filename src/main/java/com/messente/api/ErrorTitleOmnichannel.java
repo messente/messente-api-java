@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Textual value which corresponds to ErrorCodeOmnichannel
+ * Textual value which corresponds to an error code
  */
 @JsonAdapter(ErrorTitleOmnichannel.Adapter.class)
 public enum ErrorTitleOmnichannel {
