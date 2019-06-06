@@ -185,7 +185,7 @@ public class BlacklistApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/blacklist/{phone}"
+        String localVarPath = "/phonebook/blacklist/{phone}"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -415,7 +415,7 @@ public class BlacklistApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/blacklist/{phone}"
+        String localVarPath = "/phonebook/blacklist/{phone}"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

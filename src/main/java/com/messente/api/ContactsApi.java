@@ -73,7 +73,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/groups/{groupId}/contacts/{phone}"
+        String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
             .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()))
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
@@ -204,7 +204,7 @@ public class ContactsApi {
         Object localVarPostBody = contactFields;
 
         // create path and map variables
-        String localVarPath = "/contacts";
+        String localVarPath = "/phonebook/contacts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -325,7 +325,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/contacts/{phone}"
+        String localVarPath = "/phonebook/contacts/{phone}"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -443,7 +443,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/contacts/{phone}"
+        String localVarPath = "/phonebook/contacts/{phone}"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -565,7 +565,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/contacts/{phone}/groups"
+        String localVarPath = "/phonebook/contacts/{phone}/groups"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -687,7 +687,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/contacts";
+        String localVarPath = "/phonebook/contacts";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -808,7 +808,7 @@ public class ContactsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/groups/{groupId}/contacts/{phone}"
+        String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
             .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()))
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
@@ -936,7 +936,7 @@ public class ContactsApi {
         Object localVarPostBody = contactUpdateFields;
 
         // create path and map variables
-        String localVarPath = "/contacts/{phone}"
+        String localVarPath = "/phonebook/contacts/{phone}"
             .replaceAll("\\{" + "phone" + "\\}", apiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

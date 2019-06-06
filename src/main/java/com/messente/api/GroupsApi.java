@@ -69,7 +69,7 @@ public class GroupsApi {
         Object localVarPostBody = groupName;
 
         // create path and map variables
-        String localVarPath = "/groups";
+        String localVarPath = "/phonebook/groups";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -190,7 +190,7 @@ public class GroupsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/groups/{groupId}"
+        String localVarPath = "/phonebook/groups/{groupId}"
             .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -308,7 +308,7 @@ public class GroupsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/groups/{groupId}"
+        String localVarPath = "/phonebook/groups/{groupId}"
             .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -429,7 +429,7 @@ public class GroupsApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/groups";
+        String localVarPath = "/phonebook/groups";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -543,7 +543,7 @@ public class GroupsApi {
         Object localVarPostBody = groupName;
 
         // create path and map variables
-        String localVarPath = "/groups/{groupId}"
+        String localVarPath = "/phonebook/groups/{groupId}"
             .replaceAll("\\{" + "groupId" + "\\}", apiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
