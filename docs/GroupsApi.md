@@ -4,18 +4,18 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createGroup**](GroupsApi.md#createGroup) | **POST** /groups | Creates a new group with the provided name.
-[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /groups/{groupId} | Deletes a group.
-[**fetchGroup**](GroupsApi.md#fetchGroup) | **GET** /groups/{groupId} | Lists a group.
-[**fetchGroups**](GroupsApi.md#fetchGroups) | **GET** /groups | Returns all groups.
-[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /groups/{groupId} | Updates a group with the provided name.
+[**createGroup**](GroupsApi.md#createGroup) | **POST** /phonebook/groups | Creates a new group with the provided name
+[**deleteGroup**](GroupsApi.md#deleteGroup) | **DELETE** /phonebook/groups/{groupId} | Deletes a group
+[**fetchGroup**](GroupsApi.md#fetchGroup) | **GET** /phonebook/groups/{groupId} | Lists a group
+[**fetchGroups**](GroupsApi.md#fetchGroups) | **GET** /phonebook/groups | Returns all groups
+[**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /phonebook/groups/{groupId} | Updates a group with the provided name
 
 
 <a name="createGroup"></a>
 # **createGroup**
 > GroupEnvelope createGroup(groupName)
 
-Creates a new group with the provided name.
+Creates a new group with the provided name
 
 ### Example
 ```java
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 # **deleteGroup**
 > deleteGroup(groupId)
 
-Deletes a group.
+Deletes a group
 
 ### Example
 ```java
@@ -86,7 +86,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in uuid format.
+String groupId = "groupId_example"; // String | String in UUID format
 try {
     apiInstance.deleteGroup(groupId);
 } catch (ApiException e) {
@@ -99,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in uuid format. |
+ **groupId** | **String**| String in UUID format |
 
 ### Return type
 
@@ -118,7 +118,7 @@ null (empty response body)
 # **fetchGroup**
 > GroupEnvelope fetchGroup(groupId)
 
-Lists a group.
+Lists a group
 
 ### Example
 ```java
@@ -137,7 +137,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in uuid format.
+String groupId = "groupId_example"; // String | String in UUID format
 try {
     GroupEnvelope result = apiInstance.fetchGroup(groupId);
     System.out.println(result);
@@ -151,7 +151,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in uuid format. |
+ **groupId** | **String**| String in UUID format |
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 # **fetchGroups**
 > GroupListEnvelope fetchGroups()
 
-Returns all groups.
+Returns all groups
 
 ### Example
 ```java
@@ -218,7 +218,7 @@ This endpoint does not need any parameter.
 # **updateGroup**
 > GroupEnvelope updateGroup(groupId, groupName)
 
-Updates a group with the provided name.
+Updates a group with the provided name
 
 ### Example
 ```java
@@ -237,7 +237,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in uuid format.
+String groupId = "groupId_example"; // String | String in UUID format
 GroupName groupName = new GroupName(); // GroupName | 
 try {
     GroupEnvelope result = apiInstance.updateGroup(groupId, groupName);
@@ -252,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **String**| String in uuid format. |
+ **groupId** | **String**| String in UUID format |
  **groupName** | [**GroupName**](GroupName.md)|  |
 
 ### Return type

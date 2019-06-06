@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **image** | [**WhatsAppImage**](WhatsAppImage.md) |  |  [optional]
 **document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  |  [optional]
 **audio** | [**WhatsAppAudio**](WhatsAppAudio.md) |  |  [optional]
-**channel** | [**ChannelEnum**](#ChannelEnum) |  |  [optional]
+**channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional]
 
 
 <a name="ChannelEnum"></a>

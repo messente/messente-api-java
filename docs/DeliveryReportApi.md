@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**retrieveDeliveryReport**](DeliveryReportApi.md#retrieveDeliveryReport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage.
+[**retrieveDeliveryReport**](DeliveryReportApi.md#retrieveDeliveryReport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage
 
 
 <a name="retrieveDeliveryReport"></a>
 # **retrieveDeliveryReport**
 > DeliveryReportResponse retrieveDeliveryReport(omnimessageId)
 
-Retrieves the delivery report for the Omnimessage.
+Retrieves the delivery report for the Omnimessage
 
 ### Example
 ```java
@@ -30,7 +30,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 DeliveryReportApi apiInstance = new DeliveryReportApi();
-UUID omnimessageId = new UUID(); // UUID | UUID of the Omnimessage to for which the delivery report is to be retrieved
+String omnimessageId = "omnimessageId_example"; // String | UUID of the omnimessage to for which the delivery report is to be retrieved
 try {
     DeliveryReportResponse result = apiInstance.retrieveDeliveryReport(omnimessageId);
     System.out.println(result);
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**UUID**](.md)| UUID of the Omnimessage to for which the delivery report is to be retrieved |
+ **omnimessageId** | **String**| UUID of the omnimessage to for which the delivery report is to be retrieved |
 
 ### Return type
 
@@ -57,5 +57,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 

@@ -1,7 +1,7 @@
 # Messente API Library
 
-- Messente API version: 1.0.1
-- Java artifact version: 1.0.1
+- Messente API version: 1.0.2
+- Java artifact version: 1.0.2
 
 [Messente](https://messente.com) is a global provider of messaging and user verification services. Use Messente API library to send and receive SMS, Viber and WhatsApp messages, blacklist phone numbers to make sure you&#39;re not sending any unwanted messages, manage contacts and groups.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
@@ -12,7 +12,7 @@ Install Messente API library via Maven, Gradle, Ivy or manual build.
 ### Gradle
 
 ```groovy
-compile "com.messente.api:messente-api:1.0.1"
+compile "com.messente.api:messente-api:1.0.2"
 ```
 
 ### Maven
@@ -21,7 +21,7 @@ compile "com.messente.api:messente-api:1.0.1"
 <dependency>
   <groupId>com.messente.api</groupId>
   <artifactId>messente-api</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <type>pom</type>
 </dependency>
 ```
@@ -29,7 +29,7 @@ compile "com.messente.api:messente-api:1.0.1"
 ### Ivy
 
 ```xml
-<dependency org='com.messente.api' name='messente-api' rev='1.0.1'>
+<dependency org='com.messente.api' name='messente-api' rev='1.0.2'>
   <artifact name='messente-api' ext='pom' ></artifact>
 </dependency>
 ```
@@ -44,7 +44,7 @@ mvn clean package
 
 Install
 
-- `target/messente-api-1.0.1.jar`
+- `target/messente-api-1.0.2.jar`
 - `target/lib/*.jar`
 
 ## Features
@@ -58,38 +58,38 @@ Messente API Library provides the operations described below to access the featu
 
 ### BlacklistApi
 
-1. Adds a phone number to the blacklist. [`addToBlacklist`](docs/BlacklistApi.md#addtoblacklist)
-1. Deletes a phone number from the blacklist. [`deleteFromBlacklist`](docs/BlacklistApi.md#deletefromblacklist)
-1. Returns all blacklisted phone numbers. [`fetchBlacklist`](docs/BlacklistApi.md#fetchblacklist)
-1. Checks if a phone number is blacklisted. [`isBlacklisted`](docs/BlacklistApi.md#isblacklisted)
+1. Adds a phone number to the blacklist [`addToBlacklist`](docs/BlacklistApi.md#addtoblacklist)
+1. Deletes a phone number from the blacklist [`deleteFromBlacklist`](docs/BlacklistApi.md#deletefromblacklist)
+1. Returns all blacklisted phone numbers [`fetchBlacklist`](docs/BlacklistApi.md#fetchblacklist)
+1. Checks if a phone number is blacklisted [`isBlacklisted`](docs/BlacklistApi.md#isblacklisted)
 
 ### ContactsApi
 
-1. Adds a contact to a group. [`addContactToGroup`](docs/ContactsApi.md#addcontacttogroup)
-1. Creates a new contact. [`createContact`](docs/ContactsApi.md#createcontact)
-1. Deletes a contact. [`deleteContact`](docs/ContactsApi.md#deletecontact)
-1. Lists a contact. [`fetchContact`](docs/ContactsApi.md#fetchcontact)
-1. Lists groups of a contact. [`fetchContactGroups`](docs/ContactsApi.md#fetchcontactgroups)
-1. Returns all contacts. [`fetchContacts`](docs/ContactsApi.md#fetchcontacts)
-1. Removes a contact from a group. [`removeContactFromGroup`](docs/ContactsApi.md#removecontactfromgroup)
-1. Updates a contact. [`updateContact`](docs/ContactsApi.md#updatecontact)
+1. Adds a contact to a group [`addContactToGroup`](docs/ContactsApi.md#addcontacttogroup)
+1. Creates a new contact [`createContact`](docs/ContactsApi.md#createcontact)
+1. Deletes a contact [`deleteContact`](docs/ContactsApi.md#deletecontact)
+1. Lists a contact [`fetchContact`](docs/ContactsApi.md#fetchcontact)
+1. Lists groups of a contact [`fetchContactGroups`](docs/ContactsApi.md#fetchcontactgroups)
+1. Returns all contacts [`fetchContacts`](docs/ContactsApi.md#fetchcontacts)
+1. Removes a contact from a group [`removeContactFromGroup`](docs/ContactsApi.md#removecontactfromgroup)
+1. Updates a contact [`updateContact`](docs/ContactsApi.md#updatecontact)
 
 ### DeliveryReportApi
 
-1. Retrieves the delivery report for the Omnimessage. [`retrieveDeliveryReport`](docs/DeliveryReportApi.md#retrievedeliveryreport)
+1. Retrieves the delivery report for the Omnimessage [`retrieveDeliveryReport`](docs/DeliveryReportApi.md#retrievedeliveryreport)
 
 ### GroupsApi
 
-1. Creates a new group with the provided name. [`createGroup`](docs/GroupsApi.md#creategroup)
-1. Deletes a group. [`deleteGroup`](docs/GroupsApi.md#deletegroup)
-1. Lists a group. [`fetchGroup`](docs/GroupsApi.md#fetchgroup)
-1. Returns all groups. [`fetchGroups`](docs/GroupsApi.md#fetchgroups)
-1. Updates a group with the provided name. [`updateGroup`](docs/GroupsApi.md#updategroup)
+1. Creates a new group with the provided name [`createGroup`](docs/GroupsApi.md#creategroup)
+1. Deletes a group [`deleteGroup`](docs/GroupsApi.md#deletegroup)
+1. Lists a group [`fetchGroup`](docs/GroupsApi.md#fetchgroup)
+1. Returns all groups [`fetchGroups`](docs/GroupsApi.md#fetchgroups)
+1. Updates a group with the provided name [`updateGroup`](docs/GroupsApi.md#updategroup)
 
 ### OmnimessageApi
 
-1. Cancels a scheduled Omnimessage. [`cancelScheduledMessage`](docs/OmnimessageApi.md#cancelscheduledmessage)
-1. Sends an Omnimessage. [`sendOmnimessage`](docs/OmnimessageApi.md#sendomnimessage)
+1. Cancels a scheduled Omnimessage [`cancelScheduledMessage`](docs/OmnimessageApi.md#cancelscheduledmessage)
+1. Sends an Omnimessage [`sendOmnimessage`](docs/OmnimessageApi.md#sendomnimessage)
 
 ## Auth
 

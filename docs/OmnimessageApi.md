@@ -4,15 +4,15 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelScheduledMessage**](OmnimessageApi.md#cancelScheduledMessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage.
-[**sendOmnimessage**](OmnimessageApi.md#sendOmnimessage) | **POST** /omnimessage | Sends an Omnimessage.
+[**cancelScheduledMessage**](OmnimessageApi.md#cancelScheduledMessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage
+[**sendOmnimessage**](OmnimessageApi.md#sendOmnimessage) | **POST** /omnimessage | Sends an Omnimessage
 
 
 <a name="cancelScheduledMessage"></a>
 # **cancelScheduledMessage**
 > cancelScheduledMessage(omnimessageId)
 
-Cancels a scheduled Omnimessage.
+Cancels a scheduled Omnimessage
 
 ### Example
 ```java
@@ -31,7 +31,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 OmnimessageApi apiInstance = new OmnimessageApi();
-UUID omnimessageId = new UUID(); // UUID | UUID of the scheduled Omnimessage to be cancelled
+String omnimessageId = "omnimessageId_example"; // String | UUID of the scheduled omnimessage to be cancelled
 try {
     apiInstance.cancelScheduledMessage(omnimessageId);
 } catch (ApiException e) {
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**UUID**](.md)| UUID of the scheduled Omnimessage to be cancelled |
+ **omnimessageId** | **String**| UUID of the scheduled omnimessage to be cancelled |
 
 ### Return type
 
@@ -63,7 +63,7 @@ null (empty response body)
 # **sendOmnimessage**
 > OmniMessageCreateSuccessResponse sendOmnimessage(omnimessage)
 
-Sends an Omnimessage.
+Sends an Omnimessage
 
 ### Example
 ```java
