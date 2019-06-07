@@ -37,8 +37,8 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String groupId = "groupId_example"; // String | String in UUID format
-String phone = "phone_example"; // String | A phone number
+String groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663; // String | String in UUID format
+String phone = +37251000000; // String | A phone number
 try {
     EmptyObject result = apiInstance.addContactToGroup(groupId, phone);
     System.out.println(result);
@@ -143,7 +143,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 try {
     apiInstance.deleteContact(phone);
 } catch (ApiException e) {
@@ -194,7 +194,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 try {
     ContactEnvelope result = apiInstance.fetchContact(phone);
     System.out.println(result);
@@ -246,7 +246,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 try {
     GroupListEnvelope result = apiInstance.fetchContactGroups(phone);
     System.out.println(result);
@@ -298,7 +298,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-List<String> groupIds = Arrays.asList(); // List<String> | Optional one or many group id strings in UUID format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\" 
+List<String> groupIds = ["5792a02a-e5c2-422b-a0a0-0ae65d814663","4792a02a-e5c2-422b-a0a0-0ae65d814662"]; // List<String> | Optional one or many group id strings in UUID format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\" 
 try {
     ContactListEnvelope result = apiInstance.fetchContacts(groupIds);
     System.out.println(result);
@@ -350,8 +350,8 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String groupId = "groupId_example"; // String | String in UUID format
-String phone = "phone_example"; // String | A phone number
+String groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663; // String | String in UUID format
+String phone = +37251000000; // String | A phone number
 try {
     apiInstance.removeContactFromGroup(groupId, phone);
 } catch (ApiException e) {
@@ -403,7 +403,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 ContactsApi apiInstance = new ContactsApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 ContactUpdateFields contactUpdateFields = {"email":"anyone@messente.com","firstName":"Any","lastName":"One","company":"Messente","title":"Sir","custom":"Any custom","custom2":"Any custom two","custom3":"Any custom three","custom4":"Any custom four"}; // ContactUpdateFields | 
 try {
     ContactEnvelope result = apiInstance.updateContact(phone, contactUpdateFields);
