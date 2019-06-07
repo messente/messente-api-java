@@ -34,7 +34,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-GroupName groupName = {"name":"Any name"}; // GroupName | 
+GroupName groupName = {"name":"Any group name"}; // GroupName | 
 try {
     GroupEnvelope result = apiInstance.createGroup(groupName);
     System.out.println(result);
@@ -238,7 +238,7 @@ basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | String in UUID format
-GroupName groupName = {"name":"Any name"}; // GroupName | 
+GroupName groupName = {"name":"Any group name"}; // GroupName | 
 try {
     GroupEnvelope result = apiInstance.updateGroup(groupId, groupName);
     System.out.println(result);
