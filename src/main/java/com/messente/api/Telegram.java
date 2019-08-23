@@ -25,15 +25,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SMS message content
+ * Telegram message content
  */
-@ApiModel(description = "SMS message content")
+@ApiModel(description = "Telegram message content")
 
-public class SMS {
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
-  private String text;
-
+public class Telegram {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
   private String sender;
@@ -42,69 +38,28 @@ public class SMS {
   @SerializedName(SERIALIZED_NAME_VALIDITY)
   private Integer validity;
 
-  /**
-   * Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way
-   */
-  @JsonAdapter(AutoconvertEnum.Adapter.class)
-  public enum AutoconvertEnum {
-    FULL("full"),
-    
-    ON("on"),
-    
-    OFF("off");
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
+  private String text;
 
-    private String value;
+  public static final String SERIALIZED_NAME_IMAGE_URL = "image_url";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  private String imageUrl;
 
-    AutoconvertEnum(String value) {
-      this.value = value;
-    }
+  public static final String SERIALIZED_NAME_DOCUMENT_URL = "document_url";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_URL)
+  private String documentUrl;
 
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static AutoconvertEnum fromValue(String text) {
-      for (AutoconvertEnum b : AutoconvertEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + text + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<AutoconvertEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AutoconvertEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AutoconvertEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return AutoconvertEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_AUTOCONVERT = "autoconvert";
-  @SerializedName(SERIALIZED_NAME_AUTOCONVERT)
-  private AutoconvertEnum autoconvert;
-
-  public static final String SERIALIZED_NAME_UDH = "udh";
-  @SerializedName(SERIALIZED_NAME_UDH)
-  private String udh;
+  public static final String SERIALIZED_NAME_AUDIO_URL = "audio_url";
+  @SerializedName(SERIALIZED_NAME_AUDIO_URL)
+  private String audioUrl;
 
   /**
    * The channel used to deliver the message
    */
   @JsonAdapter(ChannelEnum.Adapter.class)
   public enum ChannelEnum {
-    SMS("sms");
+    TELEGRAM("telegram");
 
     private String value;
 
@@ -146,27 +101,9 @@ public class SMS {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  private ChannelEnum channel = ChannelEnum.SMS;
+  private ChannelEnum channel = ChannelEnum.TELEGRAM;
 
-  public SMS text(String text) {
-    this.text = text;
-    return this;
-  }
-
-   /**
-   * Text content of the SMS
-   * @return text
-  **/
-  @ApiModelProperty(example = "Hello world!", required = true, value = "Text content of the SMS")
-  public String getText() {
-    return text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
-
-  public SMS sender(String sender) {
+  public Telegram sender(String sender) {
     this.sender = sender;
     return this;
   }
@@ -184,7 +121,7 @@ public class SMS {
     this.sender = sender;
   }
 
-  public SMS validity(Integer validity) {
+  public Telegram validity(Integer validity) {
     this.validity = validity;
     return this;
   }
@@ -202,43 +139,79 @@ public class SMS {
     this.validity = validity;
   }
 
-  public SMS autoconvert(AutoconvertEnum autoconvert) {
-    this.autoconvert = autoconvert;
+  public Telegram text(String text) {
+    this.text = text;
     return this;
   }
 
    /**
-   * Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way
-   * @return autoconvert
+   * Plaintext content for Telegram
+   * @return text
   **/
-  @ApiModelProperty(value = "Defines how non-GSM characters will be treated:    - \"on\" Use replacement settings from the account's [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \"full\" All non GSM 03.38 characters will be replaced with suitable alternatives   - \"off\" Message content is not modified in any way")
-  public AutoconvertEnum getAutoconvert() {
-    return autoconvert;
+  @ApiModelProperty(value = "Plaintext content for Telegram")
+  public String getText() {
+    return text;
   }
 
-  public void setAutoconvert(AutoconvertEnum autoconvert) {
-    this.autoconvert = autoconvert;
+  public void setText(String text) {
+    this.text = text;
   }
 
-  public SMS udh(String udh) {
-    this.udh = udh;
+  public Telegram imageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
     return this;
   }
 
    /**
-   * hex-encoded string containing SMS UDH
-   * @return udh
+   * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;
+   * @return imageUrl
   **/
-  @ApiModelProperty(value = "hex-encoded string containing SMS UDH")
-  public String getUdh() {
-    return udh;
+  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"document_url\" and \"audio_url\"")
+  public String getImageUrl() {
+    return imageUrl;
   }
 
-  public void setUdh(String udh) {
-    this.udh = udh;
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
   }
 
-  public SMS channel(ChannelEnum channel) {
+  public Telegram documentUrl(String documentUrl) {
+    this.documentUrl = documentUrl;
+    return this;
+  }
+
+   /**
+   * URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;
+   * @return documentUrl
+  **/
+  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"audio_url\" and \"image_url\"")
+  public String getDocumentUrl() {
+    return documentUrl;
+  }
+
+  public void setDocumentUrl(String documentUrl) {
+    this.documentUrl = documentUrl;
+  }
+
+  public Telegram audioUrl(String audioUrl) {
+    this.audioUrl = audioUrl;
+    return this;
+  }
+
+   /**
+   * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;
+   * @return audioUrl
+  **/
+  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"document_url\" and \"image_url\"")
+  public String getAudioUrl() {
+    return audioUrl;
+  }
+
+  public void setAudioUrl(String audioUrl) {
+    this.audioUrl = audioUrl;
+  }
+
+  public Telegram channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
@@ -265,31 +238,33 @@ public class SMS {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SMS SMS = (SMS) o;
-    return Objects.equals(this.text, SMS.text) &&
-        Objects.equals(this.sender, SMS.sender) &&
-        Objects.equals(this.validity, SMS.validity) &&
-        Objects.equals(this.autoconvert, SMS.autoconvert) &&
-        Objects.equals(this.udh, SMS.udh) &&
-        Objects.equals(this.channel, SMS.channel);
+    Telegram telegram = (Telegram) o;
+    return Objects.equals(this.sender, telegram.sender) &&
+        Objects.equals(this.validity, telegram.validity) &&
+        Objects.equals(this.text, telegram.text) &&
+        Objects.equals(this.imageUrl, telegram.imageUrl) &&
+        Objects.equals(this.documentUrl, telegram.documentUrl) &&
+        Objects.equals(this.audioUrl, telegram.audioUrl) &&
+        Objects.equals(this.channel, telegram.channel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, sender, validity, autoconvert, udh, channel);
+    return Objects.hash(sender, validity, text, imageUrl, documentUrl, audioUrl, channel);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SMS {\n");
+    sb.append("class Telegram {\n");
     
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
-    sb.append("    autoconvert: ").append(toIndentedString(autoconvert)).append("\n");
-    sb.append("    udh: ").append(toIndentedString(udh)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    documentUrl: ").append(toIndentedString(documentUrl)).append("\n");
+    sb.append("    audioUrl: ").append(toIndentedString(audioUrl)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("}");
     return sb.toString();
