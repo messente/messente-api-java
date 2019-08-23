@@ -34,7 +34,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-GroupName groupName = new GroupName(); // GroupName | 
+GroupName groupName = {"name":"Any group name"}; // GroupName | 
 try {
     GroupEnvelope result = apiInstance.createGroup(groupName);
     System.out.println(result);
@@ -86,7 +86,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format
+String groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663; // String | String in UUID format
 try {
     apiInstance.deleteGroup(groupId);
 } catch (ApiException e) {
@@ -137,7 +137,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format
+String groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663; // String | String in UUID format
 try {
     GroupEnvelope result = apiInstance.fetchGroup(groupId);
     System.out.println(result);
@@ -237,8 +237,8 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 GroupsApi apiInstance = new GroupsApi();
-String groupId = "groupId_example"; // String | String in UUID format
-GroupName groupName = new GroupName(); // GroupName | 
+String groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663; // String | String in UUID format
+GroupName groupName = {"name":"Any group name"}; // GroupName | 
 try {
     GroupEnvelope result = apiInstance.updateGroup(groupId, groupName);
     System.out.println(result);

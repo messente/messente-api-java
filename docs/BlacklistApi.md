@@ -33,7 +33,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 BlacklistApi apiInstance = new BlacklistApi();
-NumberToBlacklist numberToBlacklist = new NumberToBlacklist(); // NumberToBlacklist | Phone number to be blacklisted
+NumberToBlacklist numberToBlacklist = {"phoneNumber":"+37251000000"}; // NumberToBlacklist | Phone number to be blacklisted
 try {
     apiInstance.addToBlacklist(numberToBlacklist);
 } catch (ApiException e) {
@@ -84,7 +84,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 BlacklistApi apiInstance = new BlacklistApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 try {
     apiInstance.deleteFromBlacklist(phone);
 } catch (ApiException e) {
@@ -183,7 +183,7 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 BlacklistApi apiInstance = new BlacklistApi();
-String phone = "phone_example"; // String | A phone number
+String phone = +37251000000; // String | A phone number
 try {
     apiInstance.isBlacklisted(phone);
 } catch (ApiException e) {
