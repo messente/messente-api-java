@@ -20,44 +20,37 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ErrorItemOmnichannel;
+import com.messente.api.ErrorItemNumberLookupError;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A container for errors
+ * A container for Number Lookup API error
  */
-@ApiModel(description = "A container for errors")
+@ApiModel(description = "A container for Number Lookup API error")
 
-public class ErrorOmnichannel {
-  public static final String SERIALIZED_NAME_ERRORS = "errors";
-  @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<ErrorItemOmnichannel> errors = new ArrayList<ErrorItemOmnichannel>();
+public class ErrorItemNumberLookup {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private ErrorItemNumberLookupError error = null;
 
-  public ErrorOmnichannel errors(List<ErrorItemOmnichannel> errors) {
-    this.errors = errors;
-    return this;
-  }
-
-  public ErrorOmnichannel addErrorsItem(ErrorItemOmnichannel errorsItem) {
-    this.errors.add(errorsItem);
+  public ErrorItemNumberLookup error(ErrorItemNumberLookupError error) {
+    this.error = error;
     return this;
   }
 
    /**
-   * An array of errors
-   * @return errors
+   * Get error
+   * @return error
   **/
-  @ApiModelProperty(required = true, value = "An array of errors")
-  public List<ErrorItemOmnichannel> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "")
+  public ErrorItemNumberLookupError getError() {
+    return error;
   }
 
-  public void setErrors(List<ErrorItemOmnichannel> errors) {
-    this.errors = errors;
+  public void setError(ErrorItemNumberLookupError error) {
+    this.error = error;
   }
 
 
@@ -69,22 +62,22 @@ public class ErrorOmnichannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorOmnichannel errorOmnichannel = (ErrorOmnichannel) o;
-    return Objects.equals(this.errors, errorOmnichannel.errors);
+    ErrorItemNumberLookup errorItemNumberLookup = (ErrorItemNumberLookup) o;
+    return Objects.equals(this.error, errorItemNumberLookup.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(error);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorOmnichannel {\n");
+    sb.append("class ErrorItemNumberLookup {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }

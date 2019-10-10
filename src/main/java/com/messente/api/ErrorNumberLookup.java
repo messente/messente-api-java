@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ErrorItemOmnichannel;
+import com.messente.api.ErrorItemNumberLookup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -32,17 +32,17 @@ import java.util.List;
  */
 @ApiModel(description = "A container for errors")
 
-public class ErrorOmnichannel {
+public class ErrorNumberLookup {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<ErrorItemOmnichannel> errors = new ArrayList<ErrorItemOmnichannel>();
+  private List<ErrorItemNumberLookup> errors = new ArrayList<ErrorItemNumberLookup>();
 
-  public ErrorOmnichannel errors(List<ErrorItemOmnichannel> errors) {
+  public ErrorNumberLookup errors(List<ErrorItemNumberLookup> errors) {
     this.errors = errors;
     return this;
   }
 
-  public ErrorOmnichannel addErrorsItem(ErrorItemOmnichannel errorsItem) {
+  public ErrorNumberLookup addErrorsItem(ErrorItemNumberLookup errorsItem) {
     this.errors.add(errorsItem);
     return this;
   }
@@ -52,11 +52,11 @@ public class ErrorOmnichannel {
    * @return errors
   **/
   @ApiModelProperty(required = true, value = "An array of errors")
-  public List<ErrorItemOmnichannel> getErrors() {
+  public List<ErrorItemNumberLookup> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<ErrorItemOmnichannel> errors) {
+  public void setErrors(List<ErrorItemNumberLookup> errors) {
     this.errors = errors;
   }
 
@@ -69,8 +69,8 @@ public class ErrorOmnichannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorOmnichannel errorOmnichannel = (ErrorOmnichannel) o;
-    return Objects.equals(this.errors, errorOmnichannel.errors);
+    ErrorNumberLookup errorNumberLookup = (ErrorNumberLookup) o;
+    return Objects.equals(this.errors, errorNumberLookup.errors);
   }
 
   @Override
@@ -82,7 +82,7 @@ public class ErrorOmnichannel {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorOmnichannel {\n");
+    sb.append("class ErrorNumberLookup {\n");
     
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");

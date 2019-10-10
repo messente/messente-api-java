@@ -20,81 +20,59 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ErrorCodePhonebook;
-import com.messente.api.ErrorTitlePhonebook;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * A container for Phonebook API error
+ * Error fields container
  */
-@ApiModel(description = "A container for Phonebook API error")
+@ApiModel(description = "Error fields container")
 
-public class ErrorItemPhonebook {
-  public static final String SERIALIZED_NAME_TITLE = "title";
-  @SerializedName(SERIALIZED_NAME_TITLE)
-  private ErrorTitlePhonebook title = null;
-
-  public static final String SERIALIZED_NAME_DETAIL = "detail";
-  @SerializedName(SERIALIZED_NAME_DETAIL)
-  private String detail;
+public class ErrorItemNumberLookupError {
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private ErrorCodePhonebook code = null;
+  private Integer code;
 
-  public ErrorItemPhonebook title(ErrorTitlePhonebook title) {
-    this.title = title;
+  public ErrorItemNumberLookupError description(String description) {
+    this.description = description;
     return this;
   }
 
    /**
-   * Get title
-   * @return title
+   * Error description
+   * @return description
   **/
-  @ApiModelProperty(required = true, value = "")
-  public ErrorTitlePhonebook getTitle() {
-    return title;
+  @ApiModelProperty(required = true, value = "Error description")
+  public String getDescription() {
+    return description;
   }
 
-  public void setTitle(ErrorTitlePhonebook title) {
-    this.title = title;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
-  public ErrorItemPhonebook detail(String detail) {
-    this.detail = detail;
-    return this;
-  }
-
-   /**
-   * Free form more detailed description of the error
-   * @return detail
-  **/
-  @ApiModelProperty(required = true, value = "Free form more detailed description of the error")
-  public String getDetail() {
-    return detail;
-  }
-
-  public void setDetail(String detail) {
-    this.detail = detail;
-  }
-
-  public ErrorItemPhonebook code(ErrorCodePhonebook code) {
+  public ErrorItemNumberLookupError code(Integer code) {
     this.code = code;
     return this;
   }
 
    /**
-   * Get code
+   * Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error
+   * minimum: 101
+   * maximum: 106
    * @return code
   **/
-  @ApiModelProperty(required = true, value = "")
-  public ErrorCodePhonebook getCode() {
+  @ApiModelProperty(required = true, value = "Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error")
+  public Integer getCode() {
     return code;
   }
 
-  public void setCode(ErrorCodePhonebook code) {
+  public void setCode(Integer code) {
     this.code = code;
   }
 
@@ -107,25 +85,23 @@ public class ErrorItemPhonebook {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorItemPhonebook errorItemPhonebook = (ErrorItemPhonebook) o;
-    return Objects.equals(this.title, errorItemPhonebook.title) &&
-        Objects.equals(this.detail, errorItemPhonebook.detail) &&
-        Objects.equals(this.code, errorItemPhonebook.code);
+    ErrorItemNumberLookupError errorItemNumberLookupError = (ErrorItemNumberLookupError) o;
+    return Objects.equals(this.description, errorItemNumberLookupError.description) &&
+        Objects.equals(this.code, errorItemNumberLookupError.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, detail, code);
+    return Objects.hash(description, code);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorItemPhonebook {\n");
+    sb.append("class ErrorItemNumberLookupError {\n");
     
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("}");
     return sb.toString();

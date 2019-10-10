@@ -27,8 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.messente.api.DeliveryReportResponse;
-import com.messente.api.ErrorOmnichannel;
+import com.messente.api.ErrorNumberLookup;
+import com.messente.api.SyncNumberLookup;
+import com.messente.api.SyncNumberLookupSuccess;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +37,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DeliveryReportApi {
+public class NumberLookupApi {
     private ApiClient apiClient;
 
-    public DeliveryReportApi() {
+    public NumberLookupApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public DeliveryReportApi(ApiClient apiClient) {
+    public NumberLookupApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -56,19 +57,18 @@ public class DeliveryReportApi {
     }
 
     /**
-     * Build call for retrieveDeliveryReport
-     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
+     * Build call for syncNumberLookup
+     * @param syncNumberLookup Numbers to lookup (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call retrieveDeliveryReportCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = new Object();
+    public com.squareup.okhttp.Call syncNumberLookupCall(SyncNumberLookup syncNumberLookup, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = syncNumberLookup;
 
         // create path and map variables
-        String localVarPath = "/omnimessage/{omnimessageId}/status"
-            .replaceAll("\\{" + "omnimessageId" + "\\}", apiClient.escapeString(omnimessageId.toString()));
+        String localVarPath = "/hlr/sync";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -83,7 +83,7 @@ public class DeliveryReportApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -101,57 +101,57 @@ public class DeliveryReportApi {
         }
 
         String[] localVarAuthNames = new String[] { "basicAuth" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveDeliveryReportValidateBeforeCall(String omnimessageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call syncNumberLookupValidateBeforeCall(SyncNumberLookup syncNumberLookup, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'omnimessageId' is set
-        if (omnimessageId == null) {
-            throw new ApiException("Missing the required parameter 'omnimessageId' when calling retrieveDeliveryReport(Async)");
+        // verify the required parameter 'syncNumberLookup' is set
+        if (syncNumberLookup == null) {
+            throw new ApiException("Missing the required parameter 'syncNumberLookup' when calling syncNumberLookup(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = retrieveDeliveryReportCall(omnimessageId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = syncNumberLookupCall(syncNumberLookup, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage
+     * Requests info about a phone number
      * 
-     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
-     * @return DeliveryReportResponse
+     * @param syncNumberLookup Numbers to lookup (required)
+     * @return SyncNumberLookupSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DeliveryReportResponse retrieveDeliveryReport(String omnimessageId) throws ApiException {
-        ApiResponse<DeliveryReportResponse> resp = retrieveDeliveryReportWithHttpInfo(omnimessageId);
+    public SyncNumberLookupSuccess syncNumberLookup(SyncNumberLookup syncNumberLookup) throws ApiException {
+        ApiResponse<SyncNumberLookupSuccess> resp = syncNumberLookupWithHttpInfo(syncNumberLookup);
         return resp.getData();
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage
+     * Requests info about a phone number
      * 
-     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
-     * @return ApiResponse&lt;DeliveryReportResponse&gt;
+     * @param syncNumberLookup Numbers to lookup (required)
+     * @return ApiResponse&lt;SyncNumberLookupSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DeliveryReportResponse> retrieveDeliveryReportWithHttpInfo(String omnimessageId) throws ApiException {
-        com.squareup.okhttp.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, null, null);
-        Type localVarReturnType = new TypeToken<DeliveryReportResponse>(){}.getType();
+    public ApiResponse<SyncNumberLookupSuccess> syncNumberLookupWithHttpInfo(SyncNumberLookup syncNumberLookup) throws ApiException {
+        com.squareup.okhttp.Call call = syncNumberLookupValidateBeforeCall(syncNumberLookup, null, null);
+        Type localVarReturnType = new TypeToken<SyncNumberLookupSuccess>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Retrieves the delivery report for the Omnimessage (asynchronously)
+     * Requests info about a phone number (asynchronously)
      * 
-     * @param omnimessageId UUID of the omnimessage to for which the delivery report is to be retrieved (required)
+     * @param syncNumberLookup Numbers to lookup (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveDeliveryReportAsync(String omnimessageId, final ApiCallback<DeliveryReportResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call syncNumberLookupAsync(SyncNumberLookup syncNumberLookup, final ApiCallback<SyncNumberLookupSuccess> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -172,8 +172,8 @@ public class DeliveryReportApi {
             };
         }
 
-        com.squareup.okhttp.Call call = retrieveDeliveryReportValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<DeliveryReportResponse>(){}.getType();
+        com.squareup.okhttp.Call call = syncNumberLookupValidateBeforeCall(syncNumberLookup, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SyncNumberLookupSuccess>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

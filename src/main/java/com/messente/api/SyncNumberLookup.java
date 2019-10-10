@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ErrorItemOmnichannel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,36 +27,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A container for errors
+ * A container for phone numbers
  */
-@ApiModel(description = "A container for errors")
+@ApiModel(description = "A container for phone numbers")
 
-public class ErrorOmnichannel {
-  public static final String SERIALIZED_NAME_ERRORS = "errors";
-  @SerializedName(SERIALIZED_NAME_ERRORS)
-  private List<ErrorItemOmnichannel> errors = new ArrayList<ErrorItemOmnichannel>();
+public class SyncNumberLookup {
+  public static final String SERIALIZED_NAME_NUMBERS = "numbers";
+  @SerializedName(SERIALIZED_NAME_NUMBERS)
+  private List<String> numbers = new ArrayList<String>();
 
-  public ErrorOmnichannel errors(List<ErrorItemOmnichannel> errors) {
-    this.errors = errors;
+  public SyncNumberLookup numbers(List<String> numbers) {
+    this.numbers = numbers;
     return this;
   }
 
-  public ErrorOmnichannel addErrorsItem(ErrorItemOmnichannel errorsItem) {
-    this.errors.add(errorsItem);
+  public SyncNumberLookup addNumbersItem(String numbersItem) {
+    this.numbers.add(numbersItem);
     return this;
   }
 
    /**
-   * An array of errors
-   * @return errors
+   * Array of phone numbers
+   * @return numbers
   **/
-  @ApiModelProperty(required = true, value = "An array of errors")
-  public List<ErrorItemOmnichannel> getErrors() {
-    return errors;
+  @ApiModelProperty(required = true, value = "Array of phone numbers")
+  public List<String> getNumbers() {
+    return numbers;
   }
 
-  public void setErrors(List<ErrorItemOmnichannel> errors) {
-    this.errors = errors;
+  public void setNumbers(List<String> numbers) {
+    this.numbers = numbers;
   }
 
 
@@ -69,22 +68,22 @@ public class ErrorOmnichannel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorOmnichannel errorOmnichannel = (ErrorOmnichannel) o;
-    return Objects.equals(this.errors, errorOmnichannel.errors);
+    SyncNumberLookup syncNumberLookup = (SyncNumberLookup) o;
+    return Objects.equals(this.numbers, syncNumberLookup.numbers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors);
+    return Objects.hash(numbers);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorOmnichannel {\n");
+    sb.append("class SyncNumberLookup {\n");
     
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+    sb.append("    numbers: ").append(toIndentedString(numbers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
