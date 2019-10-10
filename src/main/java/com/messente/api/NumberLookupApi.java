@@ -58,7 +58,7 @@ public class NumberLookupApi {
 
     /**
      * Build call for syncNumberLookup
-     * @param syncNumberLookup Numbers to lookup (required)
+     * @param syncNumberLookup Numbers for lookup (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -119,9 +119,9 @@ public class NumberLookupApi {
     }
 
     /**
-     * Requests info about a phone number
+     * Requests info about phone numbers
      * 
-     * @param syncNumberLookup Numbers to lookup (required)
+     * @param syncNumberLookup Numbers for lookup (required)
      * @return SyncNumberLookupSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -131,9 +131,9 @@ public class NumberLookupApi {
     }
 
     /**
-     * Requests info about a phone number
+     * Requests info about phone numbers
      * 
-     * @param syncNumberLookup Numbers to lookup (required)
+     * @param syncNumberLookup Numbers for lookup (required)
      * @return ApiResponse&lt;SyncNumberLookupSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -144,9 +144,9 @@ public class NumberLookupApi {
     }
 
     /**
-     * Requests info about a phone number (asynchronously)
+     * Requests info about phone numbers (asynchronously)
      * 
-     * @param syncNumberLookup Numbers to lookup (required)
+     * @param syncNumberLookup Numbers for lookup (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
