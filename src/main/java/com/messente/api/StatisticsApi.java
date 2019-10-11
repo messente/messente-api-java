@@ -119,7 +119,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Requests statistcs reports for each country
+     * Requests statistics reports for each country
      * 
      * @param statisticsReportSettings Settings for statistics report (required)
      * @return StatisticsReportSuccess
@@ -131,7 +131,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Requests statistcs reports for each country
+     * Requests statistics reports for each country
      * 
      * @param statisticsReportSettings Settings for statistics report (required)
      * @return ApiResponse&lt;StatisticsReportSuccess&gt;
@@ -144,7 +144,7 @@ public class StatisticsApi {
     }
 
     /**
-     * Requests statistcs reports for each country (asynchronously)
+     * Requests statistics reports for each country (asynchronously)
      * 
      * @param statisticsReportSettings Settings for statistics report (required)
      * @param callback The callback to be executed when the API call finishes
