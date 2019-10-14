@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import com.messente.api.ErrorNumberLookup;
-import com.messente.api.SyncNumberLookup;
+import com.messente.api.NumbersToInvestigate;
 import com.messente.api.SyncNumberLookupSuccess;
 
 import java.lang.reflect.Type;
@@ -57,15 +57,15 @@ public class NumberLookupApi {
     }
 
     /**
-     * Build call for syncNumberLookup
-     * @param syncNumberLookup Numbers for lookup (required)
+     * Build call for fetchInfo
+     * @param numbersToInvestigate Numbers for lookup (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call syncNumberLookupCall(SyncNumberLookup syncNumberLookup, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = syncNumberLookup;
+    public com.squareup.okhttp.Call fetchInfoCall(NumbersToInvestigate numbersToInvestigate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = numbersToInvestigate;
 
         // create path and map variables
         String localVarPath = "/hlr/sync";
@@ -105,15 +105,15 @@ public class NumberLookupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call syncNumberLookupValidateBeforeCall(SyncNumberLookup syncNumberLookup, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchInfoValidateBeforeCall(NumbersToInvestigate numbersToInvestigate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'syncNumberLookup' is set
-        if (syncNumberLookup == null) {
-            throw new ApiException("Missing the required parameter 'syncNumberLookup' when calling syncNumberLookup(Async)");
+        // verify the required parameter 'numbersToInvestigate' is set
+        if (numbersToInvestigate == null) {
+            throw new ApiException("Missing the required parameter 'numbersToInvestigate' when calling fetchInfo(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = syncNumberLookupCall(syncNumberLookup, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchInfoCall(numbersToInvestigate, progressListener, progressRequestListener);
         return call;
 
     }
@@ -121,24 +121,24 @@ public class NumberLookupApi {
     /**
      * Requests info about phone numbers
      * 
-     * @param syncNumberLookup Numbers for lookup (required)
+     * @param numbersToInvestigate Numbers for lookup (required)
      * @return SyncNumberLookupSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SyncNumberLookupSuccess syncNumberLookup(SyncNumberLookup syncNumberLookup) throws ApiException {
-        ApiResponse<SyncNumberLookupSuccess> resp = syncNumberLookupWithHttpInfo(syncNumberLookup);
+    public SyncNumberLookupSuccess fetchInfo(NumbersToInvestigate numbersToInvestigate) throws ApiException {
+        ApiResponse<SyncNumberLookupSuccess> resp = fetchInfoWithHttpInfo(numbersToInvestigate);
         return resp.getData();
     }
 
     /**
      * Requests info about phone numbers
      * 
-     * @param syncNumberLookup Numbers for lookup (required)
+     * @param numbersToInvestigate Numbers for lookup (required)
      * @return ApiResponse&lt;SyncNumberLookupSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SyncNumberLookupSuccess> syncNumberLookupWithHttpInfo(SyncNumberLookup syncNumberLookup) throws ApiException {
-        com.squareup.okhttp.Call call = syncNumberLookupValidateBeforeCall(syncNumberLookup, null, null);
+    public ApiResponse<SyncNumberLookupSuccess> fetchInfoWithHttpInfo(NumbersToInvestigate numbersToInvestigate) throws ApiException {
+        com.squareup.okhttp.Call call = fetchInfoValidateBeforeCall(numbersToInvestigate, null, null);
         Type localVarReturnType = new TypeToken<SyncNumberLookupSuccess>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -146,12 +146,12 @@ public class NumberLookupApi {
     /**
      * Requests info about phone numbers (asynchronously)
      * 
-     * @param syncNumberLookup Numbers for lookup (required)
+     * @param numbersToInvestigate Numbers for lookup (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call syncNumberLookupAsync(SyncNumberLookup syncNumberLookup, final ApiCallback<SyncNumberLookupSuccess> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchInfoAsync(NumbersToInvestigate numbersToInvestigate, final ApiCallback<SyncNumberLookupSuccess> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -172,7 +172,7 @@ public class NumberLookupApi {
             };
         }
 
-        com.squareup.okhttp.Call call = syncNumberLookupValidateBeforeCall(syncNumberLookup, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchInfoValidateBeforeCall(numbersToInvestigate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SyncNumberLookupSuccess>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

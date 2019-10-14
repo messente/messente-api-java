@@ -4,12 +4,12 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**syncNumberLookup**](NumberLookupApi.md#syncNumberLookup) | **POST** /hlr/sync | Requests info about phone numbers
+[**fetchInfo**](NumberLookupApi.md#fetchInfo) | **POST** /hlr/sync | Requests info about phone numbers
 
 
-<a name="syncNumberLookup"></a>
-# **syncNumberLookup**
-> SyncNumberLookupSuccess syncNumberLookup(syncNumberLookup)
+<a name="fetchInfo"></a>
+# **fetchInfo**
+> SyncNumberLookupSuccess fetchInfo(numbersToInvestigate)
 
 Requests info about phone numbers
 
@@ -30,12 +30,12 @@ basicAuth.setUsername("YOUR USERNAME");
 basicAuth.setPassword("YOUR PASSWORD");
 
 NumberLookupApi apiInstance = new NumberLookupApi();
-SyncNumberLookup syncNumberLookup = {"numbers":["+37251000000","+37251000001"]}; // SyncNumberLookup | Numbers for lookup
+NumbersToInvestigate numbersToInvestigate = {"numbers":["+37251000000","+37251000001"]}; // NumbersToInvestigate | Numbers for lookup
 try {
-    SyncNumberLookupSuccess result = apiInstance.syncNumberLookup(syncNumberLookup);
+    SyncNumberLookupSuccess result = apiInstance.fetchInfo(numbersToInvestigate);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling NumberLookupApi#syncNumberLookup");
+    System.err.println("Exception when calling NumberLookupApi#fetchInfo");
     e.printStackTrace();
 }
 ```
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **syncNumberLookup** | [**SyncNumberLookup**](SyncNumberLookup.md)| Numbers for lookup |
+ **numbersToInvestigate** | [**NumbersToInvestigate**](NumbersToInvestigate.md)| Numbers for lookup |
 
 ### Return type
 

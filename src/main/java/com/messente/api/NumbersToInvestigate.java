@@ -31,17 +31,17 @@ import java.util.List;
  */
 @ApiModel(description = "A container for phone numbers")
 
-public class SyncNumberLookup {
+public class NumbersToInvestigate {
   public static final String SERIALIZED_NAME_NUMBERS = "numbers";
   @SerializedName(SERIALIZED_NAME_NUMBERS)
   private List<String> numbers = new ArrayList<String>();
 
-  public SyncNumberLookup numbers(List<String> numbers) {
+  public NumbersToInvestigate numbers(List<String> numbers) {
     this.numbers = numbers;
     return this;
   }
 
-  public SyncNumberLookup addNumbersItem(String numbersItem) {
+  public NumbersToInvestigate addNumbersItem(String numbersItem) {
     this.numbers.add(numbersItem);
     return this;
   }
@@ -68,8 +68,8 @@ public class SyncNumberLookup {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SyncNumberLookup syncNumberLookup = (SyncNumberLookup) o;
-    return Objects.equals(this.numbers, syncNumberLookup.numbers);
+    NumbersToInvestigate numbersToInvestigate = (NumbersToInvestigate) o;
+    return Objects.equals(this.numbers, numbersToInvestigate.numbers);
   }
 
   @Override
@@ -81,7 +81,7 @@ public class SyncNumberLookup {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SyncNumberLookup {\n");
+    sb.append("class NumbersToInvestigate {\n");
     
     sb.append("    numbers: ").append(toIndentedString(numbers)).append("\n");
     sb.append("}");
