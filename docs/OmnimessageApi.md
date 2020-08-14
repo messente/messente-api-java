@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="cancelScheduledMessage"></a>
 # **cancelScheduledMessage**
-> cancelScheduledMessage(omnimessageId)
+> EmptyObject cancelScheduledMessage(omnimessageId)
 
 Cancels a scheduled Omnimessage
 
@@ -33,7 +33,8 @@ basicAuth.setPassword("YOUR PASSWORD");
 OmnimessageApi apiInstance = new OmnimessageApi();
 String omnimessageId = "omnimessageId_example"; // String | UUID of the scheduled omnimessage to be cancelled
 try {
-    apiInstance.cancelScheduledMessage(omnimessageId);
+    EmptyObject result = apiInstance.cancelScheduledMessage(omnimessageId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OmnimessageApi#cancelScheduledMessage");
     e.printStackTrace();
@@ -48,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**EmptyObject**](EmptyObject.md)
 
 ### Authorization
 

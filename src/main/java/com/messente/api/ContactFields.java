@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.LocalDate;
 
 /**
  * A container for fields of a contact
@@ -69,6 +70,10 @@ public class ContactFields {
   public static final String SERIALIZED_NAME_CUSTOM4 = "custom4";
   @SerializedName(SERIALIZED_NAME_CUSTOM4)
   private String custom4;
+
+  public static final String SERIALIZED_NAME_SCHEDULED_DELETION_DATE = "scheduledDeletionDate";
+  @SerializedName(SERIALIZED_NAME_SCHEDULED_DELETION_DATE)
+  private LocalDate scheduledDeletionDate;
 
   public ContactFields phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
@@ -250,6 +255,24 @@ public class ContactFields {
     this.custom4 = custom4;
   }
 
+  public ContactFields scheduledDeletionDate(LocalDate scheduledDeletionDate) {
+    this.scheduledDeletionDate = scheduledDeletionDate;
+    return this;
+  }
+
+   /**
+   * The date on which the contact is going to be deleted
+   * @return scheduledDeletionDate
+  **/
+  @ApiModelProperty(value = "The date on which the contact is going to be deleted")
+  public LocalDate getScheduledDeletionDate() {
+    return scheduledDeletionDate;
+  }
+
+  public void setScheduledDeletionDate(LocalDate scheduledDeletionDate) {
+    this.scheduledDeletionDate = scheduledDeletionDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -269,12 +292,13 @@ public class ContactFields {
         Objects.equals(this.custom, contactFields.custom) &&
         Objects.equals(this.custom2, contactFields.custom2) &&
         Objects.equals(this.custom3, contactFields.custom3) &&
-        Objects.equals(this.custom4, contactFields.custom4);
+        Objects.equals(this.custom4, contactFields.custom4) &&
+        Objects.equals(this.scheduledDeletionDate, contactFields.scheduledDeletionDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, email, firstName, lastName, company, title, custom, custom2, custom3, custom4);
+    return Objects.hash(phoneNumber, email, firstName, lastName, company, title, custom, custom2, custom3, custom4, scheduledDeletionDate);
   }
 
 
@@ -293,6 +317,7 @@ public class ContactFields {
     sb.append("    custom2: ").append(toIndentedString(custom2)).append("\n");
     sb.append("    custom3: ").append(toIndentedString(custom3)).append("\n");
     sb.append("    custom4: ").append(toIndentedString(custom4)).append("\n");
+    sb.append("    scheduledDeletionDate: ").append(toIndentedString(scheduledDeletionDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
