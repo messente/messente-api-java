@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.messente.api.EmptyObject;
 import com.messente.api.ErrorOmnichannel;
 import com.messente.api.OmniMessageCreateSuccessResponse;
 import com.messente.api.Omnimessage;
@@ -123,22 +124,25 @@ public class OmnimessageApi {
      * Cancels a scheduled Omnimessage
      * 
      * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
+     * @return EmptyObject
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void cancelScheduledMessage(String omnimessageId) throws ApiException {
-        cancelScheduledMessageWithHttpInfo(omnimessageId);
+    public EmptyObject cancelScheduledMessage(String omnimessageId) throws ApiException {
+        ApiResponse<EmptyObject> resp = cancelScheduledMessageWithHttpInfo(omnimessageId);
+        return resp.getData();
     }
 
     /**
      * Cancels a scheduled Omnimessage
      * 
      * @param omnimessageId UUID of the scheduled omnimessage to be cancelled (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;EmptyObject&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> cancelScheduledMessageWithHttpInfo(String omnimessageId) throws ApiException {
+    public ApiResponse<EmptyObject> cancelScheduledMessageWithHttpInfo(String omnimessageId) throws ApiException {
         com.squareup.okhttp.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, null, null);
-        return apiClient.execute(call);
+        Type localVarReturnType = new TypeToken<EmptyObject>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
@@ -149,7 +153,7 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call cancelScheduledMessageAsync(String omnimessageId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call cancelScheduledMessageAsync(String omnimessageId, final ApiCallback<EmptyObject> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,7 +175,8 @@ public class OmnimessageApi {
         }
 
         com.squareup.okhttp.Call call = cancelScheduledMessageValidateBeforeCall(omnimessageId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        Type localVarReturnType = new TypeToken<EmptyObject>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
