@@ -18,9 +18,9 @@ import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 
 /**
- * Response object without attributes
+ * An object containing no properties
  */
-@ApiModel(description = "Response object without attributes")
+@ApiModel(description = "An object containing no properties")
 
 public class EmptyObject {
 
