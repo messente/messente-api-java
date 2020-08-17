@@ -261,10 +261,10 @@ public class ContactFields {
   }
 
    /**
-   * The date on which the contact is going to be deletedbecause it has not belonged to a group for 30 days
+   * The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days
    * @return scheduledDeletionDate
   **/
-  @ApiModelProperty(value = "The date on which the contact is going to be deletedbecause it has not belonged to a group for 30 days")
+  @ApiModelProperty(value = "The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days")
   public LocalDate getScheduledDeletionDate() {
     return scheduledDeletionDate;
   }
