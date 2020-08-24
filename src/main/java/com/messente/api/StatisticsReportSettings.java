@@ -95,10 +95,10 @@ public class StatisticsReportSettings {
   }
 
    /**
-   * Optional list of message types (sms, viber, whatsapp, hlr)
+   * Optional list of message types (sms, viber, whatsapp, hlr, telegram)
    * @return messageTypes
   **/
-  @ApiModelProperty(value = "Optional list of message types (sms, viber, whatsapp, hlr)")
+  @ApiModelProperty(value = "Optional list of message types (sms, viber, whatsapp, hlr, telegram)")
   public List<String> getMessageTypes() {
     return messageTypes;
   }
