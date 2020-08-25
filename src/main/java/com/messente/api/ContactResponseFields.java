@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.LocalDate;
 
 /**
- * A container for fields of a request body of a contact
+ * A container for response fields of a contact
  */
-@ApiModel(description = "A container for fields of a request body of a contact")
+@ApiModel(description = "A container for response fields of a contact")
 
-public class ContactFields {
+public class ContactResponseFields {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
   private String phoneNumber;
@@ -70,7 +71,11 @@ public class ContactFields {
   @SerializedName(SERIALIZED_NAME_CUSTOM4)
   private String custom4;
 
-  public ContactFields phoneNumber(String phoneNumber) {
+  public static final String SERIALIZED_NAME_SCHEDULED_DELETION_DATE = "scheduledDeletionDate";
+  @SerializedName(SERIALIZED_NAME_SCHEDULED_DELETION_DATE)
+  private LocalDate scheduledDeletionDate;
+
+  public ContactResponseFields phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -79,7 +84,7 @@ public class ContactFields {
    * Phone number in e.164 format
    * @return phoneNumber
   **/
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
+  @ApiModelProperty(value = "Phone number in e.164 format")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -88,7 +93,7 @@ public class ContactFields {
     this.phoneNumber = phoneNumber;
   }
 
-  public ContactFields email(String email) {
+  public ContactResponseFields email(String email) {
     this.email = email;
     return this;
   }
@@ -106,7 +111,7 @@ public class ContactFields {
     this.email = email;
   }
 
-  public ContactFields firstName(String firstName) {
+  public ContactResponseFields firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -124,7 +129,7 @@ public class ContactFields {
     this.firstName = firstName;
   }
 
-  public ContactFields lastName(String lastName) {
+  public ContactResponseFields lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -142,7 +147,7 @@ public class ContactFields {
     this.lastName = lastName;
   }
 
-  public ContactFields company(String company) {
+  public ContactResponseFields company(String company) {
     this.company = company;
     return this;
   }
@@ -160,7 +165,7 @@ public class ContactFields {
     this.company = company;
   }
 
-  public ContactFields title(String title) {
+  public ContactResponseFields title(String title) {
     this.title = title;
     return this;
   }
@@ -178,7 +183,7 @@ public class ContactFields {
     this.title = title;
   }
 
-  public ContactFields custom(String custom) {
+  public ContactResponseFields custom(String custom) {
     this.custom = custom;
     return this;
   }
@@ -196,7 +201,7 @@ public class ContactFields {
     this.custom = custom;
   }
 
-  public ContactFields custom2(String custom2) {
+  public ContactResponseFields custom2(String custom2) {
     this.custom2 = custom2;
     return this;
   }
@@ -214,7 +219,7 @@ public class ContactFields {
     this.custom2 = custom2;
   }
 
-  public ContactFields custom3(String custom3) {
+  public ContactResponseFields custom3(String custom3) {
     this.custom3 = custom3;
     return this;
   }
@@ -232,7 +237,7 @@ public class ContactFields {
     this.custom3 = custom3;
   }
 
-  public ContactFields custom4(String custom4) {
+  public ContactResponseFields custom4(String custom4) {
     this.custom4 = custom4;
     return this;
   }
@@ -250,6 +255,24 @@ public class ContactFields {
     this.custom4 = custom4;
   }
 
+  public ContactResponseFields scheduledDeletionDate(LocalDate scheduledDeletionDate) {
+    this.scheduledDeletionDate = scheduledDeletionDate;
+    return this;
+  }
+
+   /**
+   * The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days
+   * @return scheduledDeletionDate
+  **/
+  @ApiModelProperty(value = "The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days")
+  public LocalDate getScheduledDeletionDate() {
+    return scheduledDeletionDate;
+  }
+
+  public void setScheduledDeletionDate(LocalDate scheduledDeletionDate) {
+    this.scheduledDeletionDate = scheduledDeletionDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,29 +282,30 @@ public class ContactFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ContactFields contactFields = (ContactFields) o;
-    return Objects.equals(this.phoneNumber, contactFields.phoneNumber) &&
-        Objects.equals(this.email, contactFields.email) &&
-        Objects.equals(this.firstName, contactFields.firstName) &&
-        Objects.equals(this.lastName, contactFields.lastName) &&
-        Objects.equals(this.company, contactFields.company) &&
-        Objects.equals(this.title, contactFields.title) &&
-        Objects.equals(this.custom, contactFields.custom) &&
-        Objects.equals(this.custom2, contactFields.custom2) &&
-        Objects.equals(this.custom3, contactFields.custom3) &&
-        Objects.equals(this.custom4, contactFields.custom4);
+    ContactResponseFields contactResponseFields = (ContactResponseFields) o;
+    return Objects.equals(this.phoneNumber, contactResponseFields.phoneNumber) &&
+        Objects.equals(this.email, contactResponseFields.email) &&
+        Objects.equals(this.firstName, contactResponseFields.firstName) &&
+        Objects.equals(this.lastName, contactResponseFields.lastName) &&
+        Objects.equals(this.company, contactResponseFields.company) &&
+        Objects.equals(this.title, contactResponseFields.title) &&
+        Objects.equals(this.custom, contactResponseFields.custom) &&
+        Objects.equals(this.custom2, contactResponseFields.custom2) &&
+        Objects.equals(this.custom3, contactResponseFields.custom3) &&
+        Objects.equals(this.custom4, contactResponseFields.custom4) &&
+        Objects.equals(this.scheduledDeletionDate, contactResponseFields.scheduledDeletionDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, email, firstName, lastName, company, title, custom, custom2, custom3, custom4);
+    return Objects.hash(phoneNumber, email, firstName, lastName, company, title, custom, custom2, custom3, custom4, scheduledDeletionDate);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ContactFields {\n");
+    sb.append("class ContactResponseFields {\n");
     
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -293,6 +317,7 @@ public class ContactFields {
     sb.append("    custom2: ").append(toIndentedString(custom2)).append("\n");
     sb.append("    custom3: ").append(toIndentedString(custom3)).append("\n");
     sb.append("    custom4: ").append(toIndentedString(custom4)).append("\n");
+    sb.append("    scheduledDeletionDate: ").append(toIndentedString(scheduledDeletionDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
