@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ContactFields;
+import com.messente.api.ContactResponseFields;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,9 +33,9 @@ import java.io.IOException;
 public class ContactEnvelope {
   public static final String SERIALIZED_NAME_CONTACT = "contact";
   @SerializedName(SERIALIZED_NAME_CONTACT)
-  private ContactFields contact = null;
+  private ContactResponseFields contact = null;
 
-  public ContactEnvelope contact(ContactFields contact) {
+  public ContactEnvelope contact(ContactResponseFields contact) {
     this.contact = contact;
     return this;
   }
@@ -45,11 +45,11 @@ public class ContactEnvelope {
    * @return contact
   **/
   @ApiModelProperty(value = "")
-  public ContactFields getContact() {
+  public ContactResponseFields getContact() {
     return contact;
   }
 
-  public void setContact(ContactFields contact) {
+  public void setContact(ContactResponseFields contact) {
     this.contact = contact;
   }
 

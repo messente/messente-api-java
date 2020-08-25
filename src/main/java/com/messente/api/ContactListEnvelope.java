@@ -20,7 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.ContactFields;
+import com.messente.api.ContactResponseFields;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -35,16 +35,16 @@ import java.util.List;
 public class ContactListEnvelope {
   public static final String SERIALIZED_NAME_CONTACTS = "contacts";
   @SerializedName(SERIALIZED_NAME_CONTACTS)
-  private List<ContactFields> contacts = null;
+  private List<ContactResponseFields> contacts = null;
 
-  public ContactListEnvelope contacts(List<ContactFields> contacts) {
+  public ContactListEnvelope contacts(List<ContactResponseFields> contacts) {
     this.contacts = contacts;
     return this;
   }
 
-  public ContactListEnvelope addContactsItem(ContactFields contactsItem) {
+  public ContactListEnvelope addContactsItem(ContactResponseFields contactsItem) {
     if (this.contacts == null) {
-      this.contacts = new ArrayList<ContactFields>();
+      this.contacts = new ArrayList<ContactResponseFields>();
     }
     this.contacts.add(contactsItem);
     return this;
@@ -55,11 +55,11 @@ public class ContactListEnvelope {
    * @return contacts
   **/
   @ApiModelProperty(value = "An array of contacts")
-  public List<ContactFields> getContacts() {
+  public List<ContactResponseFields> getContacts() {
     return contacts;
   }
 
-  public void setContacts(List<ContactFields> contacts) {
+  public void setContacts(List<ContactResponseFields> contacts) {
     this.contacts = contacts;
   }
 
