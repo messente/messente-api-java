@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.Priority;
 import com.messente.api.TextStore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -53,6 +54,10 @@ public class Omnimessage {
   public static final String SERIALIZED_NAME_TIME_TO_SEND = "time_to_send";
   @SerializedName(SERIALIZED_NAME_TIME_TO_SEND)
   private OffsetDateTime timeToSend;
+
+  public static final String SERIALIZED_NAME_PRIORITY = "priority";
+  @SerializedName(SERIALIZED_NAME_PRIORITY)
+  private Priority priority = null;
 
   public Omnimessage to(String to) {
     this.to = to;
@@ -149,6 +154,24 @@ public class Omnimessage {
     this.timeToSend = timeToSend;
   }
 
+  public Omnimessage priority(Priority priority) {
+    this.priority = priority;
+    return this;
+  }
+
+   /**
+   * Get priority
+   * @return priority
+  **/
+  @ApiModelProperty(value = "")
+  public Priority getPriority() {
+    return priority;
+  }
+
+  public void setPriority(Priority priority) {
+    this.priority = priority;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,12 +186,13 @@ public class Omnimessage {
         Objects.equals(this.messages, omnimessage.messages) &&
         Objects.equals(this.dlrUrl, omnimessage.dlrUrl) &&
         Objects.equals(this.textStore, omnimessage.textStore) &&
-        Objects.equals(this.timeToSend, omnimessage.timeToSend);
+        Objects.equals(this.timeToSend, omnimessage.timeToSend) &&
+        Objects.equals(this.priority, omnimessage.priority);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(to, messages, dlrUrl, textStore, timeToSend);
+    return Objects.hash(to, messages, dlrUrl, textStore, timeToSend, priority);
   }
 
 
@@ -182,6 +206,7 @@ public class Omnimessage {
     sb.append("    dlrUrl: ").append(toIndentedString(dlrUrl)).append("\n");
     sb.append("    textStore: ").append(toIndentedString(textStore)).append("\n");
     sb.append("    timeToSend: ").append(toIndentedString(timeToSend)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("}");
     return sb.toString();
   }
