@@ -1,10 +1,13 @@
 
+
 # FetchBlacklistSuccess
 
+A container for blacklisted numbers
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**phoneNumbers** | **List&lt;String&gt;** | Array of unique phone numbers |  [optional]
+**phoneNumbers** | **Set&lt;String&gt;** | Array of unique phone numbers |  [optional]
 
 
 

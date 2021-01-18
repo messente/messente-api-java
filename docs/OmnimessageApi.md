@@ -10,34 +10,43 @@ Method | HTTP request | Description
 
 <a name="cancelScheduledMessage"></a>
 # **cancelScheduledMessage**
-> EmptyObject cancelScheduledMessage(omnimessageId)
+> Object cancelScheduledMessage(omnimessageId)
 
 Cancels a scheduled Omnimessage
 
 ### Example
 ```java
 // Import classes:
-//import com.messente.ApiClient;
-//import com.messente.ApiException;
-//import com.messente.Configuration;
-//import com.messente.auth.*;
-//import com.messente.api.OmnimessageApi;
+import com.messente.ApiClient;
+import com.messente.ApiException;
+import com.messente.Configuration;
+import com.messente.auth.*;
+import com.messente.models.*;
+import com.messente.api.OmnimessageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.messente.com/v1");
+    
+    // Configure HTTP basic authorization: basicAuth
+    HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+    basicAuth.setUsername("YOUR USERNAME");
+    basicAuth.setPassword("YOUR PASSWORD");
 
-// Configure HTTP basic authorization: basicAuth
-HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-basicAuth.setUsername("YOUR USERNAME");
-basicAuth.setPassword("YOUR PASSWORD");
-
-OmnimessageApi apiInstance = new OmnimessageApi();
-String omnimessageId = "omnimessageId_example"; // String | UUID of the scheduled omnimessage to be cancelled
-try {
-    EmptyObject result = apiInstance.cancelScheduledMessage(omnimessageId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OmnimessageApi#cancelScheduledMessage");
-    e.printStackTrace();
+    OmnimessageApi apiInstance = new OmnimessageApi(defaultClient);
+    UUID omnimessageId = new UUID(); // UUID | UUID of the scheduled omnimessage to be cancelled
+    try {
+      Object result = apiInstance.cancelScheduledMessage(omnimessageId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OmnimessageApi#cancelScheduledMessage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -45,11 +54,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | **String**| UUID of the scheduled omnimessage to be cancelled |
+ **omnimessageId** | **UUID**| UUID of the scheduled omnimessage to be cancelled |
 
 ### Return type
 
-[**EmptyObject**](EmptyObject.md)
+**Object**
 
 ### Authorization
 
@@ -60,6 +69,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Scheduled omnimessage successfully cancelled |  -  |
+**404** | If the omnimessage has already been sent or no such message exists |  -  |
+
 <a name="sendOmnimessage"></a>
 # **sendOmnimessage**
 > OmniMessageCreateSuccessResponse sendOmnimessage(omnimessage)
@@ -69,27 +84,36 @@ Sends an Omnimessage
 ### Example
 ```java
 // Import classes:
-//import com.messente.ApiClient;
-//import com.messente.ApiException;
-//import com.messente.Configuration;
-//import com.messente.auth.*;
-//import com.messente.api.OmnimessageApi;
+import com.messente.ApiClient;
+import com.messente.ApiException;
+import com.messente.Configuration;
+import com.messente.auth.*;
+import com.messente.models.*;
+import com.messente.api.OmnimessageApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.messente.com/v1");
+    
+    // Configure HTTP basic authorization: basicAuth
+    HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+    basicAuth.setUsername("YOUR USERNAME");
+    basicAuth.setPassword("YOUR PASSWORD");
 
-// Configure HTTP basic authorization: basicAuth
-HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-basicAuth.setUsername("YOUR USERNAME");
-basicAuth.setPassword("YOUR PASSWORD");
-
-OmnimessageApi apiInstance = new OmnimessageApi();
-Omnimessage omnimessage = new Omnimessage(); // Omnimessage | Omnimessage to be sent
-try {
-    OmniMessageCreateSuccessResponse result = apiInstance.sendOmnimessage(omnimessage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OmnimessageApi#sendOmnimessage");
-    e.printStackTrace();
+    OmnimessageApi apiInstance = new OmnimessageApi(defaultClient);
+    Omnimessage omnimessage = new Omnimessage(); // Omnimessage | Omnimessage to be sent
+    try {
+      OmniMessageCreateSuccessResponse result = apiInstance.sendOmnimessage(omnimessage);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OmnimessageApi#sendOmnimessage");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -111,4 +135,10 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Omnimessage success response |  -  |
+**400** | Invalid input |  -  |
 

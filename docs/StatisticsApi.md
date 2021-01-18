@@ -16,27 +16,36 @@ Requests statistics reports for each country
 ### Example
 ```java
 // Import classes:
-//import com.messente.ApiClient;
-//import com.messente.ApiException;
-//import com.messente.Configuration;
-//import com.messente.auth.*;
-//import com.messente.api.StatisticsApi;
+import com.messente.ApiClient;
+import com.messente.ApiException;
+import com.messente.Configuration;
+import com.messente.auth.*;
+import com.messente.models.*;
+import com.messente.api.StatisticsApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.messente.com/v1");
+    
+    // Configure HTTP basic authorization: basicAuth
+    HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
+    basicAuth.setUsername("YOUR USERNAME");
+    basicAuth.setPassword("YOUR PASSWORD");
 
-// Configure HTTP basic authorization: basicAuth
-HttpBasicAuth basicAuth = (HttpBasicAuth) defaultClient.getAuthentication("basicAuth");
-basicAuth.setUsername("YOUR USERNAME");
-basicAuth.setPassword("YOUR PASSWORD");
-
-StatisticsApi apiInstance = new StatisticsApi();
-StatisticsReportSettings statisticsReportSettings = {"start_date":"2017-01-01","end_date":"2019-06-20","message_types":["sms"]}; // StatisticsReportSettings | Settings for statistics report
-try {
-    StatisticsReportSuccess result = apiInstance.createStatisticsReport(statisticsReportSettings);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StatisticsApi#createStatisticsReport");
-    e.printStackTrace();
+    StatisticsApi apiInstance = new StatisticsApi(defaultClient);
+    StatisticsReportSettings statisticsReportSettings = {"start_date":"2017-01-01","end_date":"2019-06-20","message_types":["sms"]}; // StatisticsReportSettings | Settings for statistics report
+    try {
+      StatisticsReportSuccess result = apiInstance.createStatisticsReport(statisticsReportSettings);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling StatisticsApi#createStatisticsReport");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
@@ -58,4 +67,13 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created reports by countries |  -  |
+**400** | Client Error |  -  |
+**401** | Unauthorized |  -  |
+**422** | Invalid data |  -  |
+**500** | Internal Server Error |  -  |
 

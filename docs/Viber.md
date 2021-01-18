@@ -1,7 +1,10 @@
 
+
 # Viber
 
+Viber message content
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sender** | **String** | Phone number or alphanumeric sender name |  [optional]
@@ -13,8 +16,9 @@ Name | Type | Description | Notes
 **channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional]
 
 
-<a name="ChannelEnum"></a>
+
 ## Enum: ChannelEnum
+
 Name | Value
 ---- | -----
 VIBER | &quot;viber&quot;
