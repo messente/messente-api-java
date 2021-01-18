@@ -1,10 +1,7 @@
 
-
 # ContactResponseFields
 
-A container for response fields of a contact
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phoneNumber** | **String** | Phone number in e.164 format |  [optional]
@@ -17,7 +14,7 @@ Name | Type | Description | Notes
 **custom2** | **String** | The second custom field |  [optional]
 **custom3** | **String** | The third custom field |  [optional]
 **custom4** | **String** | The fourth custom field |  [optional]
-**scheduledDeletionDate** | **LocalDate** | The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days |  [optional]
+**scheduledDeletionDate** | [**LocalDate**](LocalDate.md) | The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days |  [optional]
 
 
 

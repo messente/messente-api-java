@@ -1,5 +1,4 @@
 
-
 # ErrorCodeOmnichannelMachine
 
 ## Enum

@@ -15,44 +15,14 @@ package com.messente.api;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import com.messente.api.GroupResponseFields;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * A container for a group
+ * An object containing no properties
  */
-@ApiModel(description = "A container for a group")
+@ApiModel(description = "An object containing no properties")
 
-public class GroupEnvelope {
-  public static final String SERIALIZED_NAME_GROUP = "group";
-  @SerializedName(SERIALIZED_NAME_GROUP)
-  private GroupResponseFields group = null;
-
-  public GroupEnvelope group(GroupResponseFields group) {
-    this.group = group;
-    return this;
-  }
-
-   /**
-   * Get group
-   * @return group
-  **/
-  @ApiModelProperty(value = "")
-  public GroupResponseFields getGroup() {
-    return group;
-  }
-
-  public void setGroup(GroupResponseFields group) {
-    this.group = group;
-  }
-
+public class EmptyObject {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -62,22 +32,20 @@ public class GroupEnvelope {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GroupEnvelope groupEnvelope = (GroupEnvelope) o;
-    return Objects.equals(this.group, groupEnvelope.group);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(group);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GroupEnvelope {\n");
+    sb.append("class EmptyObject {\n");
     
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("}");
     return sb.toString();
   }

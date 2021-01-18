@@ -1,15 +1,12 @@
 
-
 # ErrorItemPhonebook
 
-A container for Phonebook API error
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**title** | **ErrorTitlePhonebook** |  | 
+**title** | [**ErrorTitlePhonebook**](ErrorTitlePhonebook.md) |  | 
 **detail** | **String** | Free form more detailed description of the error | 
-**code** | **ErrorCodePhonebook** |  | 
+**code** | [**ErrorCodePhonebook**](ErrorCodePhonebook.md) |  | 
 
 
 

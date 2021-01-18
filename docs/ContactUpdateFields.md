@@ -1,10 +1,7 @@
 
-
 # ContactUpdateFields
 
-A container for fields of a contact
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | The email of the contact |  [optional]

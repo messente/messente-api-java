@@ -1,10 +1,7 @@
 
-
 # WhatsApp
 
-WhatsApp message content.   Only one of \"text\", \"image\", \"document\" or \"audio\" can be provided
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sender** | **String** | Phone number or alphanumeric sender name |  [optional]
@@ -16,9 +13,8 @@ Name | Type | Description | Notes
 **channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional]
 
 
-
+<a name="ChannelEnum"></a>
 ## Enum: ChannelEnum
-
 Name | Value
 ---- | -----
 WHATSAPP | &quot;whatsapp&quot;

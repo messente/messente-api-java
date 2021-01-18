@@ -1,10 +1,7 @@
 
-
 # SyncNumberLookupResult
 
-Info about a phone number
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **String** | Phone number in e.164 format | 
@@ -18,9 +15,8 @@ Name | Type | Description | Notes
 **error** | **Object** | Indicates if any error occurred while handling the request |  [optional]
 
 
-
+<a name="StatusEnum"></a>
 ## Enum: StatusEnum
-
 Name | Value
 ---- | -----
 ON | &quot;ON&quot;

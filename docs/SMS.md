@@ -1,10 +1,7 @@
 
-
 # SMS
 
-SMS message content
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **String** | Text content of the SMS | 
@@ -15,9 +12,8 @@ Name | Type | Description | Notes
 **channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional]
 
 
-
+<a name="AutoconvertEnum"></a>
 ## Enum: AutoconvertEnum
-
 Name | Value
 ---- | -----
 FULL | &quot;full&quot;
@@ -25,9 +21,8 @@ ON | &quot;on&quot;
 OFF | &quot;off&quot;
 
 
-
+<a name="ChannelEnum"></a>
 ## Enum: ChannelEnum
-
 Name | Value
 ---- | -----
 SMS | &quot;sms&quot;

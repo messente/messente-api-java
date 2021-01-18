@@ -1,10 +1,7 @@
 
-
 # WhatsAppDocument
 
-A document
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caption** | **String** | Description for the document |  [optional]

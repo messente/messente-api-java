@@ -1,10 +1,7 @@
 
-
 # SyncNumberLookupSuccess
 
-A container for number lookup response
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **requestId** | **String** | ID of the request | 

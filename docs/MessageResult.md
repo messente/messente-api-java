@@ -1,14 +1,11 @@
 
-
 # MessageResult
 
-A message part of an omnimessage
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**messageId** | **UUID** | Unique identifier for the message | 
-**channel** | **Channel** |  | 
+**messageId** | **String** | Unique identifier for the message | 
+**channel** | [**Channel**](Channel.md) |  | 
 **sender** | **String** | Sender that was used for the message | 
 
 

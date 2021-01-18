@@ -1,5 +1,4 @@
 
-
 # TextStore
 
 ## Enum
