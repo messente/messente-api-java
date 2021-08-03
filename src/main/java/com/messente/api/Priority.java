@@ -25,22 +25,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * Set the priority of the message.   Messages are processed starting with in highest priority queue first and lowest priority queue last.   This for example allows to prioritize OTP messages over marketing traffic.
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(Priority.Adapter.class)
+public enum Priority {
   
-  SMS("sms"),
+  LOW("low"),
   
-  VIBER("viber"),
+  REGULAR("regular"),
   
-  WHATSAPP("whatsapp"),
-  
-  TELEGRAM("telegram");
+  HIGH("high");
 
   private String value;
 
-  Channel(String value) {
+  Priority(String value) {
     this.value = value;
   }
 
@@ -53,8 +51,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String text) {
-    for (Channel b : Channel.values()) {
+  public static Priority fromValue(String text) {
+    for (Priority b : Priority.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
@@ -62,16 +60,16 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + text + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<Priority> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final Priority enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public Priority read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(String.valueOf(value));
+      return Priority.fromValue(String.valueOf(value));
     }
   }
 }
