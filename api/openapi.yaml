@@ -15,7 +15,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://messente.com/terms-and-conditions
   title: Messente API
-  version: 1.4.0
+  version: 2.0.0
 externalDocs:
   description: More documentation
   url: https://messente.com/documentation
@@ -1412,7 +1412,7 @@ components:
         - numbers
       properties:
         numbers:
-          description: Array of phone numbers
+          description: A list of phone numbers. Max 10 numbers per request
           items:
             type: string
           maxItems: 10
@@ -2239,6 +2239,7 @@ components:
         error:
           description: "Human-readable description of what went wrong, *null* in case\
             \ of success or if the message has not been processed yet"
+          nullable: true
           type: string
         err:
           $ref: '#/components/schemas/ErrorCodeOmnichannelMachine'
