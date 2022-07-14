@@ -1,10 +1,14 @@
 
+
 # ContactEnvelope
 
+A container for a contact
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**contact** | [**ContactFields**](ContactFields.md) |  |  [optional]
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**contact** | [**ContactResponseFields**](ContactResponseFields.md) |  |  [optional] |
 
 
 

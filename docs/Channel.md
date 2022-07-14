@@ -1,4 +1,5 @@
 
+
 # Channel
 
 ## Enum
@@ -9,6 +10,8 @@
 * `VIBER` (value: `"viber"`)
 
 * `WHATSAPP` (value: `"whatsapp"`)
+
+* `TELEGRAM` (value: `"telegram"`)
 
 
 
