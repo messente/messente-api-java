@@ -255,7 +255,7 @@ public class SMS {
    * @return ttl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "360", value = "After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \"ttl\" and \"validity\" can be used.")
+  @ApiModelProperty(example = "21600", value = "After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \"ttl\" and \"validity\" can be used.")
 
   public Integer getTtl() {
     return ttl;

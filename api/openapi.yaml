@@ -1957,7 +1957,7 @@ components:
           description: |-
             After how many seconds this channel is considered as failed and the next channel is attempted.
                   Only one of "ttl" and "validity" can be used.
-          example: 360
+          example: 21600
           type: integer
         text:
           description: Plaintext content for Viber
@@ -1998,7 +1998,7 @@ components:
           description: |-
             After how many seconds this channel is considered as failed and the next channel is attempted.
                   Only one of "ttl" and "validity" can be used.
-          example: 360
+          example: 21600
           type: integer
         text:
           $ref: '#/components/schemas/WhatsAppText'
@@ -2067,7 +2067,7 @@ components:
           description: |-
             After how many seconds this channel is considered as failed and the next channel is attempted.
                                 Only one of "ttl" and "validity" can be used.
-          example: 360
+          example: 21600
           type: integer
         autoconvert:
           description: "Defines how non-GSM characters will be treated:\n\n  - \"\
