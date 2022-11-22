@@ -62,6 +62,10 @@ public class WhatsApp {
   @SerializedName(SERIALIZED_NAME_VALIDITY)
   private Integer validity;
 
+  public static final String SERIALIZED_NAME_TTL = "ttl";
+  @SerializedName(SERIALIZED_NAME_TTL)
+  private Integer ttl;
+
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
   private WhatsAppText text;
@@ -173,6 +177,29 @@ public class WhatsApp {
 
   public void setValidity(Integer validity) {
     this.validity = validity;
+  }
+
+
+  public WhatsApp ttl(Integer ttl) {
+    
+    this.ttl = ttl;
+    return this;
+  }
+
+   /**
+   * After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+   * @return ttl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "360", value = "After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \"ttl\" and \"validity\" can be used.")
+
+  public Integer getTtl() {
+    return ttl;
+  }
+
+
+  public void setTtl(Integer ttl) {
+    this.ttl = ttl;
   }
 
 
@@ -303,6 +330,7 @@ public class WhatsApp {
     WhatsApp whatsApp = (WhatsApp) o;
     return Objects.equals(this.sender, whatsApp.sender) &&
         Objects.equals(this.validity, whatsApp.validity) &&
+        Objects.equals(this.ttl, whatsApp.ttl) &&
         Objects.equals(this.text, whatsApp.text) &&
         Objects.equals(this.image, whatsApp.image) &&
         Objects.equals(this.document, whatsApp.document) &&
@@ -312,7 +340,7 @@ public class WhatsApp {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, text, image, document, audio, channel);
+    return Objects.hash(sender, validity, ttl, text, image, document, audio, channel);
   }
 
   @Override
@@ -321,6 +349,7 @@ public class WhatsApp {
     sb.append("class WhatsApp {\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
+    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
@@ -350,6 +379,7 @@ public class WhatsApp {
     openapiFields = new HashSet<String>();
     openapiFields.add("sender");
     openapiFields.add("validity");
+    openapiFields.add("ttl");
     openapiFields.add("text");
     openapiFields.add("image");
     openapiFields.add("document");
