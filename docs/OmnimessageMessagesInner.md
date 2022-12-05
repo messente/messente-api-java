@@ -9,7 +9,6 @@
 |------------ | ------------- | ------------- | -------------|
 |**sender** | **String** | Phone number or alphanumeric sender name |  [optional] |
 |**validity** | **Integer** | After how many minutes this channel is considered as failed and the next channel is attempted |  [optional] |
-|**ttl** | **Integer** | After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. |  [optional] |
 |**text** | **String** | Plaintext content for Telegram |  |
 |**imageUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot; |  [optional] |
 |**buttonUrl** | **String** | URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |

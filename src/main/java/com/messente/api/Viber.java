@@ -58,10 +58,6 @@ public class Viber {
   @SerializedName(SERIALIZED_NAME_VALIDITY)
   private Integer validity;
 
-  public static final String SERIALIZED_NAME_TTL = "ttl";
-  @SerializedName(SERIALIZED_NAME_TTL)
-  private Integer ttl;
-
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
   private String text;
@@ -160,11 +156,11 @@ public class Viber {
   }
 
    /**
-   * After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+   * After how many minutes this channel is considered as failed and the next channel is attempted
    * @return validity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \"ttl\" and \"validity\" can be used.")
+  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted")
 
   public Integer getValidity() {
     return validity;
@@ -173,29 +169,6 @@ public class Viber {
 
   public void setValidity(Integer validity) {
     this.validity = validity;
-  }
-
-
-  public Viber ttl(Integer ttl) {
-    
-    this.ttl = ttl;
-    return this;
-  }
-
-   /**
-   * After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
-   * @return ttl
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "21600", value = "After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \"ttl\" and \"validity\" can be used.")
-
-  public Integer getTtl() {
-    return ttl;
-  }
-
-
-  public void setTtl(Integer ttl) {
-    this.ttl = ttl;
   }
 
 
@@ -326,7 +299,6 @@ public class Viber {
     Viber viber = (Viber) o;
     return Objects.equals(this.sender, viber.sender) &&
         Objects.equals(this.validity, viber.validity) &&
-        Objects.equals(this.ttl, viber.ttl) &&
         Objects.equals(this.text, viber.text) &&
         Objects.equals(this.imageUrl, viber.imageUrl) &&
         Objects.equals(this.buttonUrl, viber.buttonUrl) &&
@@ -336,7 +308,7 @@ public class Viber {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, text, imageUrl, buttonUrl, buttonText, channel);
+    return Objects.hash(sender, validity, text, imageUrl, buttonUrl, buttonText, channel);
   }
 
   @Override
@@ -345,7 +317,6 @@ public class Viber {
     sb.append("class Viber {\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
-    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
     sb.append("    buttonUrl: ").append(toIndentedString(buttonUrl)).append("\n");
@@ -375,7 +346,6 @@ public class Viber {
     openapiFields = new HashSet<String>();
     openapiFields.add("sender");
     openapiFields.add("validity");
-    openapiFields.add("ttl");
     openapiFields.add("text");
     openapiFields.add("image_url");
     openapiFields.add("button_url");
