@@ -1948,9 +1948,16 @@ components:
           description: Phone number or alphanumeric sender name
           type: string
         validity:
-          description: After how many minutes this channel is considered as failed
-            and the next channel is attempted
+          description: |-
+            After how many minutes this channel is considered as failed and the next channel is attempted.
+                  Only one of "ttl" and "validity" can be used.
           example: 360
+          type: integer
+        ttl:
+          description: |-
+            After how many seconds this channel is considered as failed and the next channel is attempted.
+                  Only one of "ttl" and "validity" can be used.
+          example: 21600
           type: integer
         text:
           description: Plaintext content for Viber
@@ -1986,6 +1993,12 @@ components:
             After how many minutes this channel is
               considered as failed and the next channel is attempted
           example: 360
+          type: integer
+        ttl:
+          description: |-
+            After how many seconds this channel is considered as failed and the next channel is attempted.
+                  Only one of "ttl" and "validity" can be used.
+          example: 21600
           type: integer
         text:
           $ref: '#/components/schemas/WhatsAppText'
@@ -2045,9 +2058,16 @@ components:
           description: Phone number or alphanumeric sender name
           type: string
         validity:
-          description: After how many minutes this channel is considered as failed
-            and the next channel is attempted
+          description: |-
+            After how many minutes this channel is considered as failed and the next channel is attempted.
+                                Only one of "ttl" and "validity" can be used.
           example: 360
+          type: integer
+        ttl:
+          description: |-
+            After how many seconds this channel is considered as failed and the next channel is attempted.
+                                Only one of "ttl" and "validity" can be used.
+          example: 21600
           type: integer
         autoconvert:
           description: "Defines how non-GSM characters will be treated:\n\n  - \"\

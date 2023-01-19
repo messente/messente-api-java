@@ -63,6 +63,14 @@ public class OmnimessageMessagesInnerTest {
     }
 
     /**
+     * Test the property 'ttl'
+     */
+    @Test
+    public void ttlTest() {
+        // TODO: test ttl
+    }
+
+    /**
      * Test the property 'text'
      */
     @Test
