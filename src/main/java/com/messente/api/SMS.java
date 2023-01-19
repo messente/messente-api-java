@@ -62,6 +62,10 @@ public class SMS {
   @SerializedName(SERIALIZED_NAME_VALIDITY)
   private Integer validity;
 
+  public static final String SERIALIZED_NAME_TTL = "ttl";
+  @SerializedName(SERIALIZED_NAME_TTL)
+  private Integer ttl;
+
   /**
    * Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way
    */
@@ -224,11 +228,11 @@ public class SMS {
   }
 
    /**
-   * After how many minutes this channel is considered as failed and the next channel is attempted
+   * After how many minutes this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return validity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted")
+  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted.                     Only one of \"ttl\" and \"validity\" can be used.")
 
   public Integer getValidity() {
     return validity;
@@ -237,6 +241,29 @@ public class SMS {
 
   public void setValidity(Integer validity) {
     this.validity = validity;
+  }
+
+
+  public SMS ttl(Integer ttl) {
+    
+    this.ttl = ttl;
+    return this;
+  }
+
+   /**
+   * After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+   * @return ttl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "21600", value = "After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \"ttl\" and \"validity\" can be used.")
+
+  public Integer getTtl() {
+    return ttl;
+  }
+
+
+  public void setTtl(Integer ttl) {
+    this.ttl = ttl;
   }
 
 
@@ -322,6 +349,7 @@ public class SMS {
     return Objects.equals(this.text, SMS.text) &&
         Objects.equals(this.sender, SMS.sender) &&
         Objects.equals(this.validity, SMS.validity) &&
+        Objects.equals(this.ttl, SMS.ttl) &&
         Objects.equals(this.autoconvert, SMS.autoconvert) &&
         Objects.equals(this.udh, SMS.udh) &&
         Objects.equals(this.channel, SMS.channel);
@@ -329,7 +357,7 @@ public class SMS {
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, sender, validity, autoconvert, udh, channel);
+    return Objects.hash(text, sender, validity, ttl, autoconvert, udh, channel);
   }
 
   @Override
@@ -339,6 +367,7 @@ public class SMS {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
+    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    autoconvert: ").append(toIndentedString(autoconvert)).append("\n");
     sb.append("    udh: ").append(toIndentedString(udh)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
@@ -367,6 +396,7 @@ public class SMS {
     openapiFields.add("text");
     openapiFields.add("sender");
     openapiFields.add("validity");
+    openapiFields.add("ttl");
     openapiFields.add("autoconvert");
     openapiFields.add("udh");
     openapiFields.add("channel");
