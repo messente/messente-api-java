@@ -86,7 +86,6 @@ public class OmnimessageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If the omnimessage has already been sent or no such message exists </td><td>  -  </td></tr>
      </table>
      */
@@ -160,7 +159,6 @@ public class OmnimessageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If the omnimessage has already been sent or no such message exists </td><td>  -  </td></tr>
      </table>
      */
@@ -179,7 +177,6 @@ public class OmnimessageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If the omnimessage has already been sent or no such message exists </td><td>  -  </td></tr>
      </table>
      */
@@ -200,7 +197,6 @@ public class OmnimessageApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If the omnimessage has already been sent or no such message exists </td><td>  -  </td></tr>
      </table>
      */
@@ -222,7 +218,6 @@ public class OmnimessageApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call sendOmnimessageCall(Omnimessage omnimessage, final ApiCallback _callback) throws ApiException {
@@ -295,7 +290,6 @@ public class OmnimessageApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
     public OmniMessageCreateSuccessResponse sendOmnimessage(Omnimessage omnimessage) throws ApiException {
@@ -314,7 +308,6 @@ public class OmnimessageApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<OmniMessageCreateSuccessResponse> sendOmnimessageWithHttpInfo(Omnimessage omnimessage) throws ApiException {
@@ -335,7 +328,6 @@ public class OmnimessageApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call sendOmnimessageAsync(Omnimessage omnimessage, final ApiCallback<OmniMessageCreateSuccessResponse> _callback) throws ApiException {

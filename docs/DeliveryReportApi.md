@@ -72,6 +72,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Delivery report success |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | If no such message exists or you do not have access to the particular message |  -  |
 

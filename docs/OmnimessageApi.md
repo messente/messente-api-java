@@ -73,7 +73,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **202** | Scheduled omnimessage successfully cancelled |  -  |
-| **401** | Unauthorized |  -  |
 | **404** | If the omnimessage has already been sent or no such message exists |  -  |
 
 <a name="sendOmnimessage"></a>
@@ -142,5 +141,4 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | Omnimessage success response |  -  |
 | **400** | Invalid input |  -  |
-| **401** | Unauthorized |  -  |
 
