@@ -152,6 +152,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorOmnichannel'
           description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
       summary: Sends an Omnimessage
       tags:
       - Omnimessage
@@ -178,6 +184,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/DeliveryReportResponse'
           description: Delivery report success
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
         "404":
           content:
             application/json:
@@ -210,6 +222,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmptyObject'
           description: Scheduled omnimessage successfully cancelled
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
         "404":
           content:
             application/json:

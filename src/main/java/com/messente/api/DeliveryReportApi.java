@@ -85,6 +85,7 @@ public class DeliveryReportApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery report success </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If no such message exists or you do not have access to the particular message </td><td>  -  </td></tr>
      </table>
      */
@@ -158,6 +159,7 @@ public class DeliveryReportApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery report success </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If no such message exists or you do not have access to the particular message </td><td>  -  </td></tr>
      </table>
      */
@@ -176,6 +178,7 @@ public class DeliveryReportApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery report success </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If no such message exists or you do not have access to the particular message </td><td>  -  </td></tr>
      </table>
      */
@@ -196,6 +199,7 @@ public class DeliveryReportApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Delivery report success </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> If no such message exists or you do not have access to the particular message </td><td>  -  </td></tr>
      </table>
      */
