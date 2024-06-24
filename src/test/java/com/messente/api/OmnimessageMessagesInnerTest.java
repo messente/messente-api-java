@@ -22,9 +22,7 @@ import com.messente.api.SMS;
 import com.messente.api.Telegram;
 import com.messente.api.Viber;
 import com.messente.api.WhatsApp;
-import com.messente.api.WhatsAppAudio;
-import com.messente.api.WhatsAppDocument;
-import com.messente.api.WhatsAppImage;
+import com.messente.api.WhatsAppTemplate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -127,27 +125,11 @@ public class OmnimessageMessagesInnerTest {
     }
 
     /**
-     * Test the property 'image'
+     * Test the property 'template'
      */
     @Test
-    public void imageTest() {
-        // TODO: test image
-    }
-
-    /**
-     * Test the property 'document'
-     */
-    @Test
-    public void documentTest() {
-        // TODO: test document
-    }
-
-    /**
-     * Test the property 'audio'
-     */
-    @Test
-    public void audioTest() {
-        // TODO: test audio
+    public void templateTest() {
+        // TODO: test template
     }
 
     /**

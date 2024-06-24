@@ -18,33 +18,44 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.WhatsAppParameter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for WhatsAppAudio
+ * Model tests for WhatsAppComponent
  */
-public class WhatsAppAudioTest {
-    private final WhatsAppAudio model = new WhatsAppAudio();
+public class WhatsAppComponentTest {
+    private final WhatsAppComponent model = new WhatsAppComponent();
 
     /**
-     * Model tests for WhatsAppAudio
+     * Model tests for WhatsAppComponent
      */
     @Test
-    public void testWhatsAppAudio() {
-        // TODO: test WhatsAppAudio
+    public void testWhatsAppComponent() {
+        // TODO: test WhatsAppComponent
     }
 
     /**
-     * Test the property 'content'
+     * Test the property 'type'
      */
     @Test
-    public void contentTest() {
-        // TODO: test content
+    public void typeTest() {
+        // TODO: test type
+    }
+
+    /**
+     * Test the property 'parameters'
+     */
+    @Test
+    public void parametersTest() {
+        // TODO: test parameters
     }
 
 }

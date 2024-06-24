@@ -20,10 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppAudio;
-import com.messente.api.WhatsAppDocument;
-import com.messente.api.WhatsAppImage;
-import com.messente.api.WhatsAppText;
+import com.messente.api.WhatsAppTemplate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -66,21 +63,9 @@ public class WhatsApp {
   @SerializedName(SERIALIZED_NAME_TTL)
   private Integer ttl;
 
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
-  private WhatsAppText text;
-
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private WhatsAppImage image;
-
-  public static final String SERIALIZED_NAME_DOCUMENT = "document";
-  @SerializedName(SERIALIZED_NAME_DOCUMENT)
-  private WhatsAppDocument document;
-
-  public static final String SERIALIZED_NAME_AUDIO = "audio";
-  @SerializedName(SERIALIZED_NAME_AUDIO)
-  private WhatsAppAudio audio;
+  public static final String SERIALIZED_NAME_TEMPLATE = "template";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE)
+  private WhatsAppTemplate template;
 
   /**
    * The channel used to deliver the message
@@ -203,95 +188,26 @@ public class WhatsApp {
   }
 
 
-  public WhatsApp text(WhatsAppText text) {
+  public WhatsApp template(WhatsAppTemplate template) {
     
-    this.text = text;
+    this.template = template;
     return this;
   }
 
    /**
-   * Get text
-   * @return text
+   * Get template
+   * @return template
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public WhatsAppText getText() {
-    return text;
+  public WhatsAppTemplate getTemplate() {
+    return template;
   }
 
 
-  public void setText(WhatsAppText text) {
-    this.text = text;
-  }
-
-
-  public WhatsApp image(WhatsAppImage image) {
-    
-    this.image = image;
-    return this;
-  }
-
-   /**
-   * Get image
-   * @return image
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public WhatsAppImage getImage() {
-    return image;
-  }
-
-
-  public void setImage(WhatsAppImage image) {
-    this.image = image;
-  }
-
-
-  public WhatsApp document(WhatsAppDocument document) {
-    
-    this.document = document;
-    return this;
-  }
-
-   /**
-   * Get document
-   * @return document
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public WhatsAppDocument getDocument() {
-    return document;
-  }
-
-
-  public void setDocument(WhatsAppDocument document) {
-    this.document = document;
-  }
-
-
-  public WhatsApp audio(WhatsAppAudio audio) {
-    
-    this.audio = audio;
-    return this;
-  }
-
-   /**
-   * Get audio
-   * @return audio
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public WhatsAppAudio getAudio() {
-    return audio;
-  }
-
-
-  public void setAudio(WhatsAppAudio audio) {
-    this.audio = audio;
+  public void setTemplate(WhatsAppTemplate template) {
+    this.template = template;
   }
 
 
@@ -331,16 +247,13 @@ public class WhatsApp {
     return Objects.equals(this.sender, whatsApp.sender) &&
         Objects.equals(this.validity, whatsApp.validity) &&
         Objects.equals(this.ttl, whatsApp.ttl) &&
-        Objects.equals(this.text, whatsApp.text) &&
-        Objects.equals(this.image, whatsApp.image) &&
-        Objects.equals(this.document, whatsApp.document) &&
-        Objects.equals(this.audio, whatsApp.audio) &&
+        Objects.equals(this.template, whatsApp.template) &&
         Objects.equals(this.channel, whatsApp.channel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, text, image, document, audio, channel);
+    return Objects.hash(sender, validity, ttl, template, channel);
   }
 
   @Override
@@ -350,10 +263,7 @@ public class WhatsApp {
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    document: ").append(toIndentedString(document)).append("\n");
-    sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -380,10 +290,7 @@ public class WhatsApp {
     openapiFields.add("sender");
     openapiFields.add("validity");
     openapiFields.add("ttl");
-    openapiFields.add("text");
-    openapiFields.add("image");
-    openapiFields.add("document");
-    openapiFields.add("audio");
+    openapiFields.add("template");
     openapiFields.add("channel");
 
     // a set of required properties/fields (JSON key names)
@@ -415,21 +322,9 @@ public class WhatsApp {
       if (jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
       }
-      // validate the optional field `text`
-      if (jsonObj.getAsJsonObject("text") != null) {
-        WhatsAppText.validateJsonObject(jsonObj.getAsJsonObject("text"));
-      }
-      // validate the optional field `image`
-      if (jsonObj.getAsJsonObject("image") != null) {
-        WhatsAppImage.validateJsonObject(jsonObj.getAsJsonObject("image"));
-      }
-      // validate the optional field `document`
-      if (jsonObj.getAsJsonObject("document") != null) {
-        WhatsAppDocument.validateJsonObject(jsonObj.getAsJsonObject("document"));
-      }
-      // validate the optional field `audio`
-      if (jsonObj.getAsJsonObject("audio") != null) {
-        WhatsAppAudio.validateJsonObject(jsonObj.getAsJsonObject("audio"));
+      // validate the optional field `template`
+      if (jsonObj.getAsJsonObject("template") != null) {
+        WhatsAppTemplate.validateJsonObject(jsonObj.getAsJsonObject("template"));
       }
       if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));

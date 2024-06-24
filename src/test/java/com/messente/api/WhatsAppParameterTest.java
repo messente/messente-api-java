@@ -26,33 +26,33 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for WhatsAppImage
+ * Model tests for WhatsAppParameter
  */
-public class WhatsAppImageTest {
-    private final WhatsAppImage model = new WhatsAppImage();
+public class WhatsAppParameterTest {
+    private final WhatsAppParameter model = new WhatsAppParameter();
 
     /**
-     * Model tests for WhatsAppImage
+     * Model tests for WhatsAppParameter
      */
     @Test
-    public void testWhatsAppImage() {
-        // TODO: test WhatsAppImage
+    public void testWhatsAppParameter() {
+        // TODO: test WhatsAppParameter
     }
 
     /**
-     * Test the property 'caption'
+     * Test the property 'type'
      */
     @Test
-    public void captionTest() {
-        // TODO: test caption
+    public void typeTest() {
+        // TODO: test type
     }
 
     /**
-     * Test the property 'content'
+     * Test the property 'text'
      */
     @Test
-    public void contentTest() {
-        // TODO: test content
+    public void textTest() {
+        // TODO: test text
     }
 
 }

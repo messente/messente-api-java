@@ -26,33 +26,33 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for WhatsAppDocument
+ * Model tests for WhatsAppLanguage
  */
-public class WhatsAppDocumentTest {
-    private final WhatsAppDocument model = new WhatsAppDocument();
+public class WhatsAppLanguageTest {
+    private final WhatsAppLanguage model = new WhatsAppLanguage();
 
     /**
-     * Model tests for WhatsAppDocument
+     * Model tests for WhatsAppLanguage
      */
     @Test
-    public void testWhatsAppDocument() {
-        // TODO: test WhatsAppDocument
+    public void testWhatsAppLanguage() {
+        // TODO: test WhatsAppLanguage
     }
 
     /**
-     * Test the property 'caption'
+     * Test the property 'code'
      */
     @Test
-    public void captionTest() {
-        // TODO: test caption
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
-     * Test the property 'content'
+     * Test the property 'policy'
      */
     @Test
-    public void contentTest() {
-        // TODO: test content
+    public void policyTest() {
+        // TODO: test policy
     }
 
 }

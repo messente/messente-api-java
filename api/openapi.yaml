@@ -2018,14 +2018,8 @@ components:
                   Only one of "ttl" and "validity" can be used.
           example: 21600
           type: integer
-        text:
-          $ref: '#/components/schemas/WhatsAppText'
-        image:
-          $ref: '#/components/schemas/WhatsAppImage'
-        document:
-          $ref: '#/components/schemas/WhatsAppDocument'
-        audio:
-          $ref: '#/components/schemas/WhatsAppAudio'
+        template:
+          $ref: '#/components/schemas/WhatsAppTemplate'
         channel:
           default: whatsapp
           description: The channel used to deliver the message
@@ -2109,52 +2103,60 @@ components:
           type: string
       required:
       - text
-    WhatsAppDocument:
-      description: A document
+    WhatsAppTemplate:
+      description: Whatsapp Cloud API template
       properties:
-        caption:
-          description: Description for the document
+        name:
+          description: Name of the template
           type: string
-        content:
-          description: Base64-encoded image
-          type: string
+        language:
+          $ref: '#/components/schemas/WhatsAppLanguage'
+        components:
+          description: List of template components
+          items:
+            $ref: '#/components/schemas/WhatsAppComponent'
+          type: array
       required:
-      - content
+      - language
+      - name
       type: object
-    WhatsAppImage:
-      description: An image
+    WhatsAppLanguage:
+      description: Whatsapp template language
       properties:
-        caption:
-          description: Description for the image
+        code:
+          description: Language code
           type: string
-        content:
-          description: Base64-encoded image
+        policy:
+          description: Language policy
           type: string
       required:
-      - content
+      - code
       type: object
-    WhatsAppText:
-      description: A text
+    WhatsAppComponent:
+      description: Whatsapp template component
       properties:
-        preview_url:
-          default: true
-          description: Whether to display link preview if the message contains a hyperlink
-          type: boolean
-        body:
-          description: "Plaintext content for WhatsApp, can contain URLs, emojis and\
-            \ formatting"
+        type:
+          description: Type of the component
           type: string
+        parameters:
+          description: List of parameters for the component
+          items:
+            $ref: '#/components/schemas/WhatsAppParameter'
+          type: array
       required:
-      - body
+      - type
       type: object
-    WhatsAppAudio:
-      description: A sound
+    WhatsAppParameter:
+      description: Whatsapp component parameter
       properties:
-        content:
-          description: Base64-encoded audio
+        type:
+          description: Type of the parameter
+          type: string
+        text:
+          description: A text
           type: string
       required:
-      - content
+      - type
       type: object
     ErrorCodeOmnichannel:
       description: |-

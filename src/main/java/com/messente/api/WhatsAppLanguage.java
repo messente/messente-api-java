@@ -45,65 +45,65 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A text
+ * Whatsapp template language
  */
-@ApiModel(description = "A text")
+@ApiModel(description = "Whatsapp template language")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class WhatsAppText {
-  public static final String SERIALIZED_NAME_PREVIEW_URL = "preview_url";
-  @SerializedName(SERIALIZED_NAME_PREVIEW_URL)
-  private Boolean previewUrl = true;
+public class WhatsAppLanguage {
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private String code;
 
-  public static final String SERIALIZED_NAME_BODY = "body";
-  @SerializedName(SERIALIZED_NAME_BODY)
-  private String body;
+  public static final String SERIALIZED_NAME_POLICY = "policy";
+  @SerializedName(SERIALIZED_NAME_POLICY)
+  private String policy;
 
-  public WhatsAppText() { 
+  public WhatsAppLanguage() { 
   }
 
-  public WhatsAppText previewUrl(Boolean previewUrl) {
+  public WhatsAppLanguage code(String code) {
     
-    this.previewUrl = previewUrl;
+    this.code = code;
     return this;
   }
 
    /**
-   * Whether to display link preview if the message contains a hyperlink
-   * @return previewUrl
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Whether to display link preview if the message contains a hyperlink")
-
-  public Boolean getPreviewUrl() {
-    return previewUrl;
-  }
-
-
-  public void setPreviewUrl(Boolean previewUrl) {
-    this.previewUrl = previewUrl;
-  }
-
-
-  public WhatsAppText body(String body) {
-    
-    this.body = body;
-    return this;
-  }
-
-   /**
-   * Plaintext content for WhatsApp, can contain URLs, emojis and formatting
-   * @return body
+   * Language code
+   * @return code
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Plaintext content for WhatsApp, can contain URLs, emojis and formatting")
+  @ApiModelProperty(required = true, value = "Language code")
 
-  public String getBody() {
-    return body;
+  public String getCode() {
+    return code;
   }
 
 
-  public void setBody(String body) {
-    this.body = body;
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public WhatsAppLanguage policy(String policy) {
+    
+    this.policy = policy;
+    return this;
+  }
+
+   /**
+   * Language policy
+   * @return policy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Language policy")
+
+  public String getPolicy() {
+    return policy;
+  }
+
+
+  public void setPolicy(String policy) {
+    this.policy = policy;
   }
 
 
@@ -116,22 +116,22 @@ public class WhatsAppText {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WhatsAppText whatsAppText = (WhatsAppText) o;
-    return Objects.equals(this.previewUrl, whatsAppText.previewUrl) &&
-        Objects.equals(this.body, whatsAppText.body);
+    WhatsAppLanguage whatsAppLanguage = (WhatsAppLanguage) o;
+    return Objects.equals(this.code, whatsAppLanguage.code) &&
+        Objects.equals(this.policy, whatsAppLanguage.policy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(previewUrl, body);
+    return Objects.hash(code, policy);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatsAppText {\n");
-    sb.append("    previewUrl: ").append(toIndentedString(previewUrl)).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("class WhatsAppLanguage {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,45 +154,48 @@ public class WhatsAppText {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("preview_url");
-    openapiFields.add("body");
+    openapiFields.add("code");
+    openapiFields.add("policy");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("body");
+    openapiRequiredFields.add("code");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to WhatsAppText
+  * @throws IOException if the JSON Object is invalid with respect to WhatsAppLanguage
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (WhatsAppText.openapiRequiredFields.isEmpty()) {
+        if (WhatsAppLanguage.openapiRequiredFields.isEmpty()) {
           return;
         } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppText is not found in the empty JSON string", WhatsAppText.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppLanguage is not found in the empty JSON string", WhatsAppLanguage.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!WhatsAppText.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WhatsAppText` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!WhatsAppLanguage.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WhatsAppLanguage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WhatsAppText.openapiRequiredFields) {
+      for (String requiredField : WhatsAppLanguage.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (jsonObj.get("body") != null && !jsonObj.get("body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("body").toString()));
+      if (jsonObj.get("code") != null && !jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+      }
+      if (jsonObj.get("policy") != null && !jsonObj.get("policy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("policy").toString()));
       }
   }
 
@@ -200,22 +203,22 @@ public class WhatsAppText {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WhatsAppText.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WhatsAppText' and its subtypes
+       if (!WhatsAppLanguage.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WhatsAppLanguage' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WhatsAppText> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppText.class));
+       final TypeAdapter<WhatsAppLanguage> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppLanguage.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WhatsAppText>() {
+       return (TypeAdapter<T>) new TypeAdapter<WhatsAppLanguage>() {
            @Override
-           public void write(JsonWriter out, WhatsAppText value) throws IOException {
+           public void write(JsonWriter out, WhatsAppLanguage value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public WhatsAppText read(JsonReader in) throws IOException {
+           public WhatsAppLanguage read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -226,18 +229,18 @@ public class WhatsAppText {
   }
 
  /**
-  * Create an instance of WhatsAppText given an JSON string
+  * Create an instance of WhatsAppLanguage given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WhatsAppText
-  * @throws IOException if the JSON string is invalid with respect to WhatsAppText
+  * @return An instance of WhatsAppLanguage
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppLanguage
   */
-  public static WhatsAppText fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WhatsAppText.class);
+  public static WhatsAppLanguage fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WhatsAppLanguage.class);
   }
 
  /**
-  * Convert an instance of WhatsAppText to an JSON string
+  * Convert an instance of WhatsAppLanguage to an JSON string
   *
   * @return JSON string
   */

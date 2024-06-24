@@ -45,65 +45,65 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * An image
+ * Whatsapp component parameter
  */
-@ApiModel(description = "An image")
+@ApiModel(description = "Whatsapp component parameter")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class WhatsAppImage {
-  public static final String SERIALIZED_NAME_CAPTION = "caption";
-  @SerializedName(SERIALIZED_NAME_CAPTION)
-  private String caption;
+public class WhatsAppParameter {
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private String type;
 
-  public static final String SERIALIZED_NAME_CONTENT = "content";
-  @SerializedName(SERIALIZED_NAME_CONTENT)
-  private String content;
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
+  private String text;
 
-  public WhatsAppImage() { 
+  public WhatsAppParameter() { 
   }
 
-  public WhatsAppImage caption(String caption) {
+  public WhatsAppParameter type(String type) {
     
-    this.caption = caption;
+    this.type = type;
     return this;
   }
 
    /**
-   * Description for the image
-   * @return caption
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Description for the image")
-
-  public String getCaption() {
-    return caption;
-  }
-
-
-  public void setCaption(String caption) {
-    this.caption = caption;
-  }
-
-
-  public WhatsAppImage content(String content) {
-    
-    this.content = content;
-    return this;
-  }
-
-   /**
-   * Base64-encoded image
-   * @return content
+   * Type of the parameter
+   * @return type
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Base64-encoded image")
+  @ApiModelProperty(required = true, value = "Type of the parameter")
 
-  public String getContent() {
-    return content;
+  public String getType() {
+    return type;
   }
 
 
-  public void setContent(String content) {
-    this.content = content;
+  public void setType(String type) {
+    this.type = type;
+  }
+
+
+  public WhatsAppParameter text(String text) {
+    
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * A text
+   * @return text
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "A text")
+
+  public String getText() {
+    return text;
+  }
+
+
+  public void setText(String text) {
+    this.text = text;
   }
 
 
@@ -116,22 +116,22 @@ public class WhatsAppImage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WhatsAppImage whatsAppImage = (WhatsAppImage) o;
-    return Objects.equals(this.caption, whatsAppImage.caption) &&
-        Objects.equals(this.content, whatsAppImage.content);
+    WhatsAppParameter whatsAppParameter = (WhatsAppParameter) o;
+    return Objects.equals(this.type, whatsAppParameter.type) &&
+        Objects.equals(this.text, whatsAppParameter.text);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(caption, content);
+    return Objects.hash(type, text);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatsAppImage {\n");
-    sb.append("    caption: ").append(toIndentedString(caption)).append("\n");
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("class WhatsAppParameter {\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -154,48 +154,48 @@ public class WhatsAppImage {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("caption");
-    openapiFields.add("content");
+    openapiFields.add("type");
+    openapiFields.add("text");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("content");
+    openapiRequiredFields.add("type");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to WhatsAppImage
+  * @throws IOException if the JSON Object is invalid with respect to WhatsAppParameter
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (WhatsAppImage.openapiRequiredFields.isEmpty()) {
+        if (WhatsAppParameter.openapiRequiredFields.isEmpty()) {
           return;
         } else { // has required fields
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppImage is not found in the empty JSON string", WhatsAppImage.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppParameter is not found in the empty JSON string", WhatsAppParameter.openapiRequiredFields.toString()));
         }
       }
 
       Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
       // check to see if the JSON string contains additional fields
       for (Entry<String, JsonElement> entry : entries) {
-        if (!WhatsAppImage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WhatsAppImage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        if (!WhatsAppParameter.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WhatsAppParameter` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WhatsAppImage.openapiRequiredFields) {
+      for (String requiredField : WhatsAppParameter.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if (jsonObj.get("caption") != null && !jsonObj.get("caption").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `caption` to be a primitive type in the JSON string but got `%s`", jsonObj.get("caption").toString()));
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      if (jsonObj.get("content") != null && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
+      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
   }
 
@@ -203,22 +203,22 @@ public class WhatsAppImage {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WhatsAppImage.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WhatsAppImage' and its subtypes
+       if (!WhatsAppParameter.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WhatsAppParameter' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WhatsAppImage> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppImage.class));
+       final TypeAdapter<WhatsAppParameter> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppParameter.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WhatsAppImage>() {
+       return (TypeAdapter<T>) new TypeAdapter<WhatsAppParameter>() {
            @Override
-           public void write(JsonWriter out, WhatsAppImage value) throws IOException {
+           public void write(JsonWriter out, WhatsAppParameter value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public WhatsAppImage read(JsonReader in) throws IOException {
+           public WhatsAppParameter read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              return thisAdapter.fromJsonTree(jsonObj);
@@ -229,18 +229,18 @@ public class WhatsAppImage {
   }
 
  /**
-  * Create an instance of WhatsAppImage given an JSON string
+  * Create an instance of WhatsAppParameter given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of WhatsAppImage
-  * @throws IOException if the JSON string is invalid with respect to WhatsAppImage
+  * @return An instance of WhatsAppParameter
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppParameter
   */
-  public static WhatsAppImage fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WhatsAppImage.class);
+  public static WhatsAppParameter fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WhatsAppParameter.class);
   }
 
  /**
-  * Convert an instance of WhatsAppImage to an JSON string
+  * Convert an instance of WhatsAppParameter to an JSON string
   *
   * @return JSON string
   */

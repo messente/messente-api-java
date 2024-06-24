@@ -18,41 +18,53 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.WhatsAppComponent;
+import com.messente.api.WhatsAppLanguage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for WhatsAppText
+ * Model tests for WhatsAppTemplate
  */
-public class WhatsAppTextTest {
-    private final WhatsAppText model = new WhatsAppText();
+public class WhatsAppTemplateTest {
+    private final WhatsAppTemplate model = new WhatsAppTemplate();
 
     /**
-     * Model tests for WhatsAppText
+     * Model tests for WhatsAppTemplate
      */
     @Test
-    public void testWhatsAppText() {
-        // TODO: test WhatsAppText
+    public void testWhatsAppTemplate() {
+        // TODO: test WhatsAppTemplate
     }
 
     /**
-     * Test the property 'previewUrl'
+     * Test the property 'name'
      */
     @Test
-    public void previewUrlTest() {
-        // TODO: test previewUrl
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'body'
+     * Test the property 'language'
      */
     @Test
-    public void bodyTest() {
-        // TODO: test body
+    public void languageTest() {
+        // TODO: test language
+    }
+
+    /**
+     * Test the property 'components'
+     */
+    @Test
+    public void componentsTest() {
+        // TODO: test components
     }
 
 }

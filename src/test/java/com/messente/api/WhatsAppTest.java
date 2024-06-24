@@ -18,10 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppAudio;
-import com.messente.api.WhatsAppDocument;
-import com.messente.api.WhatsAppImage;
-import com.messente.api.WhatsAppText;
+import com.messente.api.WhatsAppTemplate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -68,35 +65,11 @@ public class WhatsAppTest {
     }
 
     /**
-     * Test the property 'text'
+     * Test the property 'template'
      */
     @Test
-    public void textTest() {
-        // TODO: test text
-    }
-
-    /**
-     * Test the property 'image'
-     */
-    @Test
-    public void imageTest() {
-        // TODO: test image
-    }
-
-    /**
-     * Test the property 'document'
-     */
-    @Test
-    public void documentTest() {
-        // TODO: test document
-    }
-
-    /**
-     * Test the property 'audio'
-     */
-    @Test
-    public void audioTest() {
-        // TODO: test audio
+    public void templateTest() {
+        // TODO: test template
     }
 
     /**

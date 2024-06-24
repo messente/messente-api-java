@@ -130,10 +130,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Telegram.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Viber.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsApp.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppAudio.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppDocument.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppImage.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppText.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppComponent.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppLanguage.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppParameter.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppTemplate.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 
