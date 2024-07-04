@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class BlacklistApi {
     private ApiClient localVarApiClient;
@@ -138,15 +137,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addToBlacklistValidateBeforeCall(NumberToBlacklist numberToBlacklist, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'numberToBlacklist' is set
         if (numberToBlacklist == null) {
             throw new ApiException("Missing the required parameter 'numberToBlacklist' when calling addToBlacklist(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = addToBlacklistCall(numberToBlacklist, _callback);
-        return localVarCall;
+        return addToBlacklistCall(numberToBlacklist, _callback);
 
     }
 
@@ -247,7 +243,7 @@ public class BlacklistApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/blacklist/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -264,7 +260,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -277,15 +272,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteFromBlacklistValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling deleteFromBlacklist(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteFromBlacklistCall(phone, _callback);
-        return localVarCall;
+        return deleteFromBlacklistCall(phone, _callback);
 
     }
 
@@ -399,7 +391,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -412,10 +403,7 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchBlacklistValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = fetchBlacklistCall(_callback);
-        return localVarCall;
+        return fetchBlacklistCall(_callback);
 
     }
 
@@ -510,7 +498,7 @@ public class BlacklistApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/blacklist/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -527,7 +515,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -540,15 +527,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call isBlacklistedValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling isBlacklisted(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = isBlacklistedCall(phone, _callback);
-        return localVarCall;
+        return isBlacklistedCall(phone, _callback);
 
     }
 

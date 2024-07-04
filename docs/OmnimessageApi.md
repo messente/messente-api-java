@@ -8,7 +8,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**sendOmnimessage**](OmnimessageApi.md#sendOmnimessage) | **POST** /omnimessage | Sends an Omnimessage |
 
 
-<a name="cancelScheduledMessage"></a>
+<a id="cancelScheduledMessage"></a>
 # **cancelScheduledMessage**
 > Object cancelScheduledMessage(omnimessageId)
 
@@ -76,7 +76,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | If the omnimessage has already been sent or no such message exists |  -  |
 
-<a name="sendOmnimessage"></a>
+<a id="sendOmnimessage"></a>
 # **sendOmnimessage**
 > OmniMessageCreateSuccessResponse sendOmnimessage(omnimessage)
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**updateContact**](ContactsApi.md#updateContact) | **PATCH** /phonebook/contacts/{phone} | Updates a contact |
 
 
-<a name="addContactToGroup"></a>
+<a id="addContactToGroup"></a>
 # **addContactToGroup**
 > Object addContactToGroup(groupId, phone)
 
@@ -87,7 +87,7 @@ public class Example {
 | **409** | Contact already added to group |  -  |
 | **0** | General error |  -  |
 
-<a name="createContact"></a>
+<a id="createContact"></a>
 # **createContact**
 > ContactEnvelope createContact(contactFields)
 
@@ -157,7 +157,7 @@ public class Example {
 | **409** | Contact with phone already created |  -  |
 | **0** | General error |  -  |
 
-<a name="deleteContact"></a>
+<a id="deleteContact"></a>
 # **deleteContact**
 > deleteContact(phone)
 
@@ -226,7 +226,7 @@ null (empty response body)
 | **404** | Contact missing |  -  |
 | **0** | General error |  -  |
 
-<a name="fetchContact"></a>
+<a id="fetchContact"></a>
 # **fetchContact**
 > ContactEnvelope fetchContact(phone)
 
@@ -295,7 +295,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | Contact missing |  -  |
 
-<a name="fetchContactGroups"></a>
+<a id="fetchContactGroups"></a>
 # **fetchContactGroups**
 > GroupListEnvelope fetchContactGroups(phone)
 
@@ -364,7 +364,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | Contact missing |  -  |
 
-<a name="fetchContacts"></a>
+<a id="fetchContacts"></a>
 # **fetchContacts**
 > ContactListEnvelope fetchContacts(groupIds)
 
@@ -433,7 +433,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **0** | General error |  -  |
 
-<a name="removeContactFromGroup"></a>
+<a id="removeContactFromGroup"></a>
 # **removeContactFromGroup**
 > removeContactFromGroup(groupId, phone)
 
@@ -504,7 +504,7 @@ null (empty response body)
 | **404** | Contact or group is missing or contact is missing from group |  -  |
 | **0** | General error |  -  |
 
-<a name="updateContact"></a>
+<a id="updateContact"></a>
 # **updateContact**
 > ContactEnvelope updateContact(phone, contactUpdateFields)
 

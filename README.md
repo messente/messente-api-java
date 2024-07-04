@@ -1,7 +1,7 @@
 # Messente API Library
 
 - Messente API version: 2.0.0
-- Java artifact version: 3.1.0
+- Java artifact version: 4.0.0
 
 [Messente](https://messente.com) is a global provider of messaging and user verification services.  * Send and receive SMS, Viber, WhatsApp and Telegram messages. * Manage contacts and groups. * Fetch detailed info about phone numbers. * Blacklist phone numbers to make sure you&#39;re not sending any unwanted messages.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
@@ -12,7 +12,7 @@ Install Messente API library via Maven, Gradle, Ivy or manual build.
 ### Gradle
 
 ```groovy
-compile "com.messente.api:messente-api:3.1.0"
+compile "com.messente.api:messente-api:4.0.0"
 ```
 
 ### Maven
@@ -21,7 +21,7 @@ compile "com.messente.api:messente-api:3.1.0"
 <dependency>
   <groupId>com.messente.api</groupId>
   <artifactId>messente-api</artifactId>
-  <version>3.1.0</version>
+  <version>4.0.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -29,7 +29,7 @@ compile "com.messente.api:messente-api:3.1.0"
 ### Ivy
 
 ```xml
-<dependency org='com.messente.api' name='messente-api' rev='3.1.0'>
+<dependency org='com.messente.api' name='messente-api' rev='4.0.0'>
   <artifact name='messente-api' ext='pom' ></artifact>
 </dependency>
 ```
@@ -44,7 +44,7 @@ mvn clean package
 
 Install
 
-- `target/messente-api-3.1.0.jar`
+- `target/messente-api-4.0.0.jar`
 - `target/lib/*.jar`
 
 ## Features
@@ -62,6 +62,10 @@ Messente API Library provides the operations described below to access the featu
 1. Deletes a phone number from the blacklist [`deleteFromBlacklist`](docs/BlacklistApi.md#deletefromblacklist)
 1. Returns all blacklisted phone numbers [`fetchBlacklist`](docs/BlacklistApi.md#fetchblacklist)
 1. Checks if a phone number is blacklisted [`isBlacklisted`](docs/BlacklistApi.md#isblacklisted)
+
+### BulkMessagingApi
+
+1. Sends a bulk Omnimessage [`sendBulkOmnimessage`](docs/BulkMessagingApi.md#sendbulkomnimessage)
 
 ### ContactsApi
 
@@ -108,47 +112,74 @@ Read the [external getting-started article](https://messente.com/documentation/g
 ## Getting started: sending an omnimessage
 
 ```java
+import com.messente.ApiClient;
+import com.messente.ApiException;
+import com.messente.api.*;
+import com.messente.auth.HttpBasicAuth;
+
+import java.util.Arrays;
+import java.util.List;
+
+// repositories { mavenCentral() }
+// dependencies { implementation 'com.messente.api:messente-api' }
+
 public class Main {
     public static void main(String[] args) {
         ApiClient apiClient = new ApiClient();
-
-        // Configure HTTP basic authorization: basicAuth
-        HttpBasicAuth basicAuth = (HttpBasicAuth) apiClient.getAuthentication("basicAuth");
-        basicAuth.setUsername("<MESSENTE_API_USERNAME>");
-        basicAuth.setPassword("<MESSENTE_API_PASSWORD>");
-
         OmnimessageApi apiInstance = new OmnimessageApi(apiClient);
-        Omnimessage omnimessage = new Omnimessage(); // Omnimessage | Omnimessage to be sent
+
+        HttpBasicAuth basicAuth = (HttpBasicAuth) apiClient.getAuthentication("basicAuth");
+        basicAuth.setUsername("YOUR_MESSENTE_API_USERNAME");
+        basicAuth.setPassword("YOUR_MESSENTE_API_PASSWORD");
+
         Viber viber = new Viber();
-        viber.text("Viber text");
-        viber.sender("Messente");
+        viber.text("hello viber");
+        viber.sender("<sender name (optional)>");
+        OmnimessageMessagesInner viberOmnimessageInner = new OmnimessageMessagesInner(viber);
+        viberOmnimessageInner.setActualInstance(viber);
+
         SMS sms = new SMS();
-        sms.text("SMS text");
+        sms.text("hello sms");
+        sms.sender("<sender name (optional)>");
+        OmnimessageMessagesInner smsOmnimessageInner = new OmnimessageMessagesInner(sms);
+        smsOmnimessageInner.setActualInstance(sms);
+
+        WhatsAppParameter whatsAppParameter = new WhatsAppParameter();
+        whatsAppParameter.type("text");
+        whatsAppParameter.text("hello whatsapp");
+
+        WhatsAppComponent whatsAppComponent = new WhatsAppComponent();
+        whatsAppComponent.type("body");
+        whatsAppComponent.setParameters(List.of(whatsAppParameter));
+
+        WhatsAppTemplate whatsAppTemplate = new WhatsAppTemplate();
+        whatsAppTemplate.name("<template_name>");
+        whatsAppTemplate.language(new WhatsAppLanguage().code("<language_code>"));
+        whatsAppTemplate.setComponents(List.of(whatsAppComponent));
 
         WhatsApp whatsApp = new WhatsApp();
-        WhatsAppText whatsAppText = new WhatsAppText();
-        whatsAppText.body("WhatsApp text");
-        whatsApp.text(whatsAppText);
+        whatsApp.sender("<sender name (optional)>");
+        whatsApp.template(whatsAppTemplate);
 
+        OmnimessageMessagesInner whatsAppOmnimessageInner = new OmnimessageMessagesInner(whatsApp);
+        whatsAppOmnimessageInner.setActualInstance(whatsApp);
 
+        Omnimessage omnimessage = new Omnimessage();
         omnimessage.setMessages(
-            Arrays.asList(
-                    new OmnimessageMessagesInner(whatsApp),
-                    new OmnimessageMessagesInner(viber),
-                    new OmnimessageMessagesInner(sms)
-            )
+                Arrays.asList(
+                        smsOmnimessageInner,
+                        viberOmnimessageInner,
+                        whatsAppOmnimessageInner
+                )
         );
-
-
-        omnimessage.setTo("<recipient phone number in e.164 format>");
-
+        omnimessage.setTo("<recipient_phone_number>");
 
         try {
             OmniMessageCreateSuccessResponse result = apiInstance.sendOmnimessage(omnimessage);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling sendOmnimessage");
-            e.printStackTrace();
+            System.err.println(e.getResponseBody());
         }
     }
 }

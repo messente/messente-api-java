@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class NumberLookupApi {
     private ApiClient localVarApiClient;
@@ -137,15 +136,12 @@ public class NumberLookupApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchInfoValidateBeforeCall(NumbersToInvestigate numbersToInvestigate, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'numbersToInvestigate' is set
         if (numbersToInvestigate == null) {
             throw new ApiException("Missing the required parameter 'numbersToInvestigate' when calling fetchInfo(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchInfoCall(numbersToInvestigate, _callback);
-        return localVarCall;
+        return fetchInfoCall(numbersToInvestigate, _callback);
 
     }
 

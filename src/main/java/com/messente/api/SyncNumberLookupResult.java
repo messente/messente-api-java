@@ -14,16 +14,14 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.MobileNetwork;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -36,12 +34,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -49,8 +51,7 @@ import com.messente.JSON;
 /**
  * Info about a phone number
  */
-@ApiModel(description = "Info about a phone number")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class SyncNumberLookupResult {
   public static final String SERIALIZED_NAME_NUMBER = "number";
   @SerializedName(SERIALIZED_NAME_NUMBER)
@@ -129,6 +130,11 @@ public class SyncNumberLookupResult {
         return StatusEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_STATUS = "status";
@@ -139,11 +145,10 @@ public class SyncNumberLookupResult {
   @SerializedName(SERIALIZED_NAME_ERROR)
   private Object error = null;
 
-  public SyncNumberLookupResult() { 
+  public SyncNumberLookupResult() {
   }
 
   public SyncNumberLookupResult number(String number) {
-    
     this.number = number;
     return this;
   }
@@ -153,12 +158,9 @@ public class SyncNumberLookupResult {
    * @return number
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-
   public String getNumber() {
     return number;
   }
-
 
   public void setNumber(String number) {
     this.number = number;
@@ -166,7 +168,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult roaming(Boolean roaming) {
-    
     this.roaming = roaming;
     return this;
   }
@@ -176,12 +177,9 @@ public class SyncNumberLookupResult {
    * @return roaming
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates if a number is roaming")
-
   public Boolean getRoaming() {
     return roaming;
   }
-
 
   public void setRoaming(Boolean roaming) {
     this.roaming = roaming;
@@ -189,7 +187,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult ported(Boolean ported) {
-    
     this.ported = ported;
     return this;
   }
@@ -199,12 +196,9 @@ public class SyncNumberLookupResult {
    * @return ported
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates if a number is ported")
-
   public Boolean getPorted() {
     return ported;
   }
-
 
   public void setPorted(Boolean ported) {
     this.ported = ported;
@@ -212,7 +206,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult roamingNetwork(MobileNetwork roamingNetwork) {
-    
     this.roamingNetwork = roamingNetwork;
     return this;
   }
@@ -222,12 +215,9 @@ public class SyncNumberLookupResult {
    * @return roamingNetwork
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MobileNetwork getRoamingNetwork() {
     return roamingNetwork;
   }
-
 
   public void setRoamingNetwork(MobileNetwork roamingNetwork) {
     this.roamingNetwork = roamingNetwork;
@@ -235,7 +225,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult currentNetwork(MobileNetwork currentNetwork) {
-    
     this.currentNetwork = currentNetwork;
     return this;
   }
@@ -245,12 +234,9 @@ public class SyncNumberLookupResult {
    * @return currentNetwork
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MobileNetwork getCurrentNetwork() {
     return currentNetwork;
   }
-
 
   public void setCurrentNetwork(MobileNetwork currentNetwork) {
     this.currentNetwork = currentNetwork;
@@ -258,7 +244,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult originalNetwork(MobileNetwork originalNetwork) {
-    
     this.originalNetwork = originalNetwork;
     return this;
   }
@@ -268,12 +253,9 @@ public class SyncNumberLookupResult {
    * @return originalNetwork
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MobileNetwork getOriginalNetwork() {
     return originalNetwork;
   }
-
 
   public void setOriginalNetwork(MobileNetwork originalNetwork) {
     this.originalNetwork = originalNetwork;
@@ -281,7 +263,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult portedNetwork(MobileNetwork portedNetwork) {
-    
     this.portedNetwork = portedNetwork;
     return this;
   }
@@ -291,12 +272,9 @@ public class SyncNumberLookupResult {
    * @return portedNetwork
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MobileNetwork getPortedNetwork() {
     return portedNetwork;
   }
-
 
   public void setPortedNetwork(MobileNetwork portedNetwork) {
     this.portedNetwork = portedNetwork;
@@ -304,7 +282,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult status(StatusEnum status) {
-    
     this.status = status;
     return this;
   }
@@ -314,12 +291,9 @@ public class SyncNumberLookupResult {
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status of the phone number")
-
   public StatusEnum getStatus() {
     return status;
   }
-
 
   public void setStatus(StatusEnum status) {
     this.status = status;
@@ -327,7 +301,6 @@ public class SyncNumberLookupResult {
 
 
   public SyncNumberLookupResult error(Object error) {
-    
     this.error = error;
     return this;
   }
@@ -337,12 +310,9 @@ public class SyncNumberLookupResult {
    * @return error
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Indicates if any error occurred while handling the request")
-
   public Object getError() {
     return error;
   }
-
 
   public void setError(Object error) {
     this.error = error;
@@ -437,55 +407,58 @@ public class SyncNumberLookupResult {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to SyncNumberLookupResult
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SyncNumberLookupResult
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (SyncNumberLookupResult.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SyncNumberLookupResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in SyncNumberLookupResult is not found in the empty JSON string", SyncNumberLookupResult.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SyncNumberLookupResult.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SyncNumberLookupResult` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SyncNumberLookupResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SyncNumberLookupResult.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("number") != null && !jsonObj.get("number").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("number").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("number").toString()));
       }
       // validate the optional field `roamingNetwork`
-      if (jsonObj.getAsJsonObject("roamingNetwork") != null) {
-        MobileNetwork.validateJsonObject(jsonObj.getAsJsonObject("roamingNetwork"));
+      if (jsonObj.get("roamingNetwork") != null && !jsonObj.get("roamingNetwork").isJsonNull()) {
+        MobileNetwork.validateJsonElement(jsonObj.get("roamingNetwork"));
       }
       // validate the optional field `currentNetwork`
-      if (jsonObj.getAsJsonObject("currentNetwork") != null) {
-        MobileNetwork.validateJsonObject(jsonObj.getAsJsonObject("currentNetwork"));
+      if (jsonObj.get("currentNetwork") != null && !jsonObj.get("currentNetwork").isJsonNull()) {
+        MobileNetwork.validateJsonElement(jsonObj.get("currentNetwork"));
       }
       // validate the optional field `originalNetwork`
-      if (jsonObj.getAsJsonObject("originalNetwork") != null) {
-        MobileNetwork.validateJsonObject(jsonObj.getAsJsonObject("originalNetwork"));
+      if (jsonObj.get("originalNetwork") != null && !jsonObj.get("originalNetwork").isJsonNull()) {
+        MobileNetwork.validateJsonElement(jsonObj.get("originalNetwork"));
       }
       // validate the optional field `portedNetwork`
-      if (jsonObj.getAsJsonObject("portedNetwork") != null) {
-        MobileNetwork.validateJsonObject(jsonObj.getAsJsonObject("portedNetwork"));
+      if (jsonObj.get("portedNetwork") != null && !jsonObj.get("portedNetwork").isJsonNull()) {
+        MobileNetwork.validateJsonElement(jsonObj.get("portedNetwork"));
       }
-      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the optional field `status`
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
+        StatusEnum.validateJsonElement(jsonObj.get("status"));
       }
   }
 
@@ -509,9 +482,9 @@ public class SyncNumberLookupResult {
 
            @Override
            public SyncNumberLookupResult read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

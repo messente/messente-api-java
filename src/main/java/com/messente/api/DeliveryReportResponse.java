@@ -14,17 +14,15 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.DeliveryResult;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,12 +36,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -51,8 +53,7 @@ import com.messente.JSON;
 /**
  * A container for successful delivery report response
  */
-@ApiModel(description = "A container for successful delivery report response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DeliveryReportResponse {
   public static final String SERIALIZED_NAME_STATUSES = "statuses";
   @SerializedName(SERIALIZED_NAME_STATUSES)
@@ -66,16 +67,18 @@ public class DeliveryReportResponse {
   @SerializedName(SERIALIZED_NAME_OMNIMESSAGE_ID)
   private UUID omnimessageId;
 
-  public DeliveryReportResponse() { 
+  public DeliveryReportResponse() {
   }
 
   public DeliveryReportResponse statuses(List<DeliveryResult> statuses) {
-    
     this.statuses = statuses;
     return this;
   }
 
   public DeliveryReportResponse addStatusesItem(DeliveryResult statusesItem) {
+    if (this.statuses == null) {
+      this.statuses = new ArrayList<>();
+    }
     this.statuses.add(statusesItem);
     return this;
   }
@@ -85,12 +88,9 @@ public class DeliveryReportResponse {
    * @return statuses
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Contains the delivery reports for each channel, ordered by send order")
-
   public List<DeliveryResult> getStatuses() {
     return statuses;
   }
-
 
   public void setStatuses(List<DeliveryResult> statuses) {
     this.statuses = statuses;
@@ -98,7 +98,6 @@ public class DeliveryReportResponse {
 
 
   public DeliveryReportResponse to(String to) {
-    
     this.to = to;
     return this;
   }
@@ -108,12 +107,9 @@ public class DeliveryReportResponse {
    * @return to
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-
   public String getTo() {
     return to;
   }
-
 
   public void setTo(String to) {
     this.to = to;
@@ -121,7 +117,6 @@ public class DeliveryReportResponse {
 
 
   public DeliveryReportResponse omnimessageId(UUID omnimessageId) {
-    
     this.omnimessageId = omnimessageId;
     return this;
   }
@@ -131,12 +126,9 @@ public class DeliveryReportResponse {
    * @return omnimessageId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Unique identifier for the omnimessage")
-
   public UUID getOmnimessageId() {
     return omnimessageId;
   }
-
 
   public void setOmnimessageId(UUID omnimessageId) {
     this.omnimessageId = omnimessageId;
@@ -204,50 +196,47 @@ public class DeliveryReportResponse {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to DeliveryReportResponse
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DeliveryReportResponse
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (DeliveryReportResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DeliveryReportResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in DeliveryReportResponse is not found in the empty JSON string", DeliveryReportResponse.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!DeliveryReportResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DeliveryReportResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DeliveryReportResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DeliveryReportResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      JsonArray jsonArraystatuses = jsonObj.getAsJsonArray("statuses");
-      if (jsonArraystatuses != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("statuses").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `statuses` to be an array in the JSON string but got `%s`", jsonObj.get("statuses").toString()));
-        }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("statuses").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `statuses` to be an array in the JSON string but got `%s`", jsonObj.get("statuses").toString()));
+      }
 
-        // validate the optional field `statuses` (array)
-        for (int i = 0; i < jsonArraystatuses.size(); i++) {
-          DeliveryResult.validateJsonObject(jsonArraystatuses.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("to") != null && !jsonObj.get("to").isJsonPrimitive()) {
+      JsonArray jsonArraystatuses = jsonObj.getAsJsonArray("statuses");
+      // validate the required field `statuses` (array)
+      for (int i = 0; i < jsonArraystatuses.size(); i++) {
+        DeliveryResult.validateJsonElement(jsonArraystatuses.get(i));
+      };
+      if (!jsonObj.get("to").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `to` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to").toString()));
       }
-      if (jsonObj.get("omnimessage_id") != null && !jsonObj.get("omnimessage_id").isJsonPrimitive()) {
+      if (!jsonObj.get("omnimessage_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `omnimessage_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("omnimessage_id").toString()));
       }
   }
@@ -272,9 +261,9 @@ public class DeliveryReportResponse {
 
            @Override
            public DeliveryReportResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

@@ -14,7 +14,6 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,11 +22,10 @@ import com.google.gson.stream.JsonWriter;
 import com.messente.api.OmnimessageMessagesInner;
 import com.messente.api.Priority;
 import com.messente.api.TextStore;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -40,12 +38,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -53,8 +55,7 @@ import com.messente.JSON;
 /**
  * An omnimessage
  */
-@ApiModel(description = "An omnimessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Omnimessage {
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
@@ -80,11 +81,10 @@ public class Omnimessage {
   @SerializedName(SERIALIZED_NAME_PRIORITY)
   private Priority priority;
 
-  public Omnimessage() { 
+  public Omnimessage() {
   }
 
   public Omnimessage to(String to) {
-    
     this.to = to;
     return this;
   }
@@ -94,12 +94,9 @@ public class Omnimessage {
    * @return to
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-
   public String getTo() {
     return to;
   }
-
 
   public void setTo(String to) {
     this.to = to;
@@ -107,12 +104,14 @@ public class Omnimessage {
 
 
   public Omnimessage messages(List<OmnimessageMessagesInner> messages) {
-    
     this.messages = messages;
     return this;
   }
 
   public Omnimessage addMessagesItem(OmnimessageMessagesInner messagesItem) {
+    if (this.messages == null) {
+      this.messages = new ArrayList<>();
+    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -122,12 +121,9 @@ public class Omnimessage {
    * @return messages
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "An array of messages")
-
   public List<OmnimessageMessagesInner> getMessages() {
     return messages;
   }
-
 
   public void setMessages(List<OmnimessageMessagesInner> messages) {
     this.messages = messages;
@@ -135,7 +131,6 @@ public class Omnimessage {
 
 
   public Omnimessage dlrUrl(String dlrUrl) {
-    
     this.dlrUrl = dlrUrl;
     return this;
   }
@@ -145,12 +140,9 @@ public class Omnimessage {
    * @return dlrUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL where the delivery report will be sent")
-
   public String getDlrUrl() {
     return dlrUrl;
   }
-
 
   public void setDlrUrl(String dlrUrl) {
     this.dlrUrl = dlrUrl;
@@ -158,7 +150,6 @@ public class Omnimessage {
 
 
   public Omnimessage textStore(TextStore textStore) {
-    
     this.textStore = textStore;
     return this;
   }
@@ -168,12 +159,9 @@ public class Omnimessage {
    * @return textStore
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public TextStore getTextStore() {
     return textStore;
   }
-
 
   public void setTextStore(TextStore textStore) {
     this.textStore = textStore;
@@ -181,7 +169,6 @@ public class Omnimessage {
 
 
   public Omnimessage timeToSend(OffsetDateTime timeToSend) {
-    
     this.timeToSend = timeToSend;
     return this;
   }
@@ -191,12 +178,9 @@ public class Omnimessage {
    * @return timeToSend
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)")
-
   public OffsetDateTime getTimeToSend() {
     return timeToSend;
   }
-
 
   public void setTimeToSend(OffsetDateTime timeToSend) {
     this.timeToSend = timeToSend;
@@ -204,7 +188,6 @@ public class Omnimessage {
 
 
   public Omnimessage priority(Priority priority) {
-    
     this.priority = priority;
     return this;
   }
@@ -214,12 +197,9 @@ public class Omnimessage {
    * @return priority
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public Priority getPriority() {
     return priority;
   }
-
 
   public void setPriority(Priority priority) {
     this.priority = priority;
@@ -295,51 +275,56 @@ public class Omnimessage {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Omnimessage
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Omnimessage
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Omnimessage.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Omnimessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Omnimessage is not found in the empty JSON string", Omnimessage.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Omnimessage.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Omnimessage` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Omnimessage` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Omnimessage.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("to") != null && !jsonObj.get("to").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("to").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `to` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to").toString()));
       }
-      JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
-      if (jsonArraymessages != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("messages").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
-        }
-
-        // validate the optional field `messages` (array)
-        for (int i = 0; i < jsonArraymessages.size(); i++) {
-          OmnimessageMessagesInner.validateJsonObject(jsonArraymessages.get(i).getAsJsonObject());
-        };
+      // ensure the json data is an array
+      if (!jsonObj.get("messages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
       }
-      if (jsonObj.get("dlr_url") != null && !jsonObj.get("dlr_url").isJsonPrimitive()) {
+
+      JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
+      // validate the required field `messages` (array)
+      for (int i = 0; i < jsonArraymessages.size(); i++) {
+        OmnimessageMessagesInner.validateJsonElement(jsonArraymessages.get(i));
+      };
+      if ((jsonObj.get("dlr_url") != null && !jsonObj.get("dlr_url").isJsonNull()) && !jsonObj.get("dlr_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `dlr_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dlr_url").toString()));
+      }
+      // validate the optional field `text_store`
+      if (jsonObj.get("text_store") != null && !jsonObj.get("text_store").isJsonNull()) {
+        TextStore.validateJsonElement(jsonObj.get("text_store"));
+      }
+      // validate the optional field `priority`
+      if (jsonObj.get("priority") != null && !jsonObj.get("priority").isJsonNull()) {
+        Priority.validateJsonElement(jsonObj.get("priority"));
       }
   }
 
@@ -363,9 +348,9 @@ public class Omnimessage {
 
            @Override
            public Omnimessage read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

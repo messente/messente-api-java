@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class GroupsApi {
     private ApiClient localVarApiClient;
@@ -138,15 +137,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createGroupValidateBeforeCall(GroupName groupName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupName' is set
         if (groupName == null) {
             throw new ApiException("Missing the required parameter 'groupName' when calling createGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = createGroupCall(groupName, _callback);
-        return localVarCall;
+        return createGroupCall(groupName, _callback);
 
     }
 
@@ -247,7 +243,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -264,7 +260,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -277,15 +272,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteGroupValidateBeforeCall(String groupId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling deleteGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteGroupCall(groupId, _callback);
-        return localVarCall;
+        return deleteGroupCall(groupId, _callback);
 
     }
 
@@ -381,7 +373,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -398,7 +390,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -411,15 +402,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchGroupValidateBeforeCall(String groupId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling fetchGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchGroupCall(groupId, _callback);
-        return localVarCall;
+        return fetchGroupCall(groupId, _callback);
 
     }
 
@@ -531,7 +519,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -544,10 +531,7 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchGroupsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = fetchGroupsCall(_callback);
-        return localVarCall;
+        return fetchGroupsCall(_callback);
 
     }
 
@@ -644,7 +628,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -674,20 +658,17 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateGroupValidateBeforeCall(String groupId, GroupName groupName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling updateGroup(Async)");
         }
-        
+
         // verify the required parameter 'groupName' is set
         if (groupName == null) {
             throw new ApiException("Missing the required parameter 'groupName' when calling updateGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateGroupCall(groupId, groupName, _callback);
-        return localVarCall;
+        return updateGroupCall(groupId, groupName, _callback);
 
     }
 

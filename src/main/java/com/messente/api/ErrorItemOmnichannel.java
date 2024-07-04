@@ -14,7 +14,6 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,9 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.ErrorCodeOmnichannel;
 import com.messente.api.ErrorTitleOmnichannel;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -36,12 +34,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -49,8 +51,7 @@ import com.messente.JSON;
 /**
  * A container for Omnichannel API error
  */
-@ApiModel(description = "A container for Omnichannel API error")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorItemOmnichannel {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -68,11 +69,10 @@ public class ErrorItemOmnichannel {
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
 
-  public ErrorItemOmnichannel() { 
+  public ErrorItemOmnichannel() {
   }
 
   public ErrorItemOmnichannel title(ErrorTitleOmnichannel title) {
-    
     this.title = title;
     return this;
   }
@@ -82,12 +82,9 @@ public class ErrorItemOmnichannel {
    * @return title
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ErrorTitleOmnichannel getTitle() {
     return title;
   }
-
 
   public void setTitle(ErrorTitleOmnichannel title) {
     this.title = title;
@@ -95,7 +92,6 @@ public class ErrorItemOmnichannel {
 
 
   public ErrorItemOmnichannel detail(String detail) {
-    
     this.detail = detail;
     return this;
   }
@@ -105,12 +101,9 @@ public class ErrorItemOmnichannel {
    * @return detail
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Free form more detailed description of the error")
-
   public String getDetail() {
     return detail;
   }
-
 
   public void setDetail(String detail) {
     this.detail = detail;
@@ -118,7 +111,6 @@ public class ErrorItemOmnichannel {
 
 
   public ErrorItemOmnichannel code(ErrorCodeOmnichannel code) {
-    
     this.code = code;
     return this;
   }
@@ -128,12 +120,9 @@ public class ErrorItemOmnichannel {
    * @return code
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public ErrorCodeOmnichannel getCode() {
     return code;
   }
-
 
   public void setCode(ErrorCodeOmnichannel code) {
     this.code = code;
@@ -141,7 +130,6 @@ public class ErrorItemOmnichannel {
 
 
   public ErrorItemOmnichannel source(String source) {
-    
     this.source = source;
     return this;
   }
@@ -151,12 +139,9 @@ public class ErrorItemOmnichannel {
    * @return source
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(required = true, value = "Describes which field is causing the issue in the payload, null for non 400 status code responses")
-
   public String getSource() {
     return source;
   }
-
 
   public void setSource(String source) {
     this.source = source;
@@ -228,38 +213,41 @@ public class ErrorItemOmnichannel {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ErrorItemOmnichannel
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorItemOmnichannel
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ErrorItemOmnichannel.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ErrorItemOmnichannel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ErrorItemOmnichannel is not found in the empty JSON string", ErrorItemOmnichannel.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ErrorItemOmnichannel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ErrorItemOmnichannel` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ErrorItemOmnichannel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ErrorItemOmnichannel.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("detail") != null && !jsonObj.get("detail").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `title`
+      ErrorTitleOmnichannel.validateJsonElement(jsonObj.get("title"));
+      if (!jsonObj.get("detail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `detail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail").toString()));
       }
-      if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonPrimitive()) {
+      // validate the required field `code`
+      ErrorCodeOmnichannel.validateJsonElement(jsonObj.get("code"));
+      if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
       }
   }
@@ -284,9 +272,9 @@ public class ErrorItemOmnichannel {
 
            @Override
            public ErrorItemOmnichannel read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

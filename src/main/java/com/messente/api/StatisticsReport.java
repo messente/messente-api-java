@@ -14,15 +14,13 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,12 +32,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -47,8 +49,7 @@ import com.messente.JSON;
 /**
  * Report for one country
  */
-@ApiModel(description = "Report for one country")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class StatisticsReport {
   public static final String SERIALIZED_NAME_TOTAL_MESSAGES = "total_messages";
   @SerializedName(SERIALIZED_NAME_TOTAL_MESSAGES)
@@ -62,11 +63,10 @@ public class StatisticsReport {
   @SerializedName(SERIALIZED_NAME_COUNTRY)
   private String country;
 
-  public StatisticsReport() { 
+  public StatisticsReport() {
   }
 
   public StatisticsReport totalMessages(Integer totalMessages) {
-    
     this.totalMessages = totalMessages;
     return this;
   }
@@ -76,12 +76,9 @@ public class StatisticsReport {
    * @return totalMessages
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Sum of all messages")
-
   public Integer getTotalMessages() {
     return totalMessages;
   }
-
 
   public void setTotalMessages(Integer totalMessages) {
     this.totalMessages = totalMessages;
@@ -89,7 +86,6 @@ public class StatisticsReport {
 
 
   public StatisticsReport totalPrice(String totalPrice) {
-    
     this.totalPrice = totalPrice;
     return this;
   }
@@ -99,12 +95,9 @@ public class StatisticsReport {
    * @return totalPrice
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Price for all messages")
-
   public String getTotalPrice() {
     return totalPrice;
   }
-
 
   public void setTotalPrice(String totalPrice) {
     this.totalPrice = totalPrice;
@@ -112,7 +105,6 @@ public class StatisticsReport {
 
 
   public StatisticsReport country(String country) {
-    
     this.country = country;
     return this;
   }
@@ -122,12 +114,9 @@ public class StatisticsReport {
    * @return country
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Target country of all messages")
-
   public String getCountry() {
     return country;
   }
-
 
   public void setCountry(String country) {
     this.country = country;
@@ -195,38 +184,37 @@ public class StatisticsReport {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to StatisticsReport
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to StatisticsReport
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (StatisticsReport.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!StatisticsReport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReport is not found in the empty JSON string", StatisticsReport.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!StatisticsReport.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StatisticsReport` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StatisticsReport` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StatisticsReport.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("total_price") != null && !jsonObj.get("total_price").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("total_price").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `total_price` to be a primitive type in the JSON string but got `%s`", jsonObj.get("total_price").toString()));
       }
-      if (jsonObj.get("country") != null && !jsonObj.get("country").isJsonPrimitive()) {
+      if (!jsonObj.get("country").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
   }
@@ -251,9 +239,9 @@ public class StatisticsReport {
 
            @Override
            public StatisticsReport read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
