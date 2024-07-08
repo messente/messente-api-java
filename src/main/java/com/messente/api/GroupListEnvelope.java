@@ -14,18 +14,15 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.GroupResponseFields;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.google.gson.Gson;
@@ -38,12 +35,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -51,18 +52,16 @@ import com.messente.JSON;
 /**
  * A container for groups
  */
-@ApiModel(description = "A container for groups")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class GroupListEnvelope {
   public static final String SERIALIZED_NAME_GROUPS = "groups";
   @SerializedName(SERIALIZED_NAME_GROUPS)
-  private Set<GroupResponseFields> groups = null;
+  private Set<GroupResponseFields> groups = new LinkedHashSet<>();
 
-  public GroupListEnvelope() { 
+  public GroupListEnvelope() {
   }
 
   public GroupListEnvelope groups(Set<GroupResponseFields> groups) {
-    
     this.groups = groups;
     return this;
   }
@@ -80,12 +79,9 @@ public class GroupListEnvelope {
    * @return groups
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "An array of groups")
-
   public Set<GroupResponseFields> getGroups() {
     return groups;
   }
-
 
   public void setGroups(Set<GroupResponseFields> groups) {
     this.groups = groups;
@@ -144,38 +140,39 @@ public class GroupListEnvelope {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GroupListEnvelope
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to GroupListEnvelope
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GroupListEnvelope.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GroupListEnvelope.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in GroupListEnvelope is not found in the empty JSON string", GroupListEnvelope.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GroupListEnvelope.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupListEnvelope` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupListEnvelope` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-      JsonArray jsonArraygroups = jsonObj.getAsJsonArray("groups");
-      if (jsonArraygroups != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("groups").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `groups` to be an array in the JSON string but got `%s`", jsonObj.get("groups").toString()));
-        }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("groups") != null && !jsonObj.get("groups").isJsonNull()) {
+        JsonArray jsonArraygroups = jsonObj.getAsJsonArray("groups");
+        if (jsonArraygroups != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("groups").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `groups` to be an array in the JSON string but got `%s`", jsonObj.get("groups").toString()));
+          }
 
-        // validate the optional field `groups` (array)
-        for (int i = 0; i < jsonArraygroups.size(); i++) {
-          GroupResponseFields.validateJsonObject(jsonArraygroups.get(i).getAsJsonObject());
-        };
+          // validate the optional field `groups` (array)
+          for (int i = 0; i < jsonArraygroups.size(); i++) {
+            GroupResponseFields.validateJsonElement(jsonArraygroups.get(i));
+          };
+        }
       }
   }
 
@@ -199,9 +196,9 @@ public class GroupListEnvelope {
 
            @Override
            public GroupListEnvelope read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

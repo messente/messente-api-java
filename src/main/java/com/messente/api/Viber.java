@@ -14,15 +14,13 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,12 +32,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -47,8 +49,7 @@ import com.messente.JSON;
 /**
  * Viber message content
  */
-@ApiModel(description = "Viber message content")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Viber {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
@@ -121,17 +122,21 @@ public class Viber {
         return ChannelEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ChannelEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   private ChannelEnum channel = ChannelEnum.VIBER;
 
-  public Viber() { 
+  public Viber() {
   }
 
   public Viber sender(String sender) {
-    
     this.sender = sender;
     return this;
   }
@@ -141,12 +146,9 @@ public class Viber {
    * @return sender
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Phone number or alphanumeric sender name")
-
   public String getSender() {
     return sender;
   }
-
 
   public void setSender(String sender) {
     this.sender = sender;
@@ -154,7 +156,6 @@ public class Viber {
 
 
   public Viber validity(Integer validity) {
-    
     this.validity = validity;
     return this;
   }
@@ -164,12 +165,9 @@ public class Viber {
    * @return validity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \"ttl\" and \"validity\" can be used.")
-
   public Integer getValidity() {
     return validity;
   }
-
 
   public void setValidity(Integer validity) {
     this.validity = validity;
@@ -177,7 +175,6 @@ public class Viber {
 
 
   public Viber ttl(Integer ttl) {
-    
     this.ttl = ttl;
     return this;
   }
@@ -187,12 +184,9 @@ public class Viber {
    * @return ttl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "21600", value = "After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \"ttl\" and \"validity\" can be used.")
-
   public Integer getTtl() {
     return ttl;
   }
-
 
   public void setTtl(Integer ttl) {
     this.ttl = ttl;
@@ -200,7 +194,6 @@ public class Viber {
 
 
   public Viber text(String text) {
-    
     this.text = text;
     return this;
   }
@@ -210,12 +203,9 @@ public class Viber {
    * @return text
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Plaintext content for Viber")
-
   public String getText() {
     return text;
   }
-
 
   public void setText(String text) {
     this.text = text;
@@ -223,7 +213,6 @@ public class Viber {
 
 
   public Viber imageUrl(String imageUrl) {
-    
     this.imageUrl = imageUrl;
     return this;
   }
@@ -233,12 +222,9 @@ public class Viber {
    * @return imageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text")
-
   public String getImageUrl() {
     return imageUrl;
   }
-
 
   public void setImageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
@@ -246,7 +232,6 @@ public class Viber {
 
 
   public Viber buttonUrl(String buttonUrl) {
-    
     this.buttonUrl = buttonUrl;
     return this;
   }
@@ -256,12 +241,9 @@ public class Viber {
    * @return buttonUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL of the button, must be specified along with ''text'', ''button_text'' and ''image_url'' (optional)")
-
   public String getButtonUrl() {
     return buttonUrl;
   }
-
 
   public void setButtonUrl(String buttonUrl) {
     this.buttonUrl = buttonUrl;
@@ -269,7 +251,6 @@ public class Viber {
 
 
   public Viber buttonText(String buttonText) {
-    
     this.buttonText = buttonText;
     return this;
   }
@@ -279,12 +260,9 @@ public class Viber {
    * @return buttonText
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Must be specified along with ''text'', ''button_url'', ''button_text'', ''image_url'' (optional)")
-
   public String getButtonText() {
     return buttonText;
   }
-
 
   public void setButtonText(String buttonText) {
     this.buttonText = buttonText;
@@ -292,7 +270,6 @@ public class Viber {
 
 
   public Viber channel(ChannelEnum channel) {
-    
     this.channel = channel;
     return this;
   }
@@ -302,12 +279,9 @@ public class Viber {
    * @return channel
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The channel used to deliver the message")
-
   public ChannelEnum getChannel() {
     return channel;
   }
-
 
   public void setChannel(ChannelEnum channel) {
     this.channel = channel;
@@ -387,44 +361,47 @@ public class Viber {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Viber
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Viber
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Viber.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Viber.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Viber is not found in the empty JSON string", Viber.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Viber.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Viber` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Viber` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-      if (jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonNull()) && !jsonObj.get("sender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
       }
-      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonPrimitive()) {
+      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
-      if (jsonObj.get("image_url") != null && !jsonObj.get("image_url").isJsonPrimitive()) {
+      if ((jsonObj.get("image_url") != null && !jsonObj.get("image_url").isJsonNull()) && !jsonObj.get("image_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `image_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image_url").toString()));
       }
-      if (jsonObj.get("button_url") != null && !jsonObj.get("button_url").isJsonPrimitive()) {
+      if ((jsonObj.get("button_url") != null && !jsonObj.get("button_url").isJsonNull()) && !jsonObj.get("button_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `button_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("button_url").toString()));
       }
-      if (jsonObj.get("button_text") != null && !jsonObj.get("button_text").isJsonPrimitive()) {
+      if ((jsonObj.get("button_text") != null && !jsonObj.get("button_text").isJsonNull()) && !jsonObj.get("button_text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `button_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("button_text").toString()));
       }
-      if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonPrimitive()) {
+      if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
+      }
+      // validate the optional field `channel`
+      if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
+        ChannelEnum.validateJsonElement(jsonObj.get("channel"));
       }
   }
 
@@ -448,9 +425,9 @@ public class Viber {
 
            @Override
            public Viber read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

@@ -4,12 +4,15 @@ info:
     email: messente@messente.com
     name: Messente
     url: https://messente.com
-  description: "[Messente](https://messente.com) is a global provider of messaging\
-    \ and user verification services.\n\n* Send and receive SMS, Viber, WhatsApp and\
-    \ Telegram messages.\n* Manage contacts and groups.\n* Fetch detailed info about\
-    \ phone numbers.\n* Blacklist phone numbers to make sure you're not sending any\
-    \ unwanted messages.\n\nMessente builds [tools](https://messente.com/documentation)\
-    \ to help organizations connect their services to people anywhere in the world."
+  description: |-
+    [Messente](https://messente.com) is a global provider of messaging and user verification services.
+
+    * Send and receive SMS, Viber, WhatsApp and Telegram messages.
+    * Manage contacts and groups.
+    * Fetch detailed info about phone numbers.
+    * Blacklist phone numbers to make sure you're not sending any unwanted messages.
+
+    Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -24,29 +27,43 @@ servers:
 security:
 - basicAuth: []
 tags:
-- description: "Blacklist is a list of numbers that is tied to one specific account.\n\
-    All messages sent using any API credentials from this account, are passed through\
-    \ this list.\nIf the number is in the list, the message is not sent.\nIt applies\
-    \ both to API calls and messages sent from the Dashboard."
+- description: |-
+    Blacklist is a list of numbers that is tied to one specific account.
+    All messages sent using any API credentials from this account, are passed through this list.
+    If the number is in the list, the message is not sent.
+    It applies both to API calls and messages sent from the Dashboard.
   name: Blacklist
-- description: "Every contact in the Phonebook may belong to one or many Groups, which\
-    \ makes it easy to send targeted messages just by selecting the Groups you want.\n\
-    \nYou can think of Groups also as Labels that each Contacts can have.\n\nWhen\
-    \ sending message to multiple groups, Messente only sends one message per Contact.\
-    \ This means you can send messages without having to worry about duplicate messages\
-    \ being sent.\n\nUsing the Phonebook API you can\n\n* Select Contacts and filter\
-    \ by Groups\n* Fetch Contact details\n* Create a new Contact\n* Update an existing\
-    \ Contacts\n* Add or remove a Contact from a Group\n* Delete a Contact"
+- description: |-
+    Every contact in the Phonebook may belong to one or many Groups, which makes it easy to send targeted messages just by selecting the Groups you want.
+
+    You can think of Groups also as Labels that each Contacts can have.
+
+    When sending message to multiple groups, Messente only sends one message per Contact. This means you can send messages without having to worry about duplicate messages being sent.
+
+    Using the Phonebook API you can
+
+    * Select Contacts and filter by Groups
+    * Fetch Contact details
+    * Create a new Contact
+    * Update an existing Contacts
+    * Add or remove a Contact from a Group
+    * Delete a Contact
   name: Contacts
-- description: "Every contact in the Phonebook may belong to one or many Groups, which\
-    \ makes it easy to send targeted messages just by selecting the Groups you want.\n\
-    \nYou can think of Groups also as Labels that each Contacts can have.\n\nWhen\
-    \ sending message to multiple groups, Messente only sends one message per Contact.\
-    \ This means you can send messages without having to worry about duplicate messages\
-    \ being sent.\n\nUsing the Phonebook API you can\n\n* List all Groups\n* Create\
-    \ a new Group\n* Update an existing Group\n* Delete a Group"
+- description: |-
+    Every contact in the Phonebook may belong to one or many Groups, which makes it easy to send targeted messages just by selecting the Groups you want.
+
+    You can think of Groups also as Labels that each Contacts can have.
+
+    When sending message to multiple groups, Messente only sends one message per Contact. This means you can send messages without having to worry about duplicate messages being sent.
+
+    Using the Phonebook API you can
+
+    * List all Groups
+    * Create a new Group
+    * Update an existing Group
+    * Delete a Group
   name: Groups
-- description: Send an omnimessage to a phone number with fallback options for various
+- description: Send omnimessages to a phone number with fallback options for various
     channels
   name: Omnimessage
 - description: Retrieve delivery reports which indicate whether the message was delivered
@@ -55,7 +72,45 @@ tags:
   name: Number Lookup
 - description: Get total messages and price per country
   name: Statistics
+- description: Send omnimessages in bulk to a phone number with fallback options for
+    various channels
+  name: BulkMessaging
 paths:
+  /omnimessages:
+    post:
+      operationId: sendBulkOmnimessage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkOmnimessage'
+        description: Bulk Omnimessage to be sent
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse'
+          description: Bulk Omnimessage success response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+      summary: Sends a bulk Omnimessage
+      tags:
+      - BulkMessaging
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /hlr/sync:
     post:
       operationId: fetchInfo
@@ -64,8 +119,8 @@ paths:
           application/json:
             example:
               numbers:
-              - +37251000000
-              - +37251000001
+              - "+37251000000"
+              - "+37251000001"
             schema:
               $ref: '#/components/schemas/NumbersToInvestigate'
         description: Numbers for lookup
@@ -77,7 +132,7 @@ paths:
               example:
                 request_id: d50fbe61-053d-46b1-b452-f64ef38d2247
                 result:
-                - number: +37251000000
+                - number: "+37251000000"
                   roaming: null
                   roamingNetwork: null
                   currentNetwork: null
@@ -85,7 +140,7 @@ paths:
                   portedNetwork: null
                   ported: null
                   status: INVALID
-                - number: +37251000001
+                - number: "+37251000001"
                   roaming: false
                   roamingNetwork: null
                   currentNetwork:
@@ -128,7 +183,8 @@ paths:
       tags:
       - Number Lookup
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /omnimessage:
     post:
       operationId: sendOmnimessage
@@ -162,7 +218,8 @@ paths:
       tags:
       - Omnimessage
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /omnimessage/{omnimessageId}/status:
     get:
       operationId: retrieveDeliveryReport
@@ -200,7 +257,8 @@ paths:
       summary: Retrieves the delivery report for the Omnimessage
       tags:
       - Delivery Report
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /omnimessage/{omnimessageId}:
     delete:
       operationId: cancelScheduledMessage
@@ -238,7 +296,8 @@ paths:
       summary: Cancels a scheduled Omnimessage
       tags:
       - Omnimessage
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/blacklist:
     get:
       operationId: fetchBlacklist
@@ -248,8 +307,8 @@ paths:
             application/json:
               example:
                 phoneNumbers:
-                - +37251000000
-                - +37251000001
+                - "+37251000000"
+                - "+37251000001"
               schema:
                 $ref: '#/components/schemas/FetchBlacklistSuccess'
           description: An object containing a list of blacklisted phone numbers
@@ -268,14 +327,15 @@ paths:
       summary: Returns all blacklisted phone numbers
       tags:
       - Blacklist
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: addToBlacklist
       requestBody:
         content:
           application/json:
             example:
-              phoneNumber: +37251000000
+              phoneNumber: "+37251000000"
             schema:
               $ref: '#/components/schemas/NumberToBlacklist'
         description: Phone number to be blacklisted
@@ -311,13 +371,14 @@ paths:
       tags:
       - Blacklist
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/blacklist/{phone}:
     delete:
       operationId: deleteFromBlacklist
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -355,12 +416,13 @@ paths:
       summary: Deletes a phone number from the blacklist
       tags:
       - Blacklist
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: isBlacklisted
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -392,13 +454,14 @@ paths:
       summary: Checks if a phone number is blacklisted
       tags:
       - Blacklist
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/contacts/{phone}:
     delete:
       operationId: deleteContact
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -436,12 +499,13 @@ paths:
       summary: Deletes a contact
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: fetchContact
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -455,7 +519,7 @@ paths:
             application/json:
               example:
                 contact:
-                  phoneNumber: +37251000000
+                  phoneNumber: "+37251000000"
                   email: anyone@messente.com
                   firstName: Any
                   lastName: One
@@ -490,12 +554,13 @@ paths:
       summary: Lists a contact
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     patch:
       operationId: updateContact
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -525,7 +590,7 @@ paths:
             application/json:
               example:
                 contact:
-                  phoneNumber: +37251000000
+                  phoneNumber: "+37251000000"
                   email: anyone@messente.com
                   firstName: Any
                   lastName: One
@@ -568,13 +633,14 @@ paths:
       tags:
       - Contacts
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/contacts/{phone}/groups:
     get:
       operationId: fetchContactGroups
       parameters:
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -616,13 +682,15 @@ paths:
       summary: Lists groups of a contact
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/contacts:
     get:
       operationId: fetchContacts
       parameters:
-      - description: "Optional one or many group id strings in UUID format.\nFor example:\
-          \ \"/contacts?groupIds=group_id_one&groupIds=group_id_two\"\n"
+      - description: |
+          Optional one or many group id strings in UUID format.
+          For example: "/contacts?groupIds=group_id_one&groupIds=group_id_two"
         example:
         - 5792a02a-e5c2-422b-a0a0-0ae65d814663
         - 4792a02a-e5c2-422b-a0a0-0ae65d814662
@@ -641,7 +709,7 @@ paths:
             application/json:
               example:
                 contacts:
-                - phoneNumber: +37251000000
+                - phoneNumber: "+37251000000"
                   email: anyone@messente.com
                   firstName: Any
                   lastName: One
@@ -676,14 +744,15 @@ paths:
       summary: Returns all contacts
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createContact
       requestBody:
         content:
           application/json:
             example:
-              phoneNumber: +37251000000
+              phoneNumber: "+37251000000"
               email: anyone@messente.com
               firstName: Any
               lastName: One
@@ -702,7 +771,7 @@ paths:
             application/json:
               example:
                 contact:
-                  phoneNumber: +37251000000
+                  phoneNumber: "+37251000000"
                   email: anyone@messente.com
                   firstName: Any
                   lastName: One
@@ -744,7 +813,8 @@ paths:
       tags:
       - Contacts
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/groups/{groupId}:
     delete:
       operationId: deleteGroup
@@ -782,7 +852,8 @@ paths:
       summary: Deletes a group
       tags:
       - Groups
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
       operationId: fetchGroup
       parameters:
@@ -823,7 +894,8 @@ paths:
       summary: Lists a group
       tags:
       - Groups
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
       operationId: updateGroup
       parameters:
@@ -885,7 +957,8 @@ paths:
       tags:
       - Groups
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/groups/{groupId}/contacts/{phone}:
     delete:
       operationId: removeContactFromGroup
@@ -900,7 +973,7 @@ paths:
           type: string
         style: simple
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -938,7 +1011,8 @@ paths:
       summary: Removes a contact from a group
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: addContactToGroup
       parameters:
@@ -952,7 +1026,7 @@ paths:
           type: string
         style: simple
       - description: A phone number
-        example: +37251000000
+        example: "+37251000000"
         explode: false
         in: path
         name: phone
@@ -1001,7 +1075,8 @@ paths:
       summary: Adds a contact to a group
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /phonebook/groups:
     get:
       operationId: fetchGroups
@@ -1033,7 +1108,8 @@ paths:
       summary: Returns all groups
       tags:
       - Groups
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
       operationId: createGroup
       requestBody:
@@ -1079,7 +1155,8 @@ paths:
       tags:
       - Groups
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /statistics/reports:
     post:
       operationId: createStatisticsReport
@@ -1141,7 +1218,8 @@ paths:
       tags:
       - Statistics
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
     StatisticsReport:
@@ -1213,6 +1291,14 @@ components:
       type: object
     ErrorStatistics:
       description: A container for errors
+      example:
+        errors:
+        - code: "100"
+          details: details
+          title: title
+        - code: "100"
+          details: details
+          title: title
       properties:
         errors:
           description: An array of errors
@@ -1223,6 +1309,10 @@ components:
       - errors
     ErrorItemStatistics:
       description: Error fields container
+      example:
+        code: "100"
+        details: details
+        title: title
       properties:
         title:
           description: Error title
@@ -1441,6 +1531,14 @@ components:
       type: object
     ErrorNumberLookup:
       description: A container for errors
+      example:
+        errors:
+        - error:
+            code: 101
+            description: description
+        - error:
+            code: 101
+            description: description
       properties:
         errors:
           description: An array of errors
@@ -1451,6 +1549,10 @@ components:
       - errors
     ErrorItemNumberLookup:
       description: A container for Number Lookup API error
+      example:
+        error:
+          code: 101
+          description: description
       properties:
         error:
           $ref: '#/components/schemas/ErrorItemNumberLookup_error'
@@ -1458,10 +1560,16 @@ components:
       - error
       type: object
     ErrorCodeNumberLookup:
-      description: "Matches the following error title.\n  This field is a constant\n\
-        \n* 101 - Unauthorized\n* 102 - Invalid arguments or parameters\n* 103 - Server\
-        \ error\n* 104 - Crediting error #1\n* 105 - Crediting error #2\n* 106 - Client\
-        \ error"
+      description: |-
+        Matches the following error title.
+          This field is a constant
+
+        * 101 - Unauthorized
+        * 102 - Invalid arguments or parameters
+        * 103 - Server error
+        * 104 - Crediting error #1
+        * 105 - Crediting error #2
+        * 106 - Client error
       maximum: 106
       minimum: 101
       type: integer
@@ -1640,9 +1748,10 @@ components:
           nullable: true
           type: string
         scheduledDeletionDate:
-          description: "The date in ISO 8601 format, YYYY-MM-DD,\n on which the contact\
-            \ is going to be deleted\n because it has not belonged to a group for\
-            \ 30 days"
+          description: |-
+            The date in ISO 8601 format, YYYY-MM-DD,
+             on which the contact is going to be deleted
+             because it has not belonged to a group for 30 days
           format: date
           nullable: true
           type: string
@@ -1817,6 +1926,14 @@ components:
       type: string
     ErrorPhonebook:
       description: A container for errors
+      example:
+        errors:
+        - code: "201"
+          detail: detail
+          title: Invalid data
+        - code: "201"
+          detail: detail
+          title: Invalid data
       properties:
         errors:
           description: An array of errors
@@ -1827,6 +1944,10 @@ components:
       - errors
     ErrorItemPhonebook:
       description: A container for Phonebook API error
+      example:
+        code: "201"
+        detail: detail
+        title: Invalid data
       properties:
         title:
           $ref: '#/components/schemas/ErrorTitlePhonebook'
@@ -1846,10 +1967,10 @@ components:
       example:
         messages:
         - sender: sender
-          channel: null
+          channel: sms
           message_id: message_id
         - sender: sender
-          channel: null
+          channel: sms
           message_id: message_id
         to: to
         omnimessage_id: omnimessage_id
@@ -1875,7 +1996,7 @@ components:
       description: A message part of an omnimessage
       example:
         sender: sender
-        channel: null
+        channel: sms
         message_id: message_id
       properties:
         message_id:
@@ -1903,14 +2024,28 @@ components:
     Omnimessage:
       description: An omnimessage
       example:
-        text_store: null
+        text_store: nostore
         time_to_send: 2000-01-23T04:56:07.000+00:00
         dlr_url: http://example.com/aeiou
         messages:
-        - null
-        - null
+        - sender: sender
+          image_url: image_url
+          button_url: button_url
+          channel: viber
+          validity: 360
+          text: text
+          button_text: button_text
+          ttl: 21600
+        - sender: sender
+          image_url: image_url
+          button_url: button_url
+          channel: viber
+          validity: 360
+          text: text
+          button_text: button_text
+          ttl: 21600
         to: to
-        priority: null
+        priority: low
       properties:
         to:
           description: Phone number in e.164 format
@@ -1927,12 +2062,15 @@ components:
         text_store:
           $ref: '#/components/schemas/TextStore'
         time_to_send:
-          description: "Optional parameter for sending messages at some specific time\
-            \ in the future.\n  Time must be specified in the ISO-8601 format.\n \
-            \ If no timezone is specified, then the timezone is assumed to be UTC\n\
-            \n  Examples:\n\n  * Time specified with timezone: 2018-06-22T09:05:07+00:00\
-            \ Time specified in UTC: 2018-06-22T09:05:07Z\n  * Time specified without\
-            \ timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)"
+          description: |-
+            Optional parameter for sending messages at some specific time in the future.
+              Time must be specified in the ISO-8601 format.
+              If no timezone is specified, then the timezone is assumed to be UTC
+
+              Examples:
+
+              * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z
+              * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)
           format: date-time
           type: string
         priority:
@@ -1961,6 +2099,15 @@ components:
       type: string
     Viber:
       description: Viber message content
+      example:
+        sender: sender
+        image_url: image_url
+        button_url: button_url
+        channel: viber
+        validity: 360
+        text: text
+        button_text: button_text
+        ttl: 21600
       properties:
         sender:
           description: Phone number or alphanumeric sender name
@@ -1981,8 +2128,14 @@ components:
           description: Plaintext content for Viber
           type: string
         image_url:
-          description: "URL for the embedded image\n\n  Valid combinations:\n\n  1)\
-            \ image_url,\n\n  2) text, image_url, button_url, button_text"
+          description: |-
+            URL for the embedded image
+
+              Valid combinations:
+
+              1) image_url,
+
+              2) text, image_url, button_url, button_text
           type: string
         button_url:
           description: "URL of the button, must be specified along with ''text'',\
@@ -2000,8 +2153,9 @@ components:
           type: string
       type: object
     WhatsApp:
-      description: "WhatsApp message content.\n  Only one of \"text\", \"image\",\
-        \ \"document\" or \"audio\" can be provided"
+      description: |-
+        WhatsApp message content.
+          Only one of "text", "image", "document" or "audio" can be provided
       properties:
         sender:
           description: Phone number or alphanumeric sender name
@@ -2018,20 +2172,15 @@ components:
                   Only one of "ttl" and "validity" can be used.
           example: 21600
           type: integer
-        text:
-          $ref: '#/components/schemas/WhatsAppText'
-        image:
-          $ref: '#/components/schemas/WhatsAppImage'
-        document:
-          $ref: '#/components/schemas/WhatsAppDocument'
-        audio:
-          $ref: '#/components/schemas/WhatsAppAudio'
+        template:
+          $ref: '#/components/schemas/WhatsAppTemplate'
         channel:
           default: whatsapp
           description: The channel used to deliver the message
           enum:
           - whatsapp
           type: string
+      type: object
     Telegram:
       description: Telegram message content
       properties:
@@ -2088,11 +2237,12 @@ components:
           example: 21600
           type: integer
         autoconvert:
-          description: "Defines how non-GSM characters will be treated:\n\n  - \"\
-            on\" Use replacement settings from the account's [API Auto Replace settings\
-            \ page](https://dashboard.messente.com/api-settings/auto-replace) (default)\n\
-            \  - \"full\" All non GSM 03.38 characters will be replaced with suitable\
-            \ alternatives\n  - \"off\" Message content is not modified in any way"
+          description: |-
+            Defines how non-GSM characters will be treated:
+
+              - "on" Use replacement settings from the account's [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)
+              - "full" All non GSM 03.38 characters will be replaced with suitable alternatives
+              - "off" Message content is not modified in any way
           enum:
           - full
           - "on"
@@ -2109,52 +2259,123 @@ components:
           type: string
       required:
       - text
-    WhatsAppDocument:
-      description: A document
+      type: object
+    WhatsAppCurrency:
+      description: Whatsapp currency object.
       properties:
+        fallback_value:
+          description: Default text if localization fails.
+          type: string
+        code:
+          description: Currency code as defined in ISO 4217.
+          type: string
+        amount_1000:
+          description: Amount multiplied by 1000.
+          type: string
+      required:
+      - amount_1000
+      - code
+      - fallback_value
+      type: object
+    WhatsAppTemplate:
+      description: Whatsapp Cloud API template
+      properties:
+        name:
+          description: Name of the template
+          type: string
+        language:
+          $ref: '#/components/schemas/WhatsAppLanguage'
+        components:
+          description: List of template components
+          items:
+            $ref: '#/components/schemas/WhatsAppComponent'
+          type: array
+      required:
+      - language
+      - name
+      type: object
+    WhatsAppLanguage:
+      description: Whatsapp template language
+      properties:
+        code:
+          description: Language code
+          type: string
+        policy:
+          description: Language policy
+          type: string
+      required:
+      - code
+      type: object
+    WhatsAppComponent:
+      description: Whatsapp template component
+      properties:
+        type:
+          description: Type of the component
+          type: string
+        sub_type:
+          description: Sub-type of the component
+          type: string
+        index:
+          description: index used to position buttons
+          type: integer
+        parameters:
+          description: List of parameters for the component
+          items:
+            $ref: '#/components/schemas/WhatsAppParameter'
+          type: array
+      required:
+      - type
+      type: object
+    WhatsAppDatetime:
+      description: Whatsapp datetime object.
+      properties:
+        fallback_value:
+          description: Default text.
+          type: string
+      required:
+      - fallback_value
+      type: object
+    WhatsAppMedia:
+      description: Whatsapp media object.
+      properties:
+        id:
+          description: The media object ID. Do not use this field when message type
+            is set to text.
+          type: string
+        link:
+          description: |-
+            The protocol and URL of the media to be sent. Use only with HTTP/HTTPS URLs.
+                  Do not use this field when message type is set to text.
+          type: string
         caption:
-          description: Description for the document
+          description: Media asset caption. Do not use with audio or sticker media.
           type: string
-        content:
-          description: Base64-encoded image
+        filename:
+          description: Describes the filename for the specific document. Use only
+            with document media.
           type: string
-      required:
-      - content
       type: object
-    WhatsAppImage:
-      description: An image
+    WhatsAppParameter:
+      description: Whatsapp component parameter.
       properties:
-        caption:
-          description: Description for the image
+        type:
+          description: Type of the parameter.
           type: string
-        content:
-          description: Base64-encoded image
+        text:
+          description: A text.
           type: string
+        currency:
+          $ref: '#/components/schemas/WhatsAppCurrency'
+        date_time:
+          $ref: '#/components/schemas/WhatsAppDatetime'
+        image:
+          $ref: '#/components/schemas/WhatsAppMedia'
+        document:
+          $ref: '#/components/schemas/WhatsAppMedia'
+        video:
+          $ref: '#/components/schemas/WhatsAppMedia'
       required:
-      - content
-      type: object
-    WhatsAppText:
-      description: A text
-      properties:
-        preview_url:
-          default: true
-          description: Whether to display link preview if the message contains a hyperlink
-          type: boolean
-        body:
-          description: "Plaintext content for WhatsApp, can contain URLs, emojis and\
-            \ formatting"
-          type: string
-      required:
-      - body
-      type: object
-    WhatsAppAudio:
-      description: A sound
-      properties:
-        content:
-          description: Base64-encoded audio
-          type: string
-      required:
-      - content
+      - type
       type: object
     ErrorCodeOmnichannel:
       description: |-
@@ -2190,6 +2411,16 @@ components:
       type: string
     ErrorOmnichannel:
       description: A container for errors
+      example:
+        errors:
+        - code: "101"
+          detail: detail
+          source: source
+          title: Not found
+        - code: "101"
+          detail: detail
+          source: source
+          title: Not found
       properties:
         errors:
           description: An array of errors
@@ -2200,6 +2431,11 @@ components:
       - errors
     ErrorItemOmnichannel:
       description: A container for Omnichannel API error
+      example:
+        code: "101"
+        detail: detail
+        source: source
+        title: Not found
       properties:
         title:
           $ref: '#/components/schemas/ErrorTitleOmnichannel'
@@ -2223,17 +2459,17 @@ components:
       description: A container for successful delivery report response
       example:
         statuses:
-        - err: null
-          channel: null
+        - err: 0
+          channel: sms
           message_id: message_id
           error: error
-          status: null
+          status: ACK
           timestamp: 2000-01-23T04:56:07.000+00:00
-        - err: null
-          channel: null
+        - err: 0
+          channel: sms
           message_id: message_id
           error: error
-          status: null
+          status: ACK
           timestamp: 2000-01-23T04:56:07.000+00:00
         to: to
         omnimessage_id: omnimessage_id
@@ -2259,11 +2495,11 @@ components:
     DeliveryResult:
       description: A delivery report
       example:
-        err: null
-        channel: null
+        err: 0
+        channel: sms
         message_id: message_id
         error: error
-        status: null
+        status: ACK
         timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         status:
@@ -2304,13 +2540,23 @@ components:
       - SEEN
       type: string
     ErrorCodeOmnichannelMachine:
-      description: "Machine-readable error code, 'null' when the message has not been\
-        \ processed yet\n\nMatches the following meanings\n\n  * 0 - No error\n  *\
-        \ 1 - Delivery failure\n  * 2 - Sending message expired\n  * 3 - Invalid number\n\
-        \  * 4 - Error crediting account\n  * 5 - Invalid number format\n  * 6 - Too\
-        \ many identical messages\n  * 7 - Sender name not allowed\n  * 8 - Operator\
-        \ blacklisted\n  * 9 - Unroutable\n  * 10 - Seen\n  * 999 - General temporary\
-        \ error"
+      description: |-
+        Machine-readable error code, 'null' when the message has not been processed yet
+
+        Matches the following meanings
+
+          * 0 - No error
+          * 1 - Delivery failure
+          * 2 - Sending message expired
+          * 3 - Invalid number
+          * 4 - Error crediting account
+          * 5 - Invalid number format
+          * 6 - Too many identical messages
+          * 7 - Sender name not allowed
+          * 8 - Operator blacklisted
+          * 9 - Unroutable
+          * 10 - Seen
+          * 999 - General temporary error
       enum:
       - 0
       - 1
@@ -2325,17 +2571,115 @@ components:
       - 10
       - 999
       type: integer
+    BulkOmnimessage:
+      description: A bulk omnimessage.
+      example:
+        messages:
+        - text_store: nostore
+          time_to_send: 2000-01-23T04:56:07.000+00:00
+          dlr_url: http://example.com/aeiou
+          messages:
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          to: to
+          priority: low
+        - text_store: nostore
+          time_to_send: 2000-01-23T04:56:07.000+00:00
+          dlr_url: http://example.com/aeiou
+          messages:
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          to: to
+          priority: low
+      properties:
+        messages:
+          description: A list of omnimessages.
+          items:
+            $ref: '#/components/schemas/Omnimessage'
+          type: array
+      required:
+      - messages
+      type: object
+    BulkOmniMessageCreateSuccessResponse:
+      description: Response received after successfully created bulk omnimessage.
+      example:
+        messages:
+        - messages:
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          to: to
+          omnimessage_id: omnimessage_id
+        - messages:
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          to: to
+          omnimessage_id: omnimessage_id
+      properties:
+        messages:
+          description: List of responses for each Omnimessage in the bulk. These can
+            be errors or successful responses
+          items:
+            $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse_messages_inner'
+          type: array
+      required:
+      - messages
+      type: object
     ErrorItemNumberLookup_error:
       description: Error fields container
+      example:
+        code: 101
+        description: description
       properties:
         description:
           description: Error description
           type: string
         code:
-          description: "Matches the following error title.\n  This field is a constant\n\
-            \n* 101 - Unauthorized\n* 102 - Invalid arguments or parameters\n* 103\
-            \ - Server error\n* 104 - Crediting error #1\n* 105 - Crediting error\
-            \ #2\n* 106 - Client error"
+          description: |-
+            Matches the following error title.
+              This field is a constant
+
+            * 101 - Unauthorized
+            * 102 - Invalid arguments or parameters
+            * 103 - Server error
+            * 104 - Crediting error #1
+            * 105 - Crediting error #2
+            * 106 - Client error
           maximum: 106
           minimum: 101
           type: integer
@@ -2349,6 +2693,10 @@ components:
       - $ref: '#/components/schemas/SMS'
       - $ref: '#/components/schemas/WhatsApp'
       - $ref: '#/components/schemas/Telegram'
+    BulkOmniMessageCreateSuccessResponse_messages_inner:
+      oneOf:
+      - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
+      - $ref: '#/components/schemas/ErrorOmnichannel'
   securitySchemes:
     basicAuth:
       scheme: basic

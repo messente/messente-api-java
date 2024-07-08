@@ -14,12 +14,11 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -87,6 +86,11 @@ public enum Status {
       String value = jsonReader.nextString();
       return Status.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    Status.fromValue(value);
   }
 }
 

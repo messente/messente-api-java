@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class DeliveryReportApi {
     private ApiClient localVarApiClient;
@@ -107,7 +106,7 @@ public class DeliveryReportApi {
 
         // create path and map variables
         String localVarPath = "/omnimessage/{omnimessageId}/status"
-            .replaceAll("\\{" + "omnimessageId" + "\\}", localVarApiClient.escapeString(omnimessageId.toString()));
+            .replace("{" + "omnimessageId" + "}", localVarApiClient.escapeString(omnimessageId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -124,7 +123,6 @@ public class DeliveryReportApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -137,15 +135,12 @@ public class DeliveryReportApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call retrieveDeliveryReportValidateBeforeCall(UUID omnimessageId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
             throw new ApiException("Missing the required parameter 'omnimessageId' when calling retrieveDeliveryReport(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = retrieveDeliveryReportCall(omnimessageId, _callback);
-        return localVarCall;
+        return retrieveDeliveryReportCall(omnimessageId, _callback);
 
     }
 

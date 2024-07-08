@@ -14,15 +14,13 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,12 +32,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -47,8 +49,7 @@ import com.messente.JSON;
 /**
  * Telegram message content
  */
-@ApiModel(description = "Telegram message content")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Telegram {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
@@ -117,17 +118,21 @@ public class Telegram {
         return ChannelEnum.fromValue(value);
       }
     }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ChannelEnum.fromValue(value);
+    }
   }
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   private ChannelEnum channel = ChannelEnum.TELEGRAM;
 
-  public Telegram() { 
+  public Telegram() {
   }
 
   public Telegram sender(String sender) {
-    
     this.sender = sender;
     return this;
   }
@@ -137,12 +142,9 @@ public class Telegram {
    * @return sender
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Phone number or alphanumeric sender name")
-
   public String getSender() {
     return sender;
   }
-
 
   public void setSender(String sender) {
     this.sender = sender;
@@ -150,7 +152,6 @@ public class Telegram {
 
 
   public Telegram validity(Integer validity) {
-    
     this.validity = validity;
     return this;
   }
@@ -160,12 +161,9 @@ public class Telegram {
    * @return validity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "360", value = "After how many minutes this channel is considered as failed and the next channel is attempted")
-
   public Integer getValidity() {
     return validity;
   }
-
 
   public void setValidity(Integer validity) {
     this.validity = validity;
@@ -173,7 +171,6 @@ public class Telegram {
 
 
   public Telegram text(String text) {
-    
     this.text = text;
     return this;
   }
@@ -183,12 +180,9 @@ public class Telegram {
    * @return text
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Plaintext content for Telegram")
-
   public String getText() {
     return text;
   }
-
 
   public void setText(String text) {
     this.text = text;
@@ -196,7 +190,6 @@ public class Telegram {
 
 
   public Telegram imageUrl(String imageUrl) {
-    
     this.imageUrl = imageUrl;
     return this;
   }
@@ -206,12 +199,9 @@ public class Telegram {
    * @return imageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"document_url\" and \"audio_url\"")
-
   public String getImageUrl() {
     return imageUrl;
   }
-
 
   public void setImageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
@@ -219,7 +209,6 @@ public class Telegram {
 
 
   public Telegram documentUrl(String documentUrl) {
-    
     this.documentUrl = documentUrl;
     return this;
   }
@@ -229,12 +218,9 @@ public class Telegram {
    * @return documentUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"audio_url\" and \"image_url\"")
-
   public String getDocumentUrl() {
     return documentUrl;
   }
-
 
   public void setDocumentUrl(String documentUrl) {
     this.documentUrl = documentUrl;
@@ -242,7 +228,6 @@ public class Telegram {
 
 
   public Telegram audioUrl(String audioUrl) {
-    
     this.audioUrl = audioUrl;
     return this;
   }
@@ -252,12 +237,9 @@ public class Telegram {
    * @return audioUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL for the embedded image. Mutually exclusive with \"document_url\" and \"image_url\"")
-
   public String getAudioUrl() {
     return audioUrl;
   }
-
 
   public void setAudioUrl(String audioUrl) {
     this.audioUrl = audioUrl;
@@ -265,7 +247,6 @@ public class Telegram {
 
 
   public Telegram channel(ChannelEnum channel) {
-    
     this.channel = channel;
     return this;
   }
@@ -275,12 +256,9 @@ public class Telegram {
    * @return channel
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The channel used to deliver the message")
-
   public ChannelEnum getChannel() {
     return channel;
   }
-
 
   public void setChannel(ChannelEnum channel) {
     this.channel = channel;
@@ -357,44 +335,47 @@ public class Telegram {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to Telegram
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Telegram
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (Telegram.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Telegram.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in Telegram is not found in the empty JSON string", Telegram.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Telegram.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Telegram` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Telegram` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-      if (jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonNull()) && !jsonObj.get("sender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
       }
-      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonPrimitive()) {
+      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
       }
-      if (jsonObj.get("image_url") != null && !jsonObj.get("image_url").isJsonPrimitive()) {
+      if ((jsonObj.get("image_url") != null && !jsonObj.get("image_url").isJsonNull()) && !jsonObj.get("image_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `image_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image_url").toString()));
       }
-      if (jsonObj.get("document_url") != null && !jsonObj.get("document_url").isJsonPrimitive()) {
+      if ((jsonObj.get("document_url") != null && !jsonObj.get("document_url").isJsonNull()) && !jsonObj.get("document_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `document_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_url").toString()));
       }
-      if (jsonObj.get("audio_url") != null && !jsonObj.get("audio_url").isJsonPrimitive()) {
+      if ((jsonObj.get("audio_url") != null && !jsonObj.get("audio_url").isJsonNull()) && !jsonObj.get("audio_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `audio_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("audio_url").toString()));
       }
-      if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonPrimitive()) {
+      if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
+      }
+      // validate the optional field `channel`
+      if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
+        ChannelEnum.validateJsonElement(jsonObj.get("channel"));
       }
   }
 
@@ -418,9 +399,9 @@ public class Telegram {
 
            @Override
            public Telegram read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

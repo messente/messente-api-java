@@ -14,15 +14,13 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -35,12 +33,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -48,8 +50,7 @@ import com.messente.JSON;
 /**
  * A container for fields of a request body of a contact
  */
-@ApiModel(description = "A container for fields of a request body of a contact")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ContactFields {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
@@ -91,11 +92,10 @@ public class ContactFields {
   @SerializedName(SERIALIZED_NAME_CUSTOM4)
   private String custom4;
 
-  public ContactFields() { 
+  public ContactFields() {
   }
 
   public ContactFields phoneNumber(String phoneNumber) {
-    
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -105,12 +105,9 @@ public class ContactFields {
    * @return phoneNumber
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-
   public String getPhoneNumber() {
     return phoneNumber;
   }
-
 
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
@@ -118,7 +115,6 @@ public class ContactFields {
 
 
   public ContactFields email(String email) {
-    
     this.email = email;
     return this;
   }
@@ -128,12 +124,9 @@ public class ContactFields {
    * @return email
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The email of the contact")
-
   public String getEmail() {
     return email;
   }
-
 
   public void setEmail(String email) {
     this.email = email;
@@ -141,7 +134,6 @@ public class ContactFields {
 
 
   public ContactFields firstName(String firstName) {
-    
     this.firstName = firstName;
     return this;
   }
@@ -151,12 +143,9 @@ public class ContactFields {
    * @return firstName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The first name of the contact")
-
   public String getFirstName() {
     return firstName;
   }
-
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
@@ -164,7 +153,6 @@ public class ContactFields {
 
 
   public ContactFields lastName(String lastName) {
-    
     this.lastName = lastName;
     return this;
   }
@@ -174,12 +162,9 @@ public class ContactFields {
    * @return lastName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The last name of the contact")
-
   public String getLastName() {
     return lastName;
   }
-
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
@@ -187,7 +172,6 @@ public class ContactFields {
 
 
   public ContactFields company(String company) {
-    
     this.company = company;
     return this;
   }
@@ -197,12 +181,9 @@ public class ContactFields {
    * @return company
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The company of the contact")
-
   public String getCompany() {
     return company;
   }
-
 
   public void setCompany(String company) {
     this.company = company;
@@ -210,7 +191,6 @@ public class ContactFields {
 
 
   public ContactFields title(String title) {
-    
     this.title = title;
     return this;
   }
@@ -220,12 +200,9 @@ public class ContactFields {
    * @return title
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The title of the contact")
-
   public String getTitle() {
     return title;
   }
-
 
   public void setTitle(String title) {
     this.title = title;
@@ -233,7 +210,6 @@ public class ContactFields {
 
 
   public ContactFields custom(String custom) {
-    
     this.custom = custom;
     return this;
   }
@@ -243,12 +219,9 @@ public class ContactFields {
    * @return custom
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The first custom field")
-
   public String getCustom() {
     return custom;
   }
-
 
   public void setCustom(String custom) {
     this.custom = custom;
@@ -256,7 +229,6 @@ public class ContactFields {
 
 
   public ContactFields custom2(String custom2) {
-    
     this.custom2 = custom2;
     return this;
   }
@@ -266,12 +238,9 @@ public class ContactFields {
    * @return custom2
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The second custom field")
-
   public String getCustom2() {
     return custom2;
   }
-
 
   public void setCustom2(String custom2) {
     this.custom2 = custom2;
@@ -279,7 +248,6 @@ public class ContactFields {
 
 
   public ContactFields custom3(String custom3) {
-    
     this.custom3 = custom3;
     return this;
   }
@@ -289,12 +257,9 @@ public class ContactFields {
    * @return custom3
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The third custom field")
-
   public String getCustom3() {
     return custom3;
   }
-
 
   public void setCustom3(String custom3) {
     this.custom3 = custom3;
@@ -302,7 +267,6 @@ public class ContactFields {
 
 
   public ContactFields custom4(String custom4) {
-    
     this.custom4 = custom4;
     return this;
   }
@@ -312,12 +276,9 @@ public class ContactFields {
    * @return custom4
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The fourth custom field")
-
   public String getCustom4() {
     return custom4;
   }
-
 
   public void setCustom4(String custom4) {
     this.custom4 = custom4;
@@ -415,62 +376,61 @@ public class ContactFields {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to ContactFields
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ContactFields
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (ContactFields.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ContactFields.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in ContactFields is not found in the empty JSON string", ContactFields.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ContactFields.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ContactFields` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ContactFields` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ContactFields.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("phoneNumber") != null && !jsonObj.get("phoneNumber").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("phoneNumber").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `phoneNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phoneNumber").toString()));
       }
-      if (jsonObj.get("email") != null && !jsonObj.get("email").isJsonPrimitive()) {
+      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
-      if (jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonPrimitive()) {
+      if ((jsonObj.get("firstName") != null && !jsonObj.get("firstName").isJsonNull()) && !jsonObj.get("firstName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `firstName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("firstName").toString()));
       }
-      if (jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonPrimitive()) {
+      if ((jsonObj.get("lastName") != null && !jsonObj.get("lastName").isJsonNull()) && !jsonObj.get("lastName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lastName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastName").toString()));
       }
-      if (jsonObj.get("company") != null && !jsonObj.get("company").isJsonPrimitive()) {
+      if ((jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) && !jsonObj.get("company").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `company` to be a primitive type in the JSON string but got `%s`", jsonObj.get("company").toString()));
       }
-      if (jsonObj.get("title") != null && !jsonObj.get("title").isJsonPrimitive()) {
+      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
-      if (jsonObj.get("custom") != null && !jsonObj.get("custom").isJsonPrimitive()) {
+      if ((jsonObj.get("custom") != null && !jsonObj.get("custom").isJsonNull()) && !jsonObj.get("custom").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `custom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom").toString()));
       }
-      if (jsonObj.get("custom2") != null && !jsonObj.get("custom2").isJsonPrimitive()) {
+      if ((jsonObj.get("custom2") != null && !jsonObj.get("custom2").isJsonNull()) && !jsonObj.get("custom2").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `custom2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom2").toString()));
       }
-      if (jsonObj.get("custom3") != null && !jsonObj.get("custom3").isJsonPrimitive()) {
+      if ((jsonObj.get("custom3") != null && !jsonObj.get("custom3").isJsonNull()) && !jsonObj.get("custom3").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `custom3` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom3").toString()));
       }
-      if (jsonObj.get("custom4") != null && !jsonObj.get("custom4").isJsonPrimitive()) {
+      if ((jsonObj.get("custom4") != null && !jsonObj.get("custom4").isJsonNull()) && !jsonObj.get("custom4").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `custom4` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom4").toString()));
       }
   }
@@ -495,9 +455,9 @@ public class ContactFields {
 
            @Override
            public ContactFields read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

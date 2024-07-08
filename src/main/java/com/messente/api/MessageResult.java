@@ -14,16 +14,14 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.Channel;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.UUID;
 
 import com.google.gson.Gson;
@@ -36,12 +34,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -49,8 +51,7 @@ import com.messente.JSON;
 /**
  * A message part of an omnimessage
  */
-@ApiModel(description = "A message part of an omnimessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class MessageResult {
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
@@ -64,11 +65,10 @@ public class MessageResult {
   @SerializedName(SERIALIZED_NAME_SENDER)
   private String sender;
 
-  public MessageResult() { 
+  public MessageResult() {
   }
 
   public MessageResult messageId(UUID messageId) {
-    
     this.messageId = messageId;
     return this;
   }
@@ -78,12 +78,9 @@ public class MessageResult {
    * @return messageId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Unique identifier for the message")
-
   public UUID getMessageId() {
     return messageId;
   }
-
 
   public void setMessageId(UUID messageId) {
     this.messageId = messageId;
@@ -91,7 +88,6 @@ public class MessageResult {
 
 
   public MessageResult channel(Channel channel) {
-    
     this.channel = channel;
     return this;
   }
@@ -101,12 +97,9 @@ public class MessageResult {
    * @return channel
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
   public Channel getChannel() {
     return channel;
   }
-
 
   public void setChannel(Channel channel) {
     this.channel = channel;
@@ -114,7 +107,6 @@ public class MessageResult {
 
 
   public MessageResult sender(String sender) {
-    
     this.sender = sender;
     return this;
   }
@@ -124,12 +116,9 @@ public class MessageResult {
    * @return sender
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Sender that was used for the message")
-
   public String getSender() {
     return sender;
   }
-
 
   public void setSender(String sender) {
     this.sender = sender;
@@ -197,38 +186,39 @@ public class MessageResult {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to MessageResult
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to MessageResult
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (MessageResult.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!MessageResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in MessageResult is not found in the empty JSON string", MessageResult.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!MessageResult.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `MessageResult` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `MessageResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : MessageResult.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("message_id") != null && !jsonObj.get("message_id").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("message_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `message_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message_id").toString()));
       }
-      if (jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonPrimitive()) {
+      // validate the required field `channel`
+      Channel.validateJsonElement(jsonObj.get("channel"));
+      if (!jsonObj.get("sender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
       }
   }
@@ -253,9 +243,9 @@ public class MessageResult {
 
            @Override
            public MessageResult read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

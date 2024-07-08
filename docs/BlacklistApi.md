@@ -10,7 +10,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**isBlacklisted**](BlacklistApi.md#isBlacklisted) | **GET** /phonebook/blacklist/{phone} | Checks if a phone number is blacklisted |
 
 
-<a name="addToBlacklist"></a>
+<a id="addToBlacklist"></a>
 # **addToBlacklist**
 > addToBlacklist(numberToBlacklist)
 
@@ -79,7 +79,7 @@ null (empty response body)
 | **409** | Phone number already blacklisted |  -  |
 | **0** | General error |  -  |
 
-<a name="deleteFromBlacklist"></a>
+<a id="deleteFromBlacklist"></a>
 # **deleteFromBlacklist**
 > deleteFromBlacklist(phone)
 
@@ -148,7 +148,7 @@ null (empty response body)
 | **404** | Phone number is not in the blacklist |  -  |
 | **0** | General error |  -  |
 
-<a name="fetchBlacklist"></a>
+<a id="fetchBlacklist"></a>
 # **fetchBlacklist**
 > FetchBlacklistSuccess fetchBlacklist()
 
@@ -212,7 +212,7 @@ This endpoint does not need any parameter.
 | **401** | Unauthorized |  -  |
 | **0** | General error |  -  |
 
-<a name="isBlacklisted"></a>
+<a id="isBlacklisted"></a>
 # **isBlacklisted**
 > isBlacklisted(phone)
 

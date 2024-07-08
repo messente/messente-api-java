@@ -14,17 +14,15 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.MessageResult;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,12 +36,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -51,8 +53,7 @@ import com.messente.JSON;
 /**
  * A container for a response received after successfully created omnimessage
  */
-@ApiModel(description = "A container for a response received after successfully created omnimessage")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class OmniMessageCreateSuccessResponse {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
@@ -66,16 +67,18 @@ public class OmniMessageCreateSuccessResponse {
   @SerializedName(SERIALIZED_NAME_OMNIMESSAGE_ID)
   private UUID omnimessageId;
 
-  public OmniMessageCreateSuccessResponse() { 
+  public OmniMessageCreateSuccessResponse() {
   }
 
   public OmniMessageCreateSuccessResponse messages(List<MessageResult> messages) {
-    
     this.messages = messages;
     return this;
   }
 
   public OmniMessageCreateSuccessResponse addMessagesItem(MessageResult messagesItem) {
+    if (this.messages == null) {
+      this.messages = new ArrayList<>();
+    }
     this.messages.add(messagesItem);
     return this;
   }
@@ -85,12 +88,9 @@ public class OmniMessageCreateSuccessResponse {
    * @return messages
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "List of messages that compose the omnimessage")
-
   public List<MessageResult> getMessages() {
     return messages;
   }
-
 
   public void setMessages(List<MessageResult> messages) {
     this.messages = messages;
@@ -98,7 +98,6 @@ public class OmniMessageCreateSuccessResponse {
 
 
   public OmniMessageCreateSuccessResponse to(String to) {
-    
     this.to = to;
     return this;
   }
@@ -108,12 +107,9 @@ public class OmniMessageCreateSuccessResponse {
    * @return to
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Phone number in e.164 format")
-
   public String getTo() {
     return to;
   }
-
 
   public void setTo(String to) {
     this.to = to;
@@ -121,7 +117,6 @@ public class OmniMessageCreateSuccessResponse {
 
 
   public OmniMessageCreateSuccessResponse omnimessageId(UUID omnimessageId) {
-    
     this.omnimessageId = omnimessageId;
     return this;
   }
@@ -131,12 +126,9 @@ public class OmniMessageCreateSuccessResponse {
    * @return omnimessageId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Unique identifier for the omnimessage")
-
   public UUID getOmnimessageId() {
     return omnimessageId;
   }
-
 
   public void setOmnimessageId(UUID omnimessageId) {
     this.omnimessageId = omnimessageId;
@@ -204,50 +196,47 @@ public class OmniMessageCreateSuccessResponse {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OmniMessageCreateSuccessResponse
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to OmniMessageCreateSuccessResponse
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (OmniMessageCreateSuccessResponse.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!OmniMessageCreateSuccessResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in OmniMessageCreateSuccessResponse is not found in the empty JSON string", OmniMessageCreateSuccessResponse.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!OmniMessageCreateSuccessResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OmniMessageCreateSuccessResponse` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OmniMessageCreateSuccessResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : OmniMessageCreateSuccessResponse.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
-      if (jsonArraymessages != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("messages").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
-        }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("messages").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `messages` to be an array in the JSON string but got `%s`", jsonObj.get("messages").toString()));
+      }
 
-        // validate the optional field `messages` (array)
-        for (int i = 0; i < jsonArraymessages.size(); i++) {
-          MessageResult.validateJsonObject(jsonArraymessages.get(i).getAsJsonObject());
-        };
-      }
-      if (jsonObj.get("to") != null && !jsonObj.get("to").isJsonPrimitive()) {
+      JsonArray jsonArraymessages = jsonObj.getAsJsonArray("messages");
+      // validate the required field `messages` (array)
+      for (int i = 0; i < jsonArraymessages.size(); i++) {
+        MessageResult.validateJsonElement(jsonArraymessages.get(i));
+      };
+      if (!jsonObj.get("to").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `to` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to").toString()));
       }
-      if (jsonObj.get("omnimessage_id") != null && !jsonObj.get("omnimessage_id").isJsonPrimitive()) {
+      if (!jsonObj.get("omnimessage_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `omnimessage_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("omnimessage_id").toString()));
       }
   }
@@ -272,9 +261,9 @@ public class OmniMessageCreateSuccessResponse {
 
            @Override
            public OmniMessageCreateSuccessResponse read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();

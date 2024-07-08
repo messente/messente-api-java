@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class StatisticsApi {
     private ApiClient localVarApiClient;
@@ -138,15 +137,12 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createStatisticsReportValidateBeforeCall(StatisticsReportSettings statisticsReportSettings, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'statisticsReportSettings' is set
         if (statisticsReportSettings == null) {
             throw new ApiException("Missing the required parameter 'statisticsReportSettings' when calling createStatisticsReport(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = createStatisticsReportCall(statisticsReportSettings, _callback);
-        return localVarCall;
+        return createStatisticsReportCall(statisticsReportSettings, _callback);
 
     }
 

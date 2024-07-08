@@ -14,15 +14,13 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -35,12 +33,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import com.messente.JSON;
@@ -48,8 +50,7 @@ import com.messente.JSON;
 /**
  * A container for fields of a group
  */
-@ApiModel(description = "A container for fields of a group")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class GroupResponseFields {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -67,11 +68,10 @@ public class GroupResponseFields {
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
   private Integer contactsCount;
 
-  public GroupResponseFields() { 
+  public GroupResponseFields() {
   }
 
   public GroupResponseFields id(String id) {
-    
     this.id = id;
     return this;
   }
@@ -81,12 +81,9 @@ public class GroupResponseFields {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Id string in UUID format")
-
   public String getId() {
     return id;
   }
-
 
   public void setId(String id) {
     this.id = id;
@@ -94,7 +91,6 @@ public class GroupResponseFields {
 
 
   public GroupResponseFields name(String name) {
-    
     this.name = name;
     return this;
   }
@@ -104,12 +100,9 @@ public class GroupResponseFields {
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The name of the group")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -117,7 +110,6 @@ public class GroupResponseFields {
 
 
   public GroupResponseFields createdOn(String createdOn) {
-    
     this.createdOn = createdOn;
     return this;
   }
@@ -127,12 +119,9 @@ public class GroupResponseFields {
    * @return createdOn
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "When the group was created")
-
   public String getCreatedOn() {
     return createdOn;
   }
-
 
   public void setCreatedOn(String createdOn) {
     this.createdOn = createdOn;
@@ -140,7 +129,6 @@ public class GroupResponseFields {
 
 
   public GroupResponseFields contactsCount(Integer contactsCount) {
-    
     this.contactsCount = contactsCount;
     return this;
   }
@@ -150,12 +138,9 @@ public class GroupResponseFields {
    * @return contactsCount
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The count of contacts in the group")
-
   public Integer getContactsCount() {
     return contactsCount;
   }
-
 
   public void setContactsCount(Integer contactsCount) {
     this.contactsCount = contactsCount;
@@ -237,41 +222,40 @@ public class GroupResponseFields {
   }
 
  /**
-  * Validates the JSON Object and throws an exception if issues found
+  * Validates the JSON Element and throws an exception if issues found
   *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to GroupResponseFields
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to GroupResponseFields
   */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-      if (jsonObj == null) {
-        if (GroupResponseFields.openapiRequiredFields.isEmpty()) {
-          return;
-        } else { // has required fields
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!GroupResponseFields.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in GroupResponseFields is not found in the empty JSON string", GroupResponseFields.openapiRequiredFields.toString()));
         }
       }
 
-      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
-      for (Entry<String, JsonElement> entry : entries) {
+      for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GroupResponseFields.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupResponseFields` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupResponseFields` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : GroupResponseFields.openapiRequiredFields) {
-        if (jsonObj.get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      if (jsonObj.get("id") != null && !jsonObj.get("id").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (jsonObj.get("createdOn") != null && !jsonObj.get("createdOn").isJsonPrimitive()) {
+      if ((jsonObj.get("createdOn") != null && !jsonObj.get("createdOn").isJsonNull()) && !jsonObj.get("createdOn").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `createdOn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdOn").toString()));
       }
   }
@@ -296,9 +280,9 @@ public class GroupResponseFields {
 
            @Override
            public GroupResponseFields read(JsonReader in) throws IOException {
-             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
-             validateJsonObject(jsonObj);
-             return thisAdapter.fromJsonTree(jsonObj);
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
            }
 
        }.nullSafe();
