@@ -51,6 +51,7 @@ docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
 docs/OmnimessageApi.md
 docs/OmnimessageMessagesInner.md
+docs/PriceInfo.md
 docs/Priority.md
 docs/SMS.md
 docs/StatisticsApi.md
@@ -139,6 +140,7 @@ src/main/java/com/messente/api/OmniMessageCreateSuccessResponse.java
 src/main/java/com/messente/api/Omnimessage.java
 src/main/java/com/messente/api/OmnimessageApi.java
 src/main/java/com/messente/api/OmnimessageMessagesInner.java
+src/main/java/com/messente/api/PriceInfo.java
 src/main/java/com/messente/api/Priority.java
 src/main/java/com/messente/api/SMS.java
 src/main/java/com/messente/api/StatisticsApi.java
