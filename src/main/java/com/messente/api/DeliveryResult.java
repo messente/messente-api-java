@@ -86,6 +86,10 @@ public class DeliveryResult {
   @SerializedName(SERIALIZED_NAME_PRICE_INFO)
   private PriceInfo priceInfo;
 
+  public static final String SERIALIZED_NAME_SENDER = "sender";
+  @SerializedName(SERIALIZED_NAME_SENDER)
+  private String sender;
+
   public DeliveryResult() {
   }
 
@@ -222,6 +226,25 @@ public class DeliveryResult {
   }
 
 
+  public DeliveryResult sender(String sender) {
+    this.sender = sender;
+    return this;
+  }
+
+   /**
+   * the sender of the message
+   * @return sender
+  **/
+  @javax.annotation.Nullable
+  public String getSender() {
+    return sender;
+  }
+
+  public void setSender(String sender) {
+    this.sender = sender;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -238,7 +261,8 @@ public class DeliveryResult {
         Objects.equals(this.error, deliveryResult.error) &&
         Objects.equals(this.err, deliveryResult.err) &&
         Objects.equals(this.timestamp, deliveryResult.timestamp) &&
-        Objects.equals(this.priceInfo, deliveryResult.priceInfo);
+        Objects.equals(this.priceInfo, deliveryResult.priceInfo) &&
+        Objects.equals(this.sender, deliveryResult.sender);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -247,7 +271,7 @@ public class DeliveryResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, channel, messageId, error, err, timestamp, priceInfo);
+    return Objects.hash(status, channel, messageId, error, err, timestamp, priceInfo, sender);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -268,6 +292,7 @@ public class DeliveryResult {
     sb.append("    err: ").append(toIndentedString(err)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    priceInfo: ").append(toIndentedString(priceInfo)).append("\n");
+    sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -297,6 +322,7 @@ public class DeliveryResult {
     openapiFields.add("err");
     openapiFields.add("timestamp");
     openapiFields.add("price_info");
+    openapiFields.add("sender");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -344,6 +370,9 @@ public class DeliveryResult {
       // validate the optional field `price_info`
       if (jsonObj.get("price_info") != null && !jsonObj.get("price_info").isJsonNull()) {
         PriceInfo.validateJsonElement(jsonObj.get("price_info"));
+      }
+      if ((jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonNull()) && !jsonObj.get("sender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
       }
   }
 

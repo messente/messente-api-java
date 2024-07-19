@@ -15,6 +15,7 @@ A delivery report
 |**err** | **ErrorCodeOmnichannelMachine** |  |  [optional] |
 |**timestamp** | **OffsetDateTime** | When this status was received by Omnichannel API |  [optional] |
 |**priceInfo** | [**PriceInfo**](PriceInfo.md) |  |  [optional] |
+|**sender** | **String** | the sender of the message |  [optional] |
 
 
 
