@@ -5,7 +5,7 @@
     <artifactId>messente-api</artifactId>
     <packaging>jar</packaging>
     <name>messente-api</name>
-    <version>4.0.0</version>
+    <version>4.1.0</version>
     <url>https://github.com/messente/messente-api-java</url>
     <description>Java library for Messente API</description>
     <scm>
