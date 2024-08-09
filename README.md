@@ -12,7 +12,9 @@ Install Messente API library via Maven, Gradle, Ivy or manual build.
 ### Gradle
 
 ```groovy
-compile "com.messente.api:messente-api:4.2.0"
+dependencies {
+    implementation 'com.messente.api:messente-api:4.2.0'
+}
 ```
 
 ### Maven
@@ -22,16 +24,13 @@ compile "com.messente.api:messente-api:4.2.0"
   <groupId>com.messente.api</groupId>
   <artifactId>messente-api</artifactId>
   <version>4.2.0</version>
-  <type>pom</type>
 </dependency>
 ```
 
 ### Ivy
 
 ```xml
-<dependency org='com.messente.api' name='messente-api' rev='4.2.0'>
-  <artifact name='messente-api' ext='pom' ></artifact>
-</dependency>
+<dependency org='com.messente.api' name='messente-api' rev='4.2.0'/>
 ```
 
 ### Manual Build
