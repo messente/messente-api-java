@@ -16,7 +16,6 @@ Viber message content
 |**buttonUrl** | **String** | URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**buttonText** | **String** | Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional] |
-|**video** | [**ViberVideo**](ViberVideo.md) |  |  [optional] |
 
 
 
