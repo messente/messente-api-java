@@ -64,6 +64,7 @@ docs/SyncNumberLookupSuccess.md
 docs/Telegram.md
 docs/TextStore.md
 docs/Viber.md
+docs/ViberVideo.md
 docs/WhatsApp.md
 docs/WhatsAppComponent.md
 docs/WhatsAppCurrency.md
@@ -153,6 +154,7 @@ src/main/java/com/messente/api/SyncNumberLookupSuccess.java
 src/main/java/com/messente/api/Telegram.java
 src/main/java/com/messente/api/TextStore.java
 src/main/java/com/messente/api/Viber.java
+src/main/java/com/messente/api/ViberVideo.java
 src/main/java/com/messente/api/WhatsApp.java
 src/main/java/com/messente/api/WhatsAppComponent.java
 src/main/java/com/messente/api/WhatsAppCurrency.java

@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import com.messente.api.SMS;
 import com.messente.api.Telegram;
 import com.messente.api.Viber;
+import com.messente.api.ViberVideo;
 import com.messente.api.WhatsApp;
 import com.messente.api.WhatsAppTemplate;
 import java.io.IOException;
