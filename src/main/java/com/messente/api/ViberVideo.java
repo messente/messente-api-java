@@ -19,11 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppParameter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -68,7 +65,7 @@ public class ViberVideo {
 
   public static final String SERIALIZED_NAME_DURATION = "duration";
   @SerializedName(SERIALIZED_NAME_DURATION)
-  private List<WhatsAppParameter> duration = new ArrayList<>();
+  private Integer duration;
 
   public ViberVideo() {
   }
@@ -130,16 +127,8 @@ public class ViberVideo {
   }
 
 
-  public ViberVideo duration(List<WhatsAppParameter> duration) {
+  public ViberVideo duration(Integer duration) {
     this.duration = duration;
-    return this;
-  }
-
-  public ViberVideo addDurationItem(WhatsAppParameter durationItem) {
-    if (this.duration == null) {
-      this.duration = new ArrayList<>();
-    }
-    this.duration.add(durationItem);
     return this;
   }
 
@@ -148,11 +137,11 @@ public class ViberVideo {
    * @return duration
   **/
   @javax.annotation.Nonnull
-  public List<WhatsAppParameter> getDuration() {
+  public Integer getDuration() {
     return duration;
   }
 
-  public void setDuration(List<WhatsAppParameter> duration) {
+  public void setDuration(Integer duration) {
     this.duration = duration;
   }
 
@@ -293,16 +282,6 @@ public class ViberVideo {
       if (!jsonObj.get("thumbnail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `thumbnail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thumbnail").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("duration").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `duration` to be an array in the JSON string but got `%s`", jsonObj.get("duration").toString()));
-      }
-
-      JsonArray jsonArrayduration = jsonObj.getAsJsonArray("duration");
-      // validate the required field `duration` (array)
-      for (int i = 0; i < jsonArrayduration.size(); i++) {
-        WhatsAppParameter.validateJsonElement(jsonArrayduration.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
