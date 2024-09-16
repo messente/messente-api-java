@@ -140,6 +140,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.SyncNumberLookupSuccess.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Telegram.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Viber.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.ViberVideo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsApp.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppComponent.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppCurrency.CustomTypeAdapterFactory());

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.ViberVideo;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -132,6 +133,10 @@ public class Viber {
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   private ChannelEnum channel = ChannelEnum.VIBER;
+
+  public static final String SERIALIZED_NAME_VIDEO = "video";
+  @SerializedName(SERIALIZED_NAME_VIDEO)
+  private ViberVideo video;
 
   public Viber() {
   }
@@ -287,6 +292,25 @@ public class Viber {
     this.channel = channel;
   }
 
+
+  public Viber video(ViberVideo video) {
+    this.video = video;
+    return this;
+  }
+
+   /**
+   * Get video
+   * @return video
+  **/
+  @javax.annotation.Nullable
+  public ViberVideo getVideo() {
+    return video;
+  }
+
+  public void setVideo(ViberVideo video) {
+    this.video = video;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -349,13 +373,14 @@ public class Viber {
         Objects.equals(this.imageUrl, viber.imageUrl) &&
         Objects.equals(this.buttonUrl, viber.buttonUrl) &&
         Objects.equals(this.buttonText, viber.buttonText) &&
-        Objects.equals(this.channel, viber.channel)&&
+        Objects.equals(this.channel, viber.channel) &&
+        Objects.equals(this.video, viber.video)&&
         Objects.equals(this.additionalProperties, viber.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, text, imageUrl, buttonUrl, buttonText, channel, additionalProperties);
+    return Objects.hash(sender, validity, ttl, text, imageUrl, buttonUrl, buttonText, channel, video, additionalProperties);
   }
 
   @Override
@@ -370,6 +395,7 @@ public class Viber {
     sb.append("    buttonUrl: ").append(toIndentedString(buttonUrl)).append("\n");
     sb.append("    buttonText: ").append(toIndentedString(buttonText)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -401,6 +427,7 @@ public class Viber {
     openapiFields.add("button_url");
     openapiFields.add("button_text");
     openapiFields.add("channel");
+    openapiFields.add("video");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -440,6 +467,10 @@ public class Viber {
       // validate the optional field `channel`
       if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
         ChannelEnum.validateJsonElement(jsonObj.get("channel"));
+      }
+      // validate the optional field `video`
+      if (jsonObj.get("video") != null && !jsonObj.get("video").isJsonNull()) {
+        ViberVideo.validateJsonElement(jsonObj.get("video"));
       }
   }
 
