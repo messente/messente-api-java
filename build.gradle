@@ -94,6 +94,9 @@ def skipSigning = project.hasProperty('skipSigning')
 // Configure signing only if skipSigning property is not set
 if (!skipSigning) {
     signing {
+        def signingKey = findProperty("signingKey")
+        def signingPassword = findProperty("signingPassword")
+        useInMemoryPgpKeys(signingKey, signingPassword)
         sign publishing.publications.mavenJava
     }
 }
