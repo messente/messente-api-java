@@ -20,4 +20,4 @@ jobs:
             ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_PASSWORD }}
             ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.PGP_SECRET }}
             ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.PGP_PASSPHRASE }}
-        run: ./gradlew publishToSonatype --no-daemon
+        run: ./gradlew publishAllPublicationsToMavenCentralRepository --no-configuration-cache --no-daemon
