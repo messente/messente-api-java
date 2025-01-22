@@ -149,6 +149,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppMedia.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppParameter.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppTemplate.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppText.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

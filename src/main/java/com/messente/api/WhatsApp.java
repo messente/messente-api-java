@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.messente.api.WhatsAppTemplate;
+import com.messente.api.WhatsAppText;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -67,6 +68,10 @@ public class WhatsApp {
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
   private WhatsAppTemplate template;
+
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
+  private WhatsAppText text;
 
   /**
    * The channel used to deliver the message
@@ -201,6 +206,25 @@ public class WhatsApp {
   }
 
 
+  public WhatsApp text(WhatsAppText text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * Get text
+   * @return text
+  **/
+  @javax.annotation.Nullable
+  public WhatsAppText getText() {
+    return text;
+  }
+
+  public void setText(WhatsAppText text) {
+    this.text = text;
+  }
+
+
   public WhatsApp channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
@@ -278,13 +302,14 @@ public class WhatsApp {
         Objects.equals(this.validity, whatsApp.validity) &&
         Objects.equals(this.ttl, whatsApp.ttl) &&
         Objects.equals(this.template, whatsApp.template) &&
+        Objects.equals(this.text, whatsApp.text) &&
         Objects.equals(this.channel, whatsApp.channel)&&
         Objects.equals(this.additionalProperties, whatsApp.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, template, channel, additionalProperties);
+    return Objects.hash(sender, validity, ttl, template, text, channel, additionalProperties);
   }
 
   @Override
@@ -295,6 +320,7 @@ public class WhatsApp {
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -323,6 +349,7 @@ public class WhatsApp {
     openapiFields.add("validity");
     openapiFields.add("ttl");
     openapiFields.add("template");
+    openapiFields.add("text");
     openapiFields.add("channel");
 
     // a set of required properties/fields (JSON key names)
@@ -348,6 +375,10 @@ public class WhatsApp {
       // validate the optional field `template`
       if (jsonObj.get("template") != null && !jsonObj.get("template").isJsonNull()) {
         WhatsAppTemplate.validateJsonElement(jsonObj.get("template"));
+      }
+      // validate the optional field `text`
+      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) {
+        WhatsAppText.validateJsonElement(jsonObj.get("text"));
       }
       if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));

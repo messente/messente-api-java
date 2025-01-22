@@ -15,6 +15,8 @@ Whatsapp component parameter.
 |**image** | [**WhatsAppMedia**](WhatsAppMedia.md) |  |  [optional] |
 |**document** | [**WhatsAppMedia**](WhatsAppMedia.md) |  |  [optional] |
 |**video** | [**WhatsAppMedia**](WhatsAppMedia.md) |  |  [optional] |
+|**couponCode** | **String** | A coupon code. |  [optional] |
+|**payload** | **String** | A payload. |  [optional] |
 
 
 

@@ -82,6 +82,14 @@ public class WhatsAppParameter {
   @SerializedName(SERIALIZED_NAME_VIDEO)
   private WhatsAppMedia video;
 
+  public static final String SERIALIZED_NAME_COUPON_CODE = "coupon_code";
+  @SerializedName(SERIALIZED_NAME_COUPON_CODE)
+  private String couponCode;
+
+  public static final String SERIALIZED_NAME_PAYLOAD = "payload";
+  @SerializedName(SERIALIZED_NAME_PAYLOAD)
+  private String payload;
+
   public WhatsAppParameter() {
   }
 
@@ -217,6 +225,44 @@ public class WhatsAppParameter {
     this.video = video;
   }
 
+
+  public WhatsAppParameter couponCode(String couponCode) {
+    this.couponCode = couponCode;
+    return this;
+  }
+
+   /**
+   * A coupon code.
+   * @return couponCode
+  **/
+  @javax.annotation.Nullable
+  public String getCouponCode() {
+    return couponCode;
+  }
+
+  public void setCouponCode(String couponCode) {
+    this.couponCode = couponCode;
+  }
+
+
+  public WhatsAppParameter payload(String payload) {
+    this.payload = payload;
+    return this;
+  }
+
+   /**
+   * A payload.
+   * @return payload
+  **/
+  @javax.annotation.Nullable
+  public String getPayload() {
+    return payload;
+  }
+
+  public void setPayload(String payload) {
+    this.payload = payload;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -278,13 +324,15 @@ public class WhatsAppParameter {
         Objects.equals(this.dateTime, whatsAppParameter.dateTime) &&
         Objects.equals(this.image, whatsAppParameter.image) &&
         Objects.equals(this.document, whatsAppParameter.document) &&
-        Objects.equals(this.video, whatsAppParameter.video)&&
+        Objects.equals(this.video, whatsAppParameter.video) &&
+        Objects.equals(this.couponCode, whatsAppParameter.couponCode) &&
+        Objects.equals(this.payload, whatsAppParameter.payload)&&
         Objects.equals(this.additionalProperties, whatsAppParameter.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, currency, dateTime, image, document, video, additionalProperties);
+    return Objects.hash(type, text, currency, dateTime, image, document, video, couponCode, payload, additionalProperties);
   }
 
   @Override
@@ -298,6 +346,8 @@ public class WhatsAppParameter {
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    couponCode: ").append(toIndentedString(couponCode)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -328,6 +378,8 @@ public class WhatsAppParameter {
     openapiFields.add("image");
     openapiFields.add("document");
     openapiFields.add("video");
+    openapiFields.add("coupon_code");
+    openapiFields.add("payload");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -379,6 +431,12 @@ public class WhatsAppParameter {
       // validate the optional field `video`
       if (jsonObj.get("video") != null && !jsonObj.get("video").isJsonNull()) {
         WhatsAppMedia.validateJsonElement(jsonObj.get("video"));
+      }
+      if ((jsonObj.get("coupon_code") != null && !jsonObj.get("coupon_code").isJsonNull()) && !jsonObj.get("coupon_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `coupon_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("coupon_code").toString()));
+      }
+      if ((jsonObj.get("payload") != null && !jsonObj.get("payload").isJsonNull()) && !jsonObj.get("payload").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("payload").toString()));
       }
   }
 

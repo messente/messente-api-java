@@ -73,6 +73,7 @@ docs/WhatsAppLanguage.md
 docs/WhatsAppMedia.md
 docs/WhatsAppParameter.md
 docs/WhatsAppTemplate.md
+docs/WhatsAppText.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -163,6 +164,7 @@ src/main/java/com/messente/api/WhatsAppLanguage.java
 src/main/java/com/messente/api/WhatsAppMedia.java
 src/main/java/com/messente/api/WhatsAppParameter.java
 src/main/java/com/messente/api/WhatsAppTemplate.java
+src/main/java/com/messente/api/WhatsAppText.java
 src/main/java/com/messente/auth/ApiKeyAuth.java
 src/main/java/com/messente/auth/Authentication.java
 src/main/java/com/messente/auth/HttpBasicAuth.java
