@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class GroupsApi {
     private ApiClient localVarApiClient;
@@ -83,7 +82,8 @@ public class GroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -138,15 +138,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createGroupValidateBeforeCall(GroupName groupName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupName' is set
         if (groupName == null) {
             throw new ApiException("Missing the required parameter 'groupName' when calling createGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = createGroupCall(groupName, _callback);
-        return localVarCall;
+        return createGroupCall(groupName, _callback);
 
     }
 
@@ -157,7 +154,8 @@ public class GroupsApi {
      * @return GroupEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -177,7 +175,8 @@ public class GroupsApi {
      * @return ApiResponse&lt;GroupEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -199,7 +198,8 @@ public class GroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -221,7 +221,8 @@ public class GroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Group deleted </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -247,7 +248,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -264,7 +265,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -277,15 +277,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteGroupValidateBeforeCall(String groupId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling deleteGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteGroupCall(groupId, _callback);
-        return localVarCall;
+        return deleteGroupCall(groupId, _callback);
 
     }
 
@@ -295,7 +292,8 @@ public class GroupsApi {
      * @param groupId String in UUID format (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Group deleted </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -314,7 +312,8 @@ public class GroupsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Group deleted </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -335,7 +334,8 @@ public class GroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Group deleted </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -356,7 +356,8 @@ public class GroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -381,7 +382,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -398,7 +399,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -411,15 +411,12 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchGroupValidateBeforeCall(String groupId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling fetchGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchGroupCall(groupId, _callback);
-        return localVarCall;
+        return fetchGroupCall(groupId, _callback);
 
     }
 
@@ -430,7 +427,8 @@ public class GroupsApi {
      * @return GroupEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -449,7 +447,8 @@ public class GroupsApi {
      * @return ApiResponse&lt;GroupEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -470,7 +469,8 @@ public class GroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -490,7 +490,8 @@ public class GroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -531,7 +532,6 @@ public class GroupsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -544,10 +544,7 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchGroupsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = fetchGroupsCall(_callback);
-        return localVarCall;
+        return fetchGroupsCall(_callback);
 
     }
 
@@ -557,7 +554,8 @@ public class GroupsApi {
      * @return GroupListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -575,7 +573,8 @@ public class GroupsApi {
      * @return ApiResponse&lt;GroupListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -595,7 +594,8 @@ public class GroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -617,7 +617,8 @@ public class GroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -644,7 +645,7 @@ public class GroupsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -674,20 +675,17 @@ public class GroupsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateGroupValidateBeforeCall(String groupId, GroupName groupName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling updateGroup(Async)");
         }
-        
+
         // verify the required parameter 'groupName' is set
         if (groupName == null) {
             throw new ApiException("Missing the required parameter 'groupName' when calling updateGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateGroupCall(groupId, groupName, _callback);
-        return localVarCall;
+        return updateGroupCall(groupId, groupName, _callback);
 
     }
 
@@ -699,7 +697,8 @@ public class GroupsApi {
      * @return GroupEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -721,7 +720,8 @@ public class GroupsApi {
      * @return ApiResponse&lt;GroupEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>
@@ -745,7 +745,8 @@ public class GroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a group object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Name is invalid string or shorter than length 1 </td><td>  -  </td></tr>

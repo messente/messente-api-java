@@ -7,7 +7,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**retrieveDeliveryReport**](DeliveryReportApi.md#retrieveDeliveryReport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage |
 
 
-<a name="retrieveDeliveryReport"></a>
+<a id="retrieveDeliveryReport"></a>
 # **retrieveDeliveryReport**
 > DeliveryReportResponse retrieveDeliveryReport(omnimessageId)
 

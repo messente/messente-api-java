@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class OmnimessageApi {
     private ApiClient localVarApiClient;
@@ -83,7 +82,8 @@ public class OmnimessageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -108,7 +108,7 @@ public class OmnimessageApi {
 
         // create path and map variables
         String localVarPath = "/omnimessage/{omnimessageId}"
-            .replaceAll("\\{" + "omnimessageId" + "\\}", localVarApiClient.escapeString(omnimessageId.toString()));
+            .replace("{" + "omnimessageId" + "}", localVarApiClient.escapeString(omnimessageId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -125,7 +125,6 @@ public class OmnimessageApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -138,15 +137,12 @@ public class OmnimessageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call cancelScheduledMessageValidateBeforeCall(UUID omnimessageId, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
             throw new ApiException("Missing the required parameter 'omnimessageId' when calling cancelScheduledMessage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = cancelScheduledMessageCall(omnimessageId, _callback);
-        return localVarCall;
+        return cancelScheduledMessageCall(omnimessageId, _callback);
 
     }
 
@@ -157,7 +153,8 @@ public class OmnimessageApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -176,7 +173,8 @@ public class OmnimessageApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -197,7 +195,8 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 202 </td><td> Scheduled omnimessage successfully cancelled </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -218,7 +217,8 @@ public class OmnimessageApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
@@ -272,15 +272,12 @@ public class OmnimessageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call sendOmnimessageValidateBeforeCall(Omnimessage omnimessage, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'omnimessage' is set
         if (omnimessage == null) {
             throw new ApiException("Missing the required parameter 'omnimessage' when calling sendOmnimessage(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = sendOmnimessageCall(omnimessage, _callback);
-        return localVarCall;
+        return sendOmnimessageCall(omnimessage, _callback);
 
     }
 
@@ -291,7 +288,8 @@ public class OmnimessageApi {
      * @return OmniMessageCreateSuccessResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
@@ -310,7 +308,8 @@ public class OmnimessageApi {
      * @return ApiResponse&lt;OmniMessageCreateSuccessResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>
@@ -331,7 +330,8 @@ public class OmnimessageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> Omnimessage success response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid input </td><td>  -  </td></tr>

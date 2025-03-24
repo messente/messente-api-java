@@ -7,7 +7,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**createStatisticsReport**](StatisticsApi.md#createStatisticsReport) | **POST** /statistics/reports | Requests statistics reports for each country |
 
 
-<a name="createStatisticsReport"></a>
+<a id="createStatisticsReport"></a>
 # **createStatisticsReport**
 > StatisticsReportSuccess createStatisticsReport(statisticsReportSettings)
 

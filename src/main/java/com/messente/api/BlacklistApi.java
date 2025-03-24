@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class BlacklistApi {
     private ApiClient localVarApiClient;
@@ -82,7 +81,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -138,15 +138,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addToBlacklistValidateBeforeCall(NumberToBlacklist numberToBlacklist, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'numberToBlacklist' is set
         if (numberToBlacklist == null) {
             throw new ApiException("Missing the required parameter 'numberToBlacklist' when calling addToBlacklist(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = addToBlacklistCall(numberToBlacklist, _callback);
-        return localVarCall;
+        return addToBlacklistCall(numberToBlacklist, _callback);
 
     }
 
@@ -156,7 +153,8 @@ public class BlacklistApi {
      * @param numberToBlacklist Phone number to be blacklisted (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -176,7 +174,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -198,7 +197,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -220,7 +220,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -247,7 +248,7 @@ public class BlacklistApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/blacklist/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -264,7 +265,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -277,15 +277,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteFromBlacklistValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling deleteFromBlacklist(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteFromBlacklistCall(phone, _callback);
-        return localVarCall;
+        return deleteFromBlacklistCall(phone, _callback);
 
     }
 
@@ -295,7 +292,8 @@ public class BlacklistApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -315,7 +313,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -337,7 +336,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -358,7 +358,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -399,7 +400,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -412,10 +412,7 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchBlacklistValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = fetchBlacklistCall(_callback);
-        return localVarCall;
+        return fetchBlacklistCall(_callback);
 
     }
 
@@ -425,7 +422,8 @@ public class BlacklistApi {
      * @return FetchBlacklistSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -443,7 +441,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;FetchBlacklistSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -463,7 +462,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -484,7 +484,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -510,7 +511,7 @@ public class BlacklistApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/blacklist/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -527,7 +528,6 @@ public class BlacklistApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -540,15 +540,12 @@ public class BlacklistApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call isBlacklistedValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling isBlacklisted(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = isBlacklistedCall(phone, _callback);
-        return localVarCall;
+        return isBlacklistedCall(phone, _callback);
 
     }
 
@@ -558,7 +555,8 @@ public class BlacklistApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -577,7 +575,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -598,7 +597,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>

@@ -14,7 +14,6 @@
 package com.messente.api;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,15 +22,13 @@ import com.google.gson.stream.JsonWriter;
 import com.messente.api.SMS;
 import com.messente.api.Telegram;
 import com.messente.api.Viber;
+import com.messente.api.ViberVideo;
 import com.messente.api.WhatsApp;
-import com.messente.api.WhatsAppAudio;
-import com.messente.api.WhatsAppDocument;
-import com.messente.api.WhatsAppImage;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.messente.api.WhatsAppTemplate;
 import java.io.IOException;
+import java.util.Arrays;
 
-import javax.ws.rs.core.GenericType;
+
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -41,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -60,11 +58,12 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 
 import com.messente.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(OmnimessageMessagesInner.class.getName());
 
@@ -76,10 +75,10 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'OmnimessageMessagesInner' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SMS> adapterSMS = gson.getDelegateAdapter(this, TypeToken.get(SMS.class));
-            final TypeAdapter<Telegram> adapterTelegram = gson.getDelegateAdapter(this, TypeToken.get(Telegram.class));
             final TypeAdapter<Viber> adapterViber = gson.getDelegateAdapter(this, TypeToken.get(Viber.class));
+            final TypeAdapter<SMS> adapterSMS = gson.getDelegateAdapter(this, TypeToken.get(SMS.class));
             final TypeAdapter<WhatsApp> adapterWhatsApp = gson.getDelegateAdapter(this, TypeToken.get(WhatsApp.class));
+            final TypeAdapter<Telegram> adapterTelegram = gson.getDelegateAdapter(this, TypeToken.get(Telegram.class));
 
             return (TypeAdapter<T>) new TypeAdapter<OmnimessageMessagesInner>() {
                 @Override
@@ -89,50 +88,58 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
                         return;
                     }
 
-                    // check if the actual instance is of the type `SMS`
-                    if (value.getActualInstance() instanceof SMS) {
-                        JsonObject obj = adapterSMS.toJsonTree((SMS)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
-                    // check if the actual instance is of the type `Telegram`
-                    if (value.getActualInstance() instanceof Telegram) {
-                        JsonObject obj = adapterTelegram.toJsonTree((Telegram)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
-                        return;
-                    }
-
                     // check if the actual instance is of the type `Viber`
                     if (value.getActualInstance() instanceof Viber) {
-                        JsonObject obj = adapterViber.toJsonTree((Viber)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterViber.toJsonTree((Viber)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
+                    // check if the actual instance is of the type `SMS`
+                    if (value.getActualInstance() instanceof SMS) {
+                        JsonElement element = adapterSMS.toJsonTree((SMS)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `WhatsApp`
                     if (value.getActualInstance() instanceof WhatsApp) {
-                        JsonObject obj = adapterWhatsApp.toJsonTree((WhatsApp)value.getActualInstance()).getAsJsonObject();
-                        elementAdapter.write(out, obj);
+                        JsonElement element = adapterWhatsApp.toJsonTree((WhatsApp)value.getActualInstance());
+                        elementAdapter.write(out, element);
                         return;
                     }
-
+                    // check if the actual instance is of the type `Telegram`
+                    if (value.getActualInstance() instanceof Telegram) {
+                        JsonElement element = adapterTelegram.toJsonTree((Telegram)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: SMS, Telegram, Viber, WhatsApp");
                 }
 
                 @Override
                 public OmnimessageMessagesInner read(JsonReader in) throws IOException {
                     Object deserialized = null;
-                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+                    JsonElement jsonElement = elementAdapter.read(in);
 
                     int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize Viber
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        Viber.validateJsonElement(jsonElement);
+                        actualAdapter = adapterViber;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'Viber'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for Viber failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'Viber'", e);
+                    }
                     // deserialize SMS
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        SMS.validateJsonObject(jsonObject);
+                        SMS.validateJsonElement(jsonElement);
                         actualAdapter = adapterSMS;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'SMS'");
@@ -141,11 +148,22 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for SMS failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SMS'", e);
                     }
-
+                    // deserialize WhatsApp
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        WhatsApp.validateJsonElement(jsonElement);
+                        actualAdapter = adapterWhatsApp;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WhatsApp'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WhatsApp failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'WhatsApp'", e);
+                    }
                     // deserialize Telegram
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        Telegram.validateJsonObject(jsonObject);
+                        Telegram.validateJsonElement(jsonElement);
                         actualAdapter = adapterTelegram;
                         match++;
                         log.log(Level.FINER, "Input data matches schema 'Telegram'");
@@ -155,84 +173,39 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data does not match schema 'Telegram'", e);
                     }
 
-                    // deserialize Viber
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        Viber.validateJsonObject(jsonObject);
-                        actualAdapter = adapterViber;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'Viber'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Viber failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Viber'", e);
-                    }
-
-                    // deserialize WhatsApp
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        WhatsApp.validateJsonObject(jsonObject);
-                        actualAdapter = adapterWhatsApp;
-                        match++;
-                        log.log(Level.FINER, "Input data matches schema 'WhatsApp'");
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for WhatsApp failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'WhatsApp'", e);
-                    }
-
                     if (match == 1) {
                         OmnimessageMessagesInner ret = new OmnimessageMessagesInner();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for OmnimessageMessagesInner: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for OmnimessageMessagesInner: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
     // store a list of schema names defined in oneOf
-    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public OmnimessageMessagesInner() {
         super("oneOf", Boolean.FALSE);
     }
 
-    public OmnimessageMessagesInner(SMS o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public OmnimessageMessagesInner(Telegram o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public OmnimessageMessagesInner(Viber o) {
-        super("oneOf", Boolean.FALSE);
-        setActualInstance(o);
-    }
-
-    public OmnimessageMessagesInner(WhatsApp o) {
+    public OmnimessageMessagesInner(Object o) {
         super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("SMS", new GenericType<SMS>() {
-        });
-        schemas.put("Telegram", new GenericType<Telegram>() {
-        });
-        schemas.put("Viber", new GenericType<Viber>() {
-        });
-        schemas.put("WhatsApp", new GenericType<WhatsApp>() {
-        });
+        schemas.put("Viber", Viber.class);
+        schemas.put("SMS", SMS.class);
+        schemas.put("WhatsApp", WhatsApp.class);
+        schemas.put("Telegram", Telegram.class);
     }
 
     @Override
-    public Map<String, GenericType> getSchemas() {
+    public Map<String, Class<?>> getSchemas() {
         return OmnimessageMessagesInner.schemas;
     }
 
@@ -242,26 +215,25 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
      * SMS, Telegram, Viber, WhatsApp
      *
      * It could be an instance of the 'oneOf' schemas.
-     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance instanceof SMS) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        if (instance instanceof Telegram) {
-            super.setActualInstance(instance);
-            return;
-        }
-
         if (instance instanceof Viber) {
             super.setActualInstance(instance);
             return;
         }
 
+        if (instance instanceof SMS) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof WhatsApp) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof Telegram) {
             super.setActualInstance(instance);
             return;
         }
@@ -275,31 +247,10 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
      *
      * @return The actual instance (SMS, Telegram, Viber, WhatsApp)
      */
+    @SuppressWarnings("unchecked")
     @Override
     public Object getActualInstance() {
         return super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `SMS`. If the actual instance is not `SMS`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `SMS`
-     * @throws ClassCastException if the instance is not `SMS`
-     */
-    public SMS getSMS() throws ClassCastException {
-        return (SMS)super.getActualInstance();
-    }
-
-    /**
-     * Get the actual instance of `Telegram`. If the actual instance is not `Telegram`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `Telegram`
-     * @throws ClassCastException if the instance is not `Telegram`
-     */
-    public Telegram getTelegram() throws ClassCastException {
-        return (Telegram)super.getActualInstance();
     }
 
     /**
@@ -314,6 +265,17 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     }
 
     /**
+     * Get the actual instance of `SMS`. If the actual instance is not `SMS`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SMS`
+     * @throws ClassCastException if the instance is not `SMS`
+     */
+    public SMS getSMS() throws ClassCastException {
+        return (SMS)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `WhatsApp`. If the actual instance is not `WhatsApp`,
      * the ClassCastException will be thrown.
      *
@@ -324,72 +286,82 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
         return (WhatsApp)super.getActualInstance();
     }
 
+    /**
+     * Get the actual instance of `Telegram`. If the actual instance is not `Telegram`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `Telegram`
+     * @throws ClassCastException if the instance is not `Telegram`
+     */
+    public Telegram getTelegram() throws ClassCastException {
+        return (Telegram)super.getActualInstance();
+    }
 
- /**
-  * Validates the JSON Object and throws an exception if issues found
-  *
-  * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to OmnimessageMessagesInner
-  */
-  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
-    // validate oneOf schemas one by one
-    int validCount = 0;
-    ArrayList<String> errorMessages = new ArrayList<>();
-    // validate the json string with SMS
-    try {
-      SMS.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for SMS failed with `%s`.", e.getMessage()));
-      // continue to the next one
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to OmnimessageMessagesInner
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with Viber
+        try {
+            Viber.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for Viber failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with SMS
+        try {
+            SMS.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for SMS failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with WhatsApp
+        try {
+            WhatsApp.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for WhatsApp failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with Telegram
+        try {
+            Telegram.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for Telegram failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for OmnimessageMessagesInner with oneOf schemas: SMS, Telegram, Viber, WhatsApp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
-    // validate the json string with Telegram
-    try {
-      Telegram.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for Telegram failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with Viber
-    try {
-      Viber.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for Viber failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    // validate the json string with WhatsApp
-    try {
-      WhatsApp.validateJsonObject(jsonObj);
-      validCount++;
-    } catch (Exception e) {
-      errorMessages.add(String.format("Deserialization for WhatsApp failed with `%s`.", e.getMessage()));
-      // continue to the next one
-    }
-    if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for OmnimessageMessagesInner with oneOf schemas: SMS, Telegram, Viber, WhatsApp. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
-    }
-  }
 
- /**
-  * Create an instance of OmnimessageMessagesInner given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of OmnimessageMessagesInner
-  * @throws IOException if the JSON string is invalid with respect to OmnimessageMessagesInner
-  */
-  public static OmnimessageMessagesInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OmnimessageMessagesInner.class);
-  }
+    /**
+     * Create an instance of OmnimessageMessagesInner given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of OmnimessageMessagesInner
+     * @throws IOException if the JSON string is invalid with respect to OmnimessageMessagesInner
+     */
+    public static OmnimessageMessagesInner fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, OmnimessageMessagesInner.class);
+    }
 
- /**
-  * Convert an instance of OmnimessageMessagesInner to an JSON string
-  *
-  * @return JSON string
-  */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Convert an instance of OmnimessageMessagesInner to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

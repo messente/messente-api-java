@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class ContactsApi {
     private ApiClient localVarApiClient;
@@ -86,7 +85,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -114,8 +114,8 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()))
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()))
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -132,7 +132,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -145,20 +144,17 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addContactToGroupValidateBeforeCall(String groupId, String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling addContactToGroup(Async)");
         }
-        
+
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling addContactToGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = addContactToGroupCall(groupId, phone, _callback);
-        return localVarCall;
+        return addContactToGroupCall(groupId, phone, _callback);
 
     }
 
@@ -170,7 +166,8 @@ public class ContactsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -193,7 +190,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -218,7 +216,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -242,7 +241,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -298,15 +298,12 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createContactValidateBeforeCall(ContactFields contactFields, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'contactFields' is set
         if (contactFields == null) {
             throw new ApiException("Missing the required parameter 'contactFields' when calling createContact(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = createContactCall(contactFields, _callback);
-        return localVarCall;
+        return createContactCall(contactFields, _callback);
 
     }
 
@@ -317,7 +314,8 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -338,7 +336,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -361,7 +360,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -384,7 +384,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -411,7 +412,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -428,7 +429,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -441,15 +441,12 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteContactValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling deleteContact(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = deleteContactCall(phone, _callback);
-        return localVarCall;
+        return deleteContactCall(phone, _callback);
 
     }
 
@@ -459,7 +456,8 @@ public class ContactsApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -479,7 +477,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -501,7 +500,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -523,7 +523,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -549,7 +550,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -566,7 +567,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -579,15 +579,12 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling fetchContact(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchContactCall(phone, _callback);
-        return localVarCall;
+        return fetchContactCall(phone, _callback);
 
     }
 
@@ -598,7 +595,8 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -618,7 +616,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -640,7 +639,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -662,7 +662,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -688,7 +689,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}/groups"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -705,7 +706,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -718,15 +718,12 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactGroupsValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling fetchContactGroups(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchContactGroupsCall(phone, _callback);
-        return localVarCall;
+        return fetchContactGroupsCall(phone, _callback);
 
     }
 
@@ -737,7 +734,8 @@ public class ContactsApi {
      * @return GroupListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -757,7 +755,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;GroupListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -779,7 +778,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -801,7 +801,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -847,7 +848,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -860,10 +860,7 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactsValidateBeforeCall(List<String> groupIds, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = fetchContactsCall(groupIds, _callback);
-        return localVarCall;
+        return fetchContactsCall(groupIds, _callback);
 
     }
 
@@ -874,7 +871,8 @@ public class ContactsApi {
      * @return ContactListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -894,7 +892,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -916,7 +915,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -939,7 +939,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -966,8 +967,8 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
-            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()))
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()))
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -984,7 +985,6 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -997,20 +997,17 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call removeContactFromGroupValidateBeforeCall(String groupId, String phone, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling removeContactFromGroup(Async)");
         }
-        
+
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling removeContactFromGroup(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = removeContactFromGroupCall(groupId, phone, _callback);
-        return localVarCall;
+        return removeContactFromGroupCall(groupId, phone, _callback);
 
     }
 
@@ -1021,7 +1018,8 @@ public class ContactsApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1042,7 +1040,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1065,7 +1064,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1088,7 +1088,8 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1115,7 +1116,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
+            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1145,20 +1146,17 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateContactValidateBeforeCall(String phone, ContactUpdateFields contactUpdateFields, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling updateContact(Async)");
         }
-        
+
         // verify the required parameter 'contactUpdateFields' is set
         if (contactUpdateFields == null) {
             throw new ApiException("Missing the required parameter 'contactUpdateFields' when calling updateContact(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = updateContactCall(phone, contactUpdateFields, _callback);
-        return localVarCall;
+        return updateContactCall(phone, contactUpdateFields, _callback);
 
     }
 
@@ -1170,7 +1168,8 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1192,7 +1191,8 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1216,7 +1216,8 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>

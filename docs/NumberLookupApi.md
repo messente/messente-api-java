@@ -7,7 +7,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**fetchInfo**](NumberLookupApi.md#fetchInfo) | **POST** /hlr/sync | Requests info about phone numbers |
 
 
-<a name="fetchInfo"></a>
+<a id="fetchInfo"></a>
 # **fetchInfo**
 > SyncNumberLookupSuccess fetchInfo(numbersToInvestigate)
 

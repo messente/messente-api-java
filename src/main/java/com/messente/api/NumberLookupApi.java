@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.ws.rs.core.GenericType;
 
 public class NumberLookupApi {
     private ApiClient localVarApiClient;
@@ -82,7 +81,8 @@ public class NumberLookupApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Info about phone numbers returned </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -137,15 +137,12 @@ public class NumberLookupApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchInfoValidateBeforeCall(NumbersToInvestigate numbersToInvestigate, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'numbersToInvestigate' is set
         if (numbersToInvestigate == null) {
             throw new ApiException("Missing the required parameter 'numbersToInvestigate' when calling fetchInfo(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = fetchInfoCall(numbersToInvestigate, _callback);
-        return localVarCall;
+        return fetchInfoCall(numbersToInvestigate, _callback);
 
     }
 
@@ -156,7 +153,8 @@ public class NumberLookupApi {
      * @return SyncNumberLookupSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Info about phone numbers returned </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -176,7 +174,8 @@ public class NumberLookupApi {
      * @return ApiResponse&lt;SyncNumberLookupSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Info about phone numbers returned </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
@@ -198,7 +197,8 @@ public class NumberLookupApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Info about phone numbers returned </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid request </td><td>  -  </td></tr>
