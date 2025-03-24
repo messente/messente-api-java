@@ -11,7 +11,7 @@ All URIs are relative to *https://api.messente.com/v1*
 | [**updateGroup**](GroupsApi.md#updateGroup) | **PUT** /phonebook/groups/{groupId} | Updates a group with the provided name |
 
 
-<a id="createGroup"></a>
+<a name="createGroup"></a>
 # **createGroup**
 > GroupEnvelope createGroup(groupName)
 
@@ -80,7 +80,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **0** | General error |  -  |
 
-<a id="deleteGroup"></a>
+<a name="deleteGroup"></a>
 # **deleteGroup**
 > deleteGroup(groupId)
 
@@ -148,7 +148,7 @@ null (empty response body)
 | **404** | Group missing |  -  |
 | **0** | General error |  -  |
 
-<a id="fetchGroup"></a>
+<a name="fetchGroup"></a>
 # **fetchGroup**
 > GroupEnvelope fetchGroup(groupId)
 
@@ -216,7 +216,7 @@ public class Example {
 | **401** | Unauthorized |  -  |
 | **404** | Missing group |  -  |
 
-<a id="fetchGroups"></a>
+<a name="fetchGroups"></a>
 # **fetchGroups**
 > GroupListEnvelope fetchGroups()
 
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 | **401** | Unauthorized |  -  |
 | **0** | General error |  -  |
 
-<a id="updateGroup"></a>
+<a name="updateGroup"></a>
 # **updateGroup**
 > GroupEnvelope updateGroup(groupId, groupName)
 

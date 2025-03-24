@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ContactsApi {
     private ApiClient localVarApiClient;
@@ -113,8 +114,8 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
-            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()))
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()))
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -131,6 +132,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -143,17 +145,20 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call addContactToGroupValidateBeforeCall(String groupId, String phone, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling addContactToGroup(Async)");
         }
-
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling addContactToGroup(Async)");
         }
+        
 
-        return addContactToGroupCall(groupId, phone, _callback);
+        okhttp3.Call localVarCall = addContactToGroupCall(groupId, phone, _callback);
+        return localVarCall;
 
     }
 
@@ -293,12 +298,15 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createContactValidateBeforeCall(ContactFields contactFields, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'contactFields' is set
         if (contactFields == null) {
             throw new ApiException("Missing the required parameter 'contactFields' when calling createContact(Async)");
         }
+        
 
-        return createContactCall(contactFields, _callback);
+        okhttp3.Call localVarCall = createContactCall(contactFields, _callback);
+        return localVarCall;
 
     }
 
@@ -403,7 +411,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -420,6 +428,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -432,12 +441,15 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteContactValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling deleteContact(Async)");
         }
+        
 
-        return deleteContactCall(phone, _callback);
+        okhttp3.Call localVarCall = deleteContactCall(phone, _callback);
+        return localVarCall;
 
     }
 
@@ -537,7 +549,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -554,6 +566,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -566,12 +579,15 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling fetchContact(Async)");
         }
+        
 
-        return fetchContactCall(phone, _callback);
+        okhttp3.Call localVarCall = fetchContactCall(phone, _callback);
+        return localVarCall;
 
     }
 
@@ -672,7 +688,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}/groups"
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -689,6 +705,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -701,12 +718,15 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactGroupsValidateBeforeCall(String phone, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling fetchContactGroups(Async)");
         }
+        
 
-        return fetchContactGroupsCall(phone, _callback);
+        okhttp3.Call localVarCall = fetchContactGroupsCall(phone, _callback);
+        return localVarCall;
 
     }
 
@@ -827,6 +847,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -839,7 +860,10 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call fetchContactsValidateBeforeCall(List<String> groupIds, final ApiCallback _callback) throws ApiException {
-        return fetchContactsCall(groupIds, _callback);
+        
+
+        okhttp3.Call localVarCall = fetchContactsCall(groupIds, _callback);
+        return localVarCall;
 
     }
 
@@ -942,8 +966,8 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/groups/{groupId}/contacts/{phone}"
-            .replace("{" + "groupId" + "}", localVarApiClient.escapeString(groupId.toString()))
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "groupId" + "\\}", localVarApiClient.escapeString(groupId.toString()))
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -960,6 +984,7 @@ public class ContactsApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -972,17 +997,20 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call removeContactFromGroupValidateBeforeCall(String groupId, String phone, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'groupId' is set
         if (groupId == null) {
             throw new ApiException("Missing the required parameter 'groupId' when calling removeContactFromGroup(Async)");
         }
-
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling removeContactFromGroup(Async)");
         }
+        
 
-        return removeContactFromGroupCall(groupId, phone, _callback);
+        okhttp3.Call localVarCall = removeContactFromGroupCall(groupId, phone, _callback);
+        return localVarCall;
 
     }
 
@@ -1087,7 +1115,7 @@ public class ContactsApi {
 
         // create path and map variables
         String localVarPath = "/phonebook/contacts/{phone}"
-            .replace("{" + "phone" + "}", localVarApiClient.escapeString(phone.toString()));
+            .replaceAll("\\{" + "phone" + "\\}", localVarApiClient.escapeString(phone.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1117,17 +1145,20 @@ public class ContactsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateContactValidateBeforeCall(String phone, ContactUpdateFields contactUpdateFields, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'phone' is set
         if (phone == null) {
             throw new ApiException("Missing the required parameter 'phone' when calling updateContact(Async)");
         }
-
+        
         // verify the required parameter 'contactUpdateFields' is set
         if (contactUpdateFields == null) {
             throw new ApiException("Missing the required parameter 'contactUpdateFields' when calling updateContact(Async)");
         }
+        
 
-        return updateContactCall(phone, contactUpdateFields, _callback);
+        okhttp3.Call localVarCall = updateContactCall(phone, contactUpdateFields, _callback);
+        return localVarCall;
 
     }
 

@@ -13,11 +13,11 @@
 
 package com.messente;
 
-import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.JsonElement;
@@ -31,16 +31,14 @@ import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.ParsePosition;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.TimeZone;
 
 /*
  * A JSON utility class
@@ -56,11 +54,6 @@ public class JSON {
     private static OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
     private static LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
     private static ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
-
-    private static final StdDateFormat sdf = new StdDateFormat()
-        .withTimeZone(TimeZone.getTimeZone(ZoneId.systemDefault()))
-        .withColonInTimeZone(true);
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
 
     @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
@@ -93,16 +86,13 @@ public class JSON {
         return clazz;
     }
 
-    static {
+    {
         GsonBuilder gsonBuilder = createGson();
         gsonBuilder.registerTypeAdapter(Date.class, dateTypeAdapter);
         gsonBuilder.registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.BulkOmniMessageCreateSuccessResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.BulkOmniMessageCreateSuccessResponseMessagesInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.BulkOmnimessage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.ContactEnvelope.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.ContactFields.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.ContactListEnvelope.CustomTypeAdapterFactory());
@@ -131,7 +121,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.OmniMessageCreateSuccessResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Omnimessage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.OmnimessageMessagesInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.PriceInfo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.SMS.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.StatisticsReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.StatisticsReportSettings.CustomTypeAdapterFactory());
@@ -140,15 +129,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.SyncNumberLookupSuccess.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Telegram.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.Viber.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.ViberVideo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsApp.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppComponent.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppCurrency.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppDatetime.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppLanguage.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppMedia.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppParameter.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppTemplate.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppAudio.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppDocument.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppImage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppText.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
@@ -382,7 +366,7 @@ public class JSON {
                         if (dateFormat != null) {
                             return new java.sql.Date(dateFormat.parse(date).getTime());
                         }
-                        return new java.sql.Date(sdf.parse(date).getTime());
+                        return new java.sql.Date(ISO8601Utils.parse(date, new ParsePosition(0)).getTime());
                     } catch (ParseException e) {
                         throw new JsonParseException(e);
                     }
@@ -392,7 +376,7 @@ public class JSON {
 
     /**
      * Gson TypeAdapter for java.util.Date type
-     * If the dateFormat is null, DateTimeFormatter will be used.
+     * If the dateFormat is null, ISO8601Utils will be used.
      */
     public static class DateTypeAdapter extends TypeAdapter<Date> {
 
@@ -417,7 +401,7 @@ public class JSON {
                 if (dateFormat != null) {
                     value = dateFormat.format(date);
                 } else {
-                    value = date.toInstant().atOffset(ZoneOffset.UTC).format(dtf);
+                    value = ISO8601Utils.format(date, true);
                 }
                 out.value(value);
             }
@@ -436,7 +420,7 @@ public class JSON {
                             if (dateFormat != null) {
                                 return dateFormat.parse(date);
                             }
-                            return sdf.parse(date);
+                            return ISO8601Utils.parse(date, new ParsePosition(0));
                         } catch (ParseException e) {
                             throw new JsonParseException(e);
                         }

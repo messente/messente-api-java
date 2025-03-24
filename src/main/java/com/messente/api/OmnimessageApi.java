@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class OmnimessageApi {
     private ApiClient localVarApiClient;
@@ -107,7 +108,7 @@ public class OmnimessageApi {
 
         // create path and map variables
         String localVarPath = "/omnimessage/{omnimessageId}"
-            .replace("{" + "omnimessageId" + "}", localVarApiClient.escapeString(omnimessageId.toString()));
+            .replaceAll("\\{" + "omnimessageId" + "\\}", localVarApiClient.escapeString(omnimessageId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -124,6 +125,7 @@ public class OmnimessageApi {
         }
 
         final String[] localVarContentTypes = {
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -136,12 +138,15 @@ public class OmnimessageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call cancelScheduledMessageValidateBeforeCall(UUID omnimessageId, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'omnimessageId' is set
         if (omnimessageId == null) {
             throw new ApiException("Missing the required parameter 'omnimessageId' when calling cancelScheduledMessage(Async)");
         }
+        
 
-        return cancelScheduledMessageCall(omnimessageId, _callback);
+        okhttp3.Call localVarCall = cancelScheduledMessageCall(omnimessageId, _callback);
+        return localVarCall;
 
     }
 
@@ -267,12 +272,15 @@ public class OmnimessageApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call sendOmnimessageValidateBeforeCall(Omnimessage omnimessage, final ApiCallback _callback) throws ApiException {
+        
         // verify the required parameter 'omnimessage' is set
         if (omnimessage == null) {
             throw new ApiException("Missing the required parameter 'omnimessage' when calling sendOmnimessage(Async)");
         }
+        
 
-        return sendOmnimessageCall(omnimessage, _callback);
+        okhttp3.Call localVarCall = sendOmnimessageCall(omnimessage, _callback);
+        return localVarCall;
 
     }
 
