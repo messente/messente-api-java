@@ -44,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -56,191 +55,199 @@ import com.messente.JSON;
 /**
  * A delivery report
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class DeliveryResult {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private Status status;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
+  @javax.annotation.Nullable
   private Channel channel;
 
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  @javax.annotation.Nullable
   private UUID messageId;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private String error;
 
   public static final String SERIALIZED_NAME_ERR = "err";
   @SerializedName(SERIALIZED_NAME_ERR)
+  @javax.annotation.Nullable
   private ErrorCodeOmnichannelMachine err;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
+  @javax.annotation.Nullable
   private OffsetDateTime timestamp;
 
   public static final String SERIALIZED_NAME_PRICE_INFO = "price_info";
   @SerializedName(SERIALIZED_NAME_PRICE_INFO)
+  @javax.annotation.Nullable
   private PriceInfo priceInfo;
 
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
+  @javax.annotation.Nullable
   private String sender;
 
   public DeliveryResult() {
   }
 
-  public DeliveryResult status(Status status) {
+  public DeliveryResult status(@javax.annotation.Nullable Status status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public Status getStatus() {
     return status;
   }
 
-  public void setStatus(Status status) {
+  public void setStatus(@javax.annotation.Nullable Status status) {
     this.status = status;
   }
 
 
-  public DeliveryResult channel(Channel channel) {
+  public DeliveryResult channel(@javax.annotation.Nullable Channel channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * Get channel
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   public Channel getChannel() {
     return channel;
   }
 
-  public void setChannel(Channel channel) {
+  public void setChannel(@javax.annotation.Nullable Channel channel) {
     this.channel = channel;
   }
 
 
-  public DeliveryResult messageId(UUID messageId) {
+  public DeliveryResult messageId(@javax.annotation.Nullable UUID messageId) {
     this.messageId = messageId;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier for the message
    * @return messageId
-  **/
+   */
   @javax.annotation.Nullable
   public UUID getMessageId() {
     return messageId;
   }
 
-  public void setMessageId(UUID messageId) {
+  public void setMessageId(@javax.annotation.Nullable UUID messageId) {
     this.messageId = messageId;
   }
 
 
-  public DeliveryResult error(String error) {
+  public DeliveryResult error(@javax.annotation.Nullable String error) {
     this.error = error;
     return this;
   }
 
-   /**
+  /**
    * Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public String getError() {
     return error;
   }
 
-  public void setError(String error) {
+  public void setError(@javax.annotation.Nullable String error) {
     this.error = error;
   }
 
 
-  public DeliveryResult err(ErrorCodeOmnichannelMachine err) {
+  public DeliveryResult err(@javax.annotation.Nullable ErrorCodeOmnichannelMachine err) {
     this.err = err;
     return this;
   }
 
-   /**
+  /**
    * Get err
    * @return err
-  **/
+   */
   @javax.annotation.Nullable
   public ErrorCodeOmnichannelMachine getErr() {
     return err;
   }
 
-  public void setErr(ErrorCodeOmnichannelMachine err) {
+  public void setErr(@javax.annotation.Nullable ErrorCodeOmnichannelMachine err) {
     this.err = err;
   }
 
 
-  public DeliveryResult timestamp(OffsetDateTime timestamp) {
+  public DeliveryResult timestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
     return this;
   }
 
-   /**
+  /**
    * When this status was received by Omnichannel API
    * @return timestamp
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(OffsetDateTime timestamp) {
+  public void setTimestamp(@javax.annotation.Nullable OffsetDateTime timestamp) {
     this.timestamp = timestamp;
   }
 
 
-  public DeliveryResult priceInfo(PriceInfo priceInfo) {
+  public DeliveryResult priceInfo(@javax.annotation.Nullable PriceInfo priceInfo) {
     this.priceInfo = priceInfo;
     return this;
   }
 
-   /**
+  /**
    * Get priceInfo
    * @return priceInfo
-  **/
+   */
   @javax.annotation.Nullable
   public PriceInfo getPriceInfo() {
     return priceInfo;
   }
 
-  public void setPriceInfo(PriceInfo priceInfo) {
+  public void setPriceInfo(@javax.annotation.Nullable PriceInfo priceInfo) {
     this.priceInfo = priceInfo;
   }
 
 
-  public DeliveryResult sender(String sender) {
+  public DeliveryResult sender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
     return this;
   }
 
-   /**
+  /**
    * the sender of the message
    * @return sender
-  **/
+   */
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(String sender) {
+  public void setSender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
   }
 
@@ -374,12 +381,12 @@ public class DeliveryResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DeliveryResult
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeliveryResult
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeliveryResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -486,22 +493,22 @@ public class DeliveryResult {
     }
   }
 
- /**
-  * Create an instance of DeliveryResult given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DeliveryResult
-  * @throws IOException if the JSON string is invalid with respect to DeliveryResult
-  */
+  /**
+   * Create an instance of DeliveryResult given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeliveryResult
+   * @throws IOException if the JSON string is invalid with respect to DeliveryResult
+   */
   public static DeliveryResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeliveryResult.class);
   }
 
- /**
-  * Convert an instance of DeliveryResult to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DeliveryResult to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

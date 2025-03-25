@@ -81,7 +81,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -152,7 +153,8 @@ public class BlacklistApi {
      * @param numberToBlacklist Phone number to be blacklisted (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -172,7 +174,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -194,7 +197,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number added to the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -216,7 +220,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -287,7 +292,8 @@ public class BlacklistApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -307,7 +313,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -329,7 +336,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number deleted from the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -350,7 +358,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -413,7 +422,8 @@ public class BlacklistApi {
      * @return FetchBlacklistSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -431,7 +441,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;FetchBlacklistSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -451,7 +462,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of blacklisted phone numbers </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
@@ -472,7 +484,8 @@ public class BlacklistApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -542,7 +555,8 @@ public class BlacklistApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -561,7 +575,8 @@ public class BlacklistApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -582,7 +597,8 @@ public class BlacklistApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Phone number is in the blacklist </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>

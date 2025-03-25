@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,16 +50,17 @@ import com.messente.JSON;
 /**
  * A container for phone numbers
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class NumbersToInvestigate {
   public static final String SERIALIZED_NAME_NUMBERS = "numbers";
   @SerializedName(SERIALIZED_NAME_NUMBERS)
+  @javax.annotation.Nonnull
   private List<String> numbers = new ArrayList<>();
 
   public NumbersToInvestigate() {
   }
 
-  public NumbersToInvestigate numbers(List<String> numbers) {
+  public NumbersToInvestigate numbers(@javax.annotation.Nonnull List<String> numbers) {
     this.numbers = numbers;
     return this;
   }
@@ -73,16 +73,16 @@ public class NumbersToInvestigate {
     return this;
   }
 
-   /**
+  /**
    * A list of phone numbers. Max 10 numbers per request
    * @return numbers
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getNumbers() {
     return numbers;
   }
 
-  public void setNumbers(List<String> numbers) {
+  public void setNumbers(@javax.annotation.Nonnull List<String> numbers) {
     this.numbers = numbers;
   }
 
@@ -185,12 +185,12 @@ public class NumbersToInvestigate {
     openapiRequiredFields.add("numbers");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NumbersToInvestigate
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NumbersToInvestigate
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NumbersToInvestigate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -285,22 +285,22 @@ public class NumbersToInvestigate {
     }
   }
 
- /**
-  * Create an instance of NumbersToInvestigate given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NumbersToInvestigate
-  * @throws IOException if the JSON string is invalid with respect to NumbersToInvestigate
-  */
+  /**
+   * Create an instance of NumbersToInvestigate given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NumbersToInvestigate
+   * @throws IOException if the JSON string is invalid with respect to NumbersToInvestigate
+   */
   public static NumbersToInvestigate fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NumbersToInvestigate.class);
   }
 
- /**
-  * Convert an instance of NumbersToInvestigate to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NumbersToInvestigate to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

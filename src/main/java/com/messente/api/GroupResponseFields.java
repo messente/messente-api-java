@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,99 +49,103 @@ import com.messente.JSON;
 /**
  * A container for fields of a group
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class GroupResponseFields {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CREATED_ON = "createdOn";
   @SerializedName(SERIALIZED_NAME_CREATED_ON)
+  @javax.annotation.Nullable
   private String createdOn;
 
   public static final String SERIALIZED_NAME_CONTACTS_COUNT = "contactsCount";
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
+  @javax.annotation.Nonnull
   private Integer contactsCount;
 
   public GroupResponseFields() {
   }
 
-  public GroupResponseFields id(String id) {
+  public GroupResponseFields id(@javax.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
 
-   /**
+  /**
    * Id string in UUID format
    * @return id
-  **/
+   */
   @javax.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public GroupResponseFields name(String name) {
+  public GroupResponseFields name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * The name of the group
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public GroupResponseFields createdOn(String createdOn) {
+  public GroupResponseFields createdOn(@javax.annotation.Nullable String createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
-   /**
+  /**
    * When the group was created
    * @return createdOn
-  **/
+   */
   @javax.annotation.Nullable
   public String getCreatedOn() {
     return createdOn;
   }
 
-  public void setCreatedOn(String createdOn) {
+  public void setCreatedOn(@javax.annotation.Nullable String createdOn) {
     this.createdOn = createdOn;
   }
 
 
-  public GroupResponseFields contactsCount(Integer contactsCount) {
+  public GroupResponseFields contactsCount(@javax.annotation.Nonnull Integer contactsCount) {
     this.contactsCount = contactsCount;
     return this;
   }
 
-   /**
+  /**
    * The count of contacts in the group
    * @return contactsCount
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getContactsCount() {
     return contactsCount;
   }
 
-  public void setContactsCount(Integer contactsCount) {
+  public void setContactsCount(@javax.annotation.Nonnull Integer contactsCount) {
     this.contactsCount = contactsCount;
   }
 
@@ -267,12 +270,12 @@ public class GroupResponseFields {
     openapiRequiredFields.add("contactsCount");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to GroupResponseFields
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to GroupResponseFields
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GroupResponseFields.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -370,22 +373,22 @@ public class GroupResponseFields {
     }
   }
 
- /**
-  * Create an instance of GroupResponseFields given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of GroupResponseFields
-  * @throws IOException if the JSON string is invalid with respect to GroupResponseFields
-  */
+  /**
+   * Create an instance of GroupResponseFields given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of GroupResponseFields
+   * @throws IOException if the JSON string is invalid with respect to GroupResponseFields
+   */
   public static GroupResponseFields fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GroupResponseFields.class);
   }
 
- /**
-  * Convert an instance of GroupResponseFields to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of GroupResponseFields to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

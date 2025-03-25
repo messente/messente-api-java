@@ -64,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import com.messente.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class BulkOmniMessageCreateSuccessResponseMessagesInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(BulkOmniMessageCreateSuccessResponseMessagesInner.class.getName());
 
@@ -214,6 +214,7 @@ public class BulkOmniMessageCreateSuccessResponseMessagesInner extends AbstractO
     public OmniMessageCreateSuccessResponse getOmniMessageCreateSuccessResponse() throws ClassCastException {
         return (OmniMessageCreateSuccessResponse)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `ErrorOmnichannel`. If the actual instance is not `ErrorOmnichannel`,
      * the ClassCastException will be thrown.

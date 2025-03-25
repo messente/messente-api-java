@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,85 +51,89 @@ import com.messente.JSON;
 /**
  * Whatsapp template component
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WhatsAppComponent {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nonnull
   private String type;
 
   public static final String SERIALIZED_NAME_SUB_TYPE = "sub_type";
   @SerializedName(SERIALIZED_NAME_SUB_TYPE)
+  @javax.annotation.Nullable
   private String subType;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
+  @javax.annotation.Nullable
   private Integer index;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
+  @javax.annotation.Nullable
   private List<WhatsAppParameter> parameters = new ArrayList<>();
 
   public WhatsAppComponent() {
   }
 
-  public WhatsAppComponent type(String type) {
+  public WhatsAppComponent type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Type of the component
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   public String getType() {
     return type;
   }
 
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public WhatsAppComponent subType(String subType) {
+  public WhatsAppComponent subType(@javax.annotation.Nullable String subType) {
     this.subType = subType;
     return this;
   }
 
-   /**
+  /**
    * Sub-type of the component
    * @return subType
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubType() {
     return subType;
   }
 
-  public void setSubType(String subType) {
+  public void setSubType(@javax.annotation.Nullable String subType) {
     this.subType = subType;
   }
 
 
-  public WhatsAppComponent index(Integer index) {
+  public WhatsAppComponent index(@javax.annotation.Nullable Integer index) {
     this.index = index;
     return this;
   }
 
-   /**
+  /**
    * index used to position buttons
    * @return index
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getIndex() {
     return index;
   }
 
-  public void setIndex(Integer index) {
+  public void setIndex(@javax.annotation.Nullable Integer index) {
     this.index = index;
   }
 
 
-  public WhatsAppComponent parameters(List<WhatsAppParameter> parameters) {
+  public WhatsAppComponent parameters(@javax.annotation.Nullable List<WhatsAppParameter> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -143,16 +146,16 @@ public class WhatsAppComponent {
     return this;
   }
 
-   /**
+  /**
    * List of parameters for the component
    * @return parameters
-  **/
+   */
   @javax.annotation.Nullable
   public List<WhatsAppParameter> getParameters() {
     return parameters;
   }
 
-  public void setParameters(List<WhatsAppParameter> parameters) {
+  public void setParameters(@javax.annotation.Nullable List<WhatsAppParameter> parameters) {
     this.parameters = parameters;
   }
 
@@ -264,12 +267,12 @@ public class WhatsAppComponent {
     openapiRequiredFields.add("type");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WhatsAppComponent
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WhatsAppComponent
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppComponent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -378,22 +381,22 @@ public class WhatsAppComponent {
     }
   }
 
- /**
-  * Create an instance of WhatsAppComponent given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WhatsAppComponent
-  * @throws IOException if the JSON string is invalid with respect to WhatsAppComponent
-  */
+  /**
+   * Create an instance of WhatsAppComponent given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WhatsAppComponent
+   * @throws IOException if the JSON string is invalid with respect to WhatsAppComponent
+   */
   public static WhatsAppComponent fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppComponent.class);
   }
 
- /**
-  * Convert an instance of WhatsAppComponent to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WhatsAppComponent to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

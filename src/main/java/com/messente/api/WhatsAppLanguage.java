@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,53 +48,55 @@ import com.messente.JSON;
 /**
  * Whatsapp template language
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WhatsAppLanguage {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nonnull
   private String code;
 
   public static final String SERIALIZED_NAME_POLICY = "policy";
   @SerializedName(SERIALIZED_NAME_POLICY)
+  @javax.annotation.Nullable
   private String policy;
 
   public WhatsAppLanguage() {
   }
 
-  public WhatsAppLanguage code(String code) {
+  public WhatsAppLanguage code(@javax.annotation.Nonnull String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Language code
    * @return code
-  **/
+   */
   @javax.annotation.Nonnull
   public String getCode() {
     return code;
   }
 
-  public void setCode(String code) {
+  public void setCode(@javax.annotation.Nonnull String code) {
     this.code = code;
   }
 
 
-  public WhatsAppLanguage policy(String policy) {
+  public WhatsAppLanguage policy(@javax.annotation.Nullable String policy) {
     this.policy = policy;
     return this;
   }
 
-   /**
+  /**
    * Language policy
    * @return policy
-  **/
+   */
   @javax.annotation.Nullable
   public String getPolicy() {
     return policy;
   }
 
-  public void setPolicy(String policy) {
+  public void setPolicy(@javax.annotation.Nullable String policy) {
     this.policy = policy;
   }
 
@@ -201,12 +202,12 @@ public class WhatsAppLanguage {
     openapiRequiredFields.add("code");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WhatsAppLanguage
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WhatsAppLanguage
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppLanguage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -301,22 +302,22 @@ public class WhatsAppLanguage {
     }
   }
 
- /**
-  * Create an instance of WhatsAppLanguage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WhatsAppLanguage
-  * @throws IOException if the JSON string is invalid with respect to WhatsAppLanguage
-  */
+  /**
+   * Create an instance of WhatsAppLanguage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WhatsAppLanguage
+   * @throws IOException if the JSON string is invalid with respect to WhatsAppLanguage
+   */
   public static WhatsAppLanguage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppLanguage.class);
   }
 
- /**
-  * Convert an instance of WhatsAppLanguage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WhatsAppLanguage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

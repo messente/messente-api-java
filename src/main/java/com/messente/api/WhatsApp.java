@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,26 +50,31 @@ import com.messente.JSON;
 /**
  * WhatsApp message content.   Only one of \&quot;text\&quot;, \&quot;image\&quot;, \&quot;document\&quot; or \&quot;audio\&quot; can be provided
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WhatsApp {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
+  @javax.annotation.Nullable
   private String sender;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
+  @javax.annotation.Nullable
   private Integer validity;
 
   public static final String SERIALIZED_NAME_TTL = "ttl";
   @SerializedName(SERIALIZED_NAME_TTL)
+  @javax.annotation.Nullable
   private Integer ttl;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
+  @javax.annotation.Nullable
   private WhatsAppTemplate template;
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
+  @javax.annotation.Nullable
   private WhatsAppText text;
 
   /**
@@ -125,121 +129,122 @@ public class WhatsApp {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
+  @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.WHATSAPP;
 
   public WhatsApp() {
   }
 
-  public WhatsApp sender(String sender) {
+  public WhatsApp sender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
     return this;
   }
 
-   /**
+  /**
    * Phone number or alphanumeric sender name
    * @return sender
-  **/
+   */
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(String sender) {
+  public void setSender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
   }
 
 
-  public WhatsApp validity(Integer validity) {
+  public WhatsApp validity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
     return this;
   }
 
-   /**
+  /**
    * After how many minutes this channel is   considered as failed and the next channel is attempted
    * @return validity
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(Integer validity) {
+  public void setValidity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
   }
 
 
-  public WhatsApp ttl(Integer ttl) {
+  public WhatsApp ttl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
     return this;
   }
 
-   /**
+  /**
    * After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return ttl
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTtl() {
     return ttl;
   }
 
-  public void setTtl(Integer ttl) {
+  public void setTtl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
   }
 
 
-  public WhatsApp template(WhatsAppTemplate template) {
+  public WhatsApp template(@javax.annotation.Nullable WhatsAppTemplate template) {
     this.template = template;
     return this;
   }
 
-   /**
+  /**
    * Get template
    * @return template
-  **/
+   */
   @javax.annotation.Nullable
   public WhatsAppTemplate getTemplate() {
     return template;
   }
 
-  public void setTemplate(WhatsAppTemplate template) {
+  public void setTemplate(@javax.annotation.Nullable WhatsAppTemplate template) {
     this.template = template;
   }
 
 
-  public WhatsApp text(WhatsAppText text) {
+  public WhatsApp text(@javax.annotation.Nullable WhatsAppText text) {
     this.text = text;
     return this;
   }
 
-   /**
+  /**
    * Get text
    * @return text
-  **/
+   */
   @javax.annotation.Nullable
   public WhatsAppText getText() {
     return text;
   }
 
-  public void setText(WhatsAppText text) {
+  public void setText(@javax.annotation.Nullable WhatsAppText text) {
     this.text = text;
   }
 
 
-  public WhatsApp channel(ChannelEnum channel) {
+  public WhatsApp channel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * The channel used to deliver the message
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(ChannelEnum channel) {
+  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
   }
 
@@ -356,12 +361,12 @@ public class WhatsApp {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WhatsApp
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WhatsApp
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsApp.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -461,22 +466,22 @@ public class WhatsApp {
     }
   }
 
- /**
-  * Create an instance of WhatsApp given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WhatsApp
-  * @throws IOException if the JSON string is invalid with respect to WhatsApp
-  */
+  /**
+   * Create an instance of WhatsApp given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WhatsApp
+   * @throws IOException if the JSON string is invalid with respect to WhatsApp
+   */
   public static WhatsApp fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsApp.class);
   }
 
- /**
-  * Convert an instance of WhatsApp to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WhatsApp to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,55 +54,61 @@ import com.messente.JSON;
 /**
  * An omnimessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Omnimessage {
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
+  @javax.annotation.Nonnull
   private String to;
 
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
+  @javax.annotation.Nonnull
   private List<OmnimessageMessagesInner> messages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DLR_URL = "dlr_url";
   @SerializedName(SERIALIZED_NAME_DLR_URL)
+  @javax.annotation.Nullable
   private String dlrUrl;
 
   public static final String SERIALIZED_NAME_TEXT_STORE = "text_store";
   @SerializedName(SERIALIZED_NAME_TEXT_STORE)
+  @javax.annotation.Nullable
   private TextStore textStore;
 
   public static final String SERIALIZED_NAME_TIME_TO_SEND = "time_to_send";
   @SerializedName(SERIALIZED_NAME_TIME_TO_SEND)
+  @javax.annotation.Nullable
   private OffsetDateTime timeToSend;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
+  @javax.annotation.Nullable
   private Priority priority;
 
   public Omnimessage() {
   }
 
-  public Omnimessage to(String to) {
+  public Omnimessage to(@javax.annotation.Nonnull String to) {
     this.to = to;
     return this;
   }
 
-   /**
+  /**
    * Phone number in e.164 format
    * @return to
-  **/
+   */
   @javax.annotation.Nonnull
   public String getTo() {
     return to;
   }
 
-  public void setTo(String to) {
+  public void setTo(@javax.annotation.Nonnull String to) {
     this.to = to;
   }
 
 
-  public Omnimessage messages(List<OmnimessageMessagesInner> messages) {
+  public Omnimessage messages(@javax.annotation.Nonnull List<OmnimessageMessagesInner> messages) {
     this.messages = messages;
     return this;
   }
@@ -116,92 +121,92 @@ public class Omnimessage {
     return this;
   }
 
-   /**
+  /**
    * An array of messages
    * @return messages
-  **/
+   */
   @javax.annotation.Nonnull
   public List<OmnimessageMessagesInner> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<OmnimessageMessagesInner> messages) {
+  public void setMessages(@javax.annotation.Nonnull List<OmnimessageMessagesInner> messages) {
     this.messages = messages;
   }
 
 
-  public Omnimessage dlrUrl(String dlrUrl) {
+  public Omnimessage dlrUrl(@javax.annotation.Nullable String dlrUrl) {
     this.dlrUrl = dlrUrl;
     return this;
   }
 
-   /**
+  /**
    * URL where the delivery report will be sent
    * @return dlrUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getDlrUrl() {
     return dlrUrl;
   }
 
-  public void setDlrUrl(String dlrUrl) {
+  public void setDlrUrl(@javax.annotation.Nullable String dlrUrl) {
     this.dlrUrl = dlrUrl;
   }
 
 
-  public Omnimessage textStore(TextStore textStore) {
+  public Omnimessage textStore(@javax.annotation.Nullable TextStore textStore) {
     this.textStore = textStore;
     return this;
   }
 
-   /**
+  /**
    * Get textStore
    * @return textStore
-  **/
+   */
   @javax.annotation.Nullable
   public TextStore getTextStore() {
     return textStore;
   }
 
-  public void setTextStore(TextStore textStore) {
+  public void setTextStore(@javax.annotation.Nullable TextStore textStore) {
     this.textStore = textStore;
   }
 
 
-  public Omnimessage timeToSend(OffsetDateTime timeToSend) {
+  public Omnimessage timeToSend(@javax.annotation.Nullable OffsetDateTime timeToSend) {
     this.timeToSend = timeToSend;
     return this;
   }
 
-   /**
+  /**
    * Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00)
    * @return timeToSend
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getTimeToSend() {
     return timeToSend;
   }
 
-  public void setTimeToSend(OffsetDateTime timeToSend) {
+  public void setTimeToSend(@javax.annotation.Nullable OffsetDateTime timeToSend) {
     this.timeToSend = timeToSend;
   }
 
 
-  public Omnimessage priority(Priority priority) {
+  public Omnimessage priority(@javax.annotation.Nullable Priority priority) {
     this.priority = priority;
     return this;
   }
 
-   /**
+  /**
    * Get priority
    * @return priority
-  **/
+   */
   @javax.annotation.Nullable
   public Priority getPriority() {
     return priority;
   }
 
-  public void setPriority(Priority priority) {
+  public void setPriority(@javax.annotation.Nullable Priority priority) {
     this.priority = priority;
   }
 
@@ -320,12 +325,12 @@ public class Omnimessage {
     openapiRequiredFields.add("messages");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Omnimessage
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Omnimessage
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Omnimessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -438,22 +443,22 @@ public class Omnimessage {
     }
   }
 
- /**
-  * Create an instance of Omnimessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Omnimessage
-  * @throws IOException if the JSON string is invalid with respect to Omnimessage
-  */
+  /**
+   * Create an instance of Omnimessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Omnimessage
+   * @throws IOException if the JSON string is invalid with respect to Omnimessage
+   */
   public static Omnimessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Omnimessage.class);
   }
 
- /**
-  * Convert an instance of Omnimessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Omnimessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

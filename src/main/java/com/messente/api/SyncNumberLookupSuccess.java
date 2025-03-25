@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,39 +51,41 @@ import com.messente.JSON;
 /**
  * A container for number lookup response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class SyncNumberLookupSuccess {
   public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
   @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @javax.annotation.Nonnull
   private String requestId;
 
   public static final String SERIALIZED_NAME_RESULT = "result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nonnull
   private List<SyncNumberLookupResult> result = new ArrayList<>();
 
   public SyncNumberLookupSuccess() {
   }
 
-  public SyncNumberLookupSuccess requestId(String requestId) {
+  public SyncNumberLookupSuccess requestId(@javax.annotation.Nonnull String requestId) {
     this.requestId = requestId;
     return this;
   }
 
-   /**
+  /**
    * ID of the request
    * @return requestId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getRequestId() {
     return requestId;
   }
 
-  public void setRequestId(String requestId) {
+  public void setRequestId(@javax.annotation.Nonnull String requestId) {
     this.requestId = requestId;
   }
 
 
-  public SyncNumberLookupSuccess result(List<SyncNumberLookupResult> result) {
+  public SyncNumberLookupSuccess result(@javax.annotation.Nonnull List<SyncNumberLookupResult> result) {
     this.result = result;
     return this;
   }
@@ -97,16 +98,16 @@ public class SyncNumberLookupSuccess {
     return this;
   }
 
-   /**
+  /**
    * A container for phone number info objects
    * @return result
-  **/
+   */
   @javax.annotation.Nonnull
   public List<SyncNumberLookupResult> getResult() {
     return result;
   }
 
-  public void setResult(List<SyncNumberLookupResult> result) {
+  public void setResult(@javax.annotation.Nonnull List<SyncNumberLookupResult> result) {
     this.result = result;
   }
 
@@ -213,12 +214,12 @@ public class SyncNumberLookupSuccess {
     openapiRequiredFields.add("result");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SyncNumberLookupSuccess
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SyncNumberLookupSuccess
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SyncNumberLookupSuccess.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -320,22 +321,22 @@ public class SyncNumberLookupSuccess {
     }
   }
 
- /**
-  * Create an instance of SyncNumberLookupSuccess given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SyncNumberLookupSuccess
-  * @throws IOException if the JSON string is invalid with respect to SyncNumberLookupSuccess
-  */
+  /**
+   * Create an instance of SyncNumberLookupSuccess given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SyncNumberLookupSuccess
+   * @throws IOException if the JSON string is invalid with respect to SyncNumberLookupSuccess
+   */
   public static SyncNumberLookupSuccess fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SyncNumberLookupSuccess.class);
   }
 
- /**
-  * Convert an instance of SyncNumberLookupSuccess to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SyncNumberLookupSuccess to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
