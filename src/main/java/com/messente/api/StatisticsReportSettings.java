@@ -40,6 +40,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,65 +52,62 @@ import com.messente.JSON;
 /**
  * A container for statistics report settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class StatisticsReportSettings {
   public static final String SERIALIZED_NAME_START_DATE = "start_date";
   @SerializedName(SERIALIZED_NAME_START_DATE)
-  @javax.annotation.Nonnull
   private LocalDate startDate;
 
   public static final String SERIALIZED_NAME_END_DATE = "end_date";
   @SerializedName(SERIALIZED_NAME_END_DATE)
-  @javax.annotation.Nonnull
   private LocalDate endDate;
 
   public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
   @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
-  @javax.annotation.Nullable
   private List<String> messageTypes = new ArrayList<>();
 
   public StatisticsReportSettings() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public StatisticsReportSettings startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
 
-  /**
+   /**
    * Start date for the report
    * @return startDate
-   */
+  **/
   @javax.annotation.Nonnull
   public LocalDate getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
   }
 
 
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public StatisticsReportSettings endDate(LocalDate endDate) {
     this.endDate = endDate;
     return this;
   }
 
-  /**
+   /**
    * End date for the report
    * @return endDate
-   */
+  **/
   @javax.annotation.Nonnull
   public LocalDate getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public void setEndDate(LocalDate endDate) {
     this.endDate = endDate;
   }
 
 
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
+  public StatisticsReportSettings messageTypes(List<String> messageTypes) {
     this.messageTypes = messageTypes;
     return this;
   }
@@ -122,16 +120,16 @@ public class StatisticsReportSettings {
     return this;
   }
 
-  /**
+   /**
    * Optional list of message types (sms, viber, whatsapp, hlr, telegram)
    * @return messageTypes
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getMessageTypes() {
     return messageTypes;
   }
 
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
+  public void setMessageTypes(List<String> messageTypes) {
     this.messageTypes = messageTypes;
   }
 
@@ -241,12 +239,12 @@ public class StatisticsReportSettings {
     openapiRequiredFields.add("end_date");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -339,22 +337,22 @@ public class StatisticsReportSettings {
     }
   }
 
-  /**
-   * Create an instance of StatisticsReportSettings given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
-   */
+ /**
+  * Create an instance of StatisticsReportSettings given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of StatisticsReportSettings
+  * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+  */
   public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
   }
 
-  /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of StatisticsReportSettings to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

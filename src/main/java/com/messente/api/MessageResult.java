@@ -39,6 +39,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,79 +51,76 @@ import com.messente.JSON;
 /**
  * A message part of an omnimessage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class MessageResult {
   public static final String SERIALIZED_NAME_MESSAGE_ID = "message_id";
   @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
-  @javax.annotation.Nonnull
   private UUID messageId;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nonnull
   private Channel channel;
 
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
-  @javax.annotation.Nonnull
   private String sender;
 
   public MessageResult() {
   }
 
-  public MessageResult messageId(@javax.annotation.Nonnull UUID messageId) {
+  public MessageResult messageId(UUID messageId) {
     this.messageId = messageId;
     return this;
   }
 
-  /**
+   /**
    * Unique identifier for the message
    * @return messageId
-   */
+  **/
   @javax.annotation.Nonnull
   public UUID getMessageId() {
     return messageId;
   }
 
-  public void setMessageId(@javax.annotation.Nonnull UUID messageId) {
+  public void setMessageId(UUID messageId) {
     this.messageId = messageId;
   }
 
 
-  public MessageResult channel(@javax.annotation.Nonnull Channel channel) {
+  public MessageResult channel(Channel channel) {
     this.channel = channel;
     return this;
   }
 
-  /**
+   /**
    * Get channel
    * @return channel
-   */
+  **/
   @javax.annotation.Nonnull
   public Channel getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nonnull Channel channel) {
+  public void setChannel(Channel channel) {
     this.channel = channel;
   }
 
 
-  public MessageResult sender(@javax.annotation.Nonnull String sender) {
+  public MessageResult sender(String sender) {
     this.sender = sender;
     return this;
   }
 
-  /**
+   /**
    * Sender that was used for the message
    * @return sender
-   */
+  **/
   @javax.annotation.Nonnull
   public String getSender() {
     return sender;
   }
 
-  public void setSender(@javax.annotation.Nonnull String sender) {
+  public void setSender(String sender) {
     this.sender = sender;
   }
 
@@ -233,12 +231,12 @@ public class MessageResult {
     openapiRequiredFields.add("sender");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to MessageResult
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to MessageResult
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MessageResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -335,22 +333,22 @@ public class MessageResult {
     }
   }
 
-  /**
-   * Create an instance of MessageResult given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of MessageResult
-   * @throws IOException if the JSON string is invalid with respect to MessageResult
-   */
+ /**
+  * Create an instance of MessageResult given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of MessageResult
+  * @throws IOException if the JSON string is invalid with respect to MessageResult
+  */
   public static MessageResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MessageResult.class);
   }
 
-  /**
-   * Convert an instance of MessageResult to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of MessageResult to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,6 +38,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,31 +50,30 @@ import com.messente.JSON;
 /**
  * A container for Number Lookup API error
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorItemNumberLookup {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
-  @javax.annotation.Nonnull
   private ErrorItemNumberLookupError error;
 
   public ErrorItemNumberLookup() {
   }
 
-  public ErrorItemNumberLookup error(@javax.annotation.Nonnull ErrorItemNumberLookupError error) {
+  public ErrorItemNumberLookup error(ErrorItemNumberLookupError error) {
     this.error = error;
     return this;
   }
 
-  /**
+   /**
    * Get error
    * @return error
-   */
+  **/
   @javax.annotation.Nonnull
   public ErrorItemNumberLookupError getError() {
     return error;
   }
 
-  public void setError(@javax.annotation.Nonnull ErrorItemNumberLookupError error) {
+  public void setError(ErrorItemNumberLookupError error) {
     this.error = error;
   }
 
@@ -176,12 +176,12 @@ public class ErrorItemNumberLookup {
     openapiRequiredFields.add("error");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorItemNumberLookup
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorItemNumberLookup
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorItemNumberLookup.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +272,22 @@ public class ErrorItemNumberLookup {
     }
   }
 
-  /**
-   * Create an instance of ErrorItemNumberLookup given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ErrorItemNumberLookup
-   * @throws IOException if the JSON string is invalid with respect to ErrorItemNumberLookup
-   */
+ /**
+  * Create an instance of ErrorItemNumberLookup given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ErrorItemNumberLookup
+  * @throws IOException if the JSON string is invalid with respect to ErrorItemNumberLookup
+  */
   public static ErrorItemNumberLookup fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorItemNumberLookup.class);
   }
 
-  /**
-   * Convert an instance of ErrorItemNumberLookup to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ErrorItemNumberLookup to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,6 +38,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,79 +50,76 @@ import com.messente.JSON;
 /**
  * Error fields container
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorItemStatistics {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  @javax.annotation.Nonnull
   private String details;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nonnull
   private ErrorCodeStatistics code;
 
   public ErrorItemStatistics() {
   }
 
-  public ErrorItemStatistics title(@javax.annotation.Nonnull String title) {
+  public ErrorItemStatistics title(String title) {
     this.title = title;
     return this;
   }
 
-  /**
+   /**
    * Error title
    * @return title
-   */
+  **/
   @javax.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(String title) {
     this.title = title;
   }
 
 
-  public ErrorItemStatistics details(@javax.annotation.Nonnull String details) {
+  public ErrorItemStatistics details(String details) {
     this.details = details;
     return this;
   }
 
-  /**
+   /**
    * Error details
    * @return details
-   */
+  **/
   @javax.annotation.Nonnull
   public String getDetails() {
     return details;
   }
 
-  public void setDetails(@javax.annotation.Nonnull String details) {
+  public void setDetails(String details) {
     this.details = details;
   }
 
 
-  public ErrorItemStatistics code(@javax.annotation.Nonnull ErrorCodeStatistics code) {
+  public ErrorItemStatistics code(ErrorCodeStatistics code) {
     this.code = code;
     return this;
   }
 
-  /**
+   /**
    * Get code
    * @return code
-   */
+  **/
   @javax.annotation.Nonnull
   public ErrorCodeStatistics getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nonnull ErrorCodeStatistics code) {
+  public void setCode(ErrorCodeStatistics code) {
     this.code = code;
   }
 
@@ -232,12 +230,12 @@ public class ErrorItemStatistics {
     openapiRequiredFields.add("code");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorItemStatistics
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorItemStatistics
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorItemStatistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -334,22 +332,22 @@ public class ErrorItemStatistics {
     }
   }
 
-  /**
-   * Create an instance of ErrorItemStatistics given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ErrorItemStatistics
-   * @throws IOException if the JSON string is invalid with respect to ErrorItemStatistics
-   */
+ /**
+  * Create an instance of ErrorItemStatistics given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ErrorItemStatistics
+  * @throws IOException if the JSON string is invalid with respect to ErrorItemStatistics
+  */
   public static ErrorItemStatistics fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorItemStatistics.class);
   }
 
-  /**
-   * Convert an instance of ErrorItemStatistics to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ErrorItemStatistics to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

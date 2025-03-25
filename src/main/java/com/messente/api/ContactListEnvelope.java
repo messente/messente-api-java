@@ -40,6 +40,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,17 +52,16 @@ import com.messente.JSON;
 /**
  * A container for contacts
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ContactListEnvelope {
   public static final String SERIALIZED_NAME_CONTACTS = "contacts";
   @SerializedName(SERIALIZED_NAME_CONTACTS)
-  @javax.annotation.Nullable
   private Set<ContactResponseFields> contacts = new LinkedHashSet<>();
 
   public ContactListEnvelope() {
   }
 
-  public ContactListEnvelope contacts(@javax.annotation.Nullable Set<ContactResponseFields> contacts) {
+  public ContactListEnvelope contacts(Set<ContactResponseFields> contacts) {
     this.contacts = contacts;
     return this;
   }
@@ -74,16 +74,16 @@ public class ContactListEnvelope {
     return this;
   }
 
-  /**
+   /**
    * An array of contacts
    * @return contacts
-   */
+  **/
   @javax.annotation.Nullable
   public Set<ContactResponseFields> getContacts() {
     return contacts;
   }
 
-  public void setContacts(@javax.annotation.Nullable Set<ContactResponseFields> contacts) {
+  public void setContacts(Set<ContactResponseFields> contacts) {
     this.contacts = contacts;
   }
 
@@ -185,12 +185,12 @@ public class ContactListEnvelope {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContactListEnvelope
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ContactListEnvelope
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactListEnvelope.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -286,22 +286,22 @@ public class ContactListEnvelope {
     }
   }
 
-  /**
-   * Create an instance of ContactListEnvelope given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ContactListEnvelope
-   * @throws IOException if the JSON string is invalid with respect to ContactListEnvelope
-   */
+ /**
+  * Create an instance of ContactListEnvelope given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ContactListEnvelope
+  * @throws IOException if the JSON string is invalid with respect to ContactListEnvelope
+  */
   public static ContactListEnvelope fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactListEnvelope.class);
   }
 
-  /**
-   * Convert an instance of ContactListEnvelope to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ContactListEnvelope to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

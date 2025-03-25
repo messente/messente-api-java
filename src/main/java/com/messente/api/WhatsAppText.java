@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,55 +49,53 @@ import com.messente.JSON;
 /**
  * A text
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppText {
   public static final String SERIALIZED_NAME_PREVIEW_URL = "preview_url";
   @SerializedName(SERIALIZED_NAME_PREVIEW_URL)
-  @javax.annotation.Nullable
   private Boolean previewUrl = true;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nonnull
   private String body;
 
   public WhatsAppText() {
   }
 
-  public WhatsAppText previewUrl(@javax.annotation.Nullable Boolean previewUrl) {
+  public WhatsAppText previewUrl(Boolean previewUrl) {
     this.previewUrl = previewUrl;
     return this;
   }
 
-  /**
+   /**
    * Whether to display link preview if the message contains a hyperlink
    * @return previewUrl
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getPreviewUrl() {
     return previewUrl;
   }
 
-  public void setPreviewUrl(@javax.annotation.Nullable Boolean previewUrl) {
+  public void setPreviewUrl(Boolean previewUrl) {
     this.previewUrl = previewUrl;
   }
 
 
-  public WhatsAppText body(@javax.annotation.Nonnull String body) {
+  public WhatsAppText body(String body) {
     this.body = body;
     return this;
   }
 
-  /**
+   /**
    * Plaintext content for WhatsApp, can contain URLs, emojis and formatting
    * @return body
-   */
+  **/
   @javax.annotation.Nonnull
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nonnull String body) {
+  public void setBody(String body) {
     this.body = body;
   }
 
@@ -202,12 +201,12 @@ public class WhatsAppText {
     openapiRequiredFields.add("body");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppText
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppText
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppText.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -299,22 +298,22 @@ public class WhatsAppText {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppText given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppText
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppText
-   */
+ /**
+  * Create an instance of WhatsAppText given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppText
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppText
+  */
   public static WhatsAppText fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppText.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppText to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppText to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

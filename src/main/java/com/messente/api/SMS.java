@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,26 +49,22 @@ import com.messente.JSON;
 /**
  * SMS message content
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class SMS {
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nonnull
   private String text;
 
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
-  @javax.annotation.Nullable
   private String sender;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
-  @javax.annotation.Nullable
   private Integer validity;
 
   public static final String SERIALIZED_NAME_TTL = "ttl";
   @SerializedName(SERIALIZED_NAME_TTL)
-  @javax.annotation.Nullable
   private Integer ttl;
 
   /**
@@ -126,12 +123,10 @@ public class SMS {
 
   public static final String SERIALIZED_NAME_AUTOCONVERT = "autoconvert";
   @SerializedName(SERIALIZED_NAME_AUTOCONVERT)
-  @javax.annotation.Nullable
   private AutoconvertEnum autoconvert;
 
   public static final String SERIALIZED_NAME_UDH = "udh";
   @SerializedName(SERIALIZED_NAME_UDH)
-  @javax.annotation.Nullable
   private String udh;
 
   /**
@@ -186,141 +181,140 @@ public class SMS {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.SMS;
 
   public SMS() {
   }
 
-  public SMS text(@javax.annotation.Nonnull String text) {
+  public SMS text(String text) {
     this.text = text;
     return this;
   }
 
-  /**
+   /**
    * Text content of the SMS
    * @return text
-   */
+  **/
   @javax.annotation.Nonnull
   public String getText() {
     return text;
   }
 
-  public void setText(@javax.annotation.Nonnull String text) {
+  public void setText(String text) {
     this.text = text;
   }
 
 
-  public SMS sender(@javax.annotation.Nullable String sender) {
+  public SMS sender(String sender) {
     this.sender = sender;
     return this;
   }
 
-  /**
+   /**
    * Phone number or alphanumeric sender name
    * @return sender
-   */
+  **/
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(@javax.annotation.Nullable String sender) {
+  public void setSender(String sender) {
     this.sender = sender;
   }
 
 
-  public SMS validity(@javax.annotation.Nullable Integer validity) {
+  public SMS validity(Integer validity) {
     this.validity = validity;
     return this;
   }
 
-  /**
+   /**
    * After how many minutes this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return validity
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(@javax.annotation.Nullable Integer validity) {
+  public void setValidity(Integer validity) {
     this.validity = validity;
   }
 
 
-  public SMS ttl(@javax.annotation.Nullable Integer ttl) {
+  public SMS ttl(Integer ttl) {
     this.ttl = ttl;
     return this;
   }
 
-  /**
+   /**
    * After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return ttl
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getTtl() {
     return ttl;
   }
 
-  public void setTtl(@javax.annotation.Nullable Integer ttl) {
+  public void setTtl(Integer ttl) {
     this.ttl = ttl;
   }
 
 
-  public SMS autoconvert(@javax.annotation.Nullable AutoconvertEnum autoconvert) {
+  public SMS autoconvert(AutoconvertEnum autoconvert) {
     this.autoconvert = autoconvert;
     return this;
   }
 
-  /**
+   /**
    * Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way
    * @return autoconvert
-   */
+  **/
   @javax.annotation.Nullable
   public AutoconvertEnum getAutoconvert() {
     return autoconvert;
   }
 
-  public void setAutoconvert(@javax.annotation.Nullable AutoconvertEnum autoconvert) {
+  public void setAutoconvert(AutoconvertEnum autoconvert) {
     this.autoconvert = autoconvert;
   }
 
 
-  public SMS udh(@javax.annotation.Nullable String udh) {
+  public SMS udh(String udh) {
     this.udh = udh;
     return this;
   }
 
-  /**
+   /**
    * hex-encoded string containing SMS UDH
    * @return udh
-   */
+  **/
   @javax.annotation.Nullable
   public String getUdh() {
     return udh;
   }
 
-  public void setUdh(@javax.annotation.Nullable String udh) {
+  public void setUdh(String udh) {
     this.udh = udh;
   }
 
 
-  public SMS channel(@javax.annotation.Nullable ChannelEnum channel) {
+  public SMS channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
 
-  /**
+   /**
    * The channel used to deliver the message
    * @return channel
-   */
+  **/
   @javax.annotation.Nullable
   public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
+  public void setChannel(ChannelEnum channel) {
     this.channel = channel;
   }
 
@@ -441,12 +435,12 @@ public class SMS {
     openapiRequiredFields.add("text");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SMS
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SMS
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SMS.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -558,22 +552,22 @@ public class SMS {
     }
   }
 
-  /**
-   * Create an instance of SMS given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SMS
-   * @throws IOException if the JSON string is invalid with respect to SMS
-   */
+ /**
+  * Create an instance of SMS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SMS
+  * @throws IOException if the JSON string is invalid with respect to SMS
+  */
   public static SMS fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SMS.class);
   }
 
-  /**
-   * Convert an instance of SMS to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SMS to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

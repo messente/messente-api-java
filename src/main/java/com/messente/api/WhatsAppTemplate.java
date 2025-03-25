@@ -41,6 +41,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,65 +53,62 @@ import com.messente.JSON;
 /**
  * Whatsapp Cloud API template
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppTemplate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  @javax.annotation.Nonnull
   private WhatsAppLanguage language;
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
   private List<WhatsAppComponent> components = new ArrayList<>();
 
   public WhatsAppTemplate() {
   }
 
-  public WhatsAppTemplate name(@javax.annotation.Nonnull String name) {
+  public WhatsAppTemplate name(String name) {
     this.name = name;
     return this;
   }
 
-  /**
+   /**
    * Name of the template
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
 
-  public WhatsAppTemplate language(@javax.annotation.Nonnull WhatsAppLanguage language) {
+  public WhatsAppTemplate language(WhatsAppLanguage language) {
     this.language = language;
     return this;
   }
 
-  /**
+   /**
    * Get language
    * @return language
-   */
+  **/
   @javax.annotation.Nonnull
   public WhatsAppLanguage getLanguage() {
     return language;
   }
 
-  public void setLanguage(@javax.annotation.Nonnull WhatsAppLanguage language) {
+  public void setLanguage(WhatsAppLanguage language) {
     this.language = language;
   }
 
 
-  public WhatsAppTemplate components(@javax.annotation.Nullable List<WhatsAppComponent> components) {
+  public WhatsAppTemplate components(List<WhatsAppComponent> components) {
     this.components = components;
     return this;
   }
@@ -123,16 +121,16 @@ public class WhatsAppTemplate {
     return this;
   }
 
-  /**
+   /**
    * List of template components
    * @return components
-   */
+  **/
   @javax.annotation.Nullable
   public List<WhatsAppComponent> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable List<WhatsAppComponent> components) {
+  public void setComponents(List<WhatsAppComponent> components) {
     this.components = components;
   }
 
@@ -242,12 +240,12 @@ public class WhatsAppTemplate {
     openapiRequiredFields.add("language");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppTemplate
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppTemplate
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -355,22 +353,22 @@ public class WhatsAppTemplate {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppTemplate given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppTemplate
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppTemplate
-   */
+ /**
+  * Create an instance of WhatsAppTemplate given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppTemplate
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppTemplate
+  */
   public static WhatsAppTemplate fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppTemplate.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppTemplate to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppTemplate to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

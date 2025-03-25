@@ -39,6 +39,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,79 +51,76 @@ import com.messente.JSON;
 /**
  * A container for Phonebook API error
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorItemPhonebook {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
   private ErrorTitlePhonebook title;
 
   public static final String SERIALIZED_NAME_DETAIL = "detail";
   @SerializedName(SERIALIZED_NAME_DETAIL)
-  @javax.annotation.Nonnull
   private String detail;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nonnull
   private ErrorCodePhonebook code;
 
   public ErrorItemPhonebook() {
   }
 
-  public ErrorItemPhonebook title(@javax.annotation.Nonnull ErrorTitlePhonebook title) {
+  public ErrorItemPhonebook title(ErrorTitlePhonebook title) {
     this.title = title;
     return this;
   }
 
-  /**
+   /**
    * Get title
    * @return title
-   */
+  **/
   @javax.annotation.Nonnull
   public ErrorTitlePhonebook getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull ErrorTitlePhonebook title) {
+  public void setTitle(ErrorTitlePhonebook title) {
     this.title = title;
   }
 
 
-  public ErrorItemPhonebook detail(@javax.annotation.Nonnull String detail) {
+  public ErrorItemPhonebook detail(String detail) {
     this.detail = detail;
     return this;
   }
 
-  /**
+   /**
    * Free form more detailed description of the error
    * @return detail
-   */
+  **/
   @javax.annotation.Nonnull
   public String getDetail() {
     return detail;
   }
 
-  public void setDetail(@javax.annotation.Nonnull String detail) {
+  public void setDetail(String detail) {
     this.detail = detail;
   }
 
 
-  public ErrorItemPhonebook code(@javax.annotation.Nonnull ErrorCodePhonebook code) {
+  public ErrorItemPhonebook code(ErrorCodePhonebook code) {
     this.code = code;
     return this;
   }
 
-  /**
+   /**
    * Get code
    * @return code
-   */
+  **/
   @javax.annotation.Nonnull
   public ErrorCodePhonebook getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nonnull ErrorCodePhonebook code) {
+  public void setCode(ErrorCodePhonebook code) {
     this.code = code;
   }
 
@@ -233,12 +231,12 @@ public class ErrorItemPhonebook {
     openapiRequiredFields.add("code");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorItemPhonebook
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorItemPhonebook
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorItemPhonebook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -334,22 +332,22 @@ public class ErrorItemPhonebook {
     }
   }
 
-  /**
-   * Create an instance of ErrorItemPhonebook given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ErrorItemPhonebook
-   * @throws IOException if the JSON string is invalid with respect to ErrorItemPhonebook
-   */
+ /**
+  * Create an instance of ErrorItemPhonebook given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ErrorItemPhonebook
+  * @throws IOException if the JSON string is invalid with respect to ErrorItemPhonebook
+  */
   public static ErrorItemPhonebook fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorItemPhonebook.class);
   }
 
-  /**
-   * Convert an instance of ErrorItemPhonebook to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ErrorItemPhonebook to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

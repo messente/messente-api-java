@@ -40,6 +40,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,17 +52,16 @@ import com.messente.JSON;
 /**
  * A container for statistics reports
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class StatisticsReportSuccess {
   public static final String SERIALIZED_NAME_REPORTS = "reports";
   @SerializedName(SERIALIZED_NAME_REPORTS)
-  @javax.annotation.Nonnull
   private List<StatisticsReport> reports = new ArrayList<>();
 
   public StatisticsReportSuccess() {
   }
 
-  public StatisticsReportSuccess reports(@javax.annotation.Nonnull List<StatisticsReport> reports) {
+  public StatisticsReportSuccess reports(List<StatisticsReport> reports) {
     this.reports = reports;
     return this;
   }
@@ -74,16 +74,16 @@ public class StatisticsReportSuccess {
     return this;
   }
 
-  /**
+   /**
    * Array of report objects
    * @return reports
-   */
+  **/
   @javax.annotation.Nonnull
   public List<StatisticsReport> getReports() {
     return reports;
   }
 
-  public void setReports(@javax.annotation.Nonnull List<StatisticsReport> reports) {
+  public void setReports(List<StatisticsReport> reports) {
     this.reports = reports;
   }
 
@@ -186,12 +186,12 @@ public class StatisticsReportSuccess {
     openapiRequiredFields.add("reports");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSuccess
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSuccess
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StatisticsReportSuccess.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class StatisticsReportSuccess {
     }
   }
 
-  /**
-   * Create an instance of StatisticsReportSuccess given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of StatisticsReportSuccess
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSuccess
-   */
+ /**
+  * Create an instance of StatisticsReportSuccess given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of StatisticsReportSuccess
+  * @throws IOException if the JSON string is invalid with respect to StatisticsReportSuccess
+  */
   public static StatisticsReportSuccess fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StatisticsReportSuccess.class);
   }
 
-  /**
-   * Convert an instance of StatisticsReportSuccess to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of StatisticsReportSuccess to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,57 +49,55 @@ import com.messente.JSON;
 /**
  * Error fields container
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorItemNumberLookupError {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nonnull
   private Integer code;
 
   public ErrorItemNumberLookupError() {
   }
 
-  public ErrorItemNumberLookupError description(@javax.annotation.Nonnull String description) {
+  public ErrorItemNumberLookupError description(String description) {
     this.description = description;
     return this;
   }
 
-  /**
+   /**
    * Error description
    * @return description
-   */
+  **/
   @javax.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public void setDescription(String description) {
     this.description = description;
   }
 
 
-  public ErrorItemNumberLookupError code(@javax.annotation.Nonnull Integer code) {
+  public ErrorItemNumberLookupError code(Integer code) {
     this.code = code;
     return this;
   }
 
-  /**
+   /**
    * Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error
    * minimum: 101
    * maximum: 106
    * @return code
-   */
+  **/
   @javax.annotation.Nonnull
   public Integer getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nonnull Integer code) {
+  public void setCode(Integer code) {
     this.code = code;
   }
 
@@ -205,12 +204,12 @@ public class ErrorItemNumberLookupError {
     openapiRequiredFields.add("code");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorItemNumberLookupError
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorItemNumberLookupError
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorItemNumberLookupError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -302,22 +301,22 @@ public class ErrorItemNumberLookupError {
     }
   }
 
-  /**
-   * Create an instance of ErrorItemNumberLookupError given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ErrorItemNumberLookupError
-   * @throws IOException if the JSON string is invalid with respect to ErrorItemNumberLookupError
-   */
+ /**
+  * Create an instance of ErrorItemNumberLookupError given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ErrorItemNumberLookupError
+  * @throws IOException if the JSON string is invalid with respect to ErrorItemNumberLookupError
+  */
   public static ErrorItemNumberLookupError fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorItemNumberLookupError.class);
   }
 
-  /**
-   * Convert an instance of ErrorItemNumberLookupError to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ErrorItemNumberLookupError to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

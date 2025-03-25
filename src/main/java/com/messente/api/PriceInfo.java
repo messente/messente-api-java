@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,79 +49,76 @@ import com.messente.JSON;
 /**
  * Contains price information for the message. This value is *null* if the message is still being processed
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class PriceInfo {
   public static final String SERIALIZED_NAME_PART_PRICE = "part_price";
   @SerializedName(SERIALIZED_NAME_PART_PRICE)
-  @javax.annotation.Nonnull
   private String partPrice;
 
   public static final String SERIALIZED_NAME_PARTS_COUNT = "parts_count";
   @SerializedName(SERIALIZED_NAME_PARTS_COUNT)
-  @javax.annotation.Nonnull
   private Integer partsCount;
 
   public static final String SERIALIZED_NAME_TOTAL_PRICE = "total_price";
   @SerializedName(SERIALIZED_NAME_TOTAL_PRICE)
-  @javax.annotation.Nonnull
   private String totalPrice;
 
   public PriceInfo() {
   }
 
-  public PriceInfo partPrice(@javax.annotation.Nonnull String partPrice) {
+  public PriceInfo partPrice(String partPrice) {
     this.partPrice = partPrice;
     return this;
   }
 
-  /**
+   /**
    * price per message part - relevant mostly for SMS
    * @return partPrice
-   */
+  **/
   @javax.annotation.Nonnull
   public String getPartPrice() {
     return partPrice;
   }
 
-  public void setPartPrice(@javax.annotation.Nonnull String partPrice) {
+  public void setPartPrice(String partPrice) {
     this.partPrice = partPrice;
   }
 
 
-  public PriceInfo partsCount(@javax.annotation.Nonnull Integer partsCount) {
+  public PriceInfo partsCount(Integer partsCount) {
     this.partsCount = partsCount;
     return this;
   }
 
-  /**
+   /**
    * the number of parts the message consists of
    * @return partsCount
-   */
+  **/
   @javax.annotation.Nonnull
   public Integer getPartsCount() {
     return partsCount;
   }
 
-  public void setPartsCount(@javax.annotation.Nonnull Integer partsCount) {
+  public void setPartsCount(Integer partsCount) {
     this.partsCount = partsCount;
   }
 
 
-  public PriceInfo totalPrice(@javax.annotation.Nonnull String totalPrice) {
+  public PriceInfo totalPrice(String totalPrice) {
     this.totalPrice = totalPrice;
     return this;
   }
 
-  /**
+   /**
    * total price for the message
    * @return totalPrice
-   */
+  **/
   @javax.annotation.Nonnull
   public String getTotalPrice() {
     return totalPrice;
   }
 
-  public void setTotalPrice(@javax.annotation.Nonnull String totalPrice) {
+  public void setTotalPrice(String totalPrice) {
     this.totalPrice = totalPrice;
   }
 
@@ -231,12 +229,12 @@ public class PriceInfo {
     openapiRequiredFields.add("total_price");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PriceInfo
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to PriceInfo
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PriceInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -331,22 +329,22 @@ public class PriceInfo {
     }
   }
 
-  /**
-   * Create an instance of PriceInfo given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of PriceInfo
-   * @throws IOException if the JSON string is invalid with respect to PriceInfo
-   */
+ /**
+  * Create an instance of PriceInfo given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of PriceInfo
+  * @throws IOException if the JSON string is invalid with respect to PriceInfo
+  */
   public static PriceInfo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, PriceInfo.class);
   }
 
-  /**
-   * Convert an instance of PriceInfo to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of PriceInfo to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

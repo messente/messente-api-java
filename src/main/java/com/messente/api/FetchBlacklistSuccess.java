@@ -39,6 +39,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,17 +51,16 @@ import com.messente.JSON;
 /**
  * A container for blacklisted numbers
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class FetchBlacklistSuccess {
   public static final String SERIALIZED_NAME_PHONE_NUMBERS = "phoneNumbers";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBERS)
-  @javax.annotation.Nullable
   private Set<String> phoneNumbers = new LinkedHashSet<>();
 
   public FetchBlacklistSuccess() {
   }
 
-  public FetchBlacklistSuccess phoneNumbers(@javax.annotation.Nullable Set<String> phoneNumbers) {
+  public FetchBlacklistSuccess phoneNumbers(Set<String> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
@@ -73,16 +73,16 @@ public class FetchBlacklistSuccess {
     return this;
   }
 
-  /**
+   /**
    * Array of unique phone numbers
    * @return phoneNumbers
-   */
+  **/
   @javax.annotation.Nullable
   public Set<String> getPhoneNumbers() {
     return phoneNumbers;
   }
 
-  public void setPhoneNumbers(@javax.annotation.Nullable Set<String> phoneNumbers) {
+  public void setPhoneNumbers(Set<String> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 
@@ -184,12 +184,12 @@ public class FetchBlacklistSuccess {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to FetchBlacklistSuccess
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to FetchBlacklistSuccess
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FetchBlacklistSuccess.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -275,22 +275,22 @@ public class FetchBlacklistSuccess {
     }
   }
 
-  /**
-   * Create an instance of FetchBlacklistSuccess given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of FetchBlacklistSuccess
-   * @throws IOException if the JSON string is invalid with respect to FetchBlacklistSuccess
-   */
+ /**
+  * Create an instance of FetchBlacklistSuccess given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of FetchBlacklistSuccess
+  * @throws IOException if the JSON string is invalid with respect to FetchBlacklistSuccess
+  */
   public static FetchBlacklistSuccess fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FetchBlacklistSuccess.class);
   }
 
-  /**
-   * Convert an instance of FetchBlacklistSuccess to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of FetchBlacklistSuccess to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

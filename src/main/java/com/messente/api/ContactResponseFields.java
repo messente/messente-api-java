@@ -39,6 +39,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,271 +51,260 @@ import com.messente.JSON;
 /**
  * A container for response fields of a contact
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ContactResponseFields {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nullable
   private String phoneNumber;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "firstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "lastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_COMPANY = "company";
   @SerializedName(SERIALIZED_NAME_COMPANY)
-  @javax.annotation.Nullable
   private String company;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_CUSTOM = "custom";
   @SerializedName(SERIALIZED_NAME_CUSTOM)
-  @javax.annotation.Nullable
   private String custom;
 
   public static final String SERIALIZED_NAME_CUSTOM2 = "custom2";
   @SerializedName(SERIALIZED_NAME_CUSTOM2)
-  @javax.annotation.Nullable
   private String custom2;
 
   public static final String SERIALIZED_NAME_CUSTOM3 = "custom3";
   @SerializedName(SERIALIZED_NAME_CUSTOM3)
-  @javax.annotation.Nullable
   private String custom3;
 
   public static final String SERIALIZED_NAME_CUSTOM4 = "custom4";
   @SerializedName(SERIALIZED_NAME_CUSTOM4)
-  @javax.annotation.Nullable
   private String custom4;
 
   public static final String SERIALIZED_NAME_SCHEDULED_DELETION_DATE = "scheduledDeletionDate";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_DELETION_DATE)
-  @javax.annotation.Nullable
   private LocalDate scheduledDeletionDate;
 
   public ContactResponseFields() {
   }
 
-  public ContactResponseFields phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public ContactResponseFields phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
 
-  /**
+   /**
    * Phone number in e.164 format
    * @return phoneNumber
-   */
+  **/
   @javax.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
 
-  public ContactResponseFields email(@javax.annotation.Nullable String email) {
+  public ContactResponseFields email(String email) {
     this.email = email;
     return this;
   }
 
-  /**
+   /**
    * The email of the contact
    * @return email
-   */
+  **/
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(String email) {
     this.email = email;
   }
 
 
-  public ContactResponseFields firstName(@javax.annotation.Nullable String firstName) {
+  public ContactResponseFields firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-  /**
+   /**
    * The first name of the contact
    * @return firstName
-   */
+  **/
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(@javax.annotation.Nullable String firstName) {
+  public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
 
 
-  public ContactResponseFields lastName(@javax.annotation.Nullable String lastName) {
+  public ContactResponseFields lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-  /**
+   /**
    * The last name of the contact
    * @return lastName
-   */
+  **/
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(@javax.annotation.Nullable String lastName) {
+  public void setLastName(String lastName) {
     this.lastName = lastName;
   }
 
 
-  public ContactResponseFields company(@javax.annotation.Nullable String company) {
+  public ContactResponseFields company(String company) {
     this.company = company;
     return this;
   }
 
-  /**
+   /**
    * The company of the contact
    * @return company
-   */
+  **/
   @javax.annotation.Nullable
   public String getCompany() {
     return company;
   }
 
-  public void setCompany(@javax.annotation.Nullable String company) {
+  public void setCompany(String company) {
     this.company = company;
   }
 
 
-  public ContactResponseFields title(@javax.annotation.Nullable String title) {
+  public ContactResponseFields title(String title) {
     this.title = title;
     return this;
   }
 
-  /**
+   /**
    * The title of the contact
    * @return title
-   */
+  **/
   @javax.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(String title) {
     this.title = title;
   }
 
 
-  public ContactResponseFields custom(@javax.annotation.Nullable String custom) {
+  public ContactResponseFields custom(String custom) {
     this.custom = custom;
     return this;
   }
 
-  /**
+   /**
    * The first custom field
    * @return custom
-   */
+  **/
   @javax.annotation.Nullable
   public String getCustom() {
     return custom;
   }
 
-  public void setCustom(@javax.annotation.Nullable String custom) {
+  public void setCustom(String custom) {
     this.custom = custom;
   }
 
 
-  public ContactResponseFields custom2(@javax.annotation.Nullable String custom2) {
+  public ContactResponseFields custom2(String custom2) {
     this.custom2 = custom2;
     return this;
   }
 
-  /**
+   /**
    * The second custom field
    * @return custom2
-   */
+  **/
   @javax.annotation.Nullable
   public String getCustom2() {
     return custom2;
   }
 
-  public void setCustom2(@javax.annotation.Nullable String custom2) {
+  public void setCustom2(String custom2) {
     this.custom2 = custom2;
   }
 
 
-  public ContactResponseFields custom3(@javax.annotation.Nullable String custom3) {
+  public ContactResponseFields custom3(String custom3) {
     this.custom3 = custom3;
     return this;
   }
 
-  /**
+   /**
    * The third custom field
    * @return custom3
-   */
+  **/
   @javax.annotation.Nullable
   public String getCustom3() {
     return custom3;
   }
 
-  public void setCustom3(@javax.annotation.Nullable String custom3) {
+  public void setCustom3(String custom3) {
     this.custom3 = custom3;
   }
 
 
-  public ContactResponseFields custom4(@javax.annotation.Nullable String custom4) {
+  public ContactResponseFields custom4(String custom4) {
     this.custom4 = custom4;
     return this;
   }
 
-  /**
+   /**
    * The fourth custom field
    * @return custom4
-   */
+  **/
   @javax.annotation.Nullable
   public String getCustom4() {
     return custom4;
   }
 
-  public void setCustom4(@javax.annotation.Nullable String custom4) {
+  public void setCustom4(String custom4) {
     this.custom4 = custom4;
   }
 
 
-  public ContactResponseFields scheduledDeletionDate(@javax.annotation.Nullable LocalDate scheduledDeletionDate) {
+  public ContactResponseFields scheduledDeletionDate(LocalDate scheduledDeletionDate) {
     this.scheduledDeletionDate = scheduledDeletionDate;
     return this;
   }
 
-  /**
+   /**
    * The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days
    * @return scheduledDeletionDate
-   */
+  **/
   @javax.annotation.Nullable
   public LocalDate getScheduledDeletionDate() {
     return scheduledDeletionDate;
   }
 
-  public void setScheduledDeletionDate(@javax.annotation.Nullable LocalDate scheduledDeletionDate) {
+  public void setScheduledDeletionDate(LocalDate scheduledDeletionDate) {
     this.scheduledDeletionDate = scheduledDeletionDate;
   }
 
@@ -457,12 +447,12 @@ public class ContactResponseFields {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContactResponseFields
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ContactResponseFields
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactResponseFields.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -574,22 +564,22 @@ public class ContactResponseFields {
     }
   }
 
-  /**
-   * Create an instance of ContactResponseFields given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ContactResponseFields
-   * @throws IOException if the JSON string is invalid with respect to ContactResponseFields
-   */
+ /**
+  * Create an instance of ContactResponseFields given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ContactResponseFields
+  * @throws IOException if the JSON string is invalid with respect to ContactResponseFields
+  */
   public static ContactResponseFields fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactResponseFields.class);
   }
 
-  /**
-   * Convert an instance of ContactResponseFields to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ContactResponseFields to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

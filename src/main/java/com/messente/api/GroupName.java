@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,31 +49,30 @@ import com.messente.JSON;
 /**
  * A group name container
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class GroupName {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
   private String name;
 
   public GroupName() {
   }
 
-  public GroupName name(@javax.annotation.Nonnull String name) {
+  public GroupName name(String name) {
     this.name = name;
     return this;
   }
 
-  /**
+   /**
    * The name of the group
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -175,12 +175,12 @@ public class GroupName {
     openapiRequiredFields.add("name");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GroupName
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to GroupName
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GroupName.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +272,22 @@ public class GroupName {
     }
   }
 
-  /**
-   * Create an instance of GroupName given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of GroupName
-   * @throws IOException if the JSON string is invalid with respect to GroupName
-   */
+ /**
+  * Create an instance of GroupName given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GroupName
+  * @throws IOException if the JSON string is invalid with respect to GroupName
+  */
   public static GroupName fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, GroupName.class);
   }
 
-  /**
-   * Convert an instance of GroupName to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of GroupName to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

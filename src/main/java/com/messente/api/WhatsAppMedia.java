@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,103 +49,99 @@ import com.messente.JSON;
 /**
  * Whatsapp media object.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppMedia {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  @javax.annotation.Nullable
   private String link;
 
   public static final String SERIALIZED_NAME_CAPTION = "caption";
   @SerializedName(SERIALIZED_NAME_CAPTION)
-  @javax.annotation.Nullable
   private String caption;
 
   public static final String SERIALIZED_NAME_FILENAME = "filename";
   @SerializedName(SERIALIZED_NAME_FILENAME)
-  @javax.annotation.Nullable
   private String filename;
 
   public WhatsAppMedia() {
   }
 
-  public WhatsAppMedia id(@javax.annotation.Nullable String id) {
+  public WhatsAppMedia id(String id) {
     this.id = id;
     return this;
   }
 
-  /**
+   /**
    * The media object ID. Do not use this field when message type is set to text.
    * @return id
-   */
+  **/
   @javax.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
 
-  public WhatsAppMedia link(@javax.annotation.Nullable String link) {
+  public WhatsAppMedia link(String link) {
     this.link = link;
     return this;
   }
 
-  /**
+   /**
    * The protocol and URL of the media to be sent. Use only with HTTP/HTTPS URLs.       Do not use this field when message type is set to text.
    * @return link
-   */
+  **/
   @javax.annotation.Nullable
   public String getLink() {
     return link;
   }
 
-  public void setLink(@javax.annotation.Nullable String link) {
+  public void setLink(String link) {
     this.link = link;
   }
 
 
-  public WhatsAppMedia caption(@javax.annotation.Nullable String caption) {
+  public WhatsAppMedia caption(String caption) {
     this.caption = caption;
     return this;
   }
 
-  /**
+   /**
    * Media asset caption. Do not use with audio or sticker media.
    * @return caption
-   */
+  **/
   @javax.annotation.Nullable
   public String getCaption() {
     return caption;
   }
 
-  public void setCaption(@javax.annotation.Nullable String caption) {
+  public void setCaption(String caption) {
     this.caption = caption;
   }
 
 
-  public WhatsAppMedia filename(@javax.annotation.Nullable String filename) {
+  public WhatsAppMedia filename(String filename) {
     this.filename = filename;
     return this;
   }
 
-  /**
+   /**
    * Describes the filename for the specific document. Use only with document media.
    * @return filename
-   */
+  **/
   @javax.annotation.Nullable
   public String getFilename() {
     return filename;
   }
 
-  public void setFilename(@javax.annotation.Nullable String filename) {
+  public void setFilename(String filename) {
     this.filename = filename;
   }
 
@@ -255,12 +252,12 @@ public class WhatsAppMedia {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppMedia
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppMedia
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppMedia.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -354,22 +351,22 @@ public class WhatsAppMedia {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppMedia given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppMedia
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppMedia
-   */
+ /**
+  * Create an instance of WhatsAppMedia given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppMedia
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppMedia
+  */
   public static WhatsAppMedia fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppMedia.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppMedia to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppMedia to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

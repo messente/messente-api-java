@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,79 +49,76 @@ import com.messente.JSON;
 /**
  * Whatsapp currency object.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppCurrency {
   public static final String SERIALIZED_NAME_FALLBACK_VALUE = "fallback_value";
   @SerializedName(SERIALIZED_NAME_FALLBACK_VALUE)
-  @javax.annotation.Nonnull
   private String fallbackValue;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nonnull
   private String code;
 
   public static final String SERIALIZED_NAME_AMOUNT1000 = "amount_1000";
   @SerializedName(SERIALIZED_NAME_AMOUNT1000)
-  @javax.annotation.Nonnull
   private String amount1000;
 
   public WhatsAppCurrency() {
   }
 
-  public WhatsAppCurrency fallbackValue(@javax.annotation.Nonnull String fallbackValue) {
+  public WhatsAppCurrency fallbackValue(String fallbackValue) {
     this.fallbackValue = fallbackValue;
     return this;
   }
 
-  /**
+   /**
    * Default text if localization fails.
    * @return fallbackValue
-   */
+  **/
   @javax.annotation.Nonnull
   public String getFallbackValue() {
     return fallbackValue;
   }
 
-  public void setFallbackValue(@javax.annotation.Nonnull String fallbackValue) {
+  public void setFallbackValue(String fallbackValue) {
     this.fallbackValue = fallbackValue;
   }
 
 
-  public WhatsAppCurrency code(@javax.annotation.Nonnull String code) {
+  public WhatsAppCurrency code(String code) {
     this.code = code;
     return this;
   }
 
-  /**
+   /**
    * Currency code as defined in ISO 4217.
    * @return code
-   */
+  **/
   @javax.annotation.Nonnull
   public String getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nonnull String code) {
+  public void setCode(String code) {
     this.code = code;
   }
 
 
-  public WhatsAppCurrency amount1000(@javax.annotation.Nonnull String amount1000) {
+  public WhatsAppCurrency amount1000(String amount1000) {
     this.amount1000 = amount1000;
     return this;
   }
 
-  /**
+   /**
    * Amount multiplied by 1000.
    * @return amount1000
-   */
+  **/
   @javax.annotation.Nonnull
   public String getAmount1000() {
     return amount1000;
   }
 
-  public void setAmount1000(@javax.annotation.Nonnull String amount1000) {
+  public void setAmount1000(String amount1000) {
     this.amount1000 = amount1000;
   }
 
@@ -231,12 +229,12 @@ public class WhatsAppCurrency {
     openapiRequiredFields.add("amount_1000");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppCurrency
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppCurrency
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppCurrency.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -334,22 +332,22 @@ public class WhatsAppCurrency {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppCurrency given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppCurrency
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppCurrency
-   */
+ /**
+  * Create an instance of WhatsAppCurrency given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppCurrency
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppCurrency
+  */
   public static WhatsAppCurrency fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppCurrency.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppCurrency to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppCurrency to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

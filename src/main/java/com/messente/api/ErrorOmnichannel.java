@@ -40,6 +40,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,17 +52,16 @@ import com.messente.JSON;
 /**
  * A container for errors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class ErrorOmnichannel {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  @javax.annotation.Nonnull
   private List<ErrorItemOmnichannel> errors = new ArrayList<>();
 
   public ErrorOmnichannel() {
   }
 
-  public ErrorOmnichannel errors(@javax.annotation.Nonnull List<ErrorItemOmnichannel> errors) {
+  public ErrorOmnichannel errors(List<ErrorItemOmnichannel> errors) {
     this.errors = errors;
     return this;
   }
@@ -74,16 +74,16 @@ public class ErrorOmnichannel {
     return this;
   }
 
-  /**
+   /**
    * An array of errors
    * @return errors
-   */
+  **/
   @javax.annotation.Nonnull
   public List<ErrorItemOmnichannel> getErrors() {
     return errors;
   }
 
-  public void setErrors(@javax.annotation.Nonnull List<ErrorItemOmnichannel> errors) {
+  public void setErrors(List<ErrorItemOmnichannel> errors) {
     this.errors = errors;
   }
 
@@ -186,12 +186,12 @@ public class ErrorOmnichannel {
     openapiRequiredFields.add("errors");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ErrorOmnichannel
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ErrorOmnichannel
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorOmnichannel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class ErrorOmnichannel {
     }
   }
 
-  /**
-   * Create an instance of ErrorOmnichannel given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ErrorOmnichannel
-   * @throws IOException if the JSON string is invalid with respect to ErrorOmnichannel
-   */
+ /**
+  * Create an instance of ErrorOmnichannel given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ErrorOmnichannel
+  * @throws IOException if the JSON string is invalid with respect to ErrorOmnichannel
+  */
   public static ErrorOmnichannel fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorOmnichannel.class);
   }
 
-  /**
-   * Convert an instance of ErrorOmnichannel to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ErrorOmnichannel to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,36 +49,30 @@ import com.messente.JSON;
 /**
  * Telegram message content
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class Telegram {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
-  @javax.annotation.Nullable
   private String sender;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
-  @javax.annotation.Nullable
   private Integer validity;
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nullable
   private String text;
 
   public static final String SERIALIZED_NAME_IMAGE_URL = "image_url";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
-  @javax.annotation.Nullable
   private String imageUrl;
 
   public static final String SERIALIZED_NAME_DOCUMENT_URL = "document_url";
   @SerializedName(SERIALIZED_NAME_DOCUMENT_URL)
-  @javax.annotation.Nullable
   private String documentUrl;
 
   public static final String SERIALIZED_NAME_AUDIO_URL = "audio_url";
   @SerializedName(SERIALIZED_NAME_AUDIO_URL)
-  @javax.annotation.Nullable
   private String audioUrl;
 
   /**
@@ -132,141 +127,140 @@ public class Telegram {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.TELEGRAM;
 
   public Telegram() {
   }
 
-  public Telegram sender(@javax.annotation.Nullable String sender) {
+  public Telegram sender(String sender) {
     this.sender = sender;
     return this;
   }
 
-  /**
+   /**
    * Phone number or alphanumeric sender name
    * @return sender
-   */
+  **/
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(@javax.annotation.Nullable String sender) {
+  public void setSender(String sender) {
     this.sender = sender;
   }
 
 
-  public Telegram validity(@javax.annotation.Nullable Integer validity) {
+  public Telegram validity(Integer validity) {
     this.validity = validity;
     return this;
   }
 
-  /**
+   /**
    * After how many minutes this channel is considered as failed and the next channel is attempted
    * @return validity
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(@javax.annotation.Nullable Integer validity) {
+  public void setValidity(Integer validity) {
     this.validity = validity;
   }
 
 
-  public Telegram text(@javax.annotation.Nullable String text) {
+  public Telegram text(String text) {
     this.text = text;
     return this;
   }
 
-  /**
+   /**
    * Plaintext content for Telegram
    * @return text
-   */
+  **/
   @javax.annotation.Nullable
   public String getText() {
     return text;
   }
 
-  public void setText(@javax.annotation.Nullable String text) {
+  public void setText(String text) {
     this.text = text;
   }
 
 
-  public Telegram imageUrl(@javax.annotation.Nullable String imageUrl) {
+  public Telegram imageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
   }
 
-  /**
+   /**
    * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;
    * @return imageUrl
-   */
+  **/
   @javax.annotation.Nullable
   public String getImageUrl() {
     return imageUrl;
   }
 
-  public void setImageUrl(@javax.annotation.Nullable String imageUrl) {
+  public void setImageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
   }
 
 
-  public Telegram documentUrl(@javax.annotation.Nullable String documentUrl) {
+  public Telegram documentUrl(String documentUrl) {
     this.documentUrl = documentUrl;
     return this;
   }
 
-  /**
+   /**
    * URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;
    * @return documentUrl
-   */
+  **/
   @javax.annotation.Nullable
   public String getDocumentUrl() {
     return documentUrl;
   }
 
-  public void setDocumentUrl(@javax.annotation.Nullable String documentUrl) {
+  public void setDocumentUrl(String documentUrl) {
     this.documentUrl = documentUrl;
   }
 
 
-  public Telegram audioUrl(@javax.annotation.Nullable String audioUrl) {
+  public Telegram audioUrl(String audioUrl) {
     this.audioUrl = audioUrl;
     return this;
   }
 
-  /**
+   /**
    * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;
    * @return audioUrl
-   */
+  **/
   @javax.annotation.Nullable
   public String getAudioUrl() {
     return audioUrl;
   }
 
-  public void setAudioUrl(@javax.annotation.Nullable String audioUrl) {
+  public void setAudioUrl(String audioUrl) {
     this.audioUrl = audioUrl;
   }
 
 
-  public Telegram channel(@javax.annotation.Nullable ChannelEnum channel) {
+  public Telegram channel(ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
 
-  /**
+   /**
    * The channel used to deliver the message
    * @return channel
-   */
+  **/
   @javax.annotation.Nullable
   public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
+  public void setChannel(ChannelEnum channel) {
     this.channel = channel;
   }
 
@@ -386,12 +380,12 @@ public class Telegram {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Telegram
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Telegram
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Telegram.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -495,22 +489,22 @@ public class Telegram {
     }
   }
 
-  /**
-   * Create an instance of Telegram given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of Telegram
-   * @throws IOException if the JSON string is invalid with respect to Telegram
-   */
+ /**
+  * Create an instance of Telegram given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of Telegram
+  * @throws IOException if the JSON string is invalid with respect to Telegram
+  */
   public static Telegram fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Telegram.class);
   }
 
-  /**
-   * Convert an instance of Telegram to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of Telegram to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

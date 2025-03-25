@@ -85,8 +85,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -166,8 +165,7 @@ public class ContactsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -190,8 +188,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -216,8 +213,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An empty object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -241,8 +237,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -314,8 +309,7 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -336,8 +330,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -360,8 +353,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -384,8 +376,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -456,8 +447,7 @@ public class ContactsApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -477,8 +467,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -500,8 +489,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact deleted </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -523,8 +511,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -595,8 +582,7 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -616,8 +602,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -639,8 +624,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -662,8 +646,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -734,8 +717,7 @@ public class ContactsApi {
      * @return GroupListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -755,8 +737,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;GroupListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -778,8 +759,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of group objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -801,8 +781,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -871,8 +850,7 @@ public class ContactsApi {
      * @return ContactListEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -892,8 +870,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactListEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -915,8 +892,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a list of contact objects </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid \&quot;groupIds\&quot; parameters provided </td><td>  -  </td></tr>
@@ -939,8 +915,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1018,8 +993,7 @@ public class ContactsApi {
      * @param phone A phone number (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1040,8 +1014,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1064,8 +1037,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> Contact removed from group </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number provided </td><td>  -  </td></tr>
@@ -1088,8 +1060,7 @@ public class ContactsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1168,8 +1139,7 @@ public class ContactsApi {
      * @return ContactEnvelope
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1191,8 +1161,7 @@ public class ContactsApi {
      * @return ApiResponse&lt;ContactEnvelope&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>
@@ -1216,8 +1185,7 @@ public class ContactsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
+     <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> An object containing a contact object </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Invalid phone number or empty patch body or unknown fields provided </td><td>  -  </td></tr>

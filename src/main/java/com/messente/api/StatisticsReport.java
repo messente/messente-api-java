@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,79 +49,76 @@ import com.messente.JSON;
 /**
  * Report for one country
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class StatisticsReport {
   public static final String SERIALIZED_NAME_TOTAL_MESSAGES = "total_messages";
   @SerializedName(SERIALIZED_NAME_TOTAL_MESSAGES)
-  @javax.annotation.Nonnull
   private Integer totalMessages;
 
   public static final String SERIALIZED_NAME_TOTAL_PRICE = "total_price";
   @SerializedName(SERIALIZED_NAME_TOTAL_PRICE)
-  @javax.annotation.Nonnull
   private String totalPrice;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
-  @javax.annotation.Nonnull
   private String country;
 
   public StatisticsReport() {
   }
 
-  public StatisticsReport totalMessages(@javax.annotation.Nonnull Integer totalMessages) {
+  public StatisticsReport totalMessages(Integer totalMessages) {
     this.totalMessages = totalMessages;
     return this;
   }
 
-  /**
+   /**
    * Sum of all messages
    * @return totalMessages
-   */
+  **/
   @javax.annotation.Nonnull
   public Integer getTotalMessages() {
     return totalMessages;
   }
 
-  public void setTotalMessages(@javax.annotation.Nonnull Integer totalMessages) {
+  public void setTotalMessages(Integer totalMessages) {
     this.totalMessages = totalMessages;
   }
 
 
-  public StatisticsReport totalPrice(@javax.annotation.Nonnull String totalPrice) {
+  public StatisticsReport totalPrice(String totalPrice) {
     this.totalPrice = totalPrice;
     return this;
   }
 
-  /**
+   /**
    * Price for all messages
    * @return totalPrice
-   */
+  **/
   @javax.annotation.Nonnull
   public String getTotalPrice() {
     return totalPrice;
   }
 
-  public void setTotalPrice(@javax.annotation.Nonnull String totalPrice) {
+  public void setTotalPrice(String totalPrice) {
     this.totalPrice = totalPrice;
   }
 
 
-  public StatisticsReport country(@javax.annotation.Nonnull String country) {
+  public StatisticsReport country(String country) {
     this.country = country;
     return this;
   }
 
-  /**
+   /**
    * Target country of all messages
    * @return country
-   */
+  **/
   @javax.annotation.Nonnull
   public String getCountry() {
     return country;
   }
 
-  public void setCountry(@javax.annotation.Nonnull String country) {
+  public void setCountry(String country) {
     this.country = country;
   }
 
@@ -231,12 +229,12 @@ public class StatisticsReport {
     openapiRequiredFields.add("country");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReport
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to StatisticsReport
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StatisticsReport.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -331,22 +329,22 @@ public class StatisticsReport {
     }
   }
 
-  /**
-   * Create an instance of StatisticsReport given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of StatisticsReport
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReport
-   */
+ /**
+  * Create an instance of StatisticsReport given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of StatisticsReport
+  * @throws IOException if the JSON string is invalid with respect to StatisticsReport
+  */
   public static StatisticsReport fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, StatisticsReport.class);
   }
 
-  /**
-   * Convert an instance of StatisticsReport to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of StatisticsReport to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,31 +49,30 @@ import com.messente.JSON;
 /**
  * Whatsapp datetime object.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppDatetime {
   public static final String SERIALIZED_NAME_FALLBACK_VALUE = "fallback_value";
   @SerializedName(SERIALIZED_NAME_FALLBACK_VALUE)
-  @javax.annotation.Nonnull
   private String fallbackValue;
 
   public WhatsAppDatetime() {
   }
 
-  public WhatsAppDatetime fallbackValue(@javax.annotation.Nonnull String fallbackValue) {
+  public WhatsAppDatetime fallbackValue(String fallbackValue) {
     this.fallbackValue = fallbackValue;
     return this;
   }
 
-  /**
+   /**
    * Default text.
    * @return fallbackValue
-   */
+  **/
   @javax.annotation.Nonnull
   public String getFallbackValue() {
     return fallbackValue;
   }
 
-  public void setFallbackValue(@javax.annotation.Nonnull String fallbackValue) {
+  public void setFallbackValue(String fallbackValue) {
     this.fallbackValue = fallbackValue;
   }
 
@@ -175,12 +175,12 @@ public class WhatsAppDatetime {
     openapiRequiredFields.add("fallback_value");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppDatetime
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppDatetime
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppDatetime.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +272,22 @@ public class WhatsAppDatetime {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppDatetime given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppDatetime
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppDatetime
-   */
+ /**
+  * Create an instance of WhatsAppDatetime given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppDatetime
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppDatetime
+  */
   public static WhatsAppDatetime fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppDatetime.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppDatetime to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppDatetime to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

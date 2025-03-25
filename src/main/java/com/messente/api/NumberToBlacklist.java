@@ -37,6 +37,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,31 +49,30 @@ import com.messente.JSON;
 /**
  * A container for a soon-to-be blacklisted number
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class NumberToBlacklist {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nonnull
   private String phoneNumber;
 
   public NumberToBlacklist() {
   }
 
-  public NumberToBlacklist phoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public NumberToBlacklist phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
 
-  /**
+   /**
    * Phone number in e.164 format
    * @return phoneNumber
-   */
+  **/
   @javax.annotation.Nonnull
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nonnull String phoneNumber) {
+  public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
@@ -175,12 +175,12 @@ public class NumberToBlacklist {
     openapiRequiredFields.add("phoneNumber");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to NumberToBlacklist
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to NumberToBlacklist
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NumberToBlacklist.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -272,22 +272,22 @@ public class NumberToBlacklist {
     }
   }
 
-  /**
-   * Create an instance of NumberToBlacklist given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of NumberToBlacklist
-   * @throws IOException if the JSON string is invalid with respect to NumberToBlacklist
-   */
+ /**
+  * Create an instance of NumberToBlacklist given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of NumberToBlacklist
+  * @throws IOException if the JSON string is invalid with respect to NumberToBlacklist
+  */
   public static NumberToBlacklist fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NumberToBlacklist.class);
   }
 
-  /**
-   * Convert an instance of NumberToBlacklist to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of NumberToBlacklist to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -40,6 +40,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,223 +52,214 @@ import com.messente.JSON;
 /**
  * Whatsapp component parameter.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class WhatsAppParameter {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
   private String type;
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nullable
   private String text;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
-  @javax.annotation.Nullable
   private WhatsAppCurrency currency;
 
   public static final String SERIALIZED_NAME_DATE_TIME = "date_time";
   @SerializedName(SERIALIZED_NAME_DATE_TIME)
-  @javax.annotation.Nullable
   private WhatsAppDatetime dateTime;
 
   public static final String SERIALIZED_NAME_IMAGE = "image";
   @SerializedName(SERIALIZED_NAME_IMAGE)
-  @javax.annotation.Nullable
   private WhatsAppMedia image;
 
   public static final String SERIALIZED_NAME_DOCUMENT = "document";
   @SerializedName(SERIALIZED_NAME_DOCUMENT)
-  @javax.annotation.Nullable
   private WhatsAppMedia document;
 
   public static final String SERIALIZED_NAME_VIDEO = "video";
   @SerializedName(SERIALIZED_NAME_VIDEO)
-  @javax.annotation.Nullable
   private WhatsAppMedia video;
 
   public static final String SERIALIZED_NAME_COUPON_CODE = "coupon_code";
   @SerializedName(SERIALIZED_NAME_COUPON_CODE)
-  @javax.annotation.Nullable
   private String couponCode;
 
   public static final String SERIALIZED_NAME_PAYLOAD = "payload";
   @SerializedName(SERIALIZED_NAME_PAYLOAD)
-  @javax.annotation.Nullable
   private String payload;
 
   public WhatsAppParameter() {
   }
 
-  public WhatsAppParameter type(@javax.annotation.Nonnull String type) {
+  public WhatsAppParameter type(String type) {
     this.type = type;
     return this;
   }
 
-  /**
+   /**
    * Type of the parameter.
    * @return type
-   */
+  **/
   @javax.annotation.Nonnull
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
+  public void setType(String type) {
     this.type = type;
   }
 
 
-  public WhatsAppParameter text(@javax.annotation.Nullable String text) {
+  public WhatsAppParameter text(String text) {
     this.text = text;
     return this;
   }
 
-  /**
+   /**
    * A text.
    * @return text
-   */
+  **/
   @javax.annotation.Nullable
   public String getText() {
     return text;
   }
 
-  public void setText(@javax.annotation.Nullable String text) {
+  public void setText(String text) {
     this.text = text;
   }
 
 
-  public WhatsAppParameter currency(@javax.annotation.Nullable WhatsAppCurrency currency) {
+  public WhatsAppParameter currency(WhatsAppCurrency currency) {
     this.currency = currency;
     return this;
   }
 
-  /**
+   /**
    * Get currency
    * @return currency
-   */
+  **/
   @javax.annotation.Nullable
   public WhatsAppCurrency getCurrency() {
     return currency;
   }
 
-  public void setCurrency(@javax.annotation.Nullable WhatsAppCurrency currency) {
+  public void setCurrency(WhatsAppCurrency currency) {
     this.currency = currency;
   }
 
 
-  public WhatsAppParameter dateTime(@javax.annotation.Nullable WhatsAppDatetime dateTime) {
+  public WhatsAppParameter dateTime(WhatsAppDatetime dateTime) {
     this.dateTime = dateTime;
     return this;
   }
 
-  /**
+   /**
    * Get dateTime
    * @return dateTime
-   */
+  **/
   @javax.annotation.Nullable
   public WhatsAppDatetime getDateTime() {
     return dateTime;
   }
 
-  public void setDateTime(@javax.annotation.Nullable WhatsAppDatetime dateTime) {
+  public void setDateTime(WhatsAppDatetime dateTime) {
     this.dateTime = dateTime;
   }
 
 
-  public WhatsAppParameter image(@javax.annotation.Nullable WhatsAppMedia image) {
+  public WhatsAppParameter image(WhatsAppMedia image) {
     this.image = image;
     return this;
   }
 
-  /**
+   /**
    * Get image
    * @return image
-   */
+  **/
   @javax.annotation.Nullable
   public WhatsAppMedia getImage() {
     return image;
   }
 
-  public void setImage(@javax.annotation.Nullable WhatsAppMedia image) {
+  public void setImage(WhatsAppMedia image) {
     this.image = image;
   }
 
 
-  public WhatsAppParameter document(@javax.annotation.Nullable WhatsAppMedia document) {
+  public WhatsAppParameter document(WhatsAppMedia document) {
     this.document = document;
     return this;
   }
 
-  /**
+   /**
    * Get document
    * @return document
-   */
+  **/
   @javax.annotation.Nullable
   public WhatsAppMedia getDocument() {
     return document;
   }
 
-  public void setDocument(@javax.annotation.Nullable WhatsAppMedia document) {
+  public void setDocument(WhatsAppMedia document) {
     this.document = document;
   }
 
 
-  public WhatsAppParameter video(@javax.annotation.Nullable WhatsAppMedia video) {
+  public WhatsAppParameter video(WhatsAppMedia video) {
     this.video = video;
     return this;
   }
 
-  /**
+   /**
    * Get video
    * @return video
-   */
+  **/
   @javax.annotation.Nullable
   public WhatsAppMedia getVideo() {
     return video;
   }
 
-  public void setVideo(@javax.annotation.Nullable WhatsAppMedia video) {
+  public void setVideo(WhatsAppMedia video) {
     this.video = video;
   }
 
 
-  public WhatsAppParameter couponCode(@javax.annotation.Nullable String couponCode) {
+  public WhatsAppParameter couponCode(String couponCode) {
     this.couponCode = couponCode;
     return this;
   }
 
-  /**
+   /**
    * A coupon code.
    * @return couponCode
-   */
+  **/
   @javax.annotation.Nullable
   public String getCouponCode() {
     return couponCode;
   }
 
-  public void setCouponCode(@javax.annotation.Nullable String couponCode) {
+  public void setCouponCode(String couponCode) {
     this.couponCode = couponCode;
   }
 
 
-  public WhatsAppParameter payload(@javax.annotation.Nullable String payload) {
+  public WhatsAppParameter payload(String payload) {
     this.payload = payload;
     return this;
   }
 
-  /**
+   /**
    * A payload.
    * @return payload
-   */
+  **/
   @javax.annotation.Nullable
   public String getPayload() {
     return payload;
   }
 
-  public void setPayload(@javax.annotation.Nullable String payload) {
+  public void setPayload(String payload) {
     this.payload = payload;
   }
 
@@ -394,12 +386,12 @@ public class WhatsAppParameter {
     openapiRequiredFields.add("type");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppParameter
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to WhatsAppParameter
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsAppParameter.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -520,22 +512,22 @@ public class WhatsAppParameter {
     }
   }
 
-  /**
-   * Create an instance of WhatsAppParameter given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of WhatsAppParameter
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppParameter
-   */
+ /**
+  * Create an instance of WhatsAppParameter given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of WhatsAppParameter
+  * @throws IOException if the JSON string is invalid with respect to WhatsAppParameter
+  */
   public static WhatsAppParameter fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsAppParameter.class);
   }
 
-  /**
-   * Convert an instance of WhatsAppParameter to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of WhatsAppParameter to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

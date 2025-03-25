@@ -41,6 +41,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,27 +53,24 @@ import com.messente.JSON;
 /**
  * A container for successful delivery report response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class DeliveryReportResponse {
   public static final String SERIALIZED_NAME_STATUSES = "statuses";
   @SerializedName(SERIALIZED_NAME_STATUSES)
-  @javax.annotation.Nonnull
   private List<DeliveryResult> statuses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
-  @javax.annotation.Nonnull
   private String to;
 
   public static final String SERIALIZED_NAME_OMNIMESSAGE_ID = "omnimessage_id";
   @SerializedName(SERIALIZED_NAME_OMNIMESSAGE_ID)
-  @javax.annotation.Nonnull
   private UUID omnimessageId;
 
   public DeliveryReportResponse() {
   }
 
-  public DeliveryReportResponse statuses(@javax.annotation.Nonnull List<DeliveryResult> statuses) {
+  public DeliveryReportResponse statuses(List<DeliveryResult> statuses) {
     this.statuses = statuses;
     return this;
   }
@@ -85,54 +83,54 @@ public class DeliveryReportResponse {
     return this;
   }
 
-  /**
+   /**
    * Contains the delivery reports for each channel, ordered by send order
    * @return statuses
-   */
+  **/
   @javax.annotation.Nonnull
   public List<DeliveryResult> getStatuses() {
     return statuses;
   }
 
-  public void setStatuses(@javax.annotation.Nonnull List<DeliveryResult> statuses) {
+  public void setStatuses(List<DeliveryResult> statuses) {
     this.statuses = statuses;
   }
 
 
-  public DeliveryReportResponse to(@javax.annotation.Nonnull String to) {
+  public DeliveryReportResponse to(String to) {
     this.to = to;
     return this;
   }
 
-  /**
+   /**
    * Phone number in e.164 format
    * @return to
-   */
+  **/
   @javax.annotation.Nonnull
   public String getTo() {
     return to;
   }
 
-  public void setTo(@javax.annotation.Nonnull String to) {
+  public void setTo(String to) {
     this.to = to;
   }
 
 
-  public DeliveryReportResponse omnimessageId(@javax.annotation.Nonnull UUID omnimessageId) {
+  public DeliveryReportResponse omnimessageId(UUID omnimessageId) {
     this.omnimessageId = omnimessageId;
     return this;
   }
 
-  /**
+   /**
    * Unique identifier for the omnimessage
    * @return omnimessageId
-   */
+  **/
   @javax.annotation.Nonnull
   public UUID getOmnimessageId() {
     return omnimessageId;
   }
 
-  public void setOmnimessageId(@javax.annotation.Nonnull UUID omnimessageId) {
+  public void setOmnimessageId(UUID omnimessageId) {
     this.omnimessageId = omnimessageId;
   }
 
@@ -243,12 +241,12 @@ public class DeliveryReportResponse {
     openapiRequiredFields.add("omnimessage_id");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DeliveryReportResponse
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to DeliveryReportResponse
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeliveryReportResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -353,22 +351,22 @@ public class DeliveryReportResponse {
     }
   }
 
-  /**
-   * Create an instance of DeliveryReportResponse given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of DeliveryReportResponse
-   * @throws IOException if the JSON string is invalid with respect to DeliveryReportResponse
-   */
+ /**
+  * Create an instance of DeliveryReportResponse given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of DeliveryReportResponse
+  * @throws IOException if the JSON string is invalid with respect to DeliveryReportResponse
+  */
   public static DeliveryReportResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DeliveryReportResponse.class);
   }
 
-  /**
-   * Convert an instance of DeliveryReportResponse to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of DeliveryReportResponse to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
