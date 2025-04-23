@@ -19,8 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppComponent;
-import com.messente.api.WhatsAppLanguage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,90 +48,74 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * Whatsapp Cloud API template
+ * Example of the templated content
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class WhatsAppTemplate {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
-  private String name;
+public class WhatsappTemplateExample {
+  public static final String SERIALIZED_NAME_HEADER_TEXT = "header_text";
+  @SerializedName(SERIALIZED_NAME_HEADER_TEXT)
+  @javax.annotation.Nullable
+  private List<List<String>> headerText = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_LANGUAGE = "language";
-  @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  @javax.annotation.Nonnull
-  private WhatsAppLanguage language;
+  public static final String SERIALIZED_NAME_BODY_TEXT = "body_text";
+  @SerializedName(SERIALIZED_NAME_BODY_TEXT)
+  @javax.annotation.Nullable
+  private List<List<String>> bodyText = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_COMPONENTS = "components";
-  @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nonnull
-  private List<WhatsAppComponent> components = new ArrayList<>();
-
-  public WhatsAppTemplate() {
+  public WhatsappTemplateExample() {
   }
 
-  public WhatsAppTemplate name(@javax.annotation.Nonnull String name) {
-    this.name = name;
+  public WhatsappTemplateExample headerText(@javax.annotation.Nullable List<List<String>> headerText) {
+    this.headerText = headerText;
     return this;
   }
 
-  /**
-   * Name of the template
-   * @return name
-   */
-  @javax.annotation.Nonnull
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@javax.annotation.Nonnull String name) {
-    this.name = name;
-  }
-
-
-  public WhatsAppTemplate language(@javax.annotation.Nonnull WhatsAppLanguage language) {
-    this.language = language;
-    return this;
-  }
-
-  /**
-   * Get language
-   * @return language
-   */
-  @javax.annotation.Nonnull
-  public WhatsAppLanguage getLanguage() {
-    return language;
-  }
-
-  public void setLanguage(@javax.annotation.Nonnull WhatsAppLanguage language) {
-    this.language = language;
-  }
-
-
-  public WhatsAppTemplate components(@javax.annotation.Nonnull List<WhatsAppComponent> components) {
-    this.components = components;
-    return this;
-  }
-
-  public WhatsAppTemplate addComponentsItem(WhatsAppComponent componentsItem) {
-    if (this.components == null) {
-      this.components = new ArrayList<>();
+  public WhatsappTemplateExample addHeaderTextItem(List<String> headerTextItem) {
+    if (this.headerText == null) {
+      this.headerText = new ArrayList<>();
     }
-    this.components.add(componentsItem);
+    this.headerText.add(headerTextItem);
     return this;
   }
 
   /**
-   * List of template components
-   * @return components
+   * Example of the templated text for the header
+   * @return headerText
    */
-  @javax.annotation.Nonnull
-  public List<WhatsAppComponent> getComponents() {
-    return components;
+  @javax.annotation.Nullable
+  public List<List<String>> getHeaderText() {
+    return headerText;
   }
 
-  public void setComponents(@javax.annotation.Nonnull List<WhatsAppComponent> components) {
-    this.components = components;
+  public void setHeaderText(@javax.annotation.Nullable List<List<String>> headerText) {
+    this.headerText = headerText;
+  }
+
+
+  public WhatsappTemplateExample bodyText(@javax.annotation.Nullable List<List<String>> bodyText) {
+    this.bodyText = bodyText;
+    return this;
+  }
+
+  public WhatsappTemplateExample addBodyTextItem(List<String> bodyTextItem) {
+    if (this.bodyText == null) {
+      this.bodyText = new ArrayList<>();
+    }
+    this.bodyText.add(bodyTextItem);
+    return this;
+  }
+
+  /**
+   * Example of the templated text for the body
+   * @return bodyText
+   */
+  @javax.annotation.Nullable
+  public List<List<String>> getBodyText() {
+    return bodyText;
+  }
+
+  public void setBodyText(@javax.annotation.Nullable List<List<String>> bodyText) {
+    this.bodyText = bodyText;
   }
 
   /**
@@ -149,9 +131,9 @@ public class WhatsAppTemplate {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WhatsAppTemplate instance itself
+   * @return the WhatsappTemplateExample instance itself
    */
-  public WhatsAppTemplate putAdditionalProperty(String key, Object value) {
+  public WhatsappTemplateExample putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -190,25 +172,23 @@ public class WhatsAppTemplate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WhatsAppTemplate whatsAppTemplate = (WhatsAppTemplate) o;
-    return Objects.equals(this.name, whatsAppTemplate.name) &&
-        Objects.equals(this.language, whatsAppTemplate.language) &&
-        Objects.equals(this.components, whatsAppTemplate.components)&&
-        Objects.equals(this.additionalProperties, whatsAppTemplate.additionalProperties);
+    WhatsappTemplateExample whatsappTemplateExample = (WhatsappTemplateExample) o;
+    return Objects.equals(this.headerText, whatsappTemplateExample.headerText) &&
+        Objects.equals(this.bodyText, whatsappTemplateExample.bodyText)&&
+        Objects.equals(this.additionalProperties, whatsappTemplateExample.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, language, components, additionalProperties);
+    return Objects.hash(headerText, bodyText, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatsAppTemplate {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    components: ").append(toIndentedString(components)).append("\n");
+    sb.append("class WhatsappTemplateExample {\n");
+    sb.append("    headerText: ").append(toIndentedString(headerText)).append("\n");
+    sb.append("    bodyText: ").append(toIndentedString(bodyText)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -232,68 +212,50 @@ public class WhatsAppTemplate {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("language");
-    openapiFields.add("components");
+    openapiFields.add("header_text");
+    openapiFields.add("body_text");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("language");
-    openapiRequiredFields.add("components");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppTemplate
+   * @throws IOException if the JSON Element is invalid with respect to WhatsappTemplateExample
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WhatsAppTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppTemplate is not found in the empty JSON string", WhatsAppTemplate.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WhatsAppTemplate.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!WhatsappTemplateExample.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsappTemplateExample is not found in the empty JSON string", WhatsappTemplateExample.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("header_text") != null && !jsonObj.get("header_text").isJsonNull() && !jsonObj.get("header_text").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `header_text` to be an array in the JSON string but got `%s`", jsonObj.get("header_text").toString()));
       }
-      // validate the required field `language`
-      WhatsAppLanguage.validateJsonElement(jsonObj.get("language"));
-      // ensure the json data is an array
-      if (!jsonObj.get("components").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `components` to be an array in the JSON string but got `%s`", jsonObj.get("components").toString()));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("body_text") != null && !jsonObj.get("body_text").isJsonNull() && !jsonObj.get("body_text").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `body_text` to be an array in the JSON string but got `%s`", jsonObj.get("body_text").toString()));
       }
-
-      JsonArray jsonArraycomponents = jsonObj.getAsJsonArray("components");
-      // validate the required field `components` (array)
-      for (int i = 0; i < jsonArraycomponents.size(); i++) {
-        WhatsAppComponent.validateJsonElement(jsonArraycomponents.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WhatsAppTemplate.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WhatsAppTemplate' and its subtypes
+       if (!WhatsappTemplateExample.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WhatsappTemplateExample' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WhatsAppTemplate> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppTemplate.class));
+       final TypeAdapter<WhatsappTemplateExample> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsappTemplateExample.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WhatsAppTemplate>() {
+       return (TypeAdapter<T>) new TypeAdapter<WhatsappTemplateExample>() {
            @Override
-           public void write(JsonWriter out, WhatsAppTemplate value) throws IOException {
+           public void write(JsonWriter out, WhatsappTemplateExample value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -321,12 +283,12 @@ public class WhatsAppTemplate {
            }
 
            @Override
-           public WhatsAppTemplate read(JsonReader in) throws IOException {
+           public WhatsappTemplateExample read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WhatsAppTemplate instance = thisAdapter.fromJsonTree(jsonObj);
+             WhatsappTemplateExample instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -353,18 +315,18 @@ public class WhatsAppTemplate {
   }
 
   /**
-   * Create an instance of WhatsAppTemplate given an JSON string
+   * Create an instance of WhatsappTemplateExample given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WhatsAppTemplate
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppTemplate
+   * @return An instance of WhatsappTemplateExample
+   * @throws IOException if the JSON string is invalid with respect to WhatsappTemplateExample
    */
-  public static WhatsAppTemplate fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WhatsAppTemplate.class);
+  public static WhatsappTemplateExample fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WhatsappTemplateExample.class);
   }
 
   /**
-   * Convert an instance of WhatsAppTemplate to an JSON string
+   * Convert an instance of WhatsappTemplateExample to an JSON string
    *
    * @return JSON string
    */

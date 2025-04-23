@@ -143,6 +143,17 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppParameter.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsAppText.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappCreateTemplateRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappCreateTemplateResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappListTemplatesResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappPagination.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappPagingCursors.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappSupportedApp.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappTemplateButton.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappTemplateComponent.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappTemplateExample.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappTemplateResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.messente.api.WhatsappUpdateTemplateRequest.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

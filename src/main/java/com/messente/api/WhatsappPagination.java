@@ -19,12 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppComponent;
-import com.messente.api.WhatsAppLanguage;
+import com.messente.api.WhatsappPagingCursors;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,90 +47,82 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * Whatsapp Cloud API template
+ * Whatsapp media object.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class WhatsAppTemplate {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
-  private String name;
+public class WhatsappPagination {
+  public static final String SERIALIZED_NAME_PREVIOUS = "previous";
+  @SerializedName(SERIALIZED_NAME_PREVIOUS)
+  @javax.annotation.Nullable
+  private String previous;
 
-  public static final String SERIALIZED_NAME_LANGUAGE = "language";
-  @SerializedName(SERIALIZED_NAME_LANGUAGE)
-  @javax.annotation.Nonnull
-  private WhatsAppLanguage language;
+  public static final String SERIALIZED_NAME_NEXT = "next";
+  @SerializedName(SERIALIZED_NAME_NEXT)
+  @javax.annotation.Nullable
+  private String next;
 
-  public static final String SERIALIZED_NAME_COMPONENTS = "components";
-  @SerializedName(SERIALIZED_NAME_COMPONENTS)
+  public static final String SERIALIZED_NAME_CURSORS = "cursors";
+  @SerializedName(SERIALIZED_NAME_CURSORS)
   @javax.annotation.Nonnull
-  private List<WhatsAppComponent> components = new ArrayList<>();
+  private WhatsappPagingCursors cursors;
 
-  public WhatsAppTemplate() {
+  public WhatsappPagination() {
   }
 
-  public WhatsAppTemplate name(@javax.annotation.Nonnull String name) {
-    this.name = name;
+  public WhatsappPagination previous(@javax.annotation.Nullable String previous) {
+    this.previous = previous;
     return this;
   }
 
   /**
-   * Name of the template
-   * @return name
+   * A URL to ge the previous paginated page.
+   * @return previous
    */
-  @javax.annotation.Nonnull
-  public String getName() {
-    return name;
+  @javax.annotation.Nullable
+  public String getPrevious() {
+    return previous;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
-    this.name = name;
+  public void setPrevious(@javax.annotation.Nullable String previous) {
+    this.previous = previous;
   }
 
 
-  public WhatsAppTemplate language(@javax.annotation.Nonnull WhatsAppLanguage language) {
-    this.language = language;
+  public WhatsappPagination next(@javax.annotation.Nullable String next) {
+    this.next = next;
     return this;
   }
 
   /**
-   * Get language
-   * @return language
+   * A URL to ge the next paginated page.
+   * @return next
    */
-  @javax.annotation.Nonnull
-  public WhatsAppLanguage getLanguage() {
-    return language;
+  @javax.annotation.Nullable
+  public String getNext() {
+    return next;
   }
 
-  public void setLanguage(@javax.annotation.Nonnull WhatsAppLanguage language) {
-    this.language = language;
+  public void setNext(@javax.annotation.Nullable String next) {
+    this.next = next;
   }
 
 
-  public WhatsAppTemplate components(@javax.annotation.Nonnull List<WhatsAppComponent> components) {
-    this.components = components;
-    return this;
-  }
-
-  public WhatsAppTemplate addComponentsItem(WhatsAppComponent componentsItem) {
-    if (this.components == null) {
-      this.components = new ArrayList<>();
-    }
-    this.components.add(componentsItem);
+  public WhatsappPagination cursors(@javax.annotation.Nonnull WhatsappPagingCursors cursors) {
+    this.cursors = cursors;
     return this;
   }
 
   /**
-   * List of template components
-   * @return components
+   * Get cursors
+   * @return cursors
    */
   @javax.annotation.Nonnull
-  public List<WhatsAppComponent> getComponents() {
-    return components;
+  public WhatsappPagingCursors getCursors() {
+    return cursors;
   }
 
-  public void setComponents(@javax.annotation.Nonnull List<WhatsAppComponent> components) {
-    this.components = components;
+  public void setCursors(@javax.annotation.Nonnull WhatsappPagingCursors cursors) {
+    this.cursors = cursors;
   }
 
   /**
@@ -149,9 +138,9 @@ public class WhatsAppTemplate {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WhatsAppTemplate instance itself
+   * @return the WhatsappPagination instance itself
    */
-  public WhatsAppTemplate putAdditionalProperty(String key, Object value) {
+  public WhatsappPagination putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -190,25 +179,25 @@ public class WhatsAppTemplate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WhatsAppTemplate whatsAppTemplate = (WhatsAppTemplate) o;
-    return Objects.equals(this.name, whatsAppTemplate.name) &&
-        Objects.equals(this.language, whatsAppTemplate.language) &&
-        Objects.equals(this.components, whatsAppTemplate.components)&&
-        Objects.equals(this.additionalProperties, whatsAppTemplate.additionalProperties);
+    WhatsappPagination whatsappPagination = (WhatsappPagination) o;
+    return Objects.equals(this.previous, whatsappPagination.previous) &&
+        Objects.equals(this.next, whatsappPagination.next) &&
+        Objects.equals(this.cursors, whatsappPagination.cursors)&&
+        Objects.equals(this.additionalProperties, whatsappPagination.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, language, components, additionalProperties);
+    return Objects.hash(previous, next, cursors, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatsAppTemplate {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
-    sb.append("    components: ").append(toIndentedString(components)).append("\n");
+    sb.append("class WhatsappPagination {\n");
+    sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
+    sb.append("    cursors: ").append(toIndentedString(cursors)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -232,68 +221,59 @@ public class WhatsAppTemplate {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("language");
-    openapiFields.add("components");
+    openapiFields.add("previous");
+    openapiFields.add("next");
+    openapiFields.add("cursors");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("language");
-    openapiRequiredFields.add("components");
+    openapiRequiredFields.add("cursors");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppTemplate
+   * @throws IOException if the JSON Element is invalid with respect to WhatsappPagination
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WhatsAppTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppTemplate is not found in the empty JSON string", WhatsAppTemplate.openapiRequiredFields.toString()));
+        if (!WhatsappPagination.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsappPagination is not found in the empty JSON string", WhatsappPagination.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WhatsAppTemplate.openapiRequiredFields) {
+      for (String requiredField : WhatsappPagination.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if ((jsonObj.get("previous") != null && !jsonObj.get("previous").isJsonNull()) && !jsonObj.get("previous").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `previous` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previous").toString()));
       }
-      // validate the required field `language`
-      WhatsAppLanguage.validateJsonElement(jsonObj.get("language"));
-      // ensure the json data is an array
-      if (!jsonObj.get("components").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `components` to be an array in the JSON string but got `%s`", jsonObj.get("components").toString()));
+      if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
       }
-
-      JsonArray jsonArraycomponents = jsonObj.getAsJsonArray("components");
-      // validate the required field `components` (array)
-      for (int i = 0; i < jsonArraycomponents.size(); i++) {
-        WhatsAppComponent.validateJsonElement(jsonArraycomponents.get(i));
-      };
+      // validate the required field `cursors`
+      WhatsappPagingCursors.validateJsonElement(jsonObj.get("cursors"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WhatsAppTemplate.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WhatsAppTemplate' and its subtypes
+       if (!WhatsappPagination.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WhatsappPagination' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WhatsAppTemplate> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppTemplate.class));
+       final TypeAdapter<WhatsappPagination> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsappPagination.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WhatsAppTemplate>() {
+       return (TypeAdapter<T>) new TypeAdapter<WhatsappPagination>() {
            @Override
-           public void write(JsonWriter out, WhatsAppTemplate value) throws IOException {
+           public void write(JsonWriter out, WhatsappPagination value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -321,12 +301,12 @@ public class WhatsAppTemplate {
            }
 
            @Override
-           public WhatsAppTemplate read(JsonReader in) throws IOException {
+           public WhatsappPagination read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WhatsAppTemplate instance = thisAdapter.fromJsonTree(jsonObj);
+             WhatsappPagination instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -353,18 +333,18 @@ public class WhatsAppTemplate {
   }
 
   /**
-   * Create an instance of WhatsAppTemplate given an JSON string
+   * Create an instance of WhatsappPagination given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WhatsAppTemplate
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppTemplate
+   * @return An instance of WhatsappPagination
+   * @throws IOException if the JSON string is invalid with respect to WhatsappPagination
    */
-  public static WhatsAppTemplate fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WhatsAppTemplate.class);
+  public static WhatsappPagination fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WhatsappPagination.class);
   }
 
   /**
-   * Convert an instance of WhatsAppTemplate to an JSON string
+   * Convert an instance of WhatsappPagination to an JSON string
    *
    * @return JSON string
    */
