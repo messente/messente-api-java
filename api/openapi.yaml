@@ -3087,10 +3087,8 @@ components:
               - - body_text
                 - body_text
               header_text:
-              - - header_text
-                - header_text
-              - - header_text
-                - header_text
+              - header_text
+              - header_text
           - buttons:
             - supported_apps:
               - package_name: package_name
@@ -3124,10 +3122,8 @@ components:
               - - body_text
                 - body_text
               header_text:
-              - - header_text
-                - header_text
-              - - header_text
-                - header_text
+              - header_text
+              - header_text
           name: name
           language: language
           id: id
@@ -3167,10 +3163,8 @@ components:
               - - body_text
                 - body_text
               header_text:
-              - - header_text
-                - header_text
-              - - header_text
-                - header_text
+              - header_text
+              - header_text
           - buttons:
             - supported_apps:
               - package_name: package_name
@@ -3204,10 +3198,8 @@ components:
               - - body_text
                 - body_text
               header_text:
-              - - header_text
-                - header_text
-              - - header_text
-                - header_text
+              - header_text
+              - header_text
           name: name
           language: language
           id: id
@@ -3268,10 +3260,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         - buttons:
           - supported_apps:
             - package_name: package_name
@@ -3305,10 +3295,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         name: name
         language: language
         id: id
@@ -3412,10 +3400,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         - buttons:
           - supported_apps:
             - package_name: package_name
@@ -3449,10 +3435,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         category: utility
       nullable: true
       properties:
@@ -3501,10 +3485,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         - buttons:
           - supported_apps:
             - package_name: package_name
@@ -3538,10 +3520,8 @@ components:
             - - body_text
               - body_text
             header_text:
-            - - header_text
-              - header_text
-            - - header_text
-              - header_text
+            - header_text
+            - header_text
         allow_category_change: false
         name: name
         language: language
@@ -3595,6 +3575,7 @@ components:
       - approved
       - rejected
       - pending
+      - pending_deletion
       example: approved
       type: string
     WhatsappTemplateCategory:
@@ -3641,10 +3622,8 @@ components:
           - - body_text
             - body_text
           header_text:
-          - - header_text
-            - header_text
-          - - header_text
-            - header_text
+          - header_text
+          - header_text
       properties:
         type:
           $ref: '#/components/schemas/WhatsappComponentType'
@@ -3683,17 +3662,13 @@ components:
         - - body_text
           - body_text
         header_text:
-        - - header_text
-          - header_text
-        - - header_text
-          - header_text
+        - header_text
+        - header_text
       properties:
         header_text:
           description: Example of the templated text for the header
           items:
-            items:
-              type: string
-            type: array
+            type: string
           type: array
         body_text:
           description: Example of the templated text for the body
@@ -3750,6 +3725,9 @@ components:
       - phone_number
       - otp
       - url
+      - catalog
+      - flow
+      - copy_code
       type: string
     WhatsappOtpButtonType:
       description: Type of the OTP button

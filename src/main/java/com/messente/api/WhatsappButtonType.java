@@ -35,7 +35,13 @@ public enum WhatsappButtonType {
   
   OTP("otp"),
   
-  URL("url");
+  URL("url"),
+  
+  CATALOG("catalog"),
+  
+  FLOW("flow"),
+  
+  COPY_CODE("copy_code");
 
   private String value;
 

@@ -291,7 +291,7 @@ public class Example {
 | **content** | **String**| A search filter representing the content of a template. Only matching templates will be returned in the list. | [optional] |
 | **language** | **String**| A filter  for returning only templates matching a specific language code. A list of supported languages is available in the [WhatsApp documentation](https://developers.facebook.com/docs/whatsapp/api/messages/message-templates/)  | [optional] |
 | **name** | **String**| A search filter representing the name, either full or partial, of a template. Only matching templates will be returned in the list. | [optional] |
-| **status** | [**WhatsappTemplateStatus**](.md)| A filter for returning only templates matching a specific status. | [optional] [enum: approved, rejected, pending] |
+| **status** | [**WhatsappTemplateStatus**](.md)| A filter for returning only templates matching a specific status. | [optional] [enum: approved, rejected, pending, pending_deletion] |
 
 ### Return type
 

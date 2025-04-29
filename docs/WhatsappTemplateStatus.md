@@ -11,5 +11,7 @@
 
 * `PENDING` (value: `"pending"`)
 
+* `PENDING_DELETION` (value: `"pending_deletion"`)
+
 
 

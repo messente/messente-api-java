@@ -55,7 +55,7 @@ public class WhatsappTemplateExample {
   public static final String SERIALIZED_NAME_HEADER_TEXT = "header_text";
   @SerializedName(SERIALIZED_NAME_HEADER_TEXT)
   @javax.annotation.Nullable
-  private List<List<String>> headerText = new ArrayList<>();
+  private List<String> headerText = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BODY_TEXT = "body_text";
   @SerializedName(SERIALIZED_NAME_BODY_TEXT)
@@ -65,12 +65,12 @@ public class WhatsappTemplateExample {
   public WhatsappTemplateExample() {
   }
 
-  public WhatsappTemplateExample headerText(@javax.annotation.Nullable List<List<String>> headerText) {
+  public WhatsappTemplateExample headerText(@javax.annotation.Nullable List<String> headerText) {
     this.headerText = headerText;
     return this;
   }
 
-  public WhatsappTemplateExample addHeaderTextItem(List<String> headerTextItem) {
+  public WhatsappTemplateExample addHeaderTextItem(String headerTextItem) {
     if (this.headerText == null) {
       this.headerText = new ArrayList<>();
     }
@@ -83,11 +83,11 @@ public class WhatsappTemplateExample {
    * @return headerText
    */
   @javax.annotation.Nullable
-  public List<List<String>> getHeaderText() {
+  public List<String> getHeaderText() {
     return headerText;
   }
 
-  public void setHeaderText(@javax.annotation.Nullable List<List<String>> headerText) {
+  public void setHeaderText(@javax.annotation.Nullable List<String> headerText) {
     this.headerText = headerText;
   }
 

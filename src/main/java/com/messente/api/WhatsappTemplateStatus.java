@@ -33,7 +33,9 @@ public enum WhatsappTemplateStatus {
   
   REJECTED("rejected"),
   
-  PENDING("pending");
+  PENDING("pending"),
+  
+  PENDING_DELETION("pending_deletion");
 
   private String value;
 
