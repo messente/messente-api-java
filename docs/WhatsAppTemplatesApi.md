@@ -151,7 +151,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | template deletion successful |  -  |
 | **400** | Invalid input |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -309,7 +309,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | template list fetched successfully |  -  |
 | **400** | Invalid input |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
@@ -383,7 +383,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** | template update successful |  -  |
 | **400** | Invalid input |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
