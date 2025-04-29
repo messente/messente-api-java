@@ -31,11 +31,21 @@ public enum WhatsappTemplateStatus {
   
   APPROVED("approved"),
   
+  IN_APPEAL("in_appeal"),
+  
   REJECTED("rejected"),
   
   PENDING("pending"),
   
-  PENDING_DELETION("pending_deletion");
+  PENDING_DELETION("pending_deletion"),
+  
+  DELETED("deleted"),
+  
+  DISABLED("disabled"),
+  
+  PAUSED("paused"),
+  
+  LIMIT_EXCEEDED("limit_exceeded");
 
   private String value;
 
