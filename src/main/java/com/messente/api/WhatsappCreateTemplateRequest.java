@@ -64,11 +64,6 @@ public class WhatsappCreateTemplateRequest {
   @javax.annotation.Nonnull
   private WhatsappTemplateCategory category;
 
-  public static final String SERIALIZED_NAME_ALLOW_CATEGORY_CHANGE = "allow_category_change";
-  @SerializedName(SERIALIZED_NAME_ALLOW_CATEGORY_CHANGE)
-  @javax.annotation.Nullable
-  private Boolean allowCategoryChange = false;
-
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
   @javax.annotation.Nonnull
@@ -117,25 +112,6 @@ public class WhatsappCreateTemplateRequest {
 
   public void setCategory(@javax.annotation.Nonnull WhatsappTemplateCategory category) {
     this.category = category;
-  }
-
-
-  public WhatsappCreateTemplateRequest allowCategoryChange(@javax.annotation.Nullable Boolean allowCategoryChange) {
-    this.allowCategoryChange = allowCategoryChange;
-    return this;
-  }
-
-  /**
-   * Allow category change
-   * @return allowCategoryChange
-   */
-  @javax.annotation.Nullable
-  public Boolean getAllowCategoryChange() {
-    return allowCategoryChange;
-  }
-
-  public void setAllowCategoryChange(@javax.annotation.Nullable Boolean allowCategoryChange) {
-    this.allowCategoryChange = allowCategoryChange;
   }
 
 
@@ -241,7 +217,6 @@ public class WhatsappCreateTemplateRequest {
     WhatsappCreateTemplateRequest whatsappCreateTemplateRequest = (WhatsappCreateTemplateRequest) o;
     return Objects.equals(this.name, whatsappCreateTemplateRequest.name) &&
         Objects.equals(this.category, whatsappCreateTemplateRequest.category) &&
-        Objects.equals(this.allowCategoryChange, whatsappCreateTemplateRequest.allowCategoryChange) &&
         Objects.equals(this.language, whatsappCreateTemplateRequest.language) &&
         Objects.equals(this.components, whatsappCreateTemplateRequest.components)&&
         Objects.equals(this.additionalProperties, whatsappCreateTemplateRequest.additionalProperties);
@@ -249,7 +224,7 @@ public class WhatsappCreateTemplateRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, category, allowCategoryChange, language, components, additionalProperties);
+    return Objects.hash(name, category, language, components, additionalProperties);
   }
 
   @Override
@@ -258,7 +233,6 @@ public class WhatsappCreateTemplateRequest {
     sb.append("class WhatsappCreateTemplateRequest {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    allowCategoryChange: ").append(toIndentedString(allowCategoryChange)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    components: ").append(toIndentedString(components)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
@@ -286,7 +260,6 @@ public class WhatsappCreateTemplateRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
     openapiFields.add("category");
-    openapiFields.add("allow_category_change");
     openapiFields.add("language");
     openapiFields.add("components");
 

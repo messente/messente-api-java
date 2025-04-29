@@ -10,7 +10,6 @@ Request to create a WhatsApp template
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | Name of the template |  |
 |**category** | **WhatsappTemplateCategory** |  |  |
-|**allowCategoryChange** | **Boolean** | Allow category change |  [optional] |
 |**language** | **String** | Language of the template |  |
 |**components** | [**List&lt;WhatsappTemplateComponent&gt;**](WhatsappTemplateComponent.md) | List of template components |  |
 
