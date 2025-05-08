@@ -6,6 +6,7 @@ README.md
 api/openapi.yaml
 build.gradle
 build.sbt
+docs/AccountBalanceApi.md
 docs/BlacklistApi.md
 docs/BulkMessagingApi.md
 docs/BulkOmniMessageCreateSuccessResponse.md
@@ -51,7 +52,10 @@ docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
 docs/OmnimessageApi.md
 docs/OmnimessageMessagesInner.md
+docs/Price.md
 docs/PriceInfo.md
+docs/PriceNetworksInner.md
+docs/PricingApi.md
 docs/Priority.md
 docs/SMS.md
 docs/StatisticsApi.md
@@ -115,6 +119,7 @@ src/main/java/com/messente/ServerConfiguration.java
 src/main/java/com/messente/ServerVariable.java
 src/main/java/com/messente/StringUtil.java
 src/main/java/com/messente/api/AbstractOpenApiSchema.java
+src/main/java/com/messente/api/AccountBalanceApi.java
 src/main/java/com/messente/api/BlacklistApi.java
 src/main/java/com/messente/api/BulkMessagingApi.java
 src/main/java/com/messente/api/BulkOmniMessageCreateSuccessResponse.java
@@ -160,7 +165,10 @@ src/main/java/com/messente/api/OmniMessageCreateSuccessResponse.java
 src/main/java/com/messente/api/Omnimessage.java
 src/main/java/com/messente/api/OmnimessageApi.java
 src/main/java/com/messente/api/OmnimessageMessagesInner.java
+src/main/java/com/messente/api/Price.java
 src/main/java/com/messente/api/PriceInfo.java
+src/main/java/com/messente/api/PriceNetworksInner.java
+src/main/java/com/messente/api/PricingApi.java
 src/main/java/com/messente/api/Priority.java
 src/main/java/com/messente/api/SMS.java
 src/main/java/com/messente/api/StatisticsApi.java
