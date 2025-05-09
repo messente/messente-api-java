@@ -47,6 +47,7 @@ docs/MessageResult.md
 docs/MobileNetwork.md
 docs/NumberLookupApi.md
 docs/NumberToBlacklist.md
+docs/NumberVerificationApi.md
 docs/NumbersToInvestigate.md
 docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
@@ -160,6 +161,7 @@ src/main/java/com/messente/api/MessageResult.java
 src/main/java/com/messente/api/MobileNetwork.java
 src/main/java/com/messente/api/NumberLookupApi.java
 src/main/java/com/messente/api/NumberToBlacklist.java
+src/main/java/com/messente/api/NumberVerificationApi.java
 src/main/java/com/messente/api/NumbersToInvestigate.java
 src/main/java/com/messente/api/OmniMessageCreateSuccessResponse.java
 src/main/java/com/messente/api/Omnimessage.java
