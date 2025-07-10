@@ -119,7 +119,7 @@ public class Example {
     PricingApi apiInstance = new PricingApi(defaultClient);
     String username = "username_example"; // String | The API username
     String password = "password_example"; // String | The API password
-    String country = "country_example"; // String | The country code, for which to get the prices
+    String country = "EE"; // String | The country code, for which to get the prices
     String format = "format_example"; // String | The format of the response. Can be either 'json' or 'xml'. If not specified, defaults to 'json'.
     try {
       Price result = apiInstance.getPrices(username, password, country, format);
