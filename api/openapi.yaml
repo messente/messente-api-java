@@ -69,20 +69,20 @@ tags:
 - description: Retrieve delivery reports which indicate whether the message was delivered
   name: Delivery Report
 - description: Manage WhatsApp Cloud API templates
-  name: WhatsAppTemplates
+  name: WhatsApp Templates
 - description: Find out statuses and network info of phone numbers
   name: Number Lookup
 - description: Get total messages and price per country
   name: Statistics
 - description: Send omnimessages in bulk to a phone number with fallback options for
     various channels
-  name: BulkMessaging
+  name: Bulk Messaging
 - description: Get your account balance
-  name: AccountBalance
+  name: Account Balance
 - description: Get pricing information
   name: Pricing
 - description: Verify your phone number
-  name: NumberVerification
+  name: Number Verification
 paths:
   /get_balance:
     get:
@@ -125,7 +125,7 @@ paths:
         apiPassword: []
       summary: Get account balance
       tags:
-      - AccountBalance
+      - Account Balance
       x-accepts:
       - text/plain
     post:
@@ -168,7 +168,7 @@ paths:
         apiPassword: []
       summary: Get account balance
       tags:
-      - AccountBalance
+      - Account Balance
       x-accepts:
       - text/plain
     servers:
@@ -205,7 +205,7 @@ paths:
           description: Unauthorized
       summary: Sends a bulk Omnimessage
       tags:
-      - BulkMessaging
+      - Bulk Messaging
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -421,7 +421,7 @@ paths:
         apiPassword: []
       summary: verify number
       tags:
-      - NumberVerification
+      - Number Verification
       x-accepts:
       - text/plain
     servers:
@@ -519,7 +519,7 @@ paths:
         apiPassword: []
       summary: verified the PIN code entered by the user.
       tags:
-      - NumberVerification
+      - Number Verification
       x-accepts:
       - text/plain
     servers:
@@ -701,7 +701,7 @@ paths:
           description: Internal Server Error
       summary: Deletes a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
       x-accepts:
       - application/json
     get:
@@ -828,7 +828,7 @@ paths:
           description: Internal Server Error
       summary: Requests a list of WhatsApp templates
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
       x-accepts:
       - application/json
     post:
@@ -882,7 +882,7 @@ paths:
           description: Internal Server Error
       summary: Creates a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -939,7 +939,7 @@ paths:
           description: Internal Server Error
       summary: Requests a WhatsApp template with the given ID
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
       x-accepts:
       - application/json
     put:
@@ -1001,7 +1001,7 @@ paths:
           description: Internal Server Error
       summary: Updates a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -4437,4 +4437,16 @@ components:
       in: query
       name: password
       type: apiKey
+x-tagGroups:
+- name: Phonebook
+  tags:
+  - Blacklist
+  - Contacts
+  - Groups
+- name: Omnichannel
+  tags:
+  - Omnimessage
+  - Delivery Report
+  - WhatsApp Templates
+  - Bulk Messaging
 
