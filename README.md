@@ -1,7 +1,7 @@
 # Messente API Library
 
 - Messente API version: 2.0.0
-- Java artifact version: 4.4.0
+- Java artifact version: 4.5.0
 
 [Messente](https://messente.com) is a global provider of messaging and user verification services.  * Send and receive SMS, Viber, WhatsApp and Telegram messages. * Manage contacts and groups. * Fetch detailed info about phone numbers. * Blacklist phone numbers to make sure you&#39;re not sending any unwanted messages.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
@@ -13,7 +13,7 @@ Install Messente API library via Maven, Gradle, Ivy or manual build.
 
 ```groovy
 dependencies {
-    implementation 'com.messente.api:messente-api:4.4.0'
+    implementation 'com.messente.api:messente-api:4.5.0'
 }
 ```
 
@@ -23,14 +23,14 @@ dependencies {
 <dependency>
   <groupId>com.messente.api</groupId>
   <artifactId>messente-api</artifactId>
-  <version>4.4.0</version>
+  <version>4.5.0</version>
 </dependency>
 ```
 
 ### Ivy
 
 ```xml
-<dependency org='com.messente.api' name='messente-api' rev='4.4.0'/>
+<dependency org='com.messente.api' name='messente-api' rev='4.5.0'/>
 ```
 
 ### Manual Build
@@ -43,7 +43,7 @@ mvn clean package
 
 Install
 
-- `target/messente-api-4.4.0.jar`
+- `target/messente-api-4.5.0.jar`
 - `target/lib/*.jar`
 
 ## Features

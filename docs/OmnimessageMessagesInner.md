@@ -15,10 +15,14 @@
 |**buttonUrl** | **String** | URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**buttonText** | **String** | Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional] |
-|**video** | [**ViberVideo**](ViberVideo.md) |  |  [optional] |
+|**video** | [**WhatsAppVideo**](WhatsAppVideo.md) |  |  [optional] |
 |**autoconvert** | [**AutoconvertEnum**](#AutoconvertEnum) | Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way |  [optional] |
 |**udh** | **String** | hex-encoded string containing SMS UDH |  [optional] |
 |**template** | [**WhatsAppTemplate**](WhatsAppTemplate.md) |  |  [optional] |
+|**image** | [**WhatsAppImage**](WhatsAppImage.md) |  |  [optional] |
+|**audio** | [**WhatsAppAudio**](WhatsAppAudio.md) |  |  [optional] |
+|**document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  |  [optional] |
+|**sticker** | [**WhatsAppSticker**](WhatsAppSticker.md) |  |  [optional] |
 |**documentUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot; |  [optional] |
 |**audioUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot; |  [optional] |
 

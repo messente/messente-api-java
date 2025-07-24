@@ -326,7 +326,7 @@ public class WhatsAppTemplatesApi {
      * @param wabaId The ID of the WABA (required)
      * @param name The name of the template to delete (required)
      * @param hsmId The ID of the template to delete (optional)
-     * @return Map&lt;String, Object&gt;
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -339,8 +339,8 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> deleteWhatsappTemplate(String wabaId, String name, String hsmId) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = deleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
+    public Object deleteWhatsappTemplate(String wabaId, String name, String hsmId) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
         return localVarResp.getData();
     }
 
@@ -350,7 +350,7 @@ public class WhatsAppTemplatesApi {
      * @param wabaId The ID of the WABA (required)
      * @param name The name of the template to delete (required)
      * @param hsmId The ID of the template to delete (optional)
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -363,9 +363,9 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> deleteWhatsappTemplateWithHttpInfo(String wabaId, String name, String hsmId) throws ApiException {
+    public ApiResponse<Object> deleteWhatsappTemplateWithHttpInfo(String wabaId, String name, String hsmId) throws ApiException {
         okhttp3.Call localVarCall = deleteWhatsappTemplateValidateBeforeCall(wabaId, name, hsmId, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -389,10 +389,10 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWhatsappTemplateAsync(String wabaId, String name, String hsmId, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call deleteWhatsappTemplateAsync(String wabaId, String name, String hsmId, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWhatsappTemplateValidateBeforeCall(wabaId, name, hsmId, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -849,7 +849,7 @@ public class WhatsAppTemplatesApi {
      * @param wabaId The ID of the WABA (required)
      * @param templateId The ID of the template to update (required)
      * @param whatsappUpdateTemplateRequest The template data to be updated (required)
-     * @return Map&lt;String, Object&gt;
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -862,8 +862,8 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public Map<String, Object> updateWhatsappTemplate(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = updateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
+    public Object updateWhatsappTemplate(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest) throws ApiException {
+        ApiResponse<Object> localVarResp = updateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
         return localVarResp.getData();
     }
 
@@ -873,7 +873,7 @@ public class WhatsAppTemplatesApi {
      * @param wabaId The ID of the WABA (required)
      * @param templateId The ID of the template to update (required)
      * @param whatsappUpdateTemplateRequest The template data to be updated (required)
-     * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -886,9 +886,9 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Map<String, Object>> updateWhatsappTemplateWithHttpInfo(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest) throws ApiException {
+    public ApiResponse<Object> updateWhatsappTemplateWithHttpInfo(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest) throws ApiException {
         okhttp3.Call localVarCall = updateWhatsappTemplateValidateBeforeCall(wabaId, templateId, whatsappUpdateTemplateRequest, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -912,10 +912,10 @@ public class WhatsAppTemplatesApi {
         <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWhatsappTemplateAsync(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call updateWhatsappTemplateAsync(String wabaId, String templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWhatsappTemplateValidateBeforeCall(wabaId, templateId, whatsappUpdateTemplateRequest, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

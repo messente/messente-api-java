@@ -19,11 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.messente.api.WhatsAppParameter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,114 +47,130 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * Whatsapp template component
+ * WhatsApp document content. Either \&quot;id\&quot; or \&quot;link\&quot; must be provided, but not both.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class WhatsAppComponent {
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
-  private String type;
-
-  public static final String SERIALIZED_NAME_SUB_TYPE = "sub_type";
-  @SerializedName(SERIALIZED_NAME_SUB_TYPE)
+public class WhatsAppDocument {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
-  private String subType;
+  private String id;
 
-  public static final String SERIALIZED_NAME_INDEX = "index";
-  @SerializedName(SERIALIZED_NAME_INDEX)
+  public static final String SERIALIZED_NAME_CAPTION = "caption";
+  @SerializedName(SERIALIZED_NAME_CAPTION)
   @javax.annotation.Nullable
-  private Integer index;
+  private String caption;
 
-  public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
-  @SerializedName(SERIALIZED_NAME_PARAMETERS)
+  public static final String SERIALIZED_NAME_MIME_TYPE = "mime_type";
+  @SerializedName(SERIALIZED_NAME_MIME_TYPE)
   @javax.annotation.Nullable
-  private List<WhatsAppParameter> parameters = new ArrayList<>();
+  private String mimeType;
 
-  public WhatsAppComponent() {
+  public static final String SERIALIZED_NAME_FILE_NAME = "file_name";
+  @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
+  private String fileName;
+
+  public static final String SERIALIZED_NAME_LINK = "link";
+  @SerializedName(SERIALIZED_NAME_LINK)
+  @javax.annotation.Nullable
+  private String link;
+
+  public WhatsAppDocument() {
   }
 
-  public WhatsAppComponent type(@javax.annotation.Nonnull String type) {
-    this.type = type;
+  public WhatsAppDocument id(@javax.annotation.Nullable String id) {
+    this.id = id;
     return this;
   }
 
   /**
-   * Type of the component
-   * @return type
+   * Unique identifier for the document file.
+   * @return id
    */
-  @javax.annotation.Nonnull
-  public String getType() {
-    return type;
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
-    this.type = type;
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
   }
 
 
-  public WhatsAppComponent subType(@javax.annotation.Nullable String subType) {
-    this.subType = subType;
+  public WhatsAppDocument caption(@javax.annotation.Nullable String caption) {
+    this.caption = caption;
     return this;
   }
 
   /**
-   * Sub-type of the component
-   * @return subType
+   * Caption for the document.
+   * @return caption
    */
   @javax.annotation.Nullable
-  public String getSubType() {
-    return subType;
+  public String getCaption() {
+    return caption;
   }
 
-  public void setSubType(@javax.annotation.Nullable String subType) {
-    this.subType = subType;
+  public void setCaption(@javax.annotation.Nullable String caption) {
+    this.caption = caption;
   }
 
 
-  public WhatsAppComponent index(@javax.annotation.Nullable Integer index) {
-    this.index = index;
+  public WhatsAppDocument mimeType(@javax.annotation.Nullable String mimeType) {
+    this.mimeType = mimeType;
     return this;
   }
 
   /**
-   * index used to position buttons
-   * @return index
+   * MIME type of the document file.
+   * @return mimeType
    */
   @javax.annotation.Nullable
-  public Integer getIndex() {
-    return index;
+  public String getMimeType() {
+    return mimeType;
   }
 
-  public void setIndex(@javax.annotation.Nullable Integer index) {
-    this.index = index;
+  public void setMimeType(@javax.annotation.Nullable String mimeType) {
+    this.mimeType = mimeType;
   }
 
 
-  public WhatsAppComponent parameters(@javax.annotation.Nullable List<WhatsAppParameter> parameters) {
-    this.parameters = parameters;
-    return this;
-  }
-
-  public WhatsAppComponent addParametersItem(WhatsAppParameter parametersItem) {
-    if (this.parameters == null) {
-      this.parameters = new ArrayList<>();
-    }
-    this.parameters.add(parametersItem);
+  public WhatsAppDocument fileName(@javax.annotation.Nullable String fileName) {
+    this.fileName = fileName;
     return this;
   }
 
   /**
-   * List of parameters for the component
-   * @return parameters
+   * Name of the document file.
+   * @return fileName
    */
   @javax.annotation.Nullable
-  public List<WhatsAppParameter> getParameters() {
-    return parameters;
+  public String getFileName() {
+    return fileName;
   }
 
-  public void setParameters(@javax.annotation.Nullable List<WhatsAppParameter> parameters) {
-    this.parameters = parameters;
+  public void setFileName(@javax.annotation.Nullable String fileName) {
+    this.fileName = fileName;
+  }
+
+
+  public WhatsAppDocument link(@javax.annotation.Nullable String link) {
+    this.link = link;
+    return this;
+  }
+
+  /**
+   * URL link to the document file.
+   * @return link
+   */
+  @javax.annotation.Nullable
+  public String getLink() {
+    return link;
+  }
+
+  public void setLink(@javax.annotation.Nullable String link) {
+    this.link = link;
   }
 
   /**
@@ -173,9 +186,9 @@ public class WhatsAppComponent {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WhatsAppComponent instance itself
+   * @return the WhatsAppDocument instance itself
    */
-  public WhatsAppComponent putAdditionalProperty(String key, Object value) {
+  public WhatsAppDocument putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -214,12 +227,13 @@ public class WhatsAppComponent {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WhatsAppComponent whatsAppComponent = (WhatsAppComponent) o;
-    return Objects.equals(this.type, whatsAppComponent.type) &&
-        Objects.equals(this.subType, whatsAppComponent.subType) &&
-        Objects.equals(this.index, whatsAppComponent.index) &&
-        Objects.equals(this.parameters, whatsAppComponent.parameters)&&
-        Objects.equals(this.additionalProperties, whatsAppComponent.additionalProperties);
+    WhatsAppDocument whatsAppDocument = (WhatsAppDocument) o;
+    return Objects.equals(this.id, whatsAppDocument.id) &&
+        Objects.equals(this.caption, whatsAppDocument.caption) &&
+        Objects.equals(this.mimeType, whatsAppDocument.mimeType) &&
+        Objects.equals(this.fileName, whatsAppDocument.fileName) &&
+        Objects.equals(this.link, whatsAppDocument.link)&&
+        Objects.equals(this.additionalProperties, whatsAppDocument.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -228,7 +242,7 @@ public class WhatsAppComponent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, subType, index, parameters, additionalProperties);
+    return Objects.hash(id, caption, mimeType, fileName, link, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -241,11 +255,12 @@ public class WhatsAppComponent {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WhatsAppComponent {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
-    sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+    sb.append("class WhatsAppDocument {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    caption: ").append(toIndentedString(caption)).append("\n");
+    sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
+    sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    link: ").append(toIndentedString(link)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -269,55 +284,43 @@ public class WhatsAppComponent {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("sub_type");
-    openapiFields.add("index");
-    openapiFields.add("parameters");
+    openapiFields.add("id");
+    openapiFields.add("caption");
+    openapiFields.add("mime_type");
+    openapiFields.add("file_name");
+    openapiFields.add("link");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WhatsAppComponent
+   * @throws IOException if the JSON Element is invalid with respect to WhatsAppDocument
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WhatsAppComponent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppComponent is not found in the empty JSON string", WhatsAppComponent.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WhatsAppComponent.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!WhatsAppDocument.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WhatsAppDocument is not found in the empty JSON string", WhatsAppDocument.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("sub_type") != null && !jsonObj.get("sub_type").isJsonNull()) && !jsonObj.get("sub_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sub_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sub_type").toString()));
+      if ((jsonObj.get("caption") != null && !jsonObj.get("caption").isJsonNull()) && !jsonObj.get("caption").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `caption` to be a primitive type in the JSON string but got `%s`", jsonObj.get("caption").toString()));
       }
-      if (jsonObj.get("parameters") != null && !jsonObj.get("parameters").isJsonNull()) {
-        JsonArray jsonArrayparameters = jsonObj.getAsJsonArray("parameters");
-        if (jsonArrayparameters != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("parameters").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `parameters` to be an array in the JSON string but got `%s`", jsonObj.get("parameters").toString()));
-          }
-
-          // validate the optional field `parameters` (array)
-          for (int i = 0; i < jsonArrayparameters.size(); i++) {
-            WhatsAppParameter.validateJsonElement(jsonArrayparameters.get(i));
-          };
-        }
+      if ((jsonObj.get("mime_type") != null && !jsonObj.get("mime_type").isJsonNull()) && !jsonObj.get("mime_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mime_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mime_type").toString()));
+      }
+      if ((jsonObj.get("file_name") != null && !jsonObj.get("file_name").isJsonNull()) && !jsonObj.get("file_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `file_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_name").toString()));
+      }
+      if ((jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) && !jsonObj.get("link").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `link` to be a primitive type in the JSON string but got `%s`", jsonObj.get("link").toString()));
       }
   }
 
@@ -325,16 +328,16 @@ public class WhatsAppComponent {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WhatsAppComponent.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WhatsAppComponent' and its subtypes
+       if (!WhatsAppDocument.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WhatsAppDocument' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WhatsAppComponent> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppComponent.class));
+       final TypeAdapter<WhatsAppDocument> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WhatsAppDocument.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WhatsAppComponent>() {
+       return (TypeAdapter<T>) new TypeAdapter<WhatsAppDocument>() {
            @Override
-           public void write(JsonWriter out, WhatsAppComponent value) throws IOException {
+           public void write(JsonWriter out, WhatsAppDocument value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -362,12 +365,12 @@ public class WhatsAppComponent {
            }
 
            @Override
-           public WhatsAppComponent read(JsonReader in) throws IOException {
+           public WhatsAppDocument read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WhatsAppComponent instance = thisAdapter.fromJsonTree(jsonObj);
+             WhatsAppDocument instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -394,18 +397,18 @@ public class WhatsAppComponent {
   }
 
   /**
-   * Create an instance of WhatsAppComponent given an JSON string
+   * Create an instance of WhatsAppDocument given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WhatsAppComponent
-   * @throws IOException if the JSON string is invalid with respect to WhatsAppComponent
+   * @return An instance of WhatsAppDocument
+   * @throws IOException if the JSON string is invalid with respect to WhatsAppDocument
    */
-  public static WhatsAppComponent fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WhatsAppComponent.class);
+  public static WhatsAppDocument fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WhatsAppDocument.class);
   }
 
   /**
-   * Convert an instance of WhatsAppComponent to an JSON string
+   * Convert an instance of WhatsAppDocument to an JSON string
    *
    * @return JSON string
    */

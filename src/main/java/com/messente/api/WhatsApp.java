@@ -19,8 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.WhatsAppAudio;
+import com.messente.api.WhatsAppDocument;
+import com.messente.api.WhatsAppImage;
+import com.messente.api.WhatsAppSticker;
 import com.messente.api.WhatsAppTemplate;
 import com.messente.api.WhatsAppText;
+import com.messente.api.WhatsAppVideo;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -71,11 +76,6 @@ public class WhatsApp {
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
   @javax.annotation.Nullable
   private WhatsAppTemplate template;
-
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nullable
-  private WhatsAppText text;
 
   /**
    * The channel used to deliver the message
@@ -131,6 +131,36 @@ public class WhatsApp {
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.WHATSAPP;
+
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
+  @javax.annotation.Nullable
+  private WhatsAppText text;
+
+  public static final String SERIALIZED_NAME_IMAGE = "image";
+  @SerializedName(SERIALIZED_NAME_IMAGE)
+  @javax.annotation.Nullable
+  private WhatsAppImage image;
+
+  public static final String SERIALIZED_NAME_VIDEO = "video";
+  @SerializedName(SERIALIZED_NAME_VIDEO)
+  @javax.annotation.Nullable
+  private WhatsAppVideo video;
+
+  public static final String SERIALIZED_NAME_AUDIO = "audio";
+  @SerializedName(SERIALIZED_NAME_AUDIO)
+  @javax.annotation.Nullable
+  private WhatsAppAudio audio;
+
+  public static final String SERIALIZED_NAME_DOCUMENT = "document";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT)
+  @javax.annotation.Nullable
+  private WhatsAppDocument document;
+
+  public static final String SERIALIZED_NAME_STICKER = "sticker";
+  @SerializedName(SERIALIZED_NAME_STICKER)
+  @javax.annotation.Nullable
+  private WhatsAppSticker sticker;
 
   public WhatsApp() {
   }
@@ -211,6 +241,25 @@ public class WhatsApp {
   }
 
 
+  public WhatsApp channel(@javax.annotation.Nullable ChannelEnum channel) {
+    this.channel = channel;
+    return this;
+  }
+
+  /**
+   * The channel used to deliver the message
+   * @return channel
+   */
+  @javax.annotation.Nullable
+  public ChannelEnum getChannel() {
+    return channel;
+  }
+
+  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
+    this.channel = channel;
+  }
+
+
   public WhatsApp text(@javax.annotation.Nullable WhatsAppText text) {
     this.text = text;
     return this;
@@ -230,22 +279,98 @@ public class WhatsApp {
   }
 
 
-  public WhatsApp channel(@javax.annotation.Nullable ChannelEnum channel) {
-    this.channel = channel;
+  public WhatsApp image(@javax.annotation.Nullable WhatsAppImage image) {
+    this.image = image;
     return this;
   }
 
   /**
-   * The channel used to deliver the message
-   * @return channel
+   * Get image
+   * @return image
    */
   @javax.annotation.Nullable
-  public ChannelEnum getChannel() {
-    return channel;
+  public WhatsAppImage getImage() {
+    return image;
   }
 
-  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
-    this.channel = channel;
+  public void setImage(@javax.annotation.Nullable WhatsAppImage image) {
+    this.image = image;
+  }
+
+
+  public WhatsApp video(@javax.annotation.Nullable WhatsAppVideo video) {
+    this.video = video;
+    return this;
+  }
+
+  /**
+   * Get video
+   * @return video
+   */
+  @javax.annotation.Nullable
+  public WhatsAppVideo getVideo() {
+    return video;
+  }
+
+  public void setVideo(@javax.annotation.Nullable WhatsAppVideo video) {
+    this.video = video;
+  }
+
+
+  public WhatsApp audio(@javax.annotation.Nullable WhatsAppAudio audio) {
+    this.audio = audio;
+    return this;
+  }
+
+  /**
+   * Get audio
+   * @return audio
+   */
+  @javax.annotation.Nullable
+  public WhatsAppAudio getAudio() {
+    return audio;
+  }
+
+  public void setAudio(@javax.annotation.Nullable WhatsAppAudio audio) {
+    this.audio = audio;
+  }
+
+
+  public WhatsApp document(@javax.annotation.Nullable WhatsAppDocument document) {
+    this.document = document;
+    return this;
+  }
+
+  /**
+   * Get document
+   * @return document
+   */
+  @javax.annotation.Nullable
+  public WhatsAppDocument getDocument() {
+    return document;
+  }
+
+  public void setDocument(@javax.annotation.Nullable WhatsAppDocument document) {
+    this.document = document;
+  }
+
+
+  public WhatsApp sticker(@javax.annotation.Nullable WhatsAppSticker sticker) {
+    this.sticker = sticker;
+    return this;
+  }
+
+  /**
+   * Get sticker
+   * @return sticker
+   */
+  @javax.annotation.Nullable
+  public WhatsAppSticker getSticker() {
+    return sticker;
+  }
+
+  public void setSticker(@javax.annotation.Nullable WhatsAppSticker sticker) {
+    this.sticker = sticker;
   }
 
   /**
@@ -307,14 +432,19 @@ public class WhatsApp {
         Objects.equals(this.validity, whatsApp.validity) &&
         Objects.equals(this.ttl, whatsApp.ttl) &&
         Objects.equals(this.template, whatsApp.template) &&
+        Objects.equals(this.channel, whatsApp.channel) &&
         Objects.equals(this.text, whatsApp.text) &&
-        Objects.equals(this.channel, whatsApp.channel)&&
+        Objects.equals(this.image, whatsApp.image) &&
+        Objects.equals(this.video, whatsApp.video) &&
+        Objects.equals(this.audio, whatsApp.audio) &&
+        Objects.equals(this.document, whatsApp.document) &&
+        Objects.equals(this.sticker, whatsApp.sticker)&&
         Objects.equals(this.additionalProperties, whatsApp.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, template, text, channel, additionalProperties);
+    return Objects.hash(sender, validity, ttl, template, channel, text, image, video, audio, document, sticker, additionalProperties);
   }
 
   @Override
@@ -325,8 +455,13 @@ public class WhatsApp {
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
+    sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    sticker: ").append(toIndentedString(sticker)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -354,8 +489,13 @@ public class WhatsApp {
     openapiFields.add("validity");
     openapiFields.add("ttl");
     openapiFields.add("template");
-    openapiFields.add("text");
     openapiFields.add("channel");
+    openapiFields.add("text");
+    openapiFields.add("image");
+    openapiFields.add("video");
+    openapiFields.add("audio");
+    openapiFields.add("document");
+    openapiFields.add("sticker");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -381,16 +521,36 @@ public class WhatsApp {
       if (jsonObj.get("template") != null && !jsonObj.get("template").isJsonNull()) {
         WhatsAppTemplate.validateJsonElement(jsonObj.get("template"));
       }
-      // validate the optional field `text`
-      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) {
-        WhatsAppText.validateJsonElement(jsonObj.get("text"));
-      }
       if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
       }
       // validate the optional field `channel`
       if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
         ChannelEnum.validateJsonElement(jsonObj.get("channel"));
+      }
+      // validate the optional field `text`
+      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) {
+        WhatsAppText.validateJsonElement(jsonObj.get("text"));
+      }
+      // validate the optional field `image`
+      if (jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull()) {
+        WhatsAppImage.validateJsonElement(jsonObj.get("image"));
+      }
+      // validate the optional field `video`
+      if (jsonObj.get("video") != null && !jsonObj.get("video").isJsonNull()) {
+        WhatsAppVideo.validateJsonElement(jsonObj.get("video"));
+      }
+      // validate the optional field `audio`
+      if (jsonObj.get("audio") != null && !jsonObj.get("audio").isJsonNull()) {
+        WhatsAppAudio.validateJsonElement(jsonObj.get("audio"));
+      }
+      // validate the optional field `document`
+      if (jsonObj.get("document") != null && !jsonObj.get("document").isJsonNull()) {
+        WhatsAppDocument.validateJsonElement(jsonObj.get("document"));
+      }
+      // validate the optional field `sticker`
+      if (jsonObj.get("sticker") != null && !jsonObj.get("sticker").isJsonNull()) {
+        WhatsAppSticker.validateJsonElement(jsonObj.get("sticker"));
       }
   }
 

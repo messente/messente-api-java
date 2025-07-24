@@ -85,7 +85,7 @@ public class Example {
 
 <a id="deleteWhatsappTemplate"></a>
 # **deleteWhatsappTemplate**
-> Map&lt;String, Object&gt; deleteWhatsappTemplate(wabaId, name, hsmId)
+> Object deleteWhatsappTemplate(wabaId, name, hsmId)
 
 Deletes a WhatsApp template
 
@@ -114,7 +114,7 @@ public class Example {
     String name = "template_name"; // String | The name of the template to delete
     String hsmId = "1"; // String | The ID of the template to delete
     try {
-      Map<String, Object> result = apiInstance.deleteWhatsappTemplate(wabaId, name, hsmId);
+      Object result = apiInstance.deleteWhatsappTemplate(wabaId, name, hsmId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WhatsAppTemplatesApi#deleteWhatsappTemplate");
@@ -137,7 +137,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+**Object**
 
 ### Authorization
 
@@ -317,7 +317,7 @@ public class Example {
 
 <a id="updateWhatsappTemplate"></a>
 # **updateWhatsappTemplate**
-> Map&lt;String, Object&gt; updateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest)
+> Object updateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest)
 
 Updates a WhatsApp template
 
@@ -346,7 +346,7 @@ public class Example {
     String templateId = "templateId_example"; // String | The ID of the template to update
     WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest = new WhatsappUpdateTemplateRequest(); // WhatsappUpdateTemplateRequest | The template data to be updated
     try {
-      Map<String, Object> result = apiInstance.updateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest);
+      Object result = apiInstance.updateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WhatsAppTemplatesApi#updateWhatsappTemplate");
@@ -369,7 +369,7 @@ public class Example {
 
 ### Return type
 
-**Map&lt;String, Object&gt;**
+**Object**
 
 ### Authorization
 
