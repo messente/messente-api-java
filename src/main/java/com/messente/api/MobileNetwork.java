@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,122 +48,127 @@ import com.messente.JSON;
 /**
  * Info about the network related to the phone number
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class MobileNetwork {
   public static final String SERIALIZED_NAME_MCCMNC = "mccmnc";
   @SerializedName(SERIALIZED_NAME_MCCMNC)
+  @javax.annotation.Nullable
   private String mccmnc;
 
   public static final String SERIALIZED_NAME_NETWORK_NAME = "networkName";
   @SerializedName(SERIALIZED_NAME_NETWORK_NAME)
+  @javax.annotation.Nullable
   private String networkName;
 
   public static final String SERIALIZED_NAME_COUNTRY_NAME = "countryName";
   @SerializedName(SERIALIZED_NAME_COUNTRY_NAME)
+  @javax.annotation.Nullable
   private String countryName;
 
   public static final String SERIALIZED_NAME_COUNTRY_PREFIX = "countryPrefix";
   @SerializedName(SERIALIZED_NAME_COUNTRY_PREFIX)
+  @javax.annotation.Nullable
   private String countryPrefix;
 
   public static final String SERIALIZED_NAME_COUNTRY_CODE = "countryCode";
   @SerializedName(SERIALIZED_NAME_COUNTRY_CODE)
+  @javax.annotation.Nullable
   private String countryCode;
 
   public MobileNetwork() {
   }
 
-  public MobileNetwork mccmnc(String mccmnc) {
+  public MobileNetwork mccmnc(@javax.annotation.Nullable String mccmnc) {
     this.mccmnc = mccmnc;
     return this;
   }
 
-   /**
+  /**
    * Mobile country and mobile network code
    * @return mccmnc
-  **/
+   */
   @javax.annotation.Nullable
   public String getMccmnc() {
     return mccmnc;
   }
 
-  public void setMccmnc(String mccmnc) {
+  public void setMccmnc(@javax.annotation.Nullable String mccmnc) {
     this.mccmnc = mccmnc;
   }
 
 
-  public MobileNetwork networkName(String networkName) {
+  public MobileNetwork networkName(@javax.annotation.Nullable String networkName) {
     this.networkName = networkName;
     return this;
   }
 
-   /**
+  /**
    * Mobile network name
    * @return networkName
-  **/
+   */
   @javax.annotation.Nullable
   public String getNetworkName() {
     return networkName;
   }
 
-  public void setNetworkName(String networkName) {
+  public void setNetworkName(@javax.annotation.Nullable String networkName) {
     this.networkName = networkName;
   }
 
 
-  public MobileNetwork countryName(String countryName) {
+  public MobileNetwork countryName(@javax.annotation.Nullable String countryName) {
     this.countryName = countryName;
     return this;
   }
 
-   /**
+  /**
    * Country name
    * @return countryName
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(String countryName) {
+  public void setCountryName(@javax.annotation.Nullable String countryName) {
     this.countryName = countryName;
   }
 
 
-  public MobileNetwork countryPrefix(String countryPrefix) {
+  public MobileNetwork countryPrefix(@javax.annotation.Nullable String countryPrefix) {
     this.countryPrefix = countryPrefix;
     return this;
   }
 
-   /**
+  /**
    * Country prefix
    * @return countryPrefix
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountryPrefix() {
     return countryPrefix;
   }
 
-  public void setCountryPrefix(String countryPrefix) {
+  public void setCountryPrefix(@javax.annotation.Nullable String countryPrefix) {
     this.countryPrefix = countryPrefix;
   }
 
 
-  public MobileNetwork countryCode(String countryCode) {
+  public MobileNetwork countryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
 
-   /**
+  /**
    * Country code
    * @return countryCode
-  **/
+   */
   @javax.annotation.Nullable
   public String getCountryCode() {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
   }
 
@@ -278,12 +282,12 @@ public class MobileNetwork {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MobileNetwork
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MobileNetwork
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MobileNetwork.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -380,22 +384,22 @@ public class MobileNetwork {
     }
   }
 
- /**
-  * Create an instance of MobileNetwork given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MobileNetwork
-  * @throws IOException if the JSON string is invalid with respect to MobileNetwork
-  */
+  /**
+   * Create an instance of MobileNetwork given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MobileNetwork
+   * @throws IOException if the JSON string is invalid with respect to MobileNetwork
+   */
   public static MobileNetwork fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MobileNetwork.class);
   }
 
- /**
-  * Convert an instance of MobileNetwork to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MobileNetwork to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

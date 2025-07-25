@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.messente.JSON;
 /**
  * A container for errors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ErrorPhonebook {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nonnull
   private List<ErrorItemPhonebook> errors = new ArrayList<>();
 
   public ErrorPhonebook() {
   }
 
-  public ErrorPhonebook errors(List<ErrorItemPhonebook> errors) {
+  public ErrorPhonebook errors(@javax.annotation.Nonnull List<ErrorItemPhonebook> errors) {
     this.errors = errors;
     return this;
   }
@@ -74,16 +74,16 @@ public class ErrorPhonebook {
     return this;
   }
 
-   /**
+  /**
    * An array of errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ErrorItemPhonebook> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<ErrorItemPhonebook> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<ErrorItemPhonebook> errors) {
     this.errors = errors;
   }
 
@@ -186,12 +186,12 @@ public class ErrorPhonebook {
     openapiRequiredFields.add("errors");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ErrorPhonebook
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ErrorPhonebook
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorPhonebook.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class ErrorPhonebook {
     }
   }
 
- /**
-  * Create an instance of ErrorPhonebook given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ErrorPhonebook
-  * @throws IOException if the JSON string is invalid with respect to ErrorPhonebook
-  */
+  /**
+   * Create an instance of ErrorPhonebook given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ErrorPhonebook
+   * @throws IOException if the JSON string is invalid with respect to ErrorPhonebook
+   */
   public static ErrorPhonebook fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorPhonebook.class);
   }
 
- /**
-  * Convert an instance of ErrorPhonebook to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ErrorPhonebook to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.messente.JSON;
 /**
  * A bulk omnimessage.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class BulkOmnimessage {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
+  @javax.annotation.Nonnull
   private List<Omnimessage> messages = new ArrayList<>();
 
   public BulkOmnimessage() {
   }
 
-  public BulkOmnimessage messages(List<Omnimessage> messages) {
+  public BulkOmnimessage messages(@javax.annotation.Nonnull List<Omnimessage> messages) {
     this.messages = messages;
     return this;
   }
@@ -74,16 +74,16 @@ public class BulkOmnimessage {
     return this;
   }
 
-   /**
+  /**
    * A list of omnimessages.
    * @return messages
-  **/
+   */
   @javax.annotation.Nonnull
   public List<Omnimessage> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<Omnimessage> messages) {
+  public void setMessages(@javax.annotation.Nonnull List<Omnimessage> messages) {
     this.messages = messages;
   }
 
@@ -186,12 +186,12 @@ public class BulkOmnimessage {
     openapiRequiredFields.add("messages");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BulkOmnimessage
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BulkOmnimessage
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BulkOmnimessage.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class BulkOmnimessage {
     }
   }
 
- /**
-  * Create an instance of BulkOmnimessage given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BulkOmnimessage
-  * @throws IOException if the JSON string is invalid with respect to BulkOmnimessage
-  */
+  /**
+   * Create an instance of BulkOmnimessage given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BulkOmnimessage
+   * @throws IOException if the JSON string is invalid with respect to BulkOmnimessage
+   */
   public static BulkOmnimessage fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BulkOmnimessage.class);
   }
 
- /**
-  * Convert an instance of BulkOmnimessage to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BulkOmnimessage to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

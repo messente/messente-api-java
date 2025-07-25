@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,34 +50,41 @@ import com.messente.JSON;
 /**
  * Info about a phone number
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class SyncNumberLookupResult {
   public static final String SERIALIZED_NAME_NUMBER = "number";
   @SerializedName(SERIALIZED_NAME_NUMBER)
+  @javax.annotation.Nonnull
   private String number;
 
   public static final String SERIALIZED_NAME_ROAMING = "roaming";
   @SerializedName(SERIALIZED_NAME_ROAMING)
+  @javax.annotation.Nullable
   private Boolean roaming;
 
   public static final String SERIALIZED_NAME_PORTED = "ported";
   @SerializedName(SERIALIZED_NAME_PORTED)
+  @javax.annotation.Nullable
   private Boolean ported;
 
   public static final String SERIALIZED_NAME_ROAMING_NETWORK = "roamingNetwork";
   @SerializedName(SERIALIZED_NAME_ROAMING_NETWORK)
+  @javax.annotation.Nullable
   private MobileNetwork roamingNetwork;
 
   public static final String SERIALIZED_NAME_CURRENT_NETWORK = "currentNetwork";
   @SerializedName(SERIALIZED_NAME_CURRENT_NETWORK)
+  @javax.annotation.Nullable
   private MobileNetwork currentNetwork;
 
   public static final String SERIALIZED_NAME_ORIGINAL_NETWORK = "originalNetwork";
   @SerializedName(SERIALIZED_NAME_ORIGINAL_NETWORK)
+  @javax.annotation.Nullable
   private MobileNetwork originalNetwork;
 
   public static final String SERIALIZED_NAME_PORTED_NETWORK = "portedNetwork";
   @SerializedName(SERIALIZED_NAME_PORTED_NETWORK)
+  @javax.annotation.Nullable
   private MobileNetwork portedNetwork;
 
   /**
@@ -139,182 +145,184 @@ public class SyncNumberLookupResult {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private Object error = null;
 
   public SyncNumberLookupResult() {
   }
 
-  public SyncNumberLookupResult number(String number) {
+  public SyncNumberLookupResult number(@javax.annotation.Nonnull String number) {
     this.number = number;
     return this;
   }
 
-   /**
+  /**
    * Phone number in e.164 format
    * @return number
-  **/
+   */
   @javax.annotation.Nonnull
   public String getNumber() {
     return number;
   }
 
-  public void setNumber(String number) {
+  public void setNumber(@javax.annotation.Nonnull String number) {
     this.number = number;
   }
 
 
-  public SyncNumberLookupResult roaming(Boolean roaming) {
+  public SyncNumberLookupResult roaming(@javax.annotation.Nullable Boolean roaming) {
     this.roaming = roaming;
     return this;
   }
 
-   /**
+  /**
    * Indicates if a number is roaming
    * @return roaming
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRoaming() {
     return roaming;
   }
 
-  public void setRoaming(Boolean roaming) {
+  public void setRoaming(@javax.annotation.Nullable Boolean roaming) {
     this.roaming = roaming;
   }
 
 
-  public SyncNumberLookupResult ported(Boolean ported) {
+  public SyncNumberLookupResult ported(@javax.annotation.Nullable Boolean ported) {
     this.ported = ported;
     return this;
   }
 
-   /**
+  /**
    * Indicates if a number is ported
    * @return ported
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getPorted() {
     return ported;
   }
 
-  public void setPorted(Boolean ported) {
+  public void setPorted(@javax.annotation.Nullable Boolean ported) {
     this.ported = ported;
   }
 
 
-  public SyncNumberLookupResult roamingNetwork(MobileNetwork roamingNetwork) {
+  public SyncNumberLookupResult roamingNetwork(@javax.annotation.Nullable MobileNetwork roamingNetwork) {
     this.roamingNetwork = roamingNetwork;
     return this;
   }
 
-   /**
+  /**
    * Get roamingNetwork
    * @return roamingNetwork
-  **/
+   */
   @javax.annotation.Nullable
   public MobileNetwork getRoamingNetwork() {
     return roamingNetwork;
   }
 
-  public void setRoamingNetwork(MobileNetwork roamingNetwork) {
+  public void setRoamingNetwork(@javax.annotation.Nullable MobileNetwork roamingNetwork) {
     this.roamingNetwork = roamingNetwork;
   }
 
 
-  public SyncNumberLookupResult currentNetwork(MobileNetwork currentNetwork) {
+  public SyncNumberLookupResult currentNetwork(@javax.annotation.Nullable MobileNetwork currentNetwork) {
     this.currentNetwork = currentNetwork;
     return this;
   }
 
-   /**
+  /**
    * Get currentNetwork
    * @return currentNetwork
-  **/
+   */
   @javax.annotation.Nullable
   public MobileNetwork getCurrentNetwork() {
     return currentNetwork;
   }
 
-  public void setCurrentNetwork(MobileNetwork currentNetwork) {
+  public void setCurrentNetwork(@javax.annotation.Nullable MobileNetwork currentNetwork) {
     this.currentNetwork = currentNetwork;
   }
 
 
-  public SyncNumberLookupResult originalNetwork(MobileNetwork originalNetwork) {
+  public SyncNumberLookupResult originalNetwork(@javax.annotation.Nullable MobileNetwork originalNetwork) {
     this.originalNetwork = originalNetwork;
     return this;
   }
 
-   /**
+  /**
    * Get originalNetwork
    * @return originalNetwork
-  **/
+   */
   @javax.annotation.Nullable
   public MobileNetwork getOriginalNetwork() {
     return originalNetwork;
   }
 
-  public void setOriginalNetwork(MobileNetwork originalNetwork) {
+  public void setOriginalNetwork(@javax.annotation.Nullable MobileNetwork originalNetwork) {
     this.originalNetwork = originalNetwork;
   }
 
 
-  public SyncNumberLookupResult portedNetwork(MobileNetwork portedNetwork) {
+  public SyncNumberLookupResult portedNetwork(@javax.annotation.Nullable MobileNetwork portedNetwork) {
     this.portedNetwork = portedNetwork;
     return this;
   }
 
-   /**
+  /**
    * Get portedNetwork
    * @return portedNetwork
-  **/
+   */
   @javax.annotation.Nullable
   public MobileNetwork getPortedNetwork() {
     return portedNetwork;
   }
 
-  public void setPortedNetwork(MobileNetwork portedNetwork) {
+  public void setPortedNetwork(@javax.annotation.Nullable MobileNetwork portedNetwork) {
     this.portedNetwork = portedNetwork;
   }
 
 
-  public SyncNumberLookupResult status(StatusEnum status) {
+  public SyncNumberLookupResult status(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Status of the phone number
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public SyncNumberLookupResult error(Object error) {
+  public SyncNumberLookupResult error(@javax.annotation.Nullable Object error) {
     this.error = error;
     return this;
   }
 
-   /**
+  /**
    * Indicates if any error occurred while handling the request
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public Object getError() {
     return error;
   }
 
-  public void setError(Object error) {
+  public void setError(@javax.annotation.Nullable Object error) {
     this.error = error;
   }
 
@@ -452,12 +460,12 @@ public class SyncNumberLookupResult {
     openapiRequiredFields.add("number");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SyncNumberLookupResult
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SyncNumberLookupResult
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SyncNumberLookupResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -572,22 +580,22 @@ public class SyncNumberLookupResult {
     }
   }
 
- /**
-  * Create an instance of SyncNumberLookupResult given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SyncNumberLookupResult
-  * @throws IOException if the JSON string is invalid with respect to SyncNumberLookupResult
-  */
+  /**
+   * Create an instance of SyncNumberLookupResult given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SyncNumberLookupResult
+   * @throws IOException if the JSON string is invalid with respect to SyncNumberLookupResult
+   */
   public static SyncNumberLookupResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SyncNumberLookupResult.class);
   }
 
- /**
-  * Convert an instance of SyncNumberLookupResult to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SyncNumberLookupResult to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

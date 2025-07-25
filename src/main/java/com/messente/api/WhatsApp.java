@@ -19,8 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.WhatsAppAudio;
+import com.messente.api.WhatsAppDocument;
+import com.messente.api.WhatsAppImage;
+import com.messente.api.WhatsAppSticker;
 import com.messente.api.WhatsAppTemplate;
 import com.messente.api.WhatsAppText;
+import com.messente.api.WhatsAppVideo;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -39,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,27 +55,27 @@ import com.messente.JSON;
 /**
  * WhatsApp message content.   Only one of \&quot;text\&quot;, \&quot;image\&quot;, \&quot;document\&quot; or \&quot;audio\&quot; can be provided
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class WhatsApp {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
+  @javax.annotation.Nullable
   private String sender;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
+  @javax.annotation.Nullable
   private Integer validity;
 
   public static final String SERIALIZED_NAME_TTL = "ttl";
   @SerializedName(SERIALIZED_NAME_TTL)
+  @javax.annotation.Nullable
   private Integer ttl;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
+  @javax.annotation.Nullable
   private WhatsAppTemplate template;
-
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
-  private WhatsAppText text;
 
   /**
    * The channel used to deliver the message
@@ -125,122 +129,248 @@ public class WhatsApp {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
+  @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.WHATSAPP;
+
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
+  @javax.annotation.Nullable
+  private WhatsAppText text;
+
+  public static final String SERIALIZED_NAME_IMAGE = "image";
+  @SerializedName(SERIALIZED_NAME_IMAGE)
+  @javax.annotation.Nullable
+  private WhatsAppImage image;
+
+  public static final String SERIALIZED_NAME_VIDEO = "video";
+  @SerializedName(SERIALIZED_NAME_VIDEO)
+  @javax.annotation.Nullable
+  private WhatsAppVideo video;
+
+  public static final String SERIALIZED_NAME_AUDIO = "audio";
+  @SerializedName(SERIALIZED_NAME_AUDIO)
+  @javax.annotation.Nullable
+  private WhatsAppAudio audio;
+
+  public static final String SERIALIZED_NAME_DOCUMENT = "document";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT)
+  @javax.annotation.Nullable
+  private WhatsAppDocument document;
+
+  public static final String SERIALIZED_NAME_STICKER = "sticker";
+  @SerializedName(SERIALIZED_NAME_STICKER)
+  @javax.annotation.Nullable
+  private WhatsAppSticker sticker;
 
   public WhatsApp() {
   }
 
-  public WhatsApp sender(String sender) {
+  public WhatsApp sender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
     return this;
   }
 
-   /**
+  /**
    * Phone number or alphanumeric sender name
    * @return sender
-  **/
+   */
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(String sender) {
+  public void setSender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
   }
 
 
-  public WhatsApp validity(Integer validity) {
+  public WhatsApp validity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
     return this;
   }
 
-   /**
+  /**
    * After how many minutes this channel is   considered as failed and the next channel is attempted
    * @return validity
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(Integer validity) {
+  public void setValidity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
   }
 
 
-  public WhatsApp ttl(Integer ttl) {
+  public WhatsApp ttl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
     return this;
   }
 
-   /**
+  /**
    * After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return ttl
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTtl() {
     return ttl;
   }
 
-  public void setTtl(Integer ttl) {
+  public void setTtl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
   }
 
 
-  public WhatsApp template(WhatsAppTemplate template) {
+  public WhatsApp template(@javax.annotation.Nullable WhatsAppTemplate template) {
     this.template = template;
     return this;
   }
 
-   /**
+  /**
    * Get template
    * @return template
-  **/
+   */
   @javax.annotation.Nullable
   public WhatsAppTemplate getTemplate() {
     return template;
   }
 
-  public void setTemplate(WhatsAppTemplate template) {
+  public void setTemplate(@javax.annotation.Nullable WhatsAppTemplate template) {
     this.template = template;
   }
 
 
-  public WhatsApp text(WhatsAppText text) {
-    this.text = text;
-    return this;
-  }
-
-   /**
-   * Get text
-   * @return text
-  **/
-  @javax.annotation.Nullable
-  public WhatsAppText getText() {
-    return text;
-  }
-
-  public void setText(WhatsAppText text) {
-    this.text = text;
-  }
-
-
-  public WhatsApp channel(ChannelEnum channel) {
+  public WhatsApp channel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * The channel used to deliver the message
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(ChannelEnum channel) {
+  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
+  }
+
+
+  public WhatsApp text(@javax.annotation.Nullable WhatsAppText text) {
+    this.text = text;
+    return this;
+  }
+
+  /**
+   * Get text
+   * @return text
+   */
+  @javax.annotation.Nullable
+  public WhatsAppText getText() {
+    return text;
+  }
+
+  public void setText(@javax.annotation.Nullable WhatsAppText text) {
+    this.text = text;
+  }
+
+
+  public WhatsApp image(@javax.annotation.Nullable WhatsAppImage image) {
+    this.image = image;
+    return this;
+  }
+
+  /**
+   * Get image
+   * @return image
+   */
+  @javax.annotation.Nullable
+  public WhatsAppImage getImage() {
+    return image;
+  }
+
+  public void setImage(@javax.annotation.Nullable WhatsAppImage image) {
+    this.image = image;
+  }
+
+
+  public WhatsApp video(@javax.annotation.Nullable WhatsAppVideo video) {
+    this.video = video;
+    return this;
+  }
+
+  /**
+   * Get video
+   * @return video
+   */
+  @javax.annotation.Nullable
+  public WhatsAppVideo getVideo() {
+    return video;
+  }
+
+  public void setVideo(@javax.annotation.Nullable WhatsAppVideo video) {
+    this.video = video;
+  }
+
+
+  public WhatsApp audio(@javax.annotation.Nullable WhatsAppAudio audio) {
+    this.audio = audio;
+    return this;
+  }
+
+  /**
+   * Get audio
+   * @return audio
+   */
+  @javax.annotation.Nullable
+  public WhatsAppAudio getAudio() {
+    return audio;
+  }
+
+  public void setAudio(@javax.annotation.Nullable WhatsAppAudio audio) {
+    this.audio = audio;
+  }
+
+
+  public WhatsApp document(@javax.annotation.Nullable WhatsAppDocument document) {
+    this.document = document;
+    return this;
+  }
+
+  /**
+   * Get document
+   * @return document
+   */
+  @javax.annotation.Nullable
+  public WhatsAppDocument getDocument() {
+    return document;
+  }
+
+  public void setDocument(@javax.annotation.Nullable WhatsAppDocument document) {
+    this.document = document;
+  }
+
+
+  public WhatsApp sticker(@javax.annotation.Nullable WhatsAppSticker sticker) {
+    this.sticker = sticker;
+    return this;
+  }
+
+  /**
+   * Get sticker
+   * @return sticker
+   */
+  @javax.annotation.Nullable
+  public WhatsAppSticker getSticker() {
+    return sticker;
+  }
+
+  public void setSticker(@javax.annotation.Nullable WhatsAppSticker sticker) {
+    this.sticker = sticker;
   }
 
   /**
@@ -302,14 +432,19 @@ public class WhatsApp {
         Objects.equals(this.validity, whatsApp.validity) &&
         Objects.equals(this.ttl, whatsApp.ttl) &&
         Objects.equals(this.template, whatsApp.template) &&
+        Objects.equals(this.channel, whatsApp.channel) &&
         Objects.equals(this.text, whatsApp.text) &&
-        Objects.equals(this.channel, whatsApp.channel)&&
+        Objects.equals(this.image, whatsApp.image) &&
+        Objects.equals(this.video, whatsApp.video) &&
+        Objects.equals(this.audio, whatsApp.audio) &&
+        Objects.equals(this.document, whatsApp.document) &&
+        Objects.equals(this.sticker, whatsApp.sticker)&&
         Objects.equals(this.additionalProperties, whatsApp.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, ttl, template, text, channel, additionalProperties);
+    return Objects.hash(sender, validity, ttl, template, channel, text, image, video, audio, document, sticker, additionalProperties);
   }
 
   @Override
@@ -320,8 +455,13 @@ public class WhatsApp {
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
+    sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    sticker: ").append(toIndentedString(sticker)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -349,19 +489,24 @@ public class WhatsApp {
     openapiFields.add("validity");
     openapiFields.add("ttl");
     openapiFields.add("template");
-    openapiFields.add("text");
     openapiFields.add("channel");
+    openapiFields.add("text");
+    openapiFields.add("image");
+    openapiFields.add("video");
+    openapiFields.add("audio");
+    openapiFields.add("document");
+    openapiFields.add("sticker");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to WhatsApp
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to WhatsApp
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WhatsApp.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -376,16 +521,36 @@ public class WhatsApp {
       if (jsonObj.get("template") != null && !jsonObj.get("template").isJsonNull()) {
         WhatsAppTemplate.validateJsonElement(jsonObj.get("template"));
       }
-      // validate the optional field `text`
-      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) {
-        WhatsAppText.validateJsonElement(jsonObj.get("text"));
-      }
       if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
       }
       // validate the optional field `channel`
       if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
         ChannelEnum.validateJsonElement(jsonObj.get("channel"));
+      }
+      // validate the optional field `text`
+      if (jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) {
+        WhatsAppText.validateJsonElement(jsonObj.get("text"));
+      }
+      // validate the optional field `image`
+      if (jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull()) {
+        WhatsAppImage.validateJsonElement(jsonObj.get("image"));
+      }
+      // validate the optional field `video`
+      if (jsonObj.get("video") != null && !jsonObj.get("video").isJsonNull()) {
+        WhatsAppVideo.validateJsonElement(jsonObj.get("video"));
+      }
+      // validate the optional field `audio`
+      if (jsonObj.get("audio") != null && !jsonObj.get("audio").isJsonNull()) {
+        WhatsAppAudio.validateJsonElement(jsonObj.get("audio"));
+      }
+      // validate the optional field `document`
+      if (jsonObj.get("document") != null && !jsonObj.get("document").isJsonNull()) {
+        WhatsAppDocument.validateJsonElement(jsonObj.get("document"));
+      }
+      // validate the optional field `sticker`
+      if (jsonObj.get("sticker") != null && !jsonObj.get("sticker").isJsonNull()) {
+        WhatsAppSticker.validateJsonElement(jsonObj.get("sticker"));
       }
   }
 
@@ -461,22 +626,22 @@ public class WhatsApp {
     }
   }
 
- /**
-  * Create an instance of WhatsApp given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of WhatsApp
-  * @throws IOException if the JSON string is invalid with respect to WhatsApp
-  */
+  /**
+   * Create an instance of WhatsApp given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of WhatsApp
+   * @throws IOException if the JSON string is invalid with respect to WhatsApp
+   */
   public static WhatsApp fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, WhatsApp.class);
   }
 
- /**
-  * Convert an instance of WhatsApp to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of WhatsApp to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

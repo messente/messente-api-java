@@ -22,9 +22,13 @@ import com.google.gson.stream.JsonWriter;
 import com.messente.api.SMS;
 import com.messente.api.Telegram;
 import com.messente.api.Viber;
-import com.messente.api.ViberVideo;
 import com.messente.api.WhatsApp;
+import com.messente.api.WhatsAppAudio;
+import com.messente.api.WhatsAppDocument;
+import com.messente.api.WhatsAppImage;
+import com.messente.api.WhatsAppSticker;
 import com.messente.api.WhatsAppTemplate;
+import com.messente.api.WhatsAppVideo;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -63,7 +67,7 @@ import com.google.gson.JsonParseException;
 
 import com.messente.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(OmnimessageMessagesInner.class.getName());
 
@@ -263,6 +267,7 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     public Viber getViber() throws ClassCastException {
         return (Viber)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SMS`. If the actual instance is not `SMS`,
      * the ClassCastException will be thrown.
@@ -273,6 +278,7 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     public SMS getSMS() throws ClassCastException {
         return (SMS)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `WhatsApp`. If the actual instance is not `WhatsApp`,
      * the ClassCastException will be thrown.
@@ -283,6 +289,7 @@ public class OmnimessageMessagesInner extends AbstractOpenApiSchema {
     public WhatsApp getWhatsApp() throws ClassCastException {
         return (WhatsApp)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `Telegram`. If the actual instance is not `Telegram`,
      * the ClassCastException will be thrown.

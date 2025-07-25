@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.messente.JSON;
 /**
  * Response received after successfully created bulk omnimessage.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class BulkOmniMessageCreateSuccessResponse {
   public static final String SERIALIZED_NAME_MESSAGES = "messages";
   @SerializedName(SERIALIZED_NAME_MESSAGES)
+  @javax.annotation.Nonnull
   private List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages = new ArrayList<>();
 
   public BulkOmniMessageCreateSuccessResponse() {
   }
 
-  public BulkOmniMessageCreateSuccessResponse messages(List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages) {
+  public BulkOmniMessageCreateSuccessResponse messages(@javax.annotation.Nonnull List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages) {
     this.messages = messages;
     return this;
   }
@@ -74,16 +74,16 @@ public class BulkOmniMessageCreateSuccessResponse {
     return this;
   }
 
-   /**
+  /**
    * List of responses for each Omnimessage in the bulk. These can be errors or successful responses
    * @return messages
-  **/
+   */
   @javax.annotation.Nonnull
   public List<BulkOmniMessageCreateSuccessResponseMessagesInner> getMessages() {
     return messages;
   }
 
-  public void setMessages(List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages) {
+  public void setMessages(@javax.annotation.Nonnull List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages) {
     this.messages = messages;
   }
 
@@ -186,12 +186,12 @@ public class BulkOmniMessageCreateSuccessResponse {
     openapiRequiredFields.add("messages");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to BulkOmniMessageCreateSuccessResponse
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to BulkOmniMessageCreateSuccessResponse
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BulkOmniMessageCreateSuccessResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class BulkOmniMessageCreateSuccessResponse {
     }
   }
 
- /**
-  * Create an instance of BulkOmniMessageCreateSuccessResponse given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of BulkOmniMessageCreateSuccessResponse
-  * @throws IOException if the JSON string is invalid with respect to BulkOmniMessageCreateSuccessResponse
-  */
+  /**
+   * Create an instance of BulkOmniMessageCreateSuccessResponse given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of BulkOmniMessageCreateSuccessResponse
+   * @throws IOException if the JSON string is invalid with respect to BulkOmniMessageCreateSuccessResponse
+   */
   public static BulkOmniMessageCreateSuccessResponse fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, BulkOmniMessageCreateSuccessResponse.class);
   }
 
- /**
-  * Convert an instance of BulkOmniMessageCreateSuccessResponse to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of BulkOmniMessageCreateSuccessResponse to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,99 +48,103 @@ import com.messente.JSON;
 /**
  * Viber video object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ViberVideo {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_THUMBNAIL = "thumbnail";
   @SerializedName(SERIALIZED_NAME_THUMBNAIL)
+  @javax.annotation.Nonnull
   private String thumbnail;
 
   public static final String SERIALIZED_NAME_FILE_SIZE = "file_size";
   @SerializedName(SERIALIZED_NAME_FILE_SIZE)
+  @javax.annotation.Nonnull
   private Integer fileSize;
 
   public static final String SERIALIZED_NAME_DURATION = "duration";
   @SerializedName(SERIALIZED_NAME_DURATION)
+  @javax.annotation.Nonnull
   private Integer duration;
 
   public ViberVideo() {
   }
 
-  public ViberVideo url(String url) {
+  public ViberVideo url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
 
-   /**
+  /**
    * URL pointing to the video resource.
    * @return url
-  **/
+   */
   @javax.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public ViberVideo thumbnail(String thumbnail) {
+  public ViberVideo thumbnail(@javax.annotation.Nonnull String thumbnail) {
     this.thumbnail = thumbnail;
     return this;
   }
 
-   /**
+  /**
    * URL pointing to the video thumbnail resource.
    * @return thumbnail
-  **/
+   */
   @javax.annotation.Nonnull
   public String getThumbnail() {
     return thumbnail;
   }
 
-  public void setThumbnail(String thumbnail) {
+  public void setThumbnail(@javax.annotation.Nonnull String thumbnail) {
     this.thumbnail = thumbnail;
   }
 
 
-  public ViberVideo fileSize(Integer fileSize) {
+  public ViberVideo fileSize(@javax.annotation.Nonnull Integer fileSize) {
     this.fileSize = fileSize;
     return this;
   }
 
-   /**
+  /**
    * Size of the video file in bytes. Cannot be larger than 200MB.
    * @return fileSize
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getFileSize() {
     return fileSize;
   }
 
-  public void setFileSize(Integer fileSize) {
+  public void setFileSize(@javax.annotation.Nonnull Integer fileSize) {
     this.fileSize = fileSize;
   }
 
 
-  public ViberVideo duration(Integer duration) {
+  public ViberVideo duration(@javax.annotation.Nonnull Integer duration) {
     this.duration = duration;
     return this;
   }
 
-   /**
+  /**
    * Duration of the video in seconds. Cannot be longer than 600 seconds.
    * @return duration
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getDuration() {
     return duration;
   }
 
-  public void setDuration(Integer duration) {
+  public void setDuration(@javax.annotation.Nonnull Integer duration) {
     this.duration = duration;
   }
 
@@ -256,12 +259,12 @@ public class ViberVideo {
     openapiRequiredFields.add("duration");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ViberVideo
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ViberVideo
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ViberVideo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -356,22 +359,22 @@ public class ViberVideo {
     }
   }
 
- /**
-  * Create an instance of ViberVideo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ViberVideo
-  * @throws IOException if the JSON string is invalid with respect to ViberVideo
-  */
+  /**
+   * Create an instance of ViberVideo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ViberVideo
+   * @throws IOException if the JSON string is invalid with respect to ViberVideo
+   */
   public static ViberVideo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ViberVideo.class);
   }
 
- /**
-  * Convert an instance of ViberVideo to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ViberVideo to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

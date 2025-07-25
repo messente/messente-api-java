@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,99 +50,103 @@ import com.messente.JSON;
 /**
  * A container for Omnichannel API error
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ErrorItemOmnichannel {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nonnull
   private ErrorTitleOmnichannel title;
 
   public static final String SERIALIZED_NAME_DETAIL = "detail";
   @SerializedName(SERIALIZED_NAME_DETAIL)
+  @javax.annotation.Nonnull
   private String detail;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
+  @javax.annotation.Nonnull
   private ErrorCodeOmnichannel code;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private String source;
 
   public ErrorItemOmnichannel() {
   }
 
-  public ErrorItemOmnichannel title(ErrorTitleOmnichannel title) {
+  public ErrorItemOmnichannel title(@javax.annotation.Nonnull ErrorTitleOmnichannel title) {
     this.title = title;
     return this;
   }
 
-   /**
+  /**
    * Get title
    * @return title
-  **/
+   */
   @javax.annotation.Nonnull
   public ErrorTitleOmnichannel getTitle() {
     return title;
   }
 
-  public void setTitle(ErrorTitleOmnichannel title) {
+  public void setTitle(@javax.annotation.Nonnull ErrorTitleOmnichannel title) {
     this.title = title;
   }
 
 
-  public ErrorItemOmnichannel detail(String detail) {
+  public ErrorItemOmnichannel detail(@javax.annotation.Nonnull String detail) {
     this.detail = detail;
     return this;
   }
 
-   /**
+  /**
    * Free form more detailed description of the error
    * @return detail
-  **/
+   */
   @javax.annotation.Nonnull
   public String getDetail() {
     return detail;
   }
 
-  public void setDetail(String detail) {
+  public void setDetail(@javax.annotation.Nonnull String detail) {
     this.detail = detail;
   }
 
 
-  public ErrorItemOmnichannel code(ErrorCodeOmnichannel code) {
+  public ErrorItemOmnichannel code(@javax.annotation.Nonnull ErrorCodeOmnichannel code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * Get code
    * @return code
-  **/
+   */
   @javax.annotation.Nonnull
   public ErrorCodeOmnichannel getCode() {
     return code;
   }
 
-  public void setCode(ErrorCodeOmnichannel code) {
+  public void setCode(@javax.annotation.Nonnull ErrorCodeOmnichannel code) {
     this.code = code;
   }
 
 
-  public ErrorItemOmnichannel source(String source) {
+  public ErrorItemOmnichannel source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Describes which field is causing the issue in the payload, null for non 400 status code responses
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public String getSource() {
     return source;
   }
 
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
@@ -258,12 +261,12 @@ public class ErrorItemOmnichannel {
     openapiRequiredFields.add("source");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ErrorItemOmnichannel
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ErrorItemOmnichannel
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorItemOmnichannel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -362,22 +365,22 @@ public class ErrorItemOmnichannel {
     }
   }
 
- /**
-  * Create an instance of ErrorItemOmnichannel given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ErrorItemOmnichannel
-  * @throws IOException if the JSON string is invalid with respect to ErrorItemOmnichannel
-  */
+  /**
+   * Create an instance of ErrorItemOmnichannel given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ErrorItemOmnichannel
+   * @throws IOException if the JSON string is invalid with respect to ErrorItemOmnichannel
+   */
   public static ErrorItemOmnichannel fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorItemOmnichannel.class);
   }
 
- /**
-  * Convert an instance of ErrorItemOmnichannel to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ErrorItemOmnichannel to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

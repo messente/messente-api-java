@@ -10,7 +10,7 @@ Whatsapp Cloud API template
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | Name of the template |  |
 |**language** | [**WhatsAppLanguage**](WhatsAppLanguage.md) |  |  |
-|**components** | [**List&lt;WhatsAppComponent&gt;**](WhatsAppComponent.md) | List of template components |  [optional] |
+|**components** | [**List&lt;WhatsAppComponent&gt;**](WhatsAppComponent.md) | List of template components |  |
 
 
 

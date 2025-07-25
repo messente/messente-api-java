@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.messente.JSON;
 /**
  * A container for errors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class ErrorStatistics {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
+  @javax.annotation.Nonnull
   private List<ErrorItemStatistics> errors = new ArrayList<>();
 
   public ErrorStatistics() {
   }
 
-  public ErrorStatistics errors(List<ErrorItemStatistics> errors) {
+  public ErrorStatistics errors(@javax.annotation.Nonnull List<ErrorItemStatistics> errors) {
     this.errors = errors;
     return this;
   }
@@ -74,16 +74,16 @@ public class ErrorStatistics {
     return this;
   }
 
-   /**
+  /**
    * An array of errors
    * @return errors
-  **/
+   */
   @javax.annotation.Nonnull
   public List<ErrorItemStatistics> getErrors() {
     return errors;
   }
 
-  public void setErrors(List<ErrorItemStatistics> errors) {
+  public void setErrors(@javax.annotation.Nonnull List<ErrorItemStatistics> errors) {
     this.errors = errors;
   }
 
@@ -186,12 +186,12 @@ public class ErrorStatistics {
     openapiRequiredFields.add("errors");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ErrorStatistics
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ErrorStatistics
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ErrorStatistics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -290,22 +290,22 @@ public class ErrorStatistics {
     }
   }
 
- /**
-  * Create an instance of ErrorStatistics given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ErrorStatistics
-  * @throws IOException if the JSON string is invalid with respect to ErrorStatistics
-  */
+  /**
+   * Create an instance of ErrorStatistics given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ErrorStatistics
+   * @throws IOException if the JSON string is invalid with respect to ErrorStatistics
+   */
   public static ErrorStatistics fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ErrorStatistics.class);
   }
 
- /**
-  * Convert an instance of ErrorStatistics to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ErrorStatistics to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,34 +49,41 @@ import com.messente.JSON;
 /**
  * Viber message content
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
 public class Viber {
   public static final String SERIALIZED_NAME_SENDER = "sender";
   @SerializedName(SERIALIZED_NAME_SENDER)
+  @javax.annotation.Nullable
   private String sender;
 
   public static final String SERIALIZED_NAME_VALIDITY = "validity";
   @SerializedName(SERIALIZED_NAME_VALIDITY)
+  @javax.annotation.Nullable
   private Integer validity;
 
   public static final String SERIALIZED_NAME_TTL = "ttl";
   @SerializedName(SERIALIZED_NAME_TTL)
+  @javax.annotation.Nullable
   private Integer ttl;
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
+  @javax.annotation.Nullable
   private String text;
 
   public static final String SERIALIZED_NAME_IMAGE_URL = "image_url";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  @javax.annotation.Nullable
   private String imageUrl;
 
   public static final String SERIALIZED_NAME_BUTTON_URL = "button_url";
   @SerializedName(SERIALIZED_NAME_BUTTON_URL)
+  @javax.annotation.Nullable
   private String buttonUrl;
 
   public static final String SERIALIZED_NAME_BUTTON_TEXT = "button_text";
   @SerializedName(SERIALIZED_NAME_BUTTON_TEXT)
+  @javax.annotation.Nullable
   private String buttonText;
 
   /**
@@ -132,182 +138,184 @@ public class Viber {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
+  @javax.annotation.Nullable
   private ChannelEnum channel = ChannelEnum.VIBER;
 
   public static final String SERIALIZED_NAME_VIDEO = "video";
   @SerializedName(SERIALIZED_NAME_VIDEO)
+  @javax.annotation.Nullable
   private ViberVideo video;
 
   public Viber() {
   }
 
-  public Viber sender(String sender) {
+  public Viber sender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
     return this;
   }
 
-   /**
+  /**
    * Phone number or alphanumeric sender name
    * @return sender
-  **/
+   */
   @javax.annotation.Nullable
   public String getSender() {
     return sender;
   }
 
-  public void setSender(String sender) {
+  public void setSender(@javax.annotation.Nullable String sender) {
     this.sender = sender;
   }
 
 
-  public Viber validity(Integer validity) {
+  public Viber validity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
     return this;
   }
 
-   /**
+  /**
    * After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return validity
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(Integer validity) {
+  public void setValidity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
   }
 
 
-  public Viber ttl(Integer ttl) {
+  public Viber ttl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
     return this;
   }
 
-   /**
+  /**
    * After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
    * @return ttl
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTtl() {
     return ttl;
   }
 
-  public void setTtl(Integer ttl) {
+  public void setTtl(@javax.annotation.Nullable Integer ttl) {
     this.ttl = ttl;
   }
 
 
-  public Viber text(String text) {
+  public Viber text(@javax.annotation.Nullable String text) {
     this.text = text;
     return this;
   }
 
-   /**
+  /**
    * Plaintext content for Viber
    * @return text
-  **/
+   */
   @javax.annotation.Nullable
   public String getText() {
     return text;
   }
 
-  public void setText(String text) {
+  public void setText(@javax.annotation.Nullable String text) {
     this.text = text;
   }
 
 
-  public Viber imageUrl(String imageUrl) {
+  public Viber imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
   }
 
-   /**
+  /**
    * URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
    * @return imageUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getImageUrl() {
     return imageUrl;
   }
 
-  public void setImageUrl(String imageUrl) {
+  public void setImageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
   }
 
 
-  public Viber buttonUrl(String buttonUrl) {
+  public Viber buttonUrl(@javax.annotation.Nullable String buttonUrl) {
     this.buttonUrl = buttonUrl;
     return this;
   }
 
-   /**
+  /**
    * URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)
    * @return buttonUrl
-  **/
+   */
   @javax.annotation.Nullable
   public String getButtonUrl() {
     return buttonUrl;
   }
 
-  public void setButtonUrl(String buttonUrl) {
+  public void setButtonUrl(@javax.annotation.Nullable String buttonUrl) {
     this.buttonUrl = buttonUrl;
   }
 
 
-  public Viber buttonText(String buttonText) {
+  public Viber buttonText(@javax.annotation.Nullable String buttonText) {
     this.buttonText = buttonText;
     return this;
   }
 
-   /**
+  /**
    * Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional)
    * @return buttonText
-  **/
+   */
   @javax.annotation.Nullable
   public String getButtonText() {
     return buttonText;
   }
 
-  public void setButtonText(String buttonText) {
+  public void setButtonText(@javax.annotation.Nullable String buttonText) {
     this.buttonText = buttonText;
   }
 
 
-  public Viber channel(ChannelEnum channel) {
+  public Viber channel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
 
-   /**
+  /**
    * The channel used to deliver the message
    * @return channel
-  **/
+   */
   @javax.annotation.Nullable
   public ChannelEnum getChannel() {
     return channel;
   }
 
-  public void setChannel(ChannelEnum channel) {
+  public void setChannel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
   }
 
 
-  public Viber video(ViberVideo video) {
+  public Viber video(@javax.annotation.Nullable ViberVideo video) {
     this.video = video;
     return this;
   }
 
-   /**
+  /**
    * Get video
    * @return video
-  **/
+   */
   @javax.annotation.Nullable
   public ViberVideo getVideo() {
     return video;
   }
 
-  public void setVideo(ViberVideo video) {
+  public void setVideo(@javax.annotation.Nullable ViberVideo video) {
     this.video = video;
   }
 
@@ -433,12 +441,12 @@ public class Viber {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Viber
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Viber
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Viber.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -546,22 +554,22 @@ public class Viber {
     }
   }
 
- /**
-  * Create an instance of Viber given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Viber
-  * @throws IOException if the JSON string is invalid with respect to Viber
-  */
+  /**
+   * Create an instance of Viber given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Viber
+   * @throws IOException if the JSON string is invalid with respect to Viber
+   */
   public static Viber fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Viber.class);
   }
 
- /**
-  * Convert an instance of Viber to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Viber to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
