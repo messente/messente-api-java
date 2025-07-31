@@ -11,9 +11,7 @@ buildscript {
 
 plugins {
     id "java-library"
-    id "maven-publish"
-    id "signing"
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    id "com.vanniktech.maven.publish" version "0.34.0"
 }
 
 apply plugin: 'idea'
@@ -45,56 +43,35 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifactId = 'messente-api'
+import com.vanniktech.maven.publish.SonatypeHost
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.DEFAULT)
+    signAllPublications()
 
-            pom {
-                name = "messente-api"
-                description = "Messente API - Connecting Services to People"
-                url = "https://github.com/messente/messente-api-java"
-                inceptionYear = "2019"
-                licenses {
-                    license {
-                        name = "The Apache Software License, Version 2.0"
-                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                        distribution = "repo"
-                    }
-                }
-                developers {
-                    developer {
-                        id = "messente"
-                        name = "Messente Communications OU"
-                        email = "developers@messente.com"
-                    }
-                }
-                scm {
-                    connection = "scm:https://github.com/messente/messente-api-java.git"
-                    developerConnection = "scm:git@github.com:messente/messente-api-java.git"
-                    url = "https://github.com/messente/messente-api-java"
-                }
+    pom {
+        name = "messente-api"
+        description = "Messente API - Connecting Services to People"
+        url = "https://github.com/messente/messente-api-java"
+        inceptionYear = "2019"
+        licenses {
+            license {
+                name = "The Apache Software License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "repo"
             }
         }
-    }
-    repositories {
-        mavenCentral()
-    }
-}
-
-nexusPublishing {
-    repositories {
-        sonatype()
-    }
-}
-
-def skipSigning = project.hasProperty('skipSigning')
-
-// Configure signing only if skipSigning property is not set
-if (!skipSigning) {
-    signing {
-        sign publishing.publications.mavenJava
+        developers {
+            developer {
+                id = "messente"
+                name = "Messente Communications OU"
+                email = "developers@messente.com"
+            }
+        }
+        scm {
+            connection = "scm:https://github.com/messente/messente-api-java.git"
+            developerConnection = "scm:git@github.com:messente/messente-api-java.git"
+            url = "https://github.com/messente/messente-api-java"
+        }
     }
 }
 
@@ -109,7 +86,6 @@ sourceSets {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
-    withJavadocJar()
     withSourcesJar()
 }
 
