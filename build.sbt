@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.messente.api",
     name := "messente-api",
-    version := "4.5.1",
+    version := "4.5.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
