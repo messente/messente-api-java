@@ -17,7 +17,7 @@ jobs:
             ORG_GRADLE_PROJECT_mavenCentralPassword: $
             ORG_GRADLE_PROJECT_signingInMemoryKey: $
             ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: $
-        run: ./gradlew publishAllPublicationsToMavenCentralRepository --no-configuration-cache --no-daemon
+        run: chmod +x ./gradlew && ./gradlew publishAllPublicationsToMavenCentralRepository --no-configuration-cache --no-daemon
 
 on:
   push:
