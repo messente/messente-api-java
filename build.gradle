@@ -44,8 +44,9 @@ dependencies {
 }
 
 import com.vanniktech.maven.publish.SonatypeHost
+
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.DEFAULT)
+    publishToMavenCentral()
     signAllPublications()
 
     pom {
