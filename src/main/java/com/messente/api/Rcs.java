@@ -19,8 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.RcsContentInfo;
+import com.messente.api.RcsRichCard;
+import com.messente.api.RcsSuggestion;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,46 +51,16 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * Telegram message content
+ * RCS message object. Exactly one of &#39;text&#39;, &#39;content_info&#39; or &#39;rich_card&#39; must be provided.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class Telegram {
-  public static final String SERIALIZED_NAME_SENDER = "sender";
-  @SerializedName(SERIALIZED_NAME_SENDER)
-  @javax.annotation.Nullable
-  private String sender;
-
-  public static final String SERIALIZED_NAME_VALIDITY = "validity";
-  @SerializedName(SERIALIZED_NAME_VALIDITY)
-  @javax.annotation.Nullable
-  private Integer validity;
-
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nullable
-  private String text;
-
-  public static final String SERIALIZED_NAME_IMAGE_URL = "image_url";
-  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
-  @javax.annotation.Nullable
-  private String imageUrl;
-
-  public static final String SERIALIZED_NAME_DOCUMENT_URL = "document_url";
-  @SerializedName(SERIALIZED_NAME_DOCUMENT_URL)
-  @javax.annotation.Nullable
-  private String documentUrl;
-
-  public static final String SERIALIZED_NAME_AUDIO_URL = "audio_url";
-  @SerializedName(SERIALIZED_NAME_AUDIO_URL)
-  @javax.annotation.Nullable
-  private String audioUrl;
-
+public class Rcs {
   /**
    * The channel used to deliver the message
    */
   @JsonAdapter(ChannelEnum.Adapter.class)
   public enum ChannelEnum {
-    TELEGRAM("telegram");
+    RCS("rcs");
 
     private String value;
 
@@ -133,126 +108,47 @@ public class Telegram {
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
   @javax.annotation.Nullable
-  private ChannelEnum channel = ChannelEnum.TELEGRAM;
+  private ChannelEnum channel = ChannelEnum.RCS;
 
-  public Telegram() {
-  }
+  public static final String SERIALIZED_NAME_SENDER = "sender";
+  @SerializedName(SERIALIZED_NAME_SENDER)
+  @javax.annotation.Nonnull
+  private String sender;
 
-  public Telegram sender(@javax.annotation.Nullable String sender) {
-    this.sender = sender;
-    return this;
-  }
-
-  /**
-   * Phone number or alphanumeric sender name
-   * @return sender
-   */
+  public static final String SERIALIZED_NAME_VALIDITY = "validity";
+  @SerializedName(SERIALIZED_NAME_VALIDITY)
   @javax.annotation.Nullable
-  public String getSender() {
-    return sender;
-  }
+  private Integer validity;
 
-  public void setSender(@javax.annotation.Nullable String sender) {
-    this.sender = sender;
-  }
-
-
-  public Telegram validity(@javax.annotation.Nullable Integer validity) {
-    this.validity = validity;
-    return this;
-  }
-
-  /**
-   * After how many minutes this channel is considered as failed and the next channel is attempted
-   * @return validity
-   */
+  public static final String SERIALIZED_NAME_TTL = "ttl";
+  @SerializedName(SERIALIZED_NAME_TTL)
   @javax.annotation.Nullable
-  public Integer getValidity() {
-    return validity;
-  }
+  private Integer ttl;
 
-  public void setValidity(@javax.annotation.Nullable Integer validity) {
-    this.validity = validity;
-  }
-
-
-  public Telegram text(@javax.annotation.Nullable String text) {
-    this.text = text;
-    return this;
-  }
-
-  /**
-   * Plaintext content for Telegram
-   * @return text
-   */
+  public static final String SERIALIZED_NAME_TEXT = "text";
+  @SerializedName(SERIALIZED_NAME_TEXT)
   @javax.annotation.Nullable
-  public String getText() {
-    return text;
-  }
+  private String text;
 
-  public void setText(@javax.annotation.Nullable String text) {
-    this.text = text;
-  }
-
-
-  public Telegram imageUrl(@javax.annotation.Nullable String imageUrl) {
-    this.imageUrl = imageUrl;
-    return this;
-  }
-
-  /**
-   * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;
-   * @return imageUrl
-   */
+  public static final String SERIALIZED_NAME_SUGGESTIONS = "suggestions";
+  @SerializedName(SERIALIZED_NAME_SUGGESTIONS)
   @javax.annotation.Nullable
-  public String getImageUrl() {
-    return imageUrl;
-  }
+  private List<RcsSuggestion> suggestions = new ArrayList<>();
 
-  public void setImageUrl(@javax.annotation.Nullable String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-
-  public Telegram documentUrl(@javax.annotation.Nullable String documentUrl) {
-    this.documentUrl = documentUrl;
-    return this;
-  }
-
-  /**
-   * URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;
-   * @return documentUrl
-   */
+  public static final String SERIALIZED_NAME_RICH_CARD = "rich_card";
+  @SerializedName(SERIALIZED_NAME_RICH_CARD)
   @javax.annotation.Nullable
-  public String getDocumentUrl() {
-    return documentUrl;
-  }
+  private RcsRichCard richCard;
 
-  public void setDocumentUrl(@javax.annotation.Nullable String documentUrl) {
-    this.documentUrl = documentUrl;
-  }
-
-
-  public Telegram audioUrl(@javax.annotation.Nullable String audioUrl) {
-    this.audioUrl = audioUrl;
-    return this;
-  }
-
-  /**
-   * URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;
-   * @return audioUrl
-   */
+  public static final String SERIALIZED_NAME_CONTENT_INFO = "content_info";
+  @SerializedName(SERIALIZED_NAME_CONTENT_INFO)
   @javax.annotation.Nullable
-  public String getAudioUrl() {
-    return audioUrl;
+  private RcsContentInfo contentInfo;
+
+  public Rcs() {
   }
 
-  public void setAudioUrl(@javax.annotation.Nullable String audioUrl) {
-    this.audioUrl = audioUrl;
-  }
-
-
-  public Telegram channel(@javax.annotation.Nullable ChannelEnum channel) {
+  public Rcs channel(@javax.annotation.Nullable ChannelEnum channel) {
     this.channel = channel;
     return this;
   }
@@ -270,6 +166,147 @@ public class Telegram {
     this.channel = channel;
   }
 
+
+  public Rcs sender(@javax.annotation.Nonnull String sender) {
+    this.sender = sender;
+    return this;
+  }
+
+  /**
+   * Phone number or alphanumeric sender name
+   * @return sender
+   */
+  @javax.annotation.Nonnull
+  public String getSender() {
+    return sender;
+  }
+
+  public void setSender(@javax.annotation.Nonnull String sender) {
+    this.sender = sender;
+  }
+
+
+  public Rcs validity(@javax.annotation.Nullable Integer validity) {
+    this.validity = validity;
+    return this;
+  }
+
+  /**
+   * After how many minutes this channel is considered as failed and the next channel is attempted.Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+   * @return validity
+   */
+  @javax.annotation.Nullable
+  public Integer getValidity() {
+    return validity;
+  }
+
+  public void setValidity(@javax.annotation.Nullable Integer validity) {
+    this.validity = validity;
+  }
+
+
+  public Rcs ttl(@javax.annotation.Nullable Integer ttl) {
+    this.ttl = ttl;
+    return this;
+  }
+
+  /**
+   * After how many seconds this channel is considered as failed and the next channel is attempted. Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+   * @return ttl
+   */
+  @javax.annotation.Nullable
+  public Integer getTtl() {
+    return ttl;
+  }
+
+  public void setTtl(@javax.annotation.Nullable Integer ttl) {
+    this.ttl = ttl;
+  }
+
+
+  public Rcs text(@javax.annotation.Nullable String text) {
+    this.text = text;
+    return this;
+  }
+
+  /**
+   * Text content of the RCS message
+   * @return text
+   */
+  @javax.annotation.Nullable
+  public String getText() {
+    return text;
+  }
+
+  public void setText(@javax.annotation.Nullable String text) {
+    this.text = text;
+  }
+
+
+  public Rcs suggestions(@javax.annotation.Nullable List<RcsSuggestion> suggestions) {
+    this.suggestions = suggestions;
+    return this;
+  }
+
+  public Rcs addSuggestionsItem(RcsSuggestion suggestionsItem) {
+    if (this.suggestions == null) {
+      this.suggestions = new ArrayList<>();
+    }
+    this.suggestions.add(suggestionsItem);
+    return this;
+  }
+
+  /**
+   * List of suggestions to include with the message
+   * @return suggestions
+   */
+  @javax.annotation.Nullable
+  public List<RcsSuggestion> getSuggestions() {
+    return suggestions;
+  }
+
+  public void setSuggestions(@javax.annotation.Nullable List<RcsSuggestion> suggestions) {
+    this.suggestions = suggestions;
+  }
+
+
+  public Rcs richCard(@javax.annotation.Nullable RcsRichCard richCard) {
+    this.richCard = richCard;
+    return this;
+  }
+
+  /**
+   * Get richCard
+   * @return richCard
+   */
+  @javax.annotation.Nullable
+  public RcsRichCard getRichCard() {
+    return richCard;
+  }
+
+  public void setRichCard(@javax.annotation.Nullable RcsRichCard richCard) {
+    this.richCard = richCard;
+  }
+
+
+  public Rcs contentInfo(@javax.annotation.Nullable RcsContentInfo contentInfo) {
+    this.contentInfo = contentInfo;
+    return this;
+  }
+
+  /**
+   * Get contentInfo
+   * @return contentInfo
+   */
+  @javax.annotation.Nullable
+  public RcsContentInfo getContentInfo() {
+    return contentInfo;
+  }
+
+  public void setContentInfo(@javax.annotation.Nullable RcsContentInfo contentInfo) {
+    this.contentInfo = contentInfo;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -283,9 +320,9 @@ public class Telegram {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the Telegram instance itself
+   * @return the Rcs instance itself
    */
-  public Telegram putAdditionalProperty(String key, Object value) {
+  public Rcs putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -324,33 +361,35 @@ public class Telegram {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Telegram telegram = (Telegram) o;
-    return Objects.equals(this.sender, telegram.sender) &&
-        Objects.equals(this.validity, telegram.validity) &&
-        Objects.equals(this.text, telegram.text) &&
-        Objects.equals(this.imageUrl, telegram.imageUrl) &&
-        Objects.equals(this.documentUrl, telegram.documentUrl) &&
-        Objects.equals(this.audioUrl, telegram.audioUrl) &&
-        Objects.equals(this.channel, telegram.channel)&&
-        Objects.equals(this.additionalProperties, telegram.additionalProperties);
+    Rcs rcs = (Rcs) o;
+    return Objects.equals(this.channel, rcs.channel) &&
+        Objects.equals(this.sender, rcs.sender) &&
+        Objects.equals(this.validity, rcs.validity) &&
+        Objects.equals(this.ttl, rcs.ttl) &&
+        Objects.equals(this.text, rcs.text) &&
+        Objects.equals(this.suggestions, rcs.suggestions) &&
+        Objects.equals(this.richCard, rcs.richCard) &&
+        Objects.equals(this.contentInfo, rcs.contentInfo)&&
+        Objects.equals(this.additionalProperties, rcs.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sender, validity, text, imageUrl, documentUrl, audioUrl, channel, additionalProperties);
+    return Objects.hash(channel, sender, validity, ttl, text, suggestions, richCard, contentInfo, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Telegram {\n");
+    sb.append("class Rcs {\n");
+    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
     sb.append("    sender: ").append(toIndentedString(sender)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
+    sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
-    sb.append("    documentUrl: ").append(toIndentedString(documentUrl)).append("\n");
-    sb.append("    audioUrl: ").append(toIndentedString(audioUrl)).append("\n");
-    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
+    sb.append("    suggestions: ").append(toIndentedString(suggestions)).append("\n");
+    sb.append("    richCard: ").append(toIndentedString(richCard)).append("\n");
+    sb.append("    contentInfo: ").append(toIndentedString(contentInfo)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -374,46 +413,40 @@ public class Telegram {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("channel");
     openapiFields.add("sender");
     openapiFields.add("validity");
+    openapiFields.add("ttl");
     openapiFields.add("text");
-    openapiFields.add("image_url");
-    openapiFields.add("document_url");
-    openapiFields.add("audio_url");
-    openapiFields.add("channel");
+    openapiFields.add("suggestions");
+    openapiFields.add("rich_card");
+    openapiFields.add("content_info");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("sender");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Telegram
+   * @throws IOException if the JSON Element is invalid with respect to Rcs
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Telegram.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Telegram is not found in the empty JSON string", Telegram.openapiRequiredFields.toString()));
+        if (!Rcs.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Rcs is not found in the empty JSON string", Rcs.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : Rcs.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("sender") != null && !jsonObj.get("sender").isJsonNull()) && !jsonObj.get("sender").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
-      }
-      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
-      }
-      if ((jsonObj.get("image_url") != null && !jsonObj.get("image_url").isJsonNull()) && !jsonObj.get("image_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `image_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("image_url").toString()));
-      }
-      if ((jsonObj.get("document_url") != null && !jsonObj.get("document_url").isJsonNull()) && !jsonObj.get("document_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `document_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("document_url").toString()));
-      }
-      if ((jsonObj.get("audio_url") != null && !jsonObj.get("audio_url").isJsonNull()) && !jsonObj.get("audio_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `audio_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("audio_url").toString()));
-      }
       if ((jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) && !jsonObj.get("channel").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `channel` to be a primitive type in the JSON string but got `%s`", jsonObj.get("channel").toString()));
       }
@@ -421,22 +454,50 @@ public class Telegram {
       if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
         ChannelEnum.validateJsonElement(jsonObj.get("channel"));
       }
+      if (!jsonObj.get("sender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sender").toString()));
+      }
+      if ((jsonObj.get("text") != null && !jsonObj.get("text").isJsonNull()) && !jsonObj.get("text").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
+      }
+      if (jsonObj.get("suggestions") != null && !jsonObj.get("suggestions").isJsonNull()) {
+        JsonArray jsonArraysuggestions = jsonObj.getAsJsonArray("suggestions");
+        if (jsonArraysuggestions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("suggestions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `suggestions` to be an array in the JSON string but got `%s`", jsonObj.get("suggestions").toString()));
+          }
+
+          // validate the optional field `suggestions` (array)
+          for (int i = 0; i < jsonArraysuggestions.size(); i++) {
+            RcsSuggestion.validateJsonElement(jsonArraysuggestions.get(i));
+          };
+        }
+      }
+      // validate the optional field `rich_card`
+      if (jsonObj.get("rich_card") != null && !jsonObj.get("rich_card").isJsonNull()) {
+        RcsRichCard.validateJsonElement(jsonObj.get("rich_card"));
+      }
+      // validate the optional field `content_info`
+      if (jsonObj.get("content_info") != null && !jsonObj.get("content_info").isJsonNull()) {
+        RcsContentInfo.validateJsonElement(jsonObj.get("content_info"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Telegram.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Telegram' and its subtypes
+       if (!Rcs.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Rcs' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Telegram> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Telegram.class));
+       final TypeAdapter<Rcs> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Rcs.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Telegram>() {
+       return (TypeAdapter<T>) new TypeAdapter<Rcs>() {
            @Override
-           public void write(JsonWriter out, Telegram value) throws IOException {
+           public void write(JsonWriter out, Rcs value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -464,12 +525,12 @@ public class Telegram {
            }
 
            @Override
-           public Telegram read(JsonReader in) throws IOException {
+           public Rcs read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             Telegram instance = thisAdapter.fromJsonTree(jsonObj);
+             Rcs instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -496,18 +557,18 @@ public class Telegram {
   }
 
   /**
-   * Create an instance of Telegram given an JSON string
+   * Create an instance of Rcs given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Telegram
-   * @throws IOException if the JSON string is invalid with respect to Telegram
+   * @return An instance of Rcs
+   * @throws IOException if the JSON string is invalid with respect to Rcs
    */
-  public static Telegram fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Telegram.class);
+  public static Rcs fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Rcs.class);
   }
 
   /**
-   * Convert an instance of Telegram to an JSON string
+   * Convert an instance of Rcs to an JSON string
    *
    * @return JSON string
    */
