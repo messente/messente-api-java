@@ -19,11 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.RcsCardContent;
+import com.messente.api.RcsCardOrientation;
+import com.messente.api.RcsImageAlignment;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,90 +49,82 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A container for statistics report settings
+ * RCS standalone card object.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class StatisticsReportSettings {
-  public static final String SERIALIZED_NAME_START_DATE = "start_date";
-  @SerializedName(SERIALIZED_NAME_START_DATE)
+public class RcsStandaloneCard {
+  public static final String SERIALIZED_NAME_CARD_ORIENTATION = "card_orientation";
+  @SerializedName(SERIALIZED_NAME_CARD_ORIENTATION)
   @javax.annotation.Nonnull
-  private LocalDate startDate;
+  private RcsCardOrientation cardOrientation;
 
-  public static final String SERIALIZED_NAME_END_DATE = "end_date";
-  @SerializedName(SERIALIZED_NAME_END_DATE)
+  public static final String SERIALIZED_NAME_THUMBNAIL_IMAGE_ALIGNMENT = "thumbnail_image_alignment";
+  @SerializedName(SERIALIZED_NAME_THUMBNAIL_IMAGE_ALIGNMENT)
   @javax.annotation.Nonnull
-  private LocalDate endDate;
+  private RcsImageAlignment thumbnailImageAlignment;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
-  @javax.annotation.Nullable
-  private List<String> messageTypes = new ArrayList<>();
+  public static final String SERIALIZED_NAME_CARD_CONTENT = "card_content";
+  @SerializedName(SERIALIZED_NAME_CARD_CONTENT)
+  @javax.annotation.Nonnull
+  private RcsCardContent cardContent;
 
-  public StatisticsReportSettings() {
+  public RcsStandaloneCard() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public RcsStandaloneCard cardOrientation(@javax.annotation.Nonnull RcsCardOrientation cardOrientation) {
+    this.cardOrientation = cardOrientation;
     return this;
   }
 
   /**
-   * Start date for the report
-   * @return startDate
+   * Get cardOrientation
+   * @return cardOrientation
    */
   @javax.annotation.Nonnull
-  public LocalDate getStartDate() {
-    return startDate;
+  public RcsCardOrientation getCardOrientation() {
+    return cardOrientation;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public void setCardOrientation(@javax.annotation.Nonnull RcsCardOrientation cardOrientation) {
+    this.cardOrientation = cardOrientation;
   }
 
 
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public RcsStandaloneCard thumbnailImageAlignment(@javax.annotation.Nonnull RcsImageAlignment thumbnailImageAlignment) {
+    this.thumbnailImageAlignment = thumbnailImageAlignment;
     return this;
   }
 
   /**
-   * End date for the report
-   * @return endDate
+   * Get thumbnailImageAlignment
+   * @return thumbnailImageAlignment
    */
   @javax.annotation.Nonnull
-  public LocalDate getEndDate() {
-    return endDate;
+  public RcsImageAlignment getThumbnailImageAlignment() {
+    return thumbnailImageAlignment;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public void setThumbnailImageAlignment(@javax.annotation.Nonnull RcsImageAlignment thumbnailImageAlignment) {
+    this.thumbnailImageAlignment = thumbnailImageAlignment;
   }
 
 
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
-    return this;
-  }
-
-  public StatisticsReportSettings addMessageTypesItem(String messageTypesItem) {
-    if (this.messageTypes == null) {
-      this.messageTypes = new ArrayList<>();
-    }
-    this.messageTypes.add(messageTypesItem);
+  public RcsStandaloneCard cardContent(@javax.annotation.Nonnull RcsCardContent cardContent) {
+    this.cardContent = cardContent;
     return this;
   }
 
   /**
-   * Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-   * @return messageTypes
+   * Get cardContent
+   * @return cardContent
    */
-  @javax.annotation.Nullable
-  public List<String> getMessageTypes() {
-    return messageTypes;
+  @javax.annotation.Nonnull
+  public RcsCardContent getCardContent() {
+    return cardContent;
   }
 
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
+  public void setCardContent(@javax.annotation.Nonnull RcsCardContent cardContent) {
+    this.cardContent = cardContent;
   }
 
   /**
@@ -148,9 +140,9 @@ public class StatisticsReportSettings {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StatisticsReportSettings instance itself
+   * @return the RcsStandaloneCard instance itself
    */
-  public StatisticsReportSettings putAdditionalProperty(String key, Object value) {
+  public RcsStandaloneCard putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -189,25 +181,25 @@ public class StatisticsReportSettings {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StatisticsReportSettings statisticsReportSettings = (StatisticsReportSettings) o;
-    return Objects.equals(this.startDate, statisticsReportSettings.startDate) &&
-        Objects.equals(this.endDate, statisticsReportSettings.endDate) &&
-        Objects.equals(this.messageTypes, statisticsReportSettings.messageTypes)&&
-        Objects.equals(this.additionalProperties, statisticsReportSettings.additionalProperties);
+    RcsStandaloneCard rcsStandaloneCard = (RcsStandaloneCard) o;
+    return Objects.equals(this.cardOrientation, rcsStandaloneCard.cardOrientation) &&
+        Objects.equals(this.thumbnailImageAlignment, rcsStandaloneCard.thumbnailImageAlignment) &&
+        Objects.equals(this.cardContent, rcsStandaloneCard.cardContent)&&
+        Objects.equals(this.additionalProperties, rcsStandaloneCard.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, messageTypes, additionalProperties);
+    return Objects.hash(cardOrientation, thumbnailImageAlignment, cardContent, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatisticsReportSettings {\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("class RcsStandaloneCard {\n");
+    sb.append("    cardOrientation: ").append(toIndentedString(cardOrientation)).append("\n");
+    sb.append("    thumbnailImageAlignment: ").append(toIndentedString(thumbnailImageAlignment)).append("\n");
+    sb.append("    cardContent: ").append(toIndentedString(cardContent)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -231,56 +223,59 @@ public class StatisticsReportSettings {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("start_date");
-    openapiFields.add("end_date");
-    openapiFields.add("message_types");
+    openapiFields.add("card_orientation");
+    openapiFields.add("thumbnail_image_alignment");
+    openapiFields.add("card_content");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_date");
-    openapiRequiredFields.add("end_date");
+    openapiRequiredFields.add("card_orientation");
+    openapiRequiredFields.add("thumbnail_image_alignment");
+    openapiRequiredFields.add("card_content");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+   * @throws IOException if the JSON Element is invalid with respect to RcsStandaloneCard
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReportSettings is not found in the empty JSON string", StatisticsReportSettings.openapiRequiredFields.toString()));
+        if (!RcsStandaloneCard.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RcsStandaloneCard is not found in the empty JSON string", RcsStandaloneCard.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StatisticsReportSettings.openapiRequiredFields) {
+      for (String requiredField : RcsStandaloneCard.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("message_types") != null && !jsonObj.get("message_types").isJsonNull() && !jsonObj.get("message_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_types` to be an array in the JSON string but got `%s`", jsonObj.get("message_types").toString()));
-      }
+      // validate the required field `card_orientation`
+      RcsCardOrientation.validateJsonElement(jsonObj.get("card_orientation"));
+      // validate the required field `thumbnail_image_alignment`
+      RcsImageAlignment.validateJsonElement(jsonObj.get("thumbnail_image_alignment"));
+      // validate the required field `card_content`
+      RcsCardContent.validateJsonElement(jsonObj.get("card_content"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatisticsReportSettings.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatisticsReportSettings' and its subtypes
+       if (!RcsStandaloneCard.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RcsStandaloneCard' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatisticsReportSettings> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatisticsReportSettings.class));
+       final TypeAdapter<RcsStandaloneCard> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RcsStandaloneCard.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StatisticsReportSettings>() {
+       return (TypeAdapter<T>) new TypeAdapter<RcsStandaloneCard>() {
            @Override
-           public void write(JsonWriter out, StatisticsReportSettings value) throws IOException {
+           public void write(JsonWriter out, RcsStandaloneCard value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -308,12 +303,12 @@ public class StatisticsReportSettings {
            }
 
            @Override
-           public StatisticsReportSettings read(JsonReader in) throws IOException {
+           public RcsStandaloneCard read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StatisticsReportSettings instance = thisAdapter.fromJsonTree(jsonObj);
+             RcsStandaloneCard instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -340,18 +335,18 @@ public class StatisticsReportSettings {
   }
 
   /**
-   * Create an instance of StatisticsReportSettings given an JSON string
+   * Create an instance of RcsStandaloneCard given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+   * @return An instance of RcsStandaloneCard
+   * @throws IOException if the JSON string is invalid with respect to RcsStandaloneCard
    */
-  public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
+  public static RcsStandaloneCard fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RcsStandaloneCard.class);
   }
 
   /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
+   * Convert an instance of RcsStandaloneCard to an JSON string
    *
    * @return JSON string
    */

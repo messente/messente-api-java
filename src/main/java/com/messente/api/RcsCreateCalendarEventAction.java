@@ -20,10 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,90 +46,106 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A container for statistics report settings
+ * Action to create a calendar event.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class StatisticsReportSettings {
-  public static final String SERIALIZED_NAME_START_DATE = "start_date";
-  @SerializedName(SERIALIZED_NAME_START_DATE)
+public class RcsCreateCalendarEventAction {
+  public static final String SERIALIZED_NAME_START_TIME = "start_time";
+  @SerializedName(SERIALIZED_NAME_START_TIME)
   @javax.annotation.Nonnull
-  private LocalDate startDate;
+  private String startTime;
 
-  public static final String SERIALIZED_NAME_END_DATE = "end_date";
-  @SerializedName(SERIALIZED_NAME_END_DATE)
+  public static final String SERIALIZED_NAME_END_TIME = "end_time";
+  @SerializedName(SERIALIZED_NAME_END_TIME)
   @javax.annotation.Nonnull
-  private LocalDate endDate;
+  private String endTime;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
-  @javax.annotation.Nullable
-  private List<String> messageTypes = new ArrayList<>();
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nonnull
+  private String title;
 
-  public StatisticsReportSettings() {
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nonnull
+  private String description;
+
+  public RcsCreateCalendarEventAction() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public RcsCreateCalendarEventAction startTime(@javax.annotation.Nonnull String startTime) {
+    this.startTime = startTime;
     return this;
   }
 
   /**
-   * Start date for the report
-   * @return startDate
+   * The start time of the event.
+   * @return startTime
    */
   @javax.annotation.Nonnull
-  public LocalDate getStartDate() {
-    return startDate;
+  public String getStartTime() {
+    return startTime;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public void setStartTime(@javax.annotation.Nonnull String startTime) {
+    this.startTime = startTime;
   }
 
 
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public RcsCreateCalendarEventAction endTime(@javax.annotation.Nonnull String endTime) {
+    this.endTime = endTime;
     return this;
   }
 
   /**
-   * End date for the report
-   * @return endDate
+   * The end time of the event.
+   * @return endTime
    */
   @javax.annotation.Nonnull
-  public LocalDate getEndDate() {
-    return endDate;
+  public String getEndTime() {
+    return endTime;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public void setEndTime(@javax.annotation.Nonnull String endTime) {
+    this.endTime = endTime;
   }
 
 
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
-    return this;
-  }
-
-  public StatisticsReportSettings addMessageTypesItem(String messageTypesItem) {
-    if (this.messageTypes == null) {
-      this.messageTypes = new ArrayList<>();
-    }
-    this.messageTypes.add(messageTypesItem);
+  public RcsCreateCalendarEventAction title(@javax.annotation.Nonnull String title) {
+    this.title = title;
     return this;
   }
 
   /**
-   * Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-   * @return messageTypes
+   * The title of the event.
+   * @return title
    */
-  @javax.annotation.Nullable
-  public List<String> getMessageTypes() {
-    return messageTypes;
+  @javax.annotation.Nonnull
+  public String getTitle() {
+    return title;
   }
 
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
+  public void setTitle(@javax.annotation.Nonnull String title) {
+    this.title = title;
+  }
+
+
+  public RcsCreateCalendarEventAction description(@javax.annotation.Nonnull String description) {
+    this.description = description;
+    return this;
+  }
+
+  /**
+   * The description of the event.
+   * @return description
+   */
+  @javax.annotation.Nonnull
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(@javax.annotation.Nonnull String description) {
+    this.description = description;
   }
 
   /**
@@ -148,9 +161,9 @@ public class StatisticsReportSettings {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StatisticsReportSettings instance itself
+   * @return the RcsCreateCalendarEventAction instance itself
    */
-  public StatisticsReportSettings putAdditionalProperty(String key, Object value) {
+  public RcsCreateCalendarEventAction putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -189,25 +202,27 @@ public class StatisticsReportSettings {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StatisticsReportSettings statisticsReportSettings = (StatisticsReportSettings) o;
-    return Objects.equals(this.startDate, statisticsReportSettings.startDate) &&
-        Objects.equals(this.endDate, statisticsReportSettings.endDate) &&
-        Objects.equals(this.messageTypes, statisticsReportSettings.messageTypes)&&
-        Objects.equals(this.additionalProperties, statisticsReportSettings.additionalProperties);
+    RcsCreateCalendarEventAction rcsCreateCalendarEventAction = (RcsCreateCalendarEventAction) o;
+    return Objects.equals(this.startTime, rcsCreateCalendarEventAction.startTime) &&
+        Objects.equals(this.endTime, rcsCreateCalendarEventAction.endTime) &&
+        Objects.equals(this.title, rcsCreateCalendarEventAction.title) &&
+        Objects.equals(this.description, rcsCreateCalendarEventAction.description)&&
+        Objects.equals(this.additionalProperties, rcsCreateCalendarEventAction.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, messageTypes, additionalProperties);
+    return Objects.hash(startTime, endTime, title, description, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatisticsReportSettings {\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("class RcsCreateCalendarEventAction {\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -231,39 +246,50 @@ public class StatisticsReportSettings {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("start_date");
-    openapiFields.add("end_date");
-    openapiFields.add("message_types");
+    openapiFields.add("start_time");
+    openapiFields.add("end_time");
+    openapiFields.add("title");
+    openapiFields.add("description");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_date");
-    openapiRequiredFields.add("end_date");
+    openapiRequiredFields.add("start_time");
+    openapiRequiredFields.add("end_time");
+    openapiRequiredFields.add("title");
+    openapiRequiredFields.add("description");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+   * @throws IOException if the JSON Element is invalid with respect to RcsCreateCalendarEventAction
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReportSettings is not found in the empty JSON string", StatisticsReportSettings.openapiRequiredFields.toString()));
+        if (!RcsCreateCalendarEventAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RcsCreateCalendarEventAction is not found in the empty JSON string", RcsCreateCalendarEventAction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StatisticsReportSettings.openapiRequiredFields) {
+      for (String requiredField : RcsCreateCalendarEventAction.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("message_types") != null && !jsonObj.get("message_types").isJsonNull() && !jsonObj.get("message_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_types` to be an array in the JSON string but got `%s`", jsonObj.get("message_types").toString()));
+      if (!jsonObj.get("start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("start_time").toString()));
+      }
+      if (!jsonObj.get("end_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `end_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("end_time").toString()));
+      }
+      if (!jsonObj.get("title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if (!jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -271,16 +297,16 @@ public class StatisticsReportSettings {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatisticsReportSettings.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatisticsReportSettings' and its subtypes
+       if (!RcsCreateCalendarEventAction.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RcsCreateCalendarEventAction' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatisticsReportSettings> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatisticsReportSettings.class));
+       final TypeAdapter<RcsCreateCalendarEventAction> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RcsCreateCalendarEventAction.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StatisticsReportSettings>() {
+       return (TypeAdapter<T>) new TypeAdapter<RcsCreateCalendarEventAction>() {
            @Override
-           public void write(JsonWriter out, StatisticsReportSettings value) throws IOException {
+           public void write(JsonWriter out, RcsCreateCalendarEventAction value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -308,12 +334,12 @@ public class StatisticsReportSettings {
            }
 
            @Override
-           public StatisticsReportSettings read(JsonReader in) throws IOException {
+           public RcsCreateCalendarEventAction read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StatisticsReportSettings instance = thisAdapter.fromJsonTree(jsonObj);
+             RcsCreateCalendarEventAction instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -340,18 +366,18 @@ public class StatisticsReportSettings {
   }
 
   /**
-   * Create an instance of StatisticsReportSettings given an JSON string
+   * Create an instance of RcsCreateCalendarEventAction given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+   * @return An instance of RcsCreateCalendarEventAction
+   * @throws IOException if the JSON string is invalid with respect to RcsCreateCalendarEventAction
    */
-  public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
+  public static RcsCreateCalendarEventAction fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RcsCreateCalendarEventAction.class);
   }
 
   /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
+   * Convert an instance of RcsCreateCalendarEventAction to an JSON string
    *
    * @return JSON string
    */
