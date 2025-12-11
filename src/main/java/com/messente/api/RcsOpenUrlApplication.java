@@ -24,22 +24,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * RCS open URL application
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(RcsOpenUrlApplication.Adapter.class)
+public enum RcsOpenUrlApplication {
   
-  SMS("sms"),
+  BROWSER("BROWSER"),
   
-  VIBER("viber"),
-  
-  WHATSAPP("whatsapp"),
-  
-  RCS("rcs");
+  WEBVIEW("WEBVIEW");
 
   private String value;
 
-  Channel(String value) {
+  RcsOpenUrlApplication(String value) {
     this.value = value;
   }
 
@@ -52,8 +48,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String value) {
-    for (Channel b : Channel.values()) {
+  public static RcsOpenUrlApplication fromValue(String value) {
+    for (RcsOpenUrlApplication b : RcsOpenUrlApplication.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +57,22 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<RcsOpenUrlApplication> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final RcsOpenUrlApplication enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public RcsOpenUrlApplication read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(value);
+      return RcsOpenUrlApplication.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    Channel.fromValue(value);
+    RcsOpenUrlApplication.fromValue(value);
   }
 }
 

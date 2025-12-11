@@ -10,7 +10,7 @@ A container for statistics report settings
 |------------ | ------------- | ------------- | -------------|
 |**startDate** | **LocalDate** | Start date for the report |  |
 |**endDate** | **LocalDate** | End date for the report |  |
-|**messageTypes** | **List&lt;String&gt;** | Optional list of message types (sms, viber, whatsapp, hlr, telegram) |  [optional] |
+|**messageTypes** | **List&lt;String&gt;** | Optional list of message types (sms, viber, whatsapp, rcs, hlr) |  [optional] |
 
 
 
