@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**sender** | **String** | Phone number or alphanumeric sender name |  [optional] |
-|**validity** | **Integer** | After how many minutes this channel is considered as failed and the next channel is attempted |  [optional] |
-|**ttl** | **Integer** | After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. |  [optional] |
-|**text** | **String** | Plaintext content for Telegram |  |
-|**imageUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot; |  [optional] |
+|**sender** | **String** | Phone number or alphanumeric sender name |  |
+|**validity** | **Integer** | After how many minutes this channel is considered as failed and the next channel is attempted.Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. |  [optional] |
+|**ttl** | **Integer** | After how many seconds this channel is considered as failed and the next channel is attempted. Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. |  [optional] |
+|**text** | **String** | Text content of the RCS message |  |
+|**imageUrl** | **String** | URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text |  [optional] |
 |**buttonUrl** | **String** | URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**buttonText** | **String** | Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional) |  [optional] |
 |**channel** | [**ChannelEnum**](#ChannelEnum) | The channel used to deliver the message |  [optional] |
@@ -23,8 +23,9 @@
 |**audio** | [**WhatsAppAudio**](WhatsAppAudio.md) |  |  [optional] |
 |**document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  |  [optional] |
 |**sticker** | [**WhatsAppSticker**](WhatsAppSticker.md) |  |  [optional] |
-|**documentUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot; |  [optional] |
-|**audioUrl** | **String** | URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot; |  [optional] |
+|**suggestions** | [**List&lt;RcsSuggestion&gt;**](RcsSuggestion.md) | List of suggestions to include with the message |  [optional] |
+|**richCard** | [**RcsRichCard**](RcsRichCard.md) |  |  [optional] |
+|**contentInfo** | [**RcsContentInfo**](RcsContentInfo.md) |  |  [optional] |
 
 
 
@@ -32,7 +33,7 @@
 
 | Name | Value |
 |---- | -----|
-| TELEGRAM | &quot;telegram&quot; |
+| RCS | &quot;rcs&quot; |
 
 
 
