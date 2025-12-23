@@ -59,7 +59,7 @@ public class RcsOpenUrlAction {
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_APPLICATION = "application";
@@ -69,7 +69,7 @@ public class RcsOpenUrlAction {
 
   public static final String SERIALIZED_NAME_WEBVIEW_VIEW_MODE = "webview_view_mode";
   @SerializedName(SERIALIZED_NAME_WEBVIEW_VIEW_MODE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private RcsWebviewViewMode webviewViewMode;
 
   public RcsOpenUrlAction() {
@@ -94,7 +94,7 @@ public class RcsOpenUrlAction {
   }
 
 
-  public RcsOpenUrlAction description(@javax.annotation.Nonnull String description) {
+  public RcsOpenUrlAction description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -103,12 +103,12 @@ public class RcsOpenUrlAction {
    * A description of the URL being opened.
    * @return description
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
@@ -132,7 +132,7 @@ public class RcsOpenUrlAction {
   }
 
 
-  public RcsOpenUrlAction webviewViewMode(@javax.annotation.Nonnull RcsWebviewViewMode webviewViewMode) {
+  public RcsOpenUrlAction webviewViewMode(@javax.annotation.Nullable RcsWebviewViewMode webviewViewMode) {
     this.webviewViewMode = webviewViewMode;
     return this;
   }
@@ -141,12 +141,12 @@ public class RcsOpenUrlAction {
    * Get webviewViewMode
    * @return webviewViewMode
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public RcsWebviewViewMode getWebviewViewMode() {
     return webviewViewMode;
   }
 
-  public void setWebviewViewMode(@javax.annotation.Nonnull RcsWebviewViewMode webviewViewMode) {
+  public void setWebviewViewMode(@javax.annotation.Nullable RcsWebviewViewMode webviewViewMode) {
     this.webviewViewMode = webviewViewMode;
   }
 
@@ -256,9 +256,7 @@ public class RcsOpenUrlAction {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("url");
-    openapiRequiredFields.add("description");
     openapiRequiredFields.add("application");
-    openapiRequiredFields.add("webview_view_mode");
   }
 
   /**
@@ -284,13 +282,15 @@ public class RcsOpenUrlAction {
       if (!jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
-      if (!jsonObj.get("description").isJsonPrimitive()) {
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the required field `application`
       RcsOpenUrlApplication.validateJsonElement(jsonObj.get("application"));
-      // validate the required field `webview_view_mode`
-      RcsWebviewViewMode.validateJsonElement(jsonObj.get("webview_view_mode"));
+      // validate the optional field `webview_view_mode`
+      if (jsonObj.get("webview_view_mode") != null && !jsonObj.get("webview_view_mode").isJsonNull()) {
+        RcsWebviewViewMode.validateJsonElement(jsonObj.get("webview_view_mode"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
