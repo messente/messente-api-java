@@ -24,22 +24,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * RCS card orientation
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(RcsCardOrientation.Adapter.class)
+public enum RcsCardOrientation {
   
-  SMS("sms"),
+  VERTICAL("VERTICAL"),
   
-  VIBER("viber"),
-  
-  WHATSAPP("whatsapp"),
-  
-  RCS("rcs");
+  HORIZONTAL("HORIZONTAL");
 
   private String value;
 
-  Channel(String value) {
+  RcsCardOrientation(String value) {
     this.value = value;
   }
 
@@ -52,8 +48,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String value) {
-    for (Channel b : Channel.values()) {
+  public static RcsCardOrientation fromValue(String value) {
+    for (RcsCardOrientation b : RcsCardOrientation.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +57,22 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<RcsCardOrientation> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final RcsCardOrientation enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public RcsCardOrientation read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(value);
+      return RcsCardOrientation.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    Channel.fromValue(value);
+    RcsCardOrientation.fromValue(value);
   }
 }
 
