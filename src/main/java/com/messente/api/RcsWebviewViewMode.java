@@ -24,22 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * RCS webview view mode
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(RcsWebviewViewMode.Adapter.class)
+public enum RcsWebviewViewMode {
   
-  SMS("sms"),
+  FULL("FULL"),
   
-  VIBER("viber"),
+  HALF("HALF"),
   
-  WHATSAPP("whatsapp"),
-  
-  RCS("rcs");
+  TALL("TALL");
 
   private String value;
 
-  Channel(String value) {
+  RcsWebviewViewMode(String value) {
     this.value = value;
   }
 
@@ -52,8 +50,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String value) {
-    for (Channel b : Channel.values()) {
+  public static RcsWebviewViewMode fromValue(String value) {
+    for (RcsWebviewViewMode b : RcsWebviewViewMode.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +59,22 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<RcsWebviewViewMode> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final RcsWebviewViewMode enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public RcsWebviewViewMode read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(value);
+      return RcsWebviewViewMode.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    Channel.fromValue(value);
+    RcsWebviewViewMode.fromValue(value);
   }
 }
 

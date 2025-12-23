@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.RcsOpenUrlApplication;
+import com.messente.api.RcsWebviewViewMode;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,90 +48,106 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A container for statistics report settings
+ * Action to open a URL in a browser.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class StatisticsReportSettings {
-  public static final String SERIALIZED_NAME_START_DATE = "start_date";
-  @SerializedName(SERIALIZED_NAME_START_DATE)
+public class RcsOpenUrlAction {
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nonnull
-  private LocalDate startDate;
+  private String url;
 
-  public static final String SERIALIZED_NAME_END_DATE = "end_date";
-  @SerializedName(SERIALIZED_NAME_END_DATE)
-  @javax.annotation.Nonnull
-  private LocalDate endDate;
-
-  public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @javax.annotation.Nullable
-  private List<String> messageTypes = new ArrayList<>();
+  private String description;
 
-  public StatisticsReportSettings() {
+  public static final String SERIALIZED_NAME_APPLICATION = "application";
+  @SerializedName(SERIALIZED_NAME_APPLICATION)
+  @javax.annotation.Nonnull
+  private RcsOpenUrlApplication application;
+
+  public static final String SERIALIZED_NAME_WEBVIEW_VIEW_MODE = "webview_view_mode";
+  @SerializedName(SERIALIZED_NAME_WEBVIEW_VIEW_MODE)
+  @javax.annotation.Nullable
+  private RcsWebviewViewMode webviewViewMode;
+
+  public RcsOpenUrlAction() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public RcsOpenUrlAction url(@javax.annotation.Nonnull String url) {
+    this.url = url;
     return this;
   }
 
   /**
-   * Start date for the report
-   * @return startDate
+   * The URL to open.
+   * @return url
    */
   @javax.annotation.Nonnull
-  public LocalDate getStartDate() {
-    return startDate;
+  public String getUrl() {
+    return url;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public void setUrl(@javax.annotation.Nonnull String url) {
+    this.url = url;
   }
 
 
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public RcsOpenUrlAction description(@javax.annotation.Nullable String description) {
+    this.description = description;
     return this;
   }
 
   /**
-   * End date for the report
-   * @return endDate
-   */
-  @javax.annotation.Nonnull
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
-    return this;
-  }
-
-  public StatisticsReportSettings addMessageTypesItem(String messageTypesItem) {
-    if (this.messageTypes == null) {
-      this.messageTypes = new ArrayList<>();
-    }
-    this.messageTypes.add(messageTypesItem);
-    return this;
-  }
-
-  /**
-   * Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-   * @return messageTypes
+   * A description of the URL being opened.
+   * @return description
    */
   @javax.annotation.Nullable
-  public List<String> getMessageTypes() {
-    return messageTypes;
+  public String getDescription() {
+    return description;
   }
 
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
+  public void setDescription(@javax.annotation.Nullable String description) {
+    this.description = description;
+  }
+
+
+  public RcsOpenUrlAction application(@javax.annotation.Nonnull RcsOpenUrlApplication application) {
+    this.application = application;
+    return this;
+  }
+
+  /**
+   * Get application
+   * @return application
+   */
+  @javax.annotation.Nonnull
+  public RcsOpenUrlApplication getApplication() {
+    return application;
+  }
+
+  public void setApplication(@javax.annotation.Nonnull RcsOpenUrlApplication application) {
+    this.application = application;
+  }
+
+
+  public RcsOpenUrlAction webviewViewMode(@javax.annotation.Nullable RcsWebviewViewMode webviewViewMode) {
+    this.webviewViewMode = webviewViewMode;
+    return this;
+  }
+
+  /**
+   * Get webviewViewMode
+   * @return webviewViewMode
+   */
+  @javax.annotation.Nullable
+  public RcsWebviewViewMode getWebviewViewMode() {
+    return webviewViewMode;
+  }
+
+  public void setWebviewViewMode(@javax.annotation.Nullable RcsWebviewViewMode webviewViewMode) {
+    this.webviewViewMode = webviewViewMode;
   }
 
   /**
@@ -148,9 +163,9 @@ public class StatisticsReportSettings {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StatisticsReportSettings instance itself
+   * @return the RcsOpenUrlAction instance itself
    */
-  public StatisticsReportSettings putAdditionalProperty(String key, Object value) {
+  public RcsOpenUrlAction putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -189,25 +204,27 @@ public class StatisticsReportSettings {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StatisticsReportSettings statisticsReportSettings = (StatisticsReportSettings) o;
-    return Objects.equals(this.startDate, statisticsReportSettings.startDate) &&
-        Objects.equals(this.endDate, statisticsReportSettings.endDate) &&
-        Objects.equals(this.messageTypes, statisticsReportSettings.messageTypes)&&
-        Objects.equals(this.additionalProperties, statisticsReportSettings.additionalProperties);
+    RcsOpenUrlAction rcsOpenUrlAction = (RcsOpenUrlAction) o;
+    return Objects.equals(this.url, rcsOpenUrlAction.url) &&
+        Objects.equals(this.description, rcsOpenUrlAction.description) &&
+        Objects.equals(this.application, rcsOpenUrlAction.application) &&
+        Objects.equals(this.webviewViewMode, rcsOpenUrlAction.webviewViewMode)&&
+        Objects.equals(this.additionalProperties, rcsOpenUrlAction.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, messageTypes, additionalProperties);
+    return Objects.hash(url, description, application, webviewViewMode, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatisticsReportSettings {\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("class RcsOpenUrlAction {\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    application: ").append(toIndentedString(application)).append("\n");
+    sb.append("    webviewViewMode: ").append(toIndentedString(webviewViewMode)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -231,39 +248,48 @@ public class StatisticsReportSettings {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("start_date");
-    openapiFields.add("end_date");
-    openapiFields.add("message_types");
+    openapiFields.add("url");
+    openapiFields.add("description");
+    openapiFields.add("application");
+    openapiFields.add("webview_view_mode");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_date");
-    openapiRequiredFields.add("end_date");
+    openapiRequiredFields.add("url");
+    openapiRequiredFields.add("application");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+   * @throws IOException if the JSON Element is invalid with respect to RcsOpenUrlAction
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReportSettings is not found in the empty JSON string", StatisticsReportSettings.openapiRequiredFields.toString()));
+        if (!RcsOpenUrlAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RcsOpenUrlAction is not found in the empty JSON string", RcsOpenUrlAction.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StatisticsReportSettings.openapiRequiredFields) {
+      for (String requiredField : RcsOpenUrlAction.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("message_types") != null && !jsonObj.get("message_types").isJsonNull() && !jsonObj.get("message_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_types` to be an array in the JSON string but got `%s`", jsonObj.get("message_types").toString()));
+      if (!jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // validate the required field `application`
+      RcsOpenUrlApplication.validateJsonElement(jsonObj.get("application"));
+      // validate the optional field `webview_view_mode`
+      if (jsonObj.get("webview_view_mode") != null && !jsonObj.get("webview_view_mode").isJsonNull()) {
+        RcsWebviewViewMode.validateJsonElement(jsonObj.get("webview_view_mode"));
       }
   }
 
@@ -271,16 +297,16 @@ public class StatisticsReportSettings {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatisticsReportSettings.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatisticsReportSettings' and its subtypes
+       if (!RcsOpenUrlAction.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RcsOpenUrlAction' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatisticsReportSettings> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatisticsReportSettings.class));
+       final TypeAdapter<RcsOpenUrlAction> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RcsOpenUrlAction.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StatisticsReportSettings>() {
+       return (TypeAdapter<T>) new TypeAdapter<RcsOpenUrlAction>() {
            @Override
-           public void write(JsonWriter out, StatisticsReportSettings value) throws IOException {
+           public void write(JsonWriter out, RcsOpenUrlAction value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -308,12 +334,12 @@ public class StatisticsReportSettings {
            }
 
            @Override
-           public StatisticsReportSettings read(JsonReader in) throws IOException {
+           public RcsOpenUrlAction read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StatisticsReportSettings instance = thisAdapter.fromJsonTree(jsonObj);
+             RcsOpenUrlAction instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -340,18 +366,18 @@ public class StatisticsReportSettings {
   }
 
   /**
-   * Create an instance of StatisticsReportSettings given an JSON string
+   * Create an instance of RcsOpenUrlAction given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+   * @return An instance of RcsOpenUrlAction
+   * @throws IOException if the JSON string is invalid with respect to RcsOpenUrlAction
    */
-  public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
+  public static RcsOpenUrlAction fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RcsOpenUrlAction.class);
   }
 
   /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
+   * Convert an instance of RcsOpenUrlAction to an JSON string
    *
    * @return JSON string
    */

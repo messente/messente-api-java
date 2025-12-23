@@ -11,7 +11,7 @@
 
 * `WHATSAPP` (value: `"whatsapp"`)
 
-* `TELEGRAM` (value: `"telegram"`)
+* `RCS` (value: `"rcs"`)
 
 
 

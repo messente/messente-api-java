@@ -24,22 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Defines the delivery channel
+ * RCS media height
  */
-@JsonAdapter(Channel.Adapter.class)
-public enum Channel {
+@JsonAdapter(RcsMediaHeight.Adapter.class)
+public enum RcsMediaHeight {
   
-  SMS("sms"),
+  SHORT("SHORT"),
   
-  VIBER("viber"),
+  MEDIUM("MEDIUM"),
   
-  WHATSAPP("whatsapp"),
-  
-  RCS("rcs");
+  TALL("TALL");
 
   private String value;
 
-  Channel(String value) {
+  RcsMediaHeight(String value) {
     this.value = value;
   }
 
@@ -52,8 +50,8 @@ public enum Channel {
     return String.valueOf(value);
   }
 
-  public static Channel fromValue(String value) {
-    for (Channel b : Channel.values()) {
+  public static RcsMediaHeight fromValue(String value) {
+    for (RcsMediaHeight b : RcsMediaHeight.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +59,22 @@ public enum Channel {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<Channel> {
+  public static class Adapter extends TypeAdapter<RcsMediaHeight> {
     @Override
-    public void write(final JsonWriter jsonWriter, final Channel enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final RcsMediaHeight enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public Channel read(final JsonReader jsonReader) throws IOException {
+    public RcsMediaHeight read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return Channel.fromValue(value);
+      return RcsMediaHeight.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    Channel.fromValue(value);
+    RcsMediaHeight.fromValue(value);
   }
 }
 
