@@ -19,11 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.messente.api.RcsLatLng;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,90 +48,82 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A container for statistics report settings
+ * Action to view a location on a map.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class StatisticsReportSettings {
-  public static final String SERIALIZED_NAME_START_DATE = "start_date";
-  @SerializedName(SERIALIZED_NAME_START_DATE)
-  @javax.annotation.Nonnull
-  private LocalDate startDate;
-
-  public static final String SERIALIZED_NAME_END_DATE = "end_date";
-  @SerializedName(SERIALIZED_NAME_END_DATE)
-  @javax.annotation.Nonnull
-  private LocalDate endDate;
-
-  public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
+public class RcsViewLocationAction {
+  public static final String SERIALIZED_NAME_LAT_LONG = "lat_long";
+  @SerializedName(SERIALIZED_NAME_LAT_LONG)
   @javax.annotation.Nullable
-  private List<String> messageTypes = new ArrayList<>();
+  private RcsLatLng latLong;
 
-  public StatisticsReportSettings() {
+  public static final String SERIALIZED_NAME_LABEL = "label";
+  @SerializedName(SERIALIZED_NAME_LABEL)
+  @javax.annotation.Nullable
+  private String label;
+
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
+  @javax.annotation.Nullable
+  private String query;
+
+  public RcsViewLocationAction() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public RcsViewLocationAction latLong(@javax.annotation.Nullable RcsLatLng latLong) {
+    this.latLong = latLong;
     return this;
   }
 
   /**
-   * Start date for the report
-   * @return startDate
-   */
-  @javax.annotation.Nonnull
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
-  }
-
-
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-  /**
-   * End date for the report
-   * @return endDate
-   */
-  @javax.annotation.Nonnull
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
-    return this;
-  }
-
-  public StatisticsReportSettings addMessageTypesItem(String messageTypesItem) {
-    if (this.messageTypes == null) {
-      this.messageTypes = new ArrayList<>();
-    }
-    this.messageTypes.add(messageTypesItem);
-    return this;
-  }
-
-  /**
-   * Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-   * @return messageTypes
+   * Get latLong
+   * @return latLong
    */
   @javax.annotation.Nullable
-  public List<String> getMessageTypes() {
-    return messageTypes;
+  public RcsLatLng getLatLong() {
+    return latLong;
   }
 
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
+  public void setLatLong(@javax.annotation.Nullable RcsLatLng latLong) {
+    this.latLong = latLong;
+  }
+
+
+  public RcsViewLocationAction label(@javax.annotation.Nullable String label) {
+    this.label = label;
+    return this;
+  }
+
+  /**
+   * The label of the pin dropped at latLong.
+   * @return label
+   */
+  @javax.annotation.Nullable
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(@javax.annotation.Nullable String label) {
+    this.label = label;
+  }
+
+
+  public RcsViewLocationAction query(@javax.annotation.Nullable String query) {
+    this.query = query;
+    return this;
+  }
+
+  /**
+   * (Optional, only supported on Android Messages clients) Instead of specifying a latLong (and optionally, a label), the agent can specify a query string. For default map apps that support search functionality (including Google Maps), tapping this suggested action results in a location search centered around the user&#39;s current location.              For instance, setting the query string to \&quot;Growing Tree Bank\&quot; will show all Growing Tree Bank locations in the user&#39;s vicinity. Setting the query string to \&quot;1600 Amphitheater Parkway, Mountain View, CA 94043\&quot; will select that specific address, regardless of the user&#39;s location.       
+   * @return query
+   */
+  @javax.annotation.Nullable
+  public String getQuery() {
+    return query;
+  }
+
+  public void setQuery(@javax.annotation.Nullable String query) {
+    this.query = query;
   }
 
   /**
@@ -148,9 +139,9 @@ public class StatisticsReportSettings {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StatisticsReportSettings instance itself
+   * @return the RcsViewLocationAction instance itself
    */
-  public StatisticsReportSettings putAdditionalProperty(String key, Object value) {
+  public RcsViewLocationAction putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -189,25 +180,36 @@ public class StatisticsReportSettings {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StatisticsReportSettings statisticsReportSettings = (StatisticsReportSettings) o;
-    return Objects.equals(this.startDate, statisticsReportSettings.startDate) &&
-        Objects.equals(this.endDate, statisticsReportSettings.endDate) &&
-        Objects.equals(this.messageTypes, statisticsReportSettings.messageTypes)&&
-        Objects.equals(this.additionalProperties, statisticsReportSettings.additionalProperties);
+    RcsViewLocationAction rcsViewLocationAction = (RcsViewLocationAction) o;
+    return Objects.equals(this.latLong, rcsViewLocationAction.latLong) &&
+        Objects.equals(this.label, rcsViewLocationAction.label) &&
+        Objects.equals(this.query, rcsViewLocationAction.query)&&
+        Objects.equals(this.additionalProperties, rcsViewLocationAction.additionalProperties);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, messageTypes, additionalProperties);
+    return Objects.hash(latLong, label, query, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatisticsReportSettings {\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("class RcsViewLocationAction {\n");
+    sb.append("    latLong: ").append(toIndentedString(latLong)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -231,39 +233,36 @@ public class StatisticsReportSettings {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("start_date");
-    openapiFields.add("end_date");
-    openapiFields.add("message_types");
+    openapiFields.add("lat_long");
+    openapiFields.add("label");
+    openapiFields.add("query");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_date");
-    openapiRequiredFields.add("end_date");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+   * @throws IOException if the JSON Element is invalid with respect to RcsViewLocationAction
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReportSettings is not found in the empty JSON string", StatisticsReportSettings.openapiRequiredFields.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StatisticsReportSettings.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!RcsViewLocationAction.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RcsViewLocationAction is not found in the empty JSON string", RcsViewLocationAction.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("message_types") != null && !jsonObj.get("message_types").isJsonNull() && !jsonObj.get("message_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_types` to be an array in the JSON string but got `%s`", jsonObj.get("message_types").toString()));
+      // validate the optional field `lat_long`
+      if (jsonObj.get("lat_long") != null && !jsonObj.get("lat_long").isJsonNull()) {
+        RcsLatLng.validateJsonElement(jsonObj.get("lat_long"));
+      }
+      if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+      }
+      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
   }
 
@@ -271,16 +270,16 @@ public class StatisticsReportSettings {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatisticsReportSettings.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatisticsReportSettings' and its subtypes
+       if (!RcsViewLocationAction.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RcsViewLocationAction' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatisticsReportSettings> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatisticsReportSettings.class));
+       final TypeAdapter<RcsViewLocationAction> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RcsViewLocationAction.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StatisticsReportSettings>() {
+       return (TypeAdapter<T>) new TypeAdapter<RcsViewLocationAction>() {
            @Override
-           public void write(JsonWriter out, StatisticsReportSettings value) throws IOException {
+           public void write(JsonWriter out, RcsViewLocationAction value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -308,12 +307,12 @@ public class StatisticsReportSettings {
            }
 
            @Override
-           public StatisticsReportSettings read(JsonReader in) throws IOException {
+           public RcsViewLocationAction read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StatisticsReportSettings instance = thisAdapter.fromJsonTree(jsonObj);
+             RcsViewLocationAction instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -340,18 +339,18 @@ public class StatisticsReportSettings {
   }
 
   /**
-   * Create an instance of StatisticsReportSettings given an JSON string
+   * Create an instance of RcsViewLocationAction given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+   * @return An instance of RcsViewLocationAction
+   * @throws IOException if the JSON string is invalid with respect to RcsViewLocationAction
    */
-  public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
+  public static RcsViewLocationAction fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RcsViewLocationAction.class);
   }
 
   /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
+   * Convert an instance of RcsViewLocationAction to an JSON string
    *
    * @return JSON string
    */

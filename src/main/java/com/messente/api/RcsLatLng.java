@@ -20,10 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,90 +47,58 @@ import java.util.Set;
 import com.messente.JSON;
 
 /**
- * A container for statistics report settings
+ * Latitude and longitude coordinates.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.11.0")
-public class StatisticsReportSettings {
-  public static final String SERIALIZED_NAME_START_DATE = "start_date";
-  @SerializedName(SERIALIZED_NAME_START_DATE)
+public class RcsLatLng {
+  public static final String SERIALIZED_NAME_LATITUDE = "latitude";
+  @SerializedName(SERIALIZED_NAME_LATITUDE)
   @javax.annotation.Nonnull
-  private LocalDate startDate;
+  private BigDecimal latitude;
 
-  public static final String SERIALIZED_NAME_END_DATE = "end_date";
-  @SerializedName(SERIALIZED_NAME_END_DATE)
+  public static final String SERIALIZED_NAME_LONGITUDE = "longitude";
+  @SerializedName(SERIALIZED_NAME_LONGITUDE)
   @javax.annotation.Nonnull
-  private LocalDate endDate;
+  private BigDecimal longitude;
 
-  public static final String SERIALIZED_NAME_MESSAGE_TYPES = "message_types";
-  @SerializedName(SERIALIZED_NAME_MESSAGE_TYPES)
-  @javax.annotation.Nullable
-  private List<String> messageTypes = new ArrayList<>();
-
-  public StatisticsReportSettings() {
+  public RcsLatLng() {
   }
 
-  public StatisticsReportSettings startDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public RcsLatLng latitude(@javax.annotation.Nonnull BigDecimal latitude) {
+    this.latitude = latitude;
     return this;
   }
 
   /**
-   * Start date for the report
-   * @return startDate
+   * The latitude coordinate.
+   * @return latitude
    */
   @javax.annotation.Nonnull
-  public LocalDate getStartDate() {
-    return startDate;
+  public BigDecimal getLatitude() {
+    return latitude;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
-    this.startDate = startDate;
+  public void setLatitude(@javax.annotation.Nonnull BigDecimal latitude) {
+    this.latitude = latitude;
   }
 
 
-  public StatisticsReportSettings endDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
+  public RcsLatLng longitude(@javax.annotation.Nonnull BigDecimal longitude) {
+    this.longitude = longitude;
     return this;
   }
 
   /**
-   * End date for the report
-   * @return endDate
+   * The longitude coordinate.
+   * @return longitude
    */
   @javax.annotation.Nonnull
-  public LocalDate getEndDate() {
-    return endDate;
+  public BigDecimal getLongitude() {
+    return longitude;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-
-  public StatisticsReportSettings messageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
-    return this;
-  }
-
-  public StatisticsReportSettings addMessageTypesItem(String messageTypesItem) {
-    if (this.messageTypes == null) {
-      this.messageTypes = new ArrayList<>();
-    }
-    this.messageTypes.add(messageTypesItem);
-    return this;
-  }
-
-  /**
-   * Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-   * @return messageTypes
-   */
-  @javax.annotation.Nullable
-  public List<String> getMessageTypes() {
-    return messageTypes;
-  }
-
-  public void setMessageTypes(@javax.annotation.Nullable List<String> messageTypes) {
-    this.messageTypes = messageTypes;
+  public void setLongitude(@javax.annotation.Nonnull BigDecimal longitude) {
+    this.longitude = longitude;
   }
 
   /**
@@ -148,9 +114,9 @@ public class StatisticsReportSettings {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the StatisticsReportSettings instance itself
+   * @return the RcsLatLng instance itself
    */
-  public StatisticsReportSettings putAdditionalProperty(String key, Object value) {
+  public RcsLatLng putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -189,25 +155,23 @@ public class StatisticsReportSettings {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StatisticsReportSettings statisticsReportSettings = (StatisticsReportSettings) o;
-    return Objects.equals(this.startDate, statisticsReportSettings.startDate) &&
-        Objects.equals(this.endDate, statisticsReportSettings.endDate) &&
-        Objects.equals(this.messageTypes, statisticsReportSettings.messageTypes)&&
-        Objects.equals(this.additionalProperties, statisticsReportSettings.additionalProperties);
+    RcsLatLng rcsLatLng = (RcsLatLng) o;
+    return Objects.equals(this.latitude, rcsLatLng.latitude) &&
+        Objects.equals(this.longitude, rcsLatLng.longitude)&&
+        Objects.equals(this.additionalProperties, rcsLatLng.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, messageTypes, additionalProperties);
+    return Objects.hash(latitude, longitude, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatisticsReportSettings {\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("class RcsLatLng {\n");
+    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
+    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -231,56 +195,51 @@ public class StatisticsReportSettings {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("start_date");
-    openapiFields.add("end_date");
-    openapiFields.add("message_types");
+    openapiFields.add("latitude");
+    openapiFields.add("longitude");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("start_date");
-    openapiRequiredFields.add("end_date");
+    openapiRequiredFields.add("latitude");
+    openapiRequiredFields.add("longitude");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to StatisticsReportSettings
+   * @throws IOException if the JSON Element is invalid with respect to RcsLatLng
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!StatisticsReportSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StatisticsReportSettings is not found in the empty JSON string", StatisticsReportSettings.openapiRequiredFields.toString()));
+        if (!RcsLatLng.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RcsLatLng is not found in the empty JSON string", RcsLatLng.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : StatisticsReportSettings.openapiRequiredFields) {
+      for (String requiredField : RcsLatLng.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("message_types") != null && !jsonObj.get("message_types").isJsonNull() && !jsonObj.get("message_types").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message_types` to be an array in the JSON string but got `%s`", jsonObj.get("message_types").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!StatisticsReportSettings.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'StatisticsReportSettings' and its subtypes
+       if (!RcsLatLng.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RcsLatLng' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<StatisticsReportSettings> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(StatisticsReportSettings.class));
+       final TypeAdapter<RcsLatLng> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RcsLatLng.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<StatisticsReportSettings>() {
+       return (TypeAdapter<T>) new TypeAdapter<RcsLatLng>() {
            @Override
-           public void write(JsonWriter out, StatisticsReportSettings value) throws IOException {
+           public void write(JsonWriter out, RcsLatLng value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -308,12 +267,12 @@ public class StatisticsReportSettings {
            }
 
            @Override
-           public StatisticsReportSettings read(JsonReader in) throws IOException {
+           public RcsLatLng read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             StatisticsReportSettings instance = thisAdapter.fromJsonTree(jsonObj);
+             RcsLatLng instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -340,18 +299,18 @@ public class StatisticsReportSettings {
   }
 
   /**
-   * Create an instance of StatisticsReportSettings given an JSON string
+   * Create an instance of RcsLatLng given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of StatisticsReportSettings
-   * @throws IOException if the JSON string is invalid with respect to StatisticsReportSettings
+   * @return An instance of RcsLatLng
+   * @throws IOException if the JSON string is invalid with respect to RcsLatLng
    */
-  public static StatisticsReportSettings fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, StatisticsReportSettings.class);
+  public static RcsLatLng fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RcsLatLng.class);
   }
 
   /**
-   * Convert an instance of StatisticsReportSettings to an JSON string
+   * Convert an instance of RcsLatLng to an JSON string
    *
    * @return JSON string
    */
