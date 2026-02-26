@@ -42,8 +42,8 @@
 | Name | Value |
 |---- | -----|
 | FULL | &quot;full&quot; |
-| ON | &quot;on&quot; |
-| OFF | &quot;off&quot; |
+| TRUE | &quot;true&quot; |
+| FALSE | &quot;false&quot; |
 
 
 
