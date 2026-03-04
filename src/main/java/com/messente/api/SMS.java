@@ -77,9 +77,9 @@ public class SMS {
   public enum AutoconvertEnum {
     FULL("full"),
     
-    ON("on"),
+    TRUE("true"),
     
-    OFF("off");
+    FALSE("false");
 
     private String value;
 

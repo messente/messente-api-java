@@ -92,9 +92,9 @@ public class SyncNumberLookupResult {
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
-    ON("ON"),
+    TRUE("true"),
     
-    OFF("OFF"),
+    FALSE("false"),
     
     INVALID("INVALID"),
     
