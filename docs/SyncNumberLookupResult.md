@@ -24,8 +24,8 @@ Info about a phone number
 
 | Name | Value |
 |---- | -----|
-| ON | &quot;ON&quot; |
-| OFF | &quot;OFF&quot; |
+| TRUE | &quot;true&quot; |
+| FALSE | &quot;false&quot; |
 | INVALID | &quot;INVALID&quot; |
 | UNKNOWN | &quot;UNKNOWN&quot; |
 
