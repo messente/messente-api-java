@@ -89,6 +89,10 @@ docs/SyncNumberLookupResult.md
 docs/SyncNumberLookupSuccess.md
 docs/TextStore.md
 docs/Viber.md
+docs/ViberCarousel.md
+docs/ViberCarouselButton.md
+docs/ViberCarouselItem.md
+docs/ViberTemplate.md
 docs/ViberVideo.md
 docs/WhatsApp.md
 docs/WhatsAppAudio.md
@@ -228,6 +232,10 @@ src/main/java/com/messente/api/SyncNumberLookupResult.java
 src/main/java/com/messente/api/SyncNumberLookupSuccess.java
 src/main/java/com/messente/api/TextStore.java
 src/main/java/com/messente/api/Viber.java
+src/main/java/com/messente/api/ViberCarousel.java
+src/main/java/com/messente/api/ViberCarouselButton.java
+src/main/java/com/messente/api/ViberCarouselItem.java
+src/main/java/com/messente/api/ViberTemplate.java
 src/main/java/com/messente/api/ViberVideo.java
 src/main/java/com/messente/api/WhatsApp.java
 src/main/java/com/messente/api/WhatsAppAudio.java
